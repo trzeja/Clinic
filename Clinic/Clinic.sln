@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinic", "Clinic\Clinic.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizzLayer", "BizzLayer\BizzLayer.csproj", "{AF8BB339-2104-4FD9-918E-21763F83A403}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{3392DE43-4ED9-4C2C-9FE2-2208EF718710}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AF8BB339-2104-4FD9-918E-21763F83A403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF8BB339-2104-4FD9-918E-21763F83A403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF8BB339-2104-4FD9-918E-21763F83A403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3392DE43-4ED9-4C2C-9FE2-2208EF718710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3392DE43-4ED9-4C2C-9FE2-2208EF718710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3392DE43-4ED9-4C2C-9FE2-2208EF718710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3392DE43-4ED9-4C2C-9FE2-2208EF718710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
