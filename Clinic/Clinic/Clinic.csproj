@@ -47,14 +47,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laboratory_manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory_manager.Designer.cs">
+      <DependentUpon>Laboratory_manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory_worker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory_worker.Designer.cs">
+      <DependentUpon>Laboratory_worker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar.Designer.cs">
+      <DependentUpon>Registrar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory_manager.resx">
+      <DependentUpon>Laboratory_manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory_worker.resx">
+      <DependentUpon>Laboratory_worker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +106,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registrar.resx">
+      <DependentUpon>Registrar.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
