@@ -36,7 +36,7 @@
             // 
             // labManApproveButton
             // 
-            this.labManApproveButton.Location = new System.Drawing.Point(272, 311);
+            this.labManApproveButton.Location = new System.Drawing.Point(360, 311);
             this.labManApproveButton.Name = "labManApproveButton";
             this.labManApproveButton.Size = new System.Drawing.Size(75, 23);
             this.labManApproveButton.TabIndex = 1;
@@ -45,7 +45,7 @@
             // 
             // labManCancelButton
             // 
-            this.labManCancelButton.Location = new System.Drawing.Point(360, 311);
+            this.labManCancelButton.Location = new System.Drawing.Point(279, 311);
             this.labManCancelButton.Name = "labManCancelButton";
             this.labManCancelButton.Size = new System.Drawing.Size(75, 23);
             this.labManCancelButton.TabIndex = 2;
