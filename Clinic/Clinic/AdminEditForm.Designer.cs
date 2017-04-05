@@ -131,7 +131,6 @@
         private System.Windows.Forms.TextBox adminTextBoxRetireDate;
         private System.Windows.Forms.TextBox adminTextBoxRoles;
         private System.Windows.Forms.TextBox adminTextBoxLname;
-        private Admin admin;
         private System.Windows.Forms.TextBox adminTextBoxFname;
     }
 }

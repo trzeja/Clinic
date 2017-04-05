@@ -70,6 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="clinicDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +107,12 @@
     <Compile Include="Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarAddFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarAddFrom.Designer.cs">
+      <DependentUpon>RegistrarAddFrom.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +143,9 @@
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarAddFrom.resx">
+      <DependentUpon>RegistrarAddFrom.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="clinicDataSet.xsc">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>
     </None>
@@ -142,6 +156,17 @@
     </None>
     <None Include="clinicDataSet.xss">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsc">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="clinicDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clinicDataSet1.xss">
+      <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

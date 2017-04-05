@@ -17,6 +17,8 @@ namespace Clinic
             InitializeComponent();
             Admin adminForm = new Admin();
             adminForm.Show();
+            Registrar registrarForm = new Registrar();
+            registrarForm.Show();
         }
     }
 }
