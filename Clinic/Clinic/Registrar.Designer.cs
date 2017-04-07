@@ -32,7 +32,7 @@
             this.visitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicDataSet1 = new Clinic.clinicDataSet1();
             this.resgistrarAddVisitButton = new System.Windows.Forms.Button();
-            this.registrarCancelButton = new System.Windows.Forms.Button();
+            this.registrarModifyButton = new System.Windows.Forms.Button();
             this.clinicDataSet = new Clinic.clinicDataSet();
             this.clinicDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visitTableAdapter = new Clinic.clinicDataSet1TableAdapters.VisitTableAdapter();
@@ -70,7 +70,7 @@
             // 
             // resgistrarAddVisitButton
             // 
-            this.resgistrarAddVisitButton.Location = new System.Drawing.Point(782, 5);
+            this.resgistrarAddVisitButton.Location = new System.Drawing.Point(782, 11);
             this.resgistrarAddVisitButton.Name = "resgistrarAddVisitButton";
             this.resgistrarAddVisitButton.Size = new System.Drawing.Size(75, 23);
             this.resgistrarAddVisitButton.TabIndex = 1;
@@ -78,15 +78,15 @@
             this.resgistrarAddVisitButton.UseVisualStyleBackColor = true;
             this.resgistrarAddVisitButton.Click += new System.EventHandler(this.resgistrarAddVisitButton_Click);
             // 
-            // registrarCancelButton
+            // registrarModifyButton
             // 
-            this.registrarCancelButton.Location = new System.Drawing.Point(782, 34);
-            this.registrarCancelButton.Name = "registrarCancelButton";
-            this.registrarCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.registrarCancelButton.TabIndex = 2;
-            this.registrarCancelButton.Text = "Cancel Visit";
-            this.registrarCancelButton.UseVisualStyleBackColor = true;
-            this.registrarCancelButton.Click += new System.EventHandler(this.registrarCancelButton_Click);
+            this.registrarModifyButton.Location = new System.Drawing.Point(782, 47);
+            this.registrarModifyButton.Name = "registrarModifyButton";
+            this.registrarModifyButton.Size = new System.Drawing.Size(75, 23);
+            this.registrarModifyButton.TabIndex = 2;
+            this.registrarModifyButton.Text = "Modify Visit";
+            this.registrarModifyButton.UseVisualStyleBackColor = true;
+            this.registrarModifyButton.Click += new System.EventHandler(this.registrarCancelButton_Click);
             // 
             // clinicDataSet
             // 
@@ -146,6 +146,7 @@
             this.registrarTextBoxPatient.Name = "registrarTextBoxPatient";
             this.registrarTextBoxPatient.Size = new System.Drawing.Size(100, 20);
             this.registrarTextBoxPatient.TabIndex = 19;
+            this.registrarTextBoxPatient.Click += new System.EventHandler(this.registrarTextBoxPatient_Clicked);
             // 
             // registrarTextBoxDoctor
             // 
@@ -204,7 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 355);
             this.Controls.Add(this.searchPanelRegistrar);
-            this.Controls.Add(this.registrarCancelButton);
+            this.Controls.Add(this.registrarModifyButton);
             this.Controls.Add(this.resgistrarAddVisitButton);
             this.Name = "Registrar";
             this.Text = "Registrar";
@@ -224,7 +225,7 @@
 
         #endregion
         private System.Windows.Forms.Button resgistrarAddVisitButton;
-        private System.Windows.Forms.Button registrarCancelButton;
+        private System.Windows.Forms.Button registrarModifyButton;
         private clinicDataSet1 clinicDataSet1;
         private System.Windows.Forms.BindingSource clinicDataSetBindingSource;
         private clinicDataSet clinicDataSet;

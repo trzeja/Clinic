@@ -28,32 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.registrarTextBoxExCancelDate = new System.Windows.Forms.TextBox();
-            this.registrarTextBoxRegDate = new System.Windows.Forms.TextBox();
             this.registrarCancelButton = new System.Windows.Forms.Button();
             this.registrarApproveButton = new System.Windows.Forms.Button();
-            this.registrarTextBoxIDDoctor = new System.Windows.Forms.TextBox();
-            this.registrarAddPatientButton = new System.Windows.Forms.Button();
-            this.registrarTextBoxIDPatient = new System.Windows.Forms.TextBox();
+            this.registrarTextBoxDoctor = new System.Windows.Forms.TextBox();
+            this.registrarTextBoxPatient = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataTimePickerRegDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dataTimePickerEcCancelDate = new System.Windows.Forms.DateTimePicker();
+            this.registrarCancelVisitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // registrarTextBoxExCancelDate
-            // 
-            this.registrarTextBoxExCancelDate.Location = new System.Drawing.Point(34, 348);
-            this.registrarTextBoxExCancelDate.Name = "registrarTextBoxExCancelDate";
-            this.registrarTextBoxExCancelDate.Size = new System.Drawing.Size(100, 20);
-            this.registrarTextBoxExCancelDate.TabIndex = 19;
-            // 
-            // registrarTextBoxRegDate
-            // 
-            this.registrarTextBoxRegDate.Location = new System.Drawing.Point(38, 374);
-            this.registrarTextBoxRegDate.Name = "registrarTextBoxRegDate";
-            this.registrarTextBoxRegDate.Size = new System.Drawing.Size(100, 20);
-            this.registrarTextBoxRegDate.TabIndex = 18;
             // 
             // registrarCancelButton
             // 
@@ -73,29 +57,23 @@
             this.registrarApproveButton.TabIndex = 12;
             this.registrarApproveButton.Text = "Approve";
             this.registrarApproveButton.UseVisualStyleBackColor = true;
+            this.registrarApproveButton.Click += new System.EventHandler(this.registrarApproveButton_Click);
             // 
-            // registrarTextBoxIDDoctor
+            // registrarTextBoxDoctor
             // 
-            this.registrarTextBoxIDDoctor.Location = new System.Drawing.Point(50, 154);
-            this.registrarTextBoxIDDoctor.Name = "registrarTextBoxIDDoctor";
-            this.registrarTextBoxIDDoctor.Size = new System.Drawing.Size(100, 20);
-            this.registrarTextBoxIDDoctor.TabIndex = 22;
+            this.registrarTextBoxDoctor.Location = new System.Drawing.Point(50, 154);
+            this.registrarTextBoxDoctor.Name = "registrarTextBoxDoctor";
+            this.registrarTextBoxDoctor.Size = new System.Drawing.Size(100, 20);
+            this.registrarTextBoxDoctor.TabIndex = 22;
             // 
-            // registrarAddPatientButton
+            // registrarTextBoxPatient
             // 
-            this.registrarAddPatientButton.Location = new System.Drawing.Point(12, 237);
-            this.registrarAddPatientButton.Name = "registrarAddPatientButton";
-            this.registrarAddPatientButton.Size = new System.Drawing.Size(75, 23);
-            this.registrarAddPatientButton.TabIndex = 23;
-            this.registrarAddPatientButton.Text = "Add Patient";
-            this.registrarAddPatientButton.UseVisualStyleBackColor = true;
-            // 
-            // registrarTextBoxIDPatient
-            // 
-            this.registrarTextBoxIDPatient.Location = new System.Drawing.Point(50, 116);
-            this.registrarTextBoxIDPatient.Name = "registrarTextBoxIDPatient";
-            this.registrarTextBoxIDPatient.Size = new System.Drawing.Size(100, 20);
-            this.registrarTextBoxIDPatient.TabIndex = 20;
+            this.registrarTextBoxPatient.Location = new System.Drawing.Point(50, 116);
+            this.registrarTextBoxPatient.Name = "registrarTextBoxPatient";
+            this.registrarTextBoxPatient.Size = new System.Drawing.Size(100, 20);
+            this.registrarTextBoxPatient.TabIndex = 20;
+            this.registrarTextBoxPatient.Click += new System.EventHandler(this.registrarTextBoxPatient_Clicked);
+            this.registrarTextBoxPatient.TextChanged += new System.EventHandler(this.registrarTextBoxPatient_TextChanged);
             // 
             // label1
             // 
@@ -130,20 +108,27 @@
             this.dataTimePickerEcCancelDate.Size = new System.Drawing.Size(158, 20);
             this.dataTimePickerEcCancelDate.TabIndex = 26;
             // 
+            // registrarCancelVisitButton
+            // 
+            this.registrarCancelVisitButton.Location = new System.Drawing.Point(63, 228);
+            this.registrarCancelVisitButton.Name = "registrarCancelVisitButton";
+            this.registrarCancelVisitButton.Size = new System.Drawing.Size(75, 23);
+            this.registrarCancelVisitButton.TabIndex = 28;
+            this.registrarCancelVisitButton.Text = "Cancel Visit";
+            this.registrarCancelVisitButton.UseVisualStyleBackColor = true;
+            // 
             // RegistrarAddFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 421);
+            this.ClientSize = new System.Drawing.Size(211, 271);
+            this.Controls.Add(this.registrarCancelVisitButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataTimePickerEcCancelDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataTimePickerRegDate);
-            this.Controls.Add(this.registrarAddPatientButton);
-            this.Controls.Add(this.registrarTextBoxIDDoctor);
-            this.Controls.Add(this.registrarTextBoxIDPatient);
-            this.Controls.Add(this.registrarTextBoxExCancelDate);
-            this.Controls.Add(this.registrarTextBoxRegDate);
+            this.Controls.Add(this.registrarTextBoxDoctor);
+            this.Controls.Add(this.registrarTextBoxPatient);
             this.Controls.Add(this.registrarCancelButton);
             this.Controls.Add(this.registrarApproveButton);
             this.Name = "RegistrarAddFrom";
@@ -154,17 +139,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox registrarTextBoxExCancelDate;
-        private System.Windows.Forms.TextBox registrarTextBoxRegDate;
         private System.Windows.Forms.Button registrarCancelButton;
         private System.Windows.Forms.Button registrarApproveButton;
-        private System.Windows.Forms.TextBox registrarTextBoxIDDoctor;
-        private System.Windows.Forms.Button registrarAddPatientButton;
-        private System.Windows.Forms.TextBox registrarTextBoxIDPatient;
+        private System.Windows.Forms.TextBox registrarTextBoxDoctor;
+        private System.Windows.Forms.TextBox registrarTextBoxPatient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dataTimePickerRegDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dataTimePickerEcCancelDate;
+        private System.Windows.Forms.Button registrarCancelVisitButton;
     }
 }

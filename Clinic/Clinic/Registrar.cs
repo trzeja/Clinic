@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,9 @@ namespace Clinic
         private void resgistrarAddVisitButton_Click(object sender, EventArgs e)
         {
             RegistrarAddFrom registrarAddFrom = new RegistrarAddFrom();
+            registrarAddFrom.setRegistrarCancelVisitButtonEnableDisable(false);
             registrarAddFrom.ShowDialog(this);
+           
 
         }
 
@@ -38,7 +41,7 @@ namespace Clinic
         //registrarTextBoxIDPatient
         private void registrarTextBoxDoctor_Enter(object sender, EventArgs e)
         {
-            if (registrarTextBoxDoctor.Text == "ID Doctor")
+            if (registrarTextBoxDoctor.Text == "Doctor")
             {
                 registrarTextBoxDoctor.Text = "";
                 registrarTextBoxDoctor.ForeColor = SystemColors.WindowText;
@@ -49,7 +52,7 @@ namespace Clinic
         {
             if (registrarTextBoxDoctor.Text.Length == 0)
             {
-                registrarTextBoxDoctor.Text = "ID Doctor";
+                registrarTextBoxDoctor.Text = "Doctor";
                 registrarTextBoxDoctor.ForeColor = SystemColors.GrayText;
             }
            
@@ -60,7 +63,7 @@ namespace Clinic
 
         private void registrarTextBoxPatient_Enter(object sender, EventArgs e)
         {
-            if (registrarTextBoxPatient.Text == "ID Patient")
+            if (registrarTextBoxPatient.Text == "Patient")
             {
                 registrarTextBoxPatient.Text = "";
                 registrarTextBoxPatient.ForeColor = SystemColors.WindowText;
@@ -71,7 +74,7 @@ namespace Clinic
         {
             if (registrarTextBoxPatient.Text.Length == 0)
             {
-                registrarTextBoxPatient.Text = "ID Patient";
+                registrarTextBoxPatient.Text = "Patient";
                 registrarTextBoxPatient.ForeColor = SystemColors.GrayText;
             }
         }
@@ -82,13 +85,13 @@ namespace Clinic
 
             //registrarTextBoxDoctor
             registrarTextBoxDoctor.ForeColor = SystemColors.GrayText;
-            registrarTextBoxDoctor.Text = "ID Doctor";
+            registrarTextBoxDoctor.Text = "Doctor";
             this.registrarTextBoxDoctor.Leave += new System.EventHandler(this.registrarTextBoxDoctor_Leave);
             this.registrarTextBoxDoctor.Enter += new System.EventHandler(this.registrarTextBoxDoctor_Enter);
 
             //registrarTextBoxPatient
             registrarTextBoxPatient.ForeColor = SystemColors.GrayText;
-            registrarTextBoxPatient.Text = "ID Patient";
+            registrarTextBoxPatient.Text = "Patient";
             this.registrarTextBoxPatient.Leave += new System.EventHandler(this.registrarTextBoxPatient_Leave);
             this.registrarTextBoxPatient.Enter += new System.EventHandler(this.registrarTextBoxPatient_Enter);
 
@@ -102,10 +105,20 @@ namespace Clinic
 
         private void registrarCancelButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You didn't check anything","Error");
-            
+            RegistrarAddFrom registrarmodifyVisit= new RegistrarAddFrom();
+            registrarmodifyVisit.setRegistrarApproveButtonEnableDisable(false);
+            registrarmodifyVisit.ShowDialog(this);
+
         }
 
+       
+
+        private void registrarTextBoxPatient_Clicked(object sender, EventArgs e)
+        {
+            RegistrarSelectPatient registrarSelectPatient = new RegistrarSelectPatient();
+            registrarSelectPatient.setRegistrarAddButtonEnableDisable(false);
+            registrarSelectPatient.ShowDialog(this);
+        }
 
     }
 }

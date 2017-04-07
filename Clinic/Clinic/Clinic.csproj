@@ -107,11 +107,23 @@
     <Compile Include="Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarAddFrom.cs">
+    <Compile Include="RegistrarAddPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarAddFrom.Designer.cs">
-      <DependentUpon>RegistrarAddFrom.cs</DependentUpon>
+    <Compile Include="RegistrarAddPatientForm.Designer.cs">
+      <DependentUpon>RegistrarAddPatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarModifyForm.Designer.cs">
+      <DependentUpon>RegistrarModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarSelectPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarSelectPatient.Designer.cs">
+      <DependentUpon>RegistrarSelectPatient.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -143,8 +155,14 @@
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarAddFrom.resx">
-      <DependentUpon>RegistrarAddFrom.cs</DependentUpon>
+    <EmbeddedResource Include="registrarAddPatientForm.resx">
+      <DependentUpon>RegistrarAddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarModifyForm.resx">
+      <DependentUpon>RegistrarModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarSelectPatient.resx">
+      <DependentUpon>RegistrarSelectPatient.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="clinicDataSet.xsc">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>

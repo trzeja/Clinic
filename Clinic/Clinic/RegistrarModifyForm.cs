@@ -101,62 +101,62 @@ namespace Clinic
 
         /*///////////////////////////////////////////////////////////////////////*/
         //registrarTextBoxRegDate
-        private void registrarTextBoxRegDate_Enter(object sender, EventArgs e)
-        {
-            if (registrarTextBoxRegDate.Text == "Registration date")
-            {
-                registrarTextBoxRegDate.Text = "";
-                registrarTextBoxRegDate.ForeColor = SystemColors.WindowText;
-            }
-        }
+        //private void registrarTextBoxRegDate_Enter(object sender, EventArgs e)
+        //{
+        //    if (registrarTextBoxRegDate.Text == "Registration date")
+        //    {
+        //        registrarTextBoxRegDate.Text = "";
+        //        registrarTextBoxRegDate.ForeColor = SystemColors.WindowText;
+        //    }
+        //}
 
-        private void registrarTextBoxRegDate_Leave(object sender, EventArgs e)
-        {
-            if (registrarTextBoxRegDate.Text.Length == 0)
-            {
-                registrarTextBoxRegDate.Text = "Registration date";
-                registrarTextBoxRegDate.ForeColor = SystemColors.GrayText;
-            }
-        }
-        /*///////////////////////////////////////////////////////////////////////*/
-        //registrarTextBoxExCancelDate
+        //private void registrarTextBoxRegDate_Leave(object sender, EventArgs e)
+        //{
+        //    if (registrarTextBoxRegDate.Text.Length == 0)
+        //    {
+        //        registrarTextBoxRegDate.Text = "Registration date";
+        //        registrarTextBoxRegDate.ForeColor = SystemColors.GrayText;
+        //    }
+        //}
+        ///*///////////////////////////////////////////////////////////////////////*/
+        ////registrarTextBoxExCancelDate
 
-        private void registrarTextBoxExCancelDate_Enter(object sender, EventArgs e)
-        {
-            if (registrarTextBoxExCancelDate.Text == "Execution, cancel date")
-            {
-                registrarTextBoxExCancelDate.Text = "";
-                registrarTextBoxExCancelDate.ForeColor = SystemColors.WindowText;
-            }
-        }
+        //private void registrarTextBoxExCancelDate_Enter(object sender, EventArgs e)
+        //{
+        //    if (registrarTextBoxExCancelDate.Text == "Execution, cancel date")
+        //    {
+        //        registrarTextBoxExCancelDate.Text = "";
+        //        registrarTextBoxExCancelDate.ForeColor = SystemColors.WindowText;
+        //    }
+        //}
 
-        private void registrarTextBoxExCancelDate_Leave(object sender, EventArgs e)
-        {
-            if (registrarTextBoxExCancelDate.Text.Length == 0)
-            {
-                registrarTextBoxExCancelDate.Text = "Execution, cancel date";
-                registrarTextBoxExCancelDate.ForeColor = SystemColors.GrayText;
-            }
-        }
+        //private void registrarTextBoxExCancelDate_Leave(object sender, EventArgs e)
+        //{
+        //    if (registrarTextBoxExCancelDate.Text.Length == 0)
+        //    {
+        //        registrarTextBoxExCancelDate.Text = "Execution, cancel date";
+        //        registrarTextBoxExCancelDate.ForeColor = SystemColors.GrayText;
+        //    }
+        //}
 
         /*///////////////////////////////////////////////////////////////////////*/
         //registrarTextBoxIDPatient
 
         private void registrarTextBoxIDPatient_Enter(object sender, EventArgs e)
         {
-            if (registrarTextBoxIDPatient.Text == "ID Patient")
+            if (registrarTextBoxPatient.Text == "ID Patient")
             {
-                registrarTextBoxIDPatient.Text = "";
-                registrarTextBoxIDPatient.ForeColor = SystemColors.WindowText;
+                registrarTextBoxPatient.Text = "";
+                registrarTextBoxPatient.ForeColor = SystemColors.WindowText;
             }
         }
 
         private void registrarTextBoxIDPatient_Leave(object sender, EventArgs e)
         {
-            if (registrarTextBoxIDPatient.Text.Length == 0)
+            if (registrarTextBoxPatient.Text.Length == 0)
             {
-                registrarTextBoxIDPatient.Text = "ID Patient";
-                registrarTextBoxIDPatient.ForeColor = SystemColors.GrayText;
+                registrarTextBoxPatient.Text = "ID Patient";
+                registrarTextBoxPatient.ForeColor = SystemColors.GrayText;
             }
         }
 
@@ -186,19 +186,19 @@ namespace Clinic
 
         private void registrarTextBoxIDDoctor_Enter(object sender, EventArgs e)
         {
-            if (registrarTextBoxIDDoctor.Text == "ID Doctor")
+            if (registrarTextBoxDoctor.Text == "ID Doctor")
             {
-                registrarTextBoxIDDoctor.Text = "";
-                registrarTextBoxIDDoctor.ForeColor = SystemColors.WindowText;
+                registrarTextBoxDoctor.Text = "";
+                registrarTextBoxDoctor.ForeColor = SystemColors.WindowText;
             }
         }
 
         private void registrarTextBoxIDDoctor_Leave(object sender, EventArgs e)
         {
-            if (registrarTextBoxIDDoctor.Text.Length == 0)
+            if (registrarTextBoxDoctor.Text.Length == 0)
             {
-                registrarTextBoxIDDoctor.Text = "ID Doctor";
-                registrarTextBoxIDDoctor.ForeColor = SystemColors.GrayText;
+                registrarTextBoxDoctor.Text = "ID Doctor";
+                registrarTextBoxDoctor.ForeColor = SystemColors.GrayText;
             }
         }
         /*///////////////////////////////////////////////////////////////////////*/
@@ -231,16 +231,16 @@ namespace Clinic
             //this.registrarTextBoxState.Enter += new System.EventHandler(this.registrarTextBoxState_Enter);
 
             //registrarTextBoxRegDate
-            registrarTextBoxRegDate.ForeColor = SystemColors.GrayText;
-            registrarTextBoxRegDate.Text = "Registration date";
-            this.registrarTextBoxRegDate.Leave += new System.EventHandler(this.registrarTextBoxRegDate_Leave);
-            this.registrarTextBoxRegDate.Enter += new System.EventHandler(this.registrarTextBoxRegDate_Enter);
+            //registrarTextBoxRegDate.ForeColor = SystemColors.GrayText;
+            //registrarTextBoxRegDate.Text = "Registration date";
+            //this.registrarTextBoxRegDate.Leave += new System.EventHandler(this.registrarTextBoxRegDate_Leave);
+            //this.registrarTextBoxRegDate.Enter += new System.EventHandler(this.registrarTextBoxRegDate_Enter);
 
-            //registrarTextBoxExCancelDate
-            registrarTextBoxExCancelDate.ForeColor = SystemColors.GrayText;
-            registrarTextBoxExCancelDate.Text = "Execution, cancel date";
-            this.registrarTextBoxExCancelDate.Leave += new System.EventHandler(this.registrarTextBoxExCancelDate_Leave);
-            this.registrarTextBoxExCancelDate.Enter += new System.EventHandler(this.registrarTextBoxExCancelDate_Enter);
+            ////registrarTextBoxExCancelDate
+            //registrarTextBoxExCancelDate.ForeColor = SystemColors.GrayText;
+            //registrarTextBoxExCancelDate.Text = "Execution, cancel date";
+            //this.registrarTextBoxExCancelDate.Leave += new System.EventHandler(this.registrarTextBoxExCancelDate_Leave);
+            //this.registrarTextBoxExCancelDate.Enter += new System.EventHandler(this.registrarTextBoxExCancelDate_Enter);
 
             ////registrarTextBoxIDRegistration
             //registrarTextBoxIDRegistration.ForeColor = SystemColors.GrayText;
@@ -249,16 +249,16 @@ namespace Clinic
             //this.registrarTextBoxIDRegistration.Enter += new System.EventHandler(this.registrarTextBoxIDRegistration_Enter);
 
             //registrarTextBoxIDPatient
-            registrarTextBoxIDPatient.ForeColor = SystemColors.GrayText;
-            registrarTextBoxIDPatient.Text = "ID Patient";
-            this.registrarTextBoxIDPatient.Leave += new System.EventHandler(this.registrarTextBoxIDPatient_Leave);
-            this.registrarTextBoxIDPatient.Enter += new System.EventHandler(this.registrarTextBoxIDPatient_Enter);
+            registrarTextBoxPatient.ForeColor = SystemColors.GrayText;
+            registrarTextBoxPatient.Text = "ID Patient";
+            this.registrarTextBoxPatient.Leave += new System.EventHandler(this.registrarTextBoxIDPatient_Leave);
+            this.registrarTextBoxPatient.Enter += new System.EventHandler(this.registrarTextBoxIDPatient_Enter);
 
             //registrarTextBoxIDDoctor
-            registrarTextBoxIDDoctor.ForeColor = SystemColors.GrayText;
-            registrarTextBoxIDDoctor.Text = "ID Doctor";
-            this.registrarTextBoxIDDoctor.Leave += new System.EventHandler(this.registrarTextBoxIDDoctor_Leave);
-            this.registrarTextBoxIDDoctor.Enter += new System.EventHandler(this.registrarTextBoxIDDoctor_Enter);
+            registrarTextBoxDoctor.ForeColor = SystemColors.GrayText;
+            registrarTextBoxDoctor.Text = "ID Doctor";
+            this.registrarTextBoxDoctor.Leave += new System.EventHandler(this.registrarTextBoxIDDoctor_Leave);
+            this.registrarTextBoxDoctor.Enter += new System.EventHandler(this.registrarTextBoxIDDoctor_Enter);
 
 
 
@@ -272,6 +272,31 @@ namespace Clinic
             this.Close();
         }
 
-        
+        private void registrarTextBoxPatient_Clicked(object sender, EventArgs e)
+        {
+            RegistrarSelectPatient registrarSelectPatient = new RegistrarSelectPatient();
+            registrarSelectPatient.setRegistrarAddButtonEnableDisable(false);
+            registrarSelectPatient.ShowDialog(this);
+        }
+
+        private void registrarApproveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarTextBoxPatient_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void setRegistrarCancelVisitButtonEnableDisable(bool set)
+        {
+            this.registrarCancelVisitButton.Enabled = set;
+        }
+
+        public void setRegistrarApproveButtonEnableDisable(bool set)
+        {
+            this.registrarApproveButton.Enabled = set;
+        }
     }
 }
