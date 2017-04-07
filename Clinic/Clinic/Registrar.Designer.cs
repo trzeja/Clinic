@@ -32,7 +32,7 @@
             this.visitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicDataSet1 = new Clinic.clinicDataSet1();
             this.resgistrarAddVisitButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.registrarCancelButton = new System.Windows.Forms.Button();
             this.clinicDataSet = new Clinic.clinicDataSet();
             this.clinicDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visitTableAdapter = new Clinic.clinicDataSet1TableAdapters.VisitTableAdapter();
@@ -47,6 +47,7 @@
             this.registrarSearchButton = new System.Windows.Forms.Button();
             this.visitTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.VisitTableAdapter();
             this.dataGridViewRegistrar = new System.Windows.Forms.DataGridView();
+            this.clinicDataSet11 = new Clinic.clinicDataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.visitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSetBindingSource1)).BeginInit();
             this.searchPanelRegistrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegistrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // visitBindingSource
@@ -76,14 +78,15 @@
             this.resgistrarAddVisitButton.UseVisualStyleBackColor = true;
             this.resgistrarAddVisitButton.Click += new System.EventHandler(this.resgistrarAddVisitButton_Click);
             // 
-            // button2
+            // registrarCancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(782, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Cancel Visit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.registrarCancelButton.Location = new System.Drawing.Point(782, 34);
+            this.registrarCancelButton.Name = "registrarCancelButton";
+            this.registrarCancelButton.Size = new System.Drawing.Size(75, 23);
+            this.registrarCancelButton.TabIndex = 2;
+            this.registrarCancelButton.Text = "Cancel Visit";
+            this.registrarCancelButton.UseVisualStyleBackColor = true;
+            this.registrarCancelButton.Click += new System.EventHandler(this.registrarCancelButton_Click);
             // 
             // clinicDataSet
             // 
@@ -190,14 +193,18 @@
             this.dataGridViewRegistrar.Size = new System.Drawing.Size(756, 218);
             this.dataGridViewRegistrar.TabIndex = 22;
             // 
+            // clinicDataSet11
+            // 
+            this.clinicDataSet11.DataSetName = "clinicDataSet1";
+            this.clinicDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 355);
-           // this.Controls.Add(this.dataGridViewRegistrar);
             this.Controls.Add(this.searchPanelRegistrar);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.registrarCancelButton);
             this.Controls.Add(this.resgistrarAddVisitButton);
             this.Name = "Registrar";
             this.Text = "Registrar";
@@ -210,13 +217,14 @@
             this.searchPanelRegistrar.ResumeLayout(false);
             this.searchPanelRegistrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegistrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button resgistrarAddVisitButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button registrarCancelButton;
         private clinicDataSet1 clinicDataSet1;
         private System.Windows.Forms.BindingSource clinicDataSetBindingSource;
         private clinicDataSet clinicDataSet;
@@ -233,5 +241,6 @@
         private System.Windows.Forms.Button registrarSearchButton;
         private clinicDataSet1TableAdapters.VisitTableAdapter visitTableAdapter1;
         private System.Windows.Forms.DataGridView dataGridViewRegistrar;
+        private clinicDataSet1 clinicDataSet11;
     }
 }

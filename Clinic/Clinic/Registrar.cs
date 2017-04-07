@@ -99,5 +99,13 @@ namespace Clinic
         {
             this.Controls.Add(this.dataGridViewRegistrar);
         }
+
+        private void registrarCancelButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You didn't check anything","Error");
+            
+        }
+
+
     }
 }
