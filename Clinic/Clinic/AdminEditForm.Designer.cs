@@ -60,6 +60,7 @@
             // 
             // adminTextBoxUserName
             // 
+            this.adminTextBoxUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.adminTextBoxUserName.Location = new System.Drawing.Point(38, 24);
             this.adminTextBoxUserName.Name = "adminTextBoxUserName";
             this.adminTextBoxUserName.Size = new System.Drawing.Size(100, 20);
@@ -113,10 +114,11 @@
             this.Controls.Add(this.adminTextBoxUserName);
             this.Controls.Add(this.adminCancelButton);
             this.Controls.Add(this.adminApproveButton);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MaximumSize = new System.Drawing.Size(190, 335);
             this.MinimumSize = new System.Drawing.Size(190, 335);
             this.Name = "AdminEditForm";
-            this.Text = "AdminEditForm";
+            this.Text = "Edit";
             this.ResumeLayout(false);
             this.PerformLayout();
 

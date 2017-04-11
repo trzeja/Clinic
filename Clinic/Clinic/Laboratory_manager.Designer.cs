@@ -86,8 +86,8 @@
             // 
             this.labManagerComboboxState.FormattingEnabled = true;
             this.labManagerComboboxState.Items.AddRange(new object[] {
-            "Start",
-            "End"});
+            "Done",
+            "ORD"});
             this.labManagerComboboxState.Location = new System.Drawing.Point(192, 6);
             this.labManagerComboboxState.Name = "labManagerComboboxState";
             this.labManagerComboboxState.Size = new System.Drawing.Size(121, 21);
@@ -133,7 +133,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 346);
-           // this.Controls.Add(this.dataGridViewLabManager);
             this.Controls.Add(this.LabWorkerPanel);
             this.Controls.Add(this.labManagerCancelButton);
             this.Controls.Add(this.labManagerApproveButton);

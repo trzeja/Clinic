@@ -154,6 +154,7 @@
             this.registrarTextBoxDoctor.Name = "registrarTextBoxDoctor";
             this.registrarTextBoxDoctor.Size = new System.Drawing.Size(100, 20);
             this.registrarTextBoxDoctor.TabIndex = 20;
+            this.registrarTextBoxDoctor.Click += new System.EventHandler(this.registrarTextBoxDoctor_Clicked);
             // 
             // searchPanelRegistrar
             // 

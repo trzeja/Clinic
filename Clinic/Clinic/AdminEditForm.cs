@@ -15,6 +15,7 @@ namespace Clinic
         public AdminEditForm()
         {
             InitializeComponent();
+           
         }
 
         private void adminCancelButton_Click(object sender, EventArgs e)

@@ -119,11 +119,11 @@
     <Compile Include="RegistrarModifyForm.Designer.cs">
       <DependentUpon>RegistrarModifyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarSelectPatient.cs">
+    <Compile Include="SelectPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarSelectPatient.Designer.cs">
-      <DependentUpon>RegistrarSelectPatient.cs</DependentUpon>
+    <Compile Include="SelectPersonForm.Designer.cs">
+      <DependentUpon>SelectPersonForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -161,8 +161,8 @@
     <EmbeddedResource Include="RegistrarModifyForm.resx">
       <DependentUpon>RegistrarModifyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarSelectPatient.resx">
-      <DependentUpon>RegistrarSelectPatient.cs</DependentUpon>
+    <EmbeddedResource Include="SelectPersonForm.resx">
+      <DependentUpon>SelectPersonForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="clinicDataSet.xsc">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>

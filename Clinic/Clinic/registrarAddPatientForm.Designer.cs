@@ -88,7 +88,7 @@
             this.MaximumSize = new System.Drawing.Size(208, 206);
             this.MinimumSize = new System.Drawing.Size(208, 206);
             this.Name = "RegistrarAddPatientForm";
-            this.Text = "registrarAddPatientForm";
+            this.Text = "Add Patient";
             this.ResumeLayout(false);
             this.PerformLayout();
 

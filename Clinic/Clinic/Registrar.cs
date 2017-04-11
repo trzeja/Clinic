@@ -106,7 +106,7 @@ namespace Clinic
         private void registrarCancelButton_Click(object sender, EventArgs e)
         {
             RegistrarAddFrom registrarmodifyVisit= new RegistrarAddFrom();
-            registrarmodifyVisit.setRegistrarApproveButtonEnableDisable(false);
+            //registrarmodifyVisit.setRegistrarApproveButtonEnableDisable(false);
             registrarmodifyVisit.ShowDialog(this);
 
         }
@@ -115,10 +115,17 @@ namespace Clinic
 
         private void registrarTextBoxPatient_Clicked(object sender, EventArgs e)
         {
-            RegistrarSelectPatient registrarSelectPatient = new RegistrarSelectPatient();
+            SelectPersonForm registrarSelectPatient = new SelectPersonForm();
             registrarSelectPatient.setRegistrarAddButtonEnableDisable(false);
             registrarSelectPatient.ShowDialog(this);
         }
 
+        private void registrarTextBoxDoctor_Clicked(object sender, EventArgs e)
+        {
+
+            SelectPersonForm registrarSelectDoctor = new SelectPersonForm();
+            registrarSelectDoctor.setRegistrarAddButtonEnableDisable(false);
+            registrarSelectDoctor.ShowDialog(this);
+        }
     }
 }

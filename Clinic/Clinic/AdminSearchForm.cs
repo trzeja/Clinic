@@ -173,7 +173,9 @@ namespace Clinic
             this.adminTextBoxFname.Leave += new System.EventHandler(this.adminTextBoxFname_Leave);
             this.adminTextBoxFname.Enter += new System.EventHandler(this.adminTextBoxFname_Enter);
 
-          
+
+            this.ActiveControl = adminSearchButton;
+
 
 
         }

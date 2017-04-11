@@ -32,12 +32,6 @@
             this.adminEditButton = new System.Windows.Forms.Button();
             this.adminSearchButton = new System.Windows.Forms.Button();
             this.dataGridAdmin = new System.Windows.Forms.DataGridView();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.retiredateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicDataSet = new Clinic.clinicDataSet();
             this.userTableAdapter = new Clinic.clinicDataSetTableAdapters.UserTableAdapter();
@@ -69,64 +63,13 @@
             // 
             // dataGridAdmin
             // 
-            this.dataGridAdmin.AutoGenerateColumns = false;
             this.dataGridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.retiredateDataGridViewTextBoxColumn,
-            this.rolesDataGridViewTextBoxColumn,
-            this.lnameDataGridViewTextBoxColumn,
-            this.fnameDataGridViewTextBoxColumn});
-            this.dataGridAdmin.DataSource = this.userBindingSource;
             this.dataGridAdmin.Location = new System.Drawing.Point(2, 3);
             this.dataGridAdmin.MultiSelect = false;
             this.dataGridAdmin.Name = "dataGridAdmin";
             this.dataGridAdmin.Size = new System.Drawing.Size(641, 174);
             this.dataGridAdmin.TabIndex = 3;
             this.dataGridAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAdmin_CellContentClick);
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "user_name";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "user_name";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // retiredateDataGridViewTextBoxColumn
-            // 
-            this.retiredateDataGridViewTextBoxColumn.DataPropertyName = "retire_date";
-            this.retiredateDataGridViewTextBoxColumn.HeaderText = "retire_date";
-            this.retiredateDataGridViewTextBoxColumn.Name = "retiredateDataGridViewTextBoxColumn";
-            this.retiredateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rolesDataGridViewTextBoxColumn
-            // 
-            this.rolesDataGridViewTextBoxColumn.DataPropertyName = "roles";
-            this.rolesDataGridViewTextBoxColumn.HeaderText = "roles";
-            this.rolesDataGridViewTextBoxColumn.Name = "rolesDataGridViewTextBoxColumn";
-            this.rolesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lnameDataGridViewTextBoxColumn
-            // 
-            this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
-            this.lnameDataGridViewTextBoxColumn.HeaderText = "lname";
-            this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
-            this.lnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fnameDataGridViewTextBoxColumn
-            // 
-            this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
-            this.fnameDataGridViewTextBoxColumn.HeaderText = "fname";
-            this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
-            this.fnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userBindingSource
             // 
@@ -177,12 +120,6 @@
         private clinicDataSet clinicDataSet;
         private System.Windows.Forms.BindingSource userBindingSource;
         private clinicDataSetTableAdapters.UserTableAdapter userTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn retiredateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rolesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button adminDeleteButton;
     }
 }

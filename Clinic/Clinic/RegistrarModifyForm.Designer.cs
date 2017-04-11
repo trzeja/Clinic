@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataTimePickerEcCancelDate = new System.Windows.Forms.DateTimePicker();
             this.registrarCancelVisitButton = new System.Windows.Forms.Button();
+            this.patientTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.SuspendLayout();
             // 
             // registrarCancelButton
@@ -65,6 +66,7 @@
             this.registrarTextBoxDoctor.Name = "registrarTextBoxDoctor";
             this.registrarTextBoxDoctor.Size = new System.Drawing.Size(100, 20);
             this.registrarTextBoxDoctor.TabIndex = 22;
+            this.registrarTextBoxDoctor.Click += new System.EventHandler(this.registrarTextBoxDoctor_Clicked);
             // 
             // registrarTextBoxPatient
             // 
@@ -117,6 +119,10 @@
             this.registrarCancelVisitButton.Text = "Cancel Visit";
             this.registrarCancelVisitButton.UseVisualStyleBackColor = true;
             // 
+            // patientTableAdapter1
+            // 
+            this.patientTableAdapter1.ClearBeforeFill = true;
+            // 
             // RegistrarAddFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,7 +138,7 @@
             this.Controls.Add(this.registrarCancelButton);
             this.Controls.Add(this.registrarApproveButton);
             this.Name = "RegistrarAddFrom";
-            this.Text = "RegistrarAddFrom";
+            this.Text = "Change";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +154,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dataTimePickerEcCancelDate;
         private System.Windows.Forms.Button registrarCancelVisitButton;
+        private clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;
     }
 }

@@ -116,7 +116,7 @@
             this.MaximumSize = new System.Drawing.Size(190, 310);
             this.MinimumSize = new System.Drawing.Size(190, 310);
             this.Name = "AdminSearchForm";
-            this.Text = "AdminSearchForm";
+            this.Text = "Search";
             this.ResumeLayout(false);
             this.PerformLayout();
 
