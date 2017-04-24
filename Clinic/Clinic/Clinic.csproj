@@ -75,11 +75,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="clinicVisitListDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clinicVisitListDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Doctor.Designer.cs">
       <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorVisitViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorVisitViewForm.Designer.cs">
+      <DependentUpon>DoctorVisitViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -137,6 +148,9 @@
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoctorVisitViewForm.resx">
+      <DependentUpon>DoctorVisitViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laboratory_manager.resx">
       <DependentUpon>Laboratory_manager.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +200,17 @@
     <None Include="clinicDataSet1.xss">
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="clinicVisitListDataSet.xsc">
+      <DependentUpon>clinicVisitListDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="clinicVisitListDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clinicVisitListDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="clinicVisitListDataSet.xss">
+      <DependentUpon>clinicVisitListDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -197,7 +222,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BizzLayer\BizzLayer.csproj">
