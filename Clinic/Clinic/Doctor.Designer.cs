@@ -108,7 +108,7 @@
             // 
             // doctorSelectVisitbutton
             // 
-            this.doctorSelectVisitbutton.Location = new System.Drawing.Point(485, 347);
+            this.doctorSelectVisitbutton.Location = new System.Drawing.Point(550, 347);
             this.doctorSelectVisitbutton.Name = "doctorSelectVisitbutton";
             this.doctorSelectVisitbutton.Size = new System.Drawing.Size(75, 23);
             this.doctorSelectVisitbutton.TabIndex = 2;

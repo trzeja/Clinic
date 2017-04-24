@@ -32,7 +32,7 @@
             this.doctorFinishVisitButton = new System.Windows.Forms.Button();
             this.doctorOrderLaboratoryExaminationButton = new System.Windows.Forms.Button();
             this.doctorVisitPanel = new System.Windows.Forms.Panel();
-            this.doctorVisitPatientDiagnosisTextBox = new System.Windows.Forms.TextBox();
+            this.doctorVisitPatientDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.doctorPhysicalExaminationButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.doctorVisitPatientPeselTextBox = new System.Windows.Forms.TextBox();
@@ -46,21 +46,27 @@
             this.doctorVisitViewVisitListLabel = new System.Windows.Forms.Label();
             this.doctorVisitViewVisitListButton = new System.Windows.Forms.Button();
             this.doctorVisitViewVisitListDataGrid = new System.Windows.Forms.DataGridView();
+            this.doctorVisitPhysicalExaminationPanel = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.doctorVisitPanel.SuspendLayout();
             this.doctorVisitViewExaminationListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorVisitViewExaminationListDataGrid)).BeginInit();
             this.doctorVisitViewVisitListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorVisitViewVisitListDataGrid)).BeginInit();
+            this.doctorVisitPhysicalExaminationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // doctorCancelVisitButton
             // 
-            this.doctorCancelVisitButton.Location = new System.Drawing.Point(591, 38);
+            this.doctorCancelVisitButton.Location = new System.Drawing.Point(591, 36);
             this.doctorCancelVisitButton.Name = "doctorCancelVisitButton";
             this.doctorCancelVisitButton.Size = new System.Drawing.Size(75, 23);
             this.doctorCancelVisitButton.TabIndex = 0;
             this.doctorCancelVisitButton.Text = "Cancel visit";
             this.doctorCancelVisitButton.UseVisualStyleBackColor = true;
+            this.doctorCancelVisitButton.Click += new System.EventHandler(this.doctorCancelVisitButton_Click);
             // 
             // doctorFinishVisitButton
             // 
@@ -74,18 +80,19 @@
             // 
             // doctorOrderLaboratoryExaminationButton
             // 
-            this.doctorOrderLaboratoryExaminationButton.Location = new System.Drawing.Point(363, 8);
+            this.doctorOrderLaboratoryExaminationButton.Location = new System.Drawing.Point(427, 9);
             this.doctorOrderLaboratoryExaminationButton.Name = "doctorOrderLaboratoryExaminationButton";
-            this.doctorOrderLaboratoryExaminationButton.Size = new System.Drawing.Size(175, 24);
+            this.doctorOrderLaboratoryExaminationButton.Size = new System.Drawing.Size(158, 50);
             this.doctorOrderLaboratoryExaminationButton.TabIndex = 2;
             this.doctorOrderLaboratoryExaminationButton.Text = "Order Laboratory Examination";
             this.doctorOrderLaboratoryExaminationButton.UseVisualStyleBackColor = true;
+            this.doctorOrderLaboratoryExaminationButton.Click += new System.EventHandler(this.doctorOrderLaboratoryExaminationButton_Click);
             // 
             // doctorVisitPanel
             // 
             this.doctorVisitPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientDiagnosisTextBox);
-            this.doctorVisitPanel.Controls.Add(this.doctorPhysicalExaminationButton);
+            this.doctorVisitPanel.Controls.Add(this.comboBox2);
+            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientDescriptionTextBox);
             this.doctorVisitPanel.Controls.Add(this.textBox1);
             this.doctorVisitPanel.Controls.Add(this.doctorCancelVisitButton);
             this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientPeselTextBox);
@@ -95,41 +102,45 @@
             this.doctorVisitPanel.Controls.Add(this.doctorOrderLaboratoryExaminationButton);
             this.doctorVisitPanel.Location = new System.Drawing.Point(12, 12);
             this.doctorVisitPanel.Name = "doctorVisitPanel";
-            this.doctorVisitPanel.Size = new System.Drawing.Size(686, 171);
+            this.doctorVisitPanel.Size = new System.Drawing.Size(686, 118);
             this.doctorVisitPanel.TabIndex = 3;
             // 
-            // doctorVisitPatientDiagnosisTextBox
+            // doctorVisitPatientDescriptionTextBox
             // 
-            this.doctorVisitPatientDiagnosisTextBox.Location = new System.Drawing.Point(21, 62);
-            this.doctorVisitPatientDiagnosisTextBox.Multiline = true;
-            this.doctorVisitPatientDiagnosisTextBox.Name = "doctorVisitPatientDiagnosisTextBox";
-            this.doctorVisitPatientDiagnosisTextBox.Size = new System.Drawing.Size(312, 72);
-            this.doctorVisitPatientDiagnosisTextBox.TabIndex = 8;
-            this.doctorVisitPatientDiagnosisTextBox.Text = "Diagnosis";
+            this.doctorVisitPatientDescriptionTextBox.Location = new System.Drawing.Point(21, 62);
+            this.doctorVisitPatientDescriptionTextBox.Multiline = true;
+            this.doctorVisitPatientDescriptionTextBox.Name = "doctorVisitPatientDescriptionTextBox";
+            this.doctorVisitPatientDescriptionTextBox.Size = new System.Drawing.Size(645, 47);
+            this.doctorVisitPatientDescriptionTextBox.TabIndex = 8;
+            this.doctorVisitPatientDescriptionTextBox.Text = "Description";
+            this.doctorVisitPatientDescriptionTextBox.Enter += new System.EventHandler(this.doctorVisitPatientDescriptionTextBox_Enter);
+            this.doctorVisitPatientDescriptionTextBox.Leave += new System.EventHandler(this.doctorVisitPatientDescriptionTextBox_Leave);
             // 
             // doctorPhysicalExaminationButton
             // 
-            this.doctorPhysicalExaminationButton.Location = new System.Drawing.Point(363, 37);
+            this.doctorPhysicalExaminationButton.Location = new System.Drawing.Point(591, 8);
             this.doctorPhysicalExaminationButton.Name = "doctorPhysicalExaminationButton";
-            this.doctorPhysicalExaminationButton.Size = new System.Drawing.Size(175, 23);
+            this.doctorPhysicalExaminationButton.Size = new System.Drawing.Size(75, 23);
             this.doctorPhysicalExaminationButton.TabIndex = 7;
-            this.doctorPhysicalExaminationButton.Text = "Physical Examination";
+            this.doctorPhysicalExaminationButton.Text = "Submit";
             this.doctorPhysicalExaminationButton.UseVisualStyleBackColor = true;
             this.doctorPhysicalExaminationButton.Click += new System.EventHandler(this.doctorPhysicalExaminationButton_Click);
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(21, 9);
+            this.textBox1.Location = new System.Drawing.Point(21, 11);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(65, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "id_visit";
             // 
             // doctorVisitPatientPeselTextBox
             // 
+            this.doctorVisitPatientPeselTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.doctorVisitPatientPeselTextBox.Enabled = false;
-            this.doctorVisitPatientPeselTextBox.Location = new System.Drawing.Point(233, 36);
+            this.doctorVisitPatientPeselTextBox.Location = new System.Drawing.Point(304, 12);
             this.doctorVisitPatientPeselTextBox.Name = "doctorVisitPatientPeselTextBox";
             this.doctorVisitPatientPeselTextBox.Size = new System.Drawing.Size(100, 20);
             this.doctorVisitPatientPeselTextBox.TabIndex = 5;
@@ -137,8 +148,9 @@
             // 
             // doctorVisitPatientLastNameTextBox
             // 
+            this.doctorVisitPatientLastNameTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.doctorVisitPatientLastNameTextBox.Enabled = false;
-            this.doctorVisitPatientLastNameTextBox.Location = new System.Drawing.Point(127, 36);
+            this.doctorVisitPatientLastNameTextBox.Location = new System.Drawing.Point(198, 12);
             this.doctorVisitPatientLastNameTextBox.Name = "doctorVisitPatientLastNameTextBox";
             this.doctorVisitPatientLastNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.doctorVisitPatientLastNameTextBox.TabIndex = 4;
@@ -146,8 +158,9 @@
             // 
             // doctorVisitPatientFirstNameTextBox
             // 
+            this.doctorVisitPatientFirstNameTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.doctorVisitPatientFirstNameTextBox.Enabled = false;
-            this.doctorVisitPatientFirstNameTextBox.Location = new System.Drawing.Point(21, 35);
+            this.doctorVisitPatientFirstNameTextBox.Location = new System.Drawing.Point(92, 11);
             this.doctorVisitPatientFirstNameTextBox.Name = "doctorVisitPatientFirstNameTextBox";
             this.doctorVisitPatientFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.doctorVisitPatientFirstNameTextBox.TabIndex = 3;
@@ -167,7 +180,7 @@
             // doctorVisitViewExaminationListLabel
             // 
             this.doctorVisitViewExaminationListLabel.AutoSize = true;
-            this.doctorVisitViewExaminationListLabel.Location = new System.Drawing.Point(7, 13);
+            this.doctorVisitViewExaminationListLabel.Location = new System.Drawing.Point(18, 13);
             this.doctorVisitViewExaminationListLabel.Name = "doctorVisitViewExaminationListLabel";
             this.doctorVisitViewExaminationListLabel.Size = new System.Drawing.Size(103, 13);
             this.doctorVisitViewExaminationListLabel.TabIndex = 2;
@@ -207,7 +220,7 @@
             // doctorVisitViewVisitListLabel
             // 
             this.doctorVisitViewVisitListLabel.AutoSize = true;
-            this.doctorVisitViewVisitListLabel.Location = new System.Drawing.Point(7, 13);
+            this.doctorVisitViewVisitListLabel.Location = new System.Drawing.Point(18, 13);
             this.doctorVisitViewVisitListLabel.Name = "doctorVisitViewVisitListLabel";
             this.doctorVisitViewVisitListLabel.Size = new System.Drawing.Size(65, 13);
             this.doctorVisitViewVisitListLabel.TabIndex = 2;
@@ -233,11 +246,49 @@
             this.doctorVisitViewVisitListDataGrid.Size = new System.Drawing.Size(672, 129);
             this.doctorVisitViewVisitListDataGrid.TabIndex = 0;
             // 
+            // doctorVisitPhysicalExaminationPanel
+            // 
+            this.doctorVisitPhysicalExaminationPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.doctorVisitPhysicalExaminationPanel.Controls.Add(this.label1);
+            this.doctorVisitPhysicalExaminationPanel.Controls.Add(this.comboBox1);
+            this.doctorVisitPhysicalExaminationPanel.Controls.Add(this.doctorPhysicalExaminationButton);
+            this.doctorVisitPhysicalExaminationPanel.Location = new System.Drawing.Point(12, 137);
+            this.doctorVisitPhysicalExaminationPanel.Name = "doctorVisitPhysicalExaminationPanel";
+            this.doctorVisitPhysicalExaminationPanel.Size = new System.Drawing.Size(686, 46);
+            this.doctorVisitPhysicalExaminationPanel.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(136, 10);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(449, 21);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(21, 38);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(383, 21);
+            this.comboBox2.TabIndex = 9;
+            this.comboBox2.Text = "Diagnosis";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Physical Examination :";
+            // 
             // DoctorVisitViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 529);
+            this.Controls.Add(this.doctorVisitPhysicalExaminationPanel);
             this.Controls.Add(this.doctorVisitViewVisitListPanel);
             this.Controls.Add(this.doctorVisitViewExaminationListPanel);
             this.Controls.Add(this.doctorVisitPanel);
@@ -251,6 +302,8 @@
             this.doctorVisitViewVisitListPanel.ResumeLayout(false);
             this.doctorVisitViewVisitListPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorVisitViewVisitListDataGrid)).EndInit();
+            this.doctorVisitPhysicalExaminationPanel.ResumeLayout(false);
+            this.doctorVisitPhysicalExaminationPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -274,6 +327,10 @@
         private System.Windows.Forms.Button doctorPhysicalExaminationButton;
         private System.Windows.Forms.Label doctorVisitViewExaminationListLabel;
         private System.Windows.Forms.Label doctorVisitViewVisitListLabel;
-        private System.Windows.Forms.TextBox doctorVisitPatientDiagnosisTextBox;
+        private System.Windows.Forms.TextBox doctorVisitPatientDescriptionTextBox;
+        private System.Windows.Forms.Panel doctorVisitPhysicalExaminationPanel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -62,7 +62,6 @@ namespace Clinic
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)
         {
             DoctorVisitViewForm doctorViewVisit = new DoctorVisitViewForm();
-            //doctorViewVisit.setDoctorVisitPatientNameDisable(true);// do dorobienia metody
             doctorViewVisit.ShowDialog(this);
         }
     }

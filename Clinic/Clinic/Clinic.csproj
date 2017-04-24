@@ -75,11 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="clinicVisitListDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>clinicVisitListDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,17 +194,6 @@
     </None>
     <None Include="clinicDataSet1.xss">
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="clinicVisitListDataSet.xsc">
-      <DependentUpon>clinicVisitListDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="clinicVisitListDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>clinicVisitListDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="clinicVisitListDataSet.xss">
-      <DependentUpon>clinicVisitListDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
