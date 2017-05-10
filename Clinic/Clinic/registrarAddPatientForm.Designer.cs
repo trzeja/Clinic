@@ -28,33 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.peselBox = new System.Windows.Forms.TextBox();
+            this.fnameBox = new System.Windows.Forms.TextBox();
             this.registrarAddPatientButtonCancel = new System.Windows.Forms.Button();
             this.registrarAddPatientButtonApprove = new System.Windows.Forms.Button();
+            this.lnameBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // peselBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.peselBox.Location = new System.Drawing.Point(46, 12);
+            this.peselBox.Name = "peselBox";
+            this.peselBox.Size = new System.Drawing.Size(100, 20);
+            this.peselBox.TabIndex = 0;
             // 
-            // textBox2
+            // fnameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(46, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.fnameBox.Location = new System.Drawing.Point(46, 54);
+            this.fnameBox.Name = "fnameBox";
+            this.fnameBox.Size = new System.Drawing.Size(100, 20);
+            this.fnameBox.TabIndex = 2;
             // 
             // registrarAddPatientButtonCancel
             // 
@@ -75,6 +68,13 @@
             this.registrarAddPatientButtonApprove.Text = "Approve";
             this.registrarAddPatientButtonApprove.UseVisualStyleBackColor = true;
             // 
+            // lnameBox
+            // 
+            this.lnameBox.Location = new System.Drawing.Point(46, 94);
+            this.lnameBox.Name = "lnameBox";
+            this.lnameBox.Size = new System.Drawing.Size(100, 20);
+            this.lnameBox.TabIndex = 1;
+            // 
             // RegistrarAddPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,9 +82,9 @@
             this.ClientSize = new System.Drawing.Size(192, 168);
             this.Controls.Add(this.registrarAddPatientButtonApprove);
             this.Controls.Add(this.registrarAddPatientButtonCancel);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.fnameBox);
+            this.Controls.Add(this.lnameBox);
+            this.Controls.Add(this.peselBox);
             this.MaximumSize = new System.Drawing.Size(208, 206);
             this.MinimumSize = new System.Drawing.Size(208, 206);
             this.Name = "RegistrarAddPatientForm";
@@ -96,10 +96,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox peselBox;
+        private System.Windows.Forms.TextBox fnameBox;
         private System.Windows.Forms.Button registrarAddPatientButtonCancel;
         private System.Windows.Forms.Button registrarAddPatientButtonApprove;
+        private System.Windows.Forms.TextBox lnameBox;
     }
 }

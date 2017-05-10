@@ -31,11 +31,12 @@
             this.adminTextBoxFname = new System.Windows.Forms.TextBox();
             this.adminTextBoxLname = new System.Windows.Forms.TextBox();
             this.adminTextBoxRoles = new System.Windows.Forms.TextBox();
-            this.adminTextBoxRetireDate = new System.Windows.Forms.TextBox();
             this.adminTextBoxPassword = new System.Windows.Forms.TextBox();
             this.adminTextBoxUserName = new System.Windows.Forms.TextBox();
             this.adminCancelButton = new System.Windows.Forms.Button();
             this.adminSearchButton = new System.Windows.Forms.Button();
+            this.dataTimeCheckerRetireDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // adminTextBoxFname
@@ -59,13 +60,6 @@
             this.adminTextBoxRoles.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxRoles.TabIndex = 15;
             // 
-            // adminTextBoxRetireDate
-            // 
-            this.adminTextBoxRetireDate.Location = new System.Drawing.Point(37, 92);
-            this.adminTextBoxRetireDate.Name = "adminTextBoxRetireDate";
-            this.adminTextBoxRetireDate.Size = new System.Drawing.Size(100, 20);
-            this.adminTextBoxRetireDate.TabIndex = 14;
-            // 
             // adminTextBoxPassword
             // 
             this.adminTextBoxPassword.Location = new System.Drawing.Point(37, 56);
@@ -79,6 +73,8 @@
             this.adminTextBoxUserName.Name = "adminTextBoxUserName";
             this.adminTextBoxUserName.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxUserName.TabIndex = 12;
+            this.adminTextBoxUserName.Enter += new System.EventHandler(this.adminTextBoxUserName_Enter);
+          
             // 
             // adminCancelButton
             // 
@@ -99,17 +95,37 @@
             this.adminSearchButton.Text = "Search";
             this.adminSearchButton.UseVisualStyleBackColor = true;
             // 
+            // dataTimeCheckerRetireDate
+            // 
+            this.dataTimeCheckerRetireDate.Checked = false;
+            this.dataTimeCheckerRetireDate.Location = new System.Drawing.Point(12, 105);
+            this.dataTimeCheckerRetireDate.Name = "dataTimeCheckerRetireDate";
+            this.dataTimeCheckerRetireDate.ShowCheckBox = true;
+            this.dataTimeCheckerRetireDate.Size = new System.Drawing.Size(153, 20);
+            this.dataTimeCheckerRetireDate.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Retire date";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // AdminSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(174, 272);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataTimeCheckerRetireDate);
             this.Controls.Add(this.adminCancelButton);
             this.Controls.Add(this.adminSearchButton);
             this.Controls.Add(this.adminTextBoxFname);
             this.Controls.Add(this.adminTextBoxLname);
             this.Controls.Add(this.adminTextBoxRoles);
-            this.Controls.Add(this.adminTextBoxRetireDate);
             this.Controls.Add(this.adminTextBoxPassword);
             this.Controls.Add(this.adminTextBoxUserName);
             this.MaximizeBox = false;
@@ -127,10 +143,11 @@
         private System.Windows.Forms.TextBox adminTextBoxFname;
         private System.Windows.Forms.TextBox adminTextBoxLname;
         private System.Windows.Forms.TextBox adminTextBoxRoles;
-        private System.Windows.Forms.TextBox adminTextBoxRetireDate;
         private System.Windows.Forms.TextBox adminTextBoxPassword;
         private System.Windows.Forms.TextBox adminTextBoxUserName;
         private System.Windows.Forms.Button adminCancelButton;
         private System.Windows.Forms.Button adminSearchButton;
+        private System.Windows.Forms.DateTimePicker dataTimeCheckerRetireDate;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -58,26 +58,7 @@ namespace Clinic
             }
         }
         /*///////////////////////////////////////////////////////////////////////*/
-        //adminTextBoxRetireDate
-        private void adminTextBoxRetireDate_Enter(object sender, EventArgs e)
-        {
-            if (adminTextBoxRetireDate.Text == "Retire Date")
-            {
-                adminTextBoxRetireDate.Text = "";
-                adminTextBoxRetireDate.ForeColor = SystemColors.WindowText;
-            }
-        }
-
-
-        private void adminTextBoxRetireDate_Leave(object sender, EventArgs e)
-        {
-            if (adminTextBoxRetireDate.Text.Length == 0)
-            {
-                adminTextBoxRetireDate.Text = "Retire Date";
-                adminTextBoxRetireDate.ForeColor = SystemColors.GrayText;
-            }
-        }
-        /*///////////////////////////////////////////////////////////////////////*/
+        
         //adminTextBoxRoles
         private void adminTextBoxRoles_Enter(object sender, EventArgs e)
         {
@@ -149,11 +130,7 @@ namespace Clinic
             this.adminTextBoxPassword.Leave += new System.EventHandler(this.adminTextBoxPassword_Leave);
             this.adminTextBoxPassword.Enter += new System.EventHandler(this.adminTextBoxPassword_Enter);
 
-            //adminTextBoxRetireDate
-            adminTextBoxRetireDate.ForeColor = SystemColors.GrayText;
-            adminTextBoxRetireDate.Text = "Retire Date";
-            this.adminTextBoxRetireDate.Leave += new System.EventHandler(this.adminTextBoxRetireDate_Leave);
-            this.adminTextBoxRetireDate.Enter += new System.EventHandler(this.adminTextBoxRetireDate_Enter);
+          
 
             //adminTextBoxRoles
             adminTextBoxRoles.ForeColor = SystemColors.GrayText;
@@ -183,6 +160,11 @@ namespace Clinic
         private void adminCancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

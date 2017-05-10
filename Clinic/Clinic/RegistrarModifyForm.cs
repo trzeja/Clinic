@@ -275,7 +275,7 @@ namespace Clinic
         private void registrarTextBoxPatient_Clicked(object sender, EventArgs e)
         {
             SelectPersonForm registrarSelectPatient = new SelectPersonForm();
-            registrarSelectPatient.setRegistrarAddButtonEnableDisable(false);
+            registrarSelectPatient.setRegistrarAddButtonEnableDisable(true);
             registrarSelectPatient.ShowDialog(this);
         }
 
