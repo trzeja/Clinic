@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labManagerApproveButton = new System.Windows.Forms.Button();
-            this.labManagerCancelButton = new System.Windows.Forms.Button();
             this.LabWorkerPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.labManagerComboboxState = new System.Windows.Forms.ComboBox();
@@ -37,27 +35,10 @@
             this.selectOrderDateLabel = new System.Windows.Forms.Label();
             this.dataTimePickerOrderDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewLabManager = new System.Windows.Forms.DataGridView();
+            this.labManagerEditButton = new System.Windows.Forms.Button();
             this.LabWorkerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLabManager)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labManagerApproveButton
-            // 
-            this.labManagerApproveButton.Location = new System.Drawing.Point(115, 311);
-            this.labManagerApproveButton.Name = "labManagerApproveButton";
-            this.labManagerApproveButton.Size = new System.Drawing.Size(75, 23);
-            this.labManagerApproveButton.TabIndex = 1;
-            this.labManagerApproveButton.Text = "Approve";
-            this.labManagerApproveButton.UseVisualStyleBackColor = true;
-            // 
-            // labManagerCancelButton
-            // 
-            this.labManagerCancelButton.Location = new System.Drawing.Point(231, 311);
-            this.labManagerCancelButton.Name = "labManagerCancelButton";
-            this.labManagerCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.labManagerCancelButton.TabIndex = 2;
-            this.labManagerCancelButton.Text = "Cancel";
-            this.labManagerCancelButton.UseVisualStyleBackColor = true;
             // 
             // LabWorkerPanel
             // 
@@ -86,8 +67,9 @@
             // 
             this.labManagerComboboxState.FormattingEnabled = true;
             this.labManagerComboboxState.Items.AddRange(new object[] {
-            "Done",
-            "ORD"});
+            "DONE",
+            "APPROVE",
+            "CANCEL"});
             this.labManagerComboboxState.Location = new System.Drawing.Point(192, 6);
             this.labManagerComboboxState.Name = "labManagerComboboxState";
             this.labManagerComboboxState.Size = new System.Drawing.Size(121, 21);
@@ -123,19 +105,29 @@
             // dataGridViewLabManager
             // 
             this.dataGridViewLabManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLabManager.Location = new System.Drawing.Point(65, 65);
+            this.dataGridViewLabManager.Location = new System.Drawing.Point(12, 56);
             this.dataGridViewLabManager.Name = "dataGridViewLabManager";
-            this.dataGridViewLabManager.Size = new System.Drawing.Size(293, 222);
+            this.dataGridViewLabManager.Size = new System.Drawing.Size(422, 222);
             this.dataGridViewLabManager.TabIndex = 10;
+            // 
+            // labManagerEditButton
+            // 
+            this.labManagerEditButton.Location = new System.Drawing.Point(384, 311);
+            this.labManagerEditButton.Name = "labManagerEditButton";
+            this.labManagerEditButton.Size = new System.Drawing.Size(75, 23);
+            this.labManagerEditButton.TabIndex = 10;
+            this.labManagerEditButton.Text = "Edit";
+            this.labManagerEditButton.UseVisualStyleBackColor = true;
+            this.labManagerEditButton.Click += new System.EventHandler(this.labManagerEditButton_Click);
             // 
             // Laboratory_manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 346);
+            this.ClientSize = new System.Drawing.Size(471, 346);
+            this.Controls.Add(this.dataGridViewLabManager);
+            this.Controls.Add(this.labManagerEditButton);
             this.Controls.Add(this.LabWorkerPanel);
-            this.Controls.Add(this.labManagerCancelButton);
-            this.Controls.Add(this.labManagerApproveButton);
             this.Name = "Laboratory_manager";
             this.Text = "Laboratory_manager";
             this.LabWorkerPanel.ResumeLayout(false);
@@ -146,8 +138,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button labManagerApproveButton;
-        private System.Windows.Forms.Button labManagerCancelButton;
         private System.Windows.Forms.Panel LabWorkerPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox labManagerComboboxState;
@@ -155,5 +145,6 @@
         private System.Windows.Forms.Label selectOrderDateLabel;
         private System.Windows.Forms.DateTimePicker dataTimePickerOrderDate;
         private System.Windows.Forms.DataGridView dataGridViewLabManager;
+        private System.Windows.Forms.Button labManagerEditButton;
     }
 }

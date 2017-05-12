@@ -39,8 +39,23 @@ namespace Clinic
 
         private void adminSearchButton_Click(object sender, EventArgs e)
         {
-            AdminSearchForm adminSearchForm = new AdminSearchForm();
+            AdminAddForm adminSearchForm = new AdminAddForm();
             adminSearchForm.ShowDialog(this);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarSearchButton_Click(object sender, EventArgs e)
+        {
+            this.Controls.Add(this.dataGridAdmin);
+        }
+
+        private void initializeElements()
+        {
+            ;
         }
     }
 }

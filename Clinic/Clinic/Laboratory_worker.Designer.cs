@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labWorkerCancelButton = new System.Windows.Forms.Button();
-            this.labWorkerApproveButton = new System.Windows.Forms.Button();
+            this.labWorkerEditButton = new System.Windows.Forms.Button();
             this.labWorkerShowButton = new System.Windows.Forms.Button();
             this.LabWorkerPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,29 +36,21 @@
             this.selectOrderDateLabel = new System.Windows.Forms.Label();
             this.dataTimePickerOrderDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridLabWorker = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLabWorker = new System.Windows.Forms.DataGridView();
             this.LabWorkerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLabWorker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLabWorker)).BeginInit();
             this.SuspendLayout();
             // 
-            // labWorkerCancelButton
+            // labWorkerEditButton
             // 
-            this.labWorkerCancelButton.Location = new System.Drawing.Point(153, 278);
-            this.labWorkerCancelButton.Name = "labWorkerCancelButton";
-            this.labWorkerCancelButton.Size = new System.Drawing.Size(79, 23);
-            this.labWorkerCancelButton.TabIndex = 0;
-            this.labWorkerCancelButton.Text = "Cancel";
-            this.labWorkerCancelButton.UseVisualStyleBackColor = true;
-            this.labWorkerCancelButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // labWorkerApproveButton
-            // 
-            this.labWorkerApproveButton.Location = new System.Drawing.Point(34, 278);
-            this.labWorkerApproveButton.Name = "labWorkerApproveButton";
-            this.labWorkerApproveButton.Size = new System.Drawing.Size(79, 23);
-            this.labWorkerApproveButton.TabIndex = 1;
-            this.labWorkerApproveButton.Text = "Approve";
-            this.labWorkerApproveButton.UseVisualStyleBackColor = true;
-            this.labWorkerApproveButton.Click += new System.EventHandler(this.labWorkerApproveButton_Click);
+            this.labWorkerEditButton.Location = new System.Drawing.Point(387, 302);
+            this.labWorkerEditButton.Name = "labWorkerEditButton";
+            this.labWorkerEditButton.Size = new System.Drawing.Size(79, 23);
+            this.labWorkerEditButton.TabIndex = 1;
+            this.labWorkerEditButton.Text = "Edit";
+            this.labWorkerEditButton.UseVisualStyleBackColor = true;
+            this.labWorkerEditButton.Click += new System.EventHandler(this.labWorkerEditButton_Click);
             // 
             // labWorkerShowButton
             // 
@@ -98,7 +89,8 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Done",
+            "DONE",
+            "CANCEL",
             "ORD"});
             this.comboBox1.Location = new System.Drawing.Point(192, 6);
             this.comboBox1.Name = "comboBox1";
@@ -130,27 +122,34 @@
             this.dataGridLabWorker.Size = new System.Drawing.Size(460, 96);
             this.dataGridLabWorker.TabIndex = 5;
             // 
+            // dataGridViewLabWorker
+            // 
+            this.dataGridViewLabWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLabWorker.Location = new System.Drawing.Point(6, 60);
+            this.dataGridViewLabWorker.Name = "dataGridViewLabWorker";
+            this.dataGridViewLabWorker.Size = new System.Drawing.Size(460, 222);
+            this.dataGridViewLabWorker.TabIndex = 11;
+            // 
             // Laboratory_worker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 304);
-            this.Controls.Add(this.labWorkerApproveButton);
-            this.Controls.Add(this.labWorkerCancelButton);
+            this.ClientSize = new System.Drawing.Size(472, 337);
+            this.Controls.Add(this.dataGridViewLabWorker);
+            this.Controls.Add(this.labWorkerEditButton);
             this.Controls.Add(this.LabWorkerPanel);
             this.Name = "Laboratory_worker";
             this.Text = "Laboratory_worker";
             this.LabWorkerPanel.ResumeLayout(false);
             this.LabWorkerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLabWorker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLabWorker)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button labWorkerCancelButton;
-        private System.Windows.Forms.Button labWorkerApproveButton;
+        private System.Windows.Forms.Button labWorkerEditButton;
         private System.Windows.Forms.Button labWorkerShowButton;
         private System.Windows.Forms.Panel LabWorkerPanel;
         private System.Windows.Forms.Label selectOrderDateLabel;
@@ -158,5 +157,6 @@
         private System.Windows.Forms.DataGridView dataGridLabWorker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridViewLabWorker;
     }
 }

@@ -10,20 +10,14 @@ using System.Windows.Forms;
 
 namespace Clinic
 {
-    public partial class AdminEditForm : Form
+    public partial class Laboratory_worker_editForm : Form
     {
-        public AdminEditForm()
+        public Laboratory_worker_editForm()
         {
             InitializeComponent();
-           
         }
 
-        private void adminCancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void adminApproveButton_Click(object sender, EventArgs e)
+        private void labWorkerEConfirmButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Clinic
 {
-    partial class AdminSearchForm
+    partial class AdminAddForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,6 @@
             this.adminTextBoxRoles = new System.Windows.Forms.TextBox();
             this.adminTextBoxPassword = new System.Windows.Forms.TextBox();
             this.adminTextBoxUserName = new System.Windows.Forms.TextBox();
-            this.adminCancelButton = new System.Windows.Forms.Button();
             this.adminSearchButton = new System.Windows.Forms.Button();
             this.dataTimeCheckerRetireDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,25 +73,14 @@
             this.adminTextBoxUserName.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxUserName.TabIndex = 12;
             this.adminTextBoxUserName.Enter += new System.EventHandler(this.adminTextBoxUserName_Enter);
-          
-            // 
-            // adminCancelButton
-            // 
-            this.adminCancelButton.Location = new System.Drawing.Point(90, 231);
-            this.adminCancelButton.Name = "adminCancelButton";
-            this.adminCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.adminCancelButton.TabIndex = 19;
-            this.adminCancelButton.Text = "Cancel";
-            this.adminCancelButton.UseVisualStyleBackColor = true;
-            this.adminCancelButton.Click += new System.EventHandler(this.adminCancelButton_Click);
             // 
             // adminSearchButton
             // 
-            this.adminSearchButton.Location = new System.Drawing.Point(9, 231);
+            this.adminSearchButton.Location = new System.Drawing.Point(49, 229);
             this.adminSearchButton.Name = "adminSearchButton";
             this.adminSearchButton.Size = new System.Drawing.Size(75, 23);
             this.adminSearchButton.TabIndex = 18;
-            this.adminSearchButton.Text = "Search";
+            this.adminSearchButton.Text = "Add";
             this.adminSearchButton.UseVisualStyleBackColor = true;
             // 
             // dataTimeCheckerRetireDate
@@ -114,14 +102,13 @@
             this.label1.Text = "Retire date";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // AdminSearchForm
+            // AdminAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(174, 272);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataTimeCheckerRetireDate);
-            this.Controls.Add(this.adminCancelButton);
             this.Controls.Add(this.adminSearchButton);
             this.Controls.Add(this.adminTextBoxFname);
             this.Controls.Add(this.adminTextBoxLname);
@@ -131,8 +118,8 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(190, 310);
             this.MinimumSize = new System.Drawing.Size(190, 310);
-            this.Name = "AdminSearchForm";
-            this.Text = "Search";
+            this.Name = "AdminAddForm";
+            this.Text = "Add";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +132,6 @@
         private System.Windows.Forms.TextBox adminTextBoxRoles;
         private System.Windows.Forms.TextBox adminTextBoxPassword;
         private System.Windows.Forms.TextBox adminTextBoxUserName;
-        private System.Windows.Forms.Button adminCancelButton;
         private System.Windows.Forms.Button adminSearchButton;
         private System.Windows.Forms.DateTimePicker dataTimeCheckerRetireDate;
         private System.Windows.Forms.Label label1;

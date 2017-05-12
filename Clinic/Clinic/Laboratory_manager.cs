@@ -24,14 +24,18 @@ namespace Clinic
 private void labManagerShowButton_Click(object sender, EventArgs e)
         {
             this.Controls.Add(this.dataGridViewLabManager);
-            labManagerCancelButton.Enabled = true;
-            labManagerApproveButton.Enabled = true;
+           
         }
 
         private void Initialize()
         {
-            labManagerCancelButton.Enabled = false;
-            labManagerApproveButton.Enabled = false;
+          
+        }
+
+        private void labManagerEditButton_Click(object sender, EventArgs e)
+        {
+            Laboratory_manager_editForm labEditForm = new Laboratory_manager_editForm();
+            labEditForm.ShowDialog(this);
         }
     }
 }

@@ -36,6 +36,8 @@
             this.searchPanel = new System.Windows.Forms.Panel();
             this.lnameTextbox = new System.Windows.Forms.TextBox();
             this.fnameTextbox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.searchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -43,14 +45,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 81);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 87);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(267, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(284, 221);
             this.dataGridView1.TabIndex = 0;
             // 
             // registrarAddButton
             // 
-            this.registrarAddButton.Location = new System.Drawing.Point(195, 335);
+            this.registrarAddButton.Location = new System.Drawing.Point(218, 323);
             this.registrarAddButton.Name = "registrarAddButton";
             this.registrarAddButton.Size = new System.Drawing.Size(75, 23);
             this.registrarAddButton.TabIndex = 24;
@@ -60,16 +62,16 @@
             // 
             // registrarSearchButton
             // 
-            this.registrarSearchButton.Location = new System.Drawing.Point(165, 30);
+            this.registrarSearchButton.Location = new System.Drawing.Point(211, 52);
             this.registrarSearchButton.Name = "registrarSearchButton";
-            this.registrarSearchButton.Size = new System.Drawing.Size(92, 23);
+            this.registrarSearchButton.Size = new System.Drawing.Size(68, 23);
             this.registrarSearchButton.TabIndex = 25;
             this.registrarSearchButton.Text = "Search";
             this.registrarSearchButton.UseVisualStyleBackColor = true;
             // 
             // registrarSelectButton
             // 
-            this.registrarSelectButton.Location = new System.Drawing.Point(12, 335);
+            this.registrarSelectButton.Location = new System.Drawing.Point(124, 323);
             this.registrarSelectButton.Name = "registrarSelectButton";
             this.registrarSelectButton.Size = new System.Drawing.Size(75, 23);
             this.registrarSelectButton.TabIndex = 26;
@@ -82,34 +84,55 @@
             // 
             // searchPanel
             // 
-            this.searchPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.searchPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.searchPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchPanel.Controls.Add(this.label3);
+            this.searchPanel.Controls.Add(this.label2);
             this.searchPanel.Controls.Add(this.lnameTextbox);
             this.searchPanel.Controls.Add(this.fnameTextbox);
             this.searchPanel.Controls.Add(this.registrarSearchButton);
             this.searchPanel.Location = new System.Drawing.Point(9, 1);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(264, 80);
+            this.searchPanel.Size = new System.Drawing.Size(284, 80);
             this.searchPanel.TabIndex = 27;
             // 
             // lnameTextbox
             // 
-            this.lnameTextbox.Location = new System.Drawing.Point(20, 49);
+            this.lnameTextbox.Location = new System.Drawing.Point(101, 36);
             this.lnameTextbox.Name = "lnameTextbox";
             this.lnameTextbox.Size = new System.Drawing.Size(100, 20);
             this.lnameTextbox.TabIndex = 27;
             // 
             // fnameTextbox
             // 
-            this.fnameTextbox.Location = new System.Drawing.Point(20, 14);
+            this.fnameTextbox.Location = new System.Drawing.Point(101, 10);
             this.fnameTextbox.Name = "fnameTextbox";
             this.fnameTextbox.Size = new System.Drawing.Size(100, 20);
             this.fnameTextbox.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(40, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "First name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Last name";
             // 
             // SelectPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 381);
+            this.ClientSize = new System.Drawing.Size(305, 360);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.registrarSelectButton);
             this.Controls.Add(this.registrarAddButton);
@@ -133,5 +156,7 @@
         private System.Windows.Forms.Panel searchPanel;
         private System.Windows.Forms.TextBox lnameTextbox;
         private System.Windows.Forms.TextBox fnameTextbox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

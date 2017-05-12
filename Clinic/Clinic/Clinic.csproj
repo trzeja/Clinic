@@ -59,11 +59,11 @@
     <Compile Include="AdminEditForm.Designer.cs">
       <DependentUpon>AdminEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminSearchForm.cs">
+    <Compile Include="AdminAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminSearchForm.Designer.cs">
-      <DependentUpon>AdminSearchForm.cs</DependentUpon>
+    <Compile Include="AdminAddForm.Designer.cs">
+      <DependentUpon>AdminAddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="clinicDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -99,11 +99,23 @@
     <Compile Include="Laboratory_manager.Designer.cs">
       <DependentUpon>Laboratory_manager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laboratory_manager_editForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory_manager_editForm.Designer.cs">
+      <DependentUpon>Laboratory_manager_editForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratory_worker.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laboratory_worker.Designer.cs">
       <DependentUpon>Laboratory_worker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory_worker_editForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory_worker_editForm.Designer.cs">
+      <DependentUpon>Laboratory_worker_editForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,8 +149,8 @@
     <EmbeddedResource Include="AdminEditForm.resx">
       <DependentUpon>AdminEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminSearchForm.resx">
-      <DependentUpon>AdminSearchForm.cs</DependentUpon>
+    <EmbeddedResource Include="AdminAddForm.resx">
+      <DependentUpon>AdminAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
@@ -149,8 +161,14 @@
     <EmbeddedResource Include="Laboratory_manager.resx">
       <DependentUpon>Laboratory_manager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory_manager_editForm.resx">
+      <DependentUpon>Laboratory_manager_editForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laboratory_worker.resx">
       <DependentUpon>Laboratory_worker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory_worker_editForm.resx">
+      <DependentUpon>Laboratory_worker_editForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -23,23 +23,24 @@ namespace Clinic
 
         }
 
-        private void labWorkerApproveButton_Click(object sender, EventArgs e)
+        private void labWorkerEditButton_Click(object sender, EventArgs e)
         {
-
+            Laboratory_worker_editForm labEditForm = new Laboratory_worker_editForm();
+            labEditForm.ShowDialog(this);
         }
 
         private void labWorkerShowButton_Click(object sender, EventArgs e)
         {
-            this.Controls.Add(this.dataGridLabWorker);
-            this.labWorkerCancelButton.Enabled = true;
-            this.labWorkerApproveButton.Enabled = true;
+            
+           
+            this.labWorkerEditButton.Enabled = true;
 
         }
 
         private void Initialize()
         {
-            this.labWorkerCancelButton.Enabled = false;
-            this.labWorkerApproveButton.Enabled = false;
+            
+            this.labWorkerEditButton.Enabled = false;
         }
     }
 }

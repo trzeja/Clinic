@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.adminApproveButton = new System.Windows.Forms.Button();
-            this.adminCancelButton = new System.Windows.Forms.Button();
             this.adminTextBoxUserName = new System.Windows.Forms.TextBox();
             this.adminTextBoxPassword = new System.Windows.Forms.TextBox();
             this.adminTextBoxRetireDate = new System.Windows.Forms.TextBox();
@@ -40,23 +39,13 @@
             // 
             // adminApproveButton
             // 
-            this.adminApproveButton.Location = new System.Drawing.Point(12, 262);
+            this.adminApproveButton.Location = new System.Drawing.Point(51, 262);
             this.adminApproveButton.Name = "adminApproveButton";
             this.adminApproveButton.Size = new System.Drawing.Size(75, 23);
             this.adminApproveButton.TabIndex = 3;
-            this.adminApproveButton.Text = "Approve";
+            this.adminApproveButton.Text = "Confirm";
             this.adminApproveButton.UseVisualStyleBackColor = true;
             this.adminApproveButton.Click += new System.EventHandler(this.adminApproveButton_Click);
-            // 
-            // adminCancelButton
-            // 
-            this.adminCancelButton.Location = new System.Drawing.Point(93, 262);
-            this.adminCancelButton.Name = "adminCancelButton";
-            this.adminCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.adminCancelButton.TabIndex = 5;
-            this.adminCancelButton.Text = "Cancel";
-            this.adminCancelButton.UseVisualStyleBackColor = true;
-            this.adminCancelButton.Click += new System.EventHandler(this.adminCancelButton_Click);
             // 
             // adminTextBoxUserName
             // 
@@ -112,7 +101,6 @@
             this.Controls.Add(this.adminTextBoxRetireDate);
             this.Controls.Add(this.adminTextBoxPassword);
             this.Controls.Add(this.adminTextBoxUserName);
-            this.Controls.Add(this.adminCancelButton);
             this.Controls.Add(this.adminApproveButton);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MaximumSize = new System.Drawing.Size(190, 335);
@@ -127,7 +115,6 @@
         #endregion
 
         private System.Windows.Forms.Button adminApproveButton;
-        private System.Windows.Forms.Button adminCancelButton;
         private System.Windows.Forms.TextBox adminTextBoxUserName;
         private System.Windows.Forms.TextBox adminTextBoxPassword;
         private System.Windows.Forms.TextBox adminTextBoxRetireDate;

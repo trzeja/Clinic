@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace Clinic
 {
-    public partial class AdminSearchForm : Form
+    public partial class AdminAddForm : Form
     {
-        public AdminSearchForm()
+        public AdminAddForm()
         {
             InitializeComponent();
             InitializeTextBoxes();
+            this.Name = "AdminAddForm";
+            this.Text = "Add user";
 
 
         }
