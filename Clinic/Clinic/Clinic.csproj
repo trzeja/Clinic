@@ -81,6 +81,12 @@
     <Compile Include="Doctor.Designer.cs">
       <DependentUpon>Doctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoctorExaminationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorExaminationView.Designer.cs">
+      <DependentUpon>DoctorExaminationView.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorVisitViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabExamination.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabExamination.Designer.cs">
+      <DependentUpon>LabExamination.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratory_manager.cs">
       <SubType>Form</SubType>
@@ -143,6 +155,12 @@
     <Compile Include="SelectPersonForm.Designer.cs">
       <DependentUpon>SelectPersonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisitView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitView.Designer.cs">
+      <DependentUpon>VisitView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,8 +173,14 @@
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoctorExaminationView.resx">
+      <DependentUpon>DoctorExaminationView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorVisitViewForm.resx">
       <DependentUpon>DoctorVisitViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabExamination.resx">
+      <DependentUpon>LabExamination.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratory_manager.resx">
       <DependentUpon>Laboratory_manager.cs</DependentUpon>
@@ -190,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectPersonForm.resx">
       <DependentUpon>SelectPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitView.resx">
+      <DependentUpon>VisitView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="clinicDataSet.xsc">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>

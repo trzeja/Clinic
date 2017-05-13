@@ -20,38 +20,8 @@ namespace Clinic
 
         private void Initialize()
         {
-            doctorTextBoxPatient.Text = "Patient";
-            doctorTextBoxPatient.ForeColor = SystemColors.GrayText;
-        }
-
-        private void surnameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void doctorTextBoxPatient_Click(object sender, EventArgs e)
-        {
-            SelectPersonForm doctorSelectPatient = new SelectPersonForm();
-            doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
-            doctorSelectPatient.ShowDialog(this);
-        }
-
-        private void doctorTextBoxPatient_Enter(object sender, EventArgs e)
-        {
-            if (doctorTextBoxPatient.Text == "Patient")
-            {
-                doctorTextBoxPatient.Text = "";
-                doctorTextBoxPatient.ForeColor = SystemColors.WindowText;
-            }
-        }
-
-        private void doctorTextBoxPatient_Leave(object sender, EventArgs e)
-        {
-            if (doctorTextBoxPatient.Text.Length == 0)
-            {
-                doctorTextBoxPatient.Text = "Patient";
-                doctorTextBoxPatient.ForeColor = SystemColors.GrayText;
-            }
+            
+          
         }
 
         private void doctorSearchButton_Click(object sender, EventArgs e)
@@ -63,6 +33,13 @@ namespace Clinic
         {
             DoctorVisitViewForm doctorViewVisit = new DoctorVisitViewForm();
             doctorViewVisit.ShowDialog(this);
+        }
+
+        private void doctorFindPatientButton_Click(object sender, EventArgs e)
+        {
+            SelectPersonForm doctorSelectPatient = new SelectPersonForm();
+            doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
+            doctorSelectPatient.ShowDialog(this);
         }
     }
 }

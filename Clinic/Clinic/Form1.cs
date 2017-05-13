@@ -15,10 +15,10 @@ namespace Clinic
         public Form1()
         {
             InitializeComponent();
-            Admin adminForm = new Admin();
-            adminForm.Show();
             Registrar registrarForm = new Registrar();
             registrarForm.Show();
+            Admin adminForm = new Admin();
+            adminForm.Show();
             Laboratory_worker laboratory_worker = new Laboratory_worker();
             laboratory_worker.Show();
             Laboratory_manager laboratory_manager = new Laboratory_manager();
