@@ -1,6 +1,6 @@
 ﻿namespace Clinic
 {
-    partial class LabExamination
+    partial class LabolatoryExaminationForm
     {
         /// <summary>
         /// Required designer variable.

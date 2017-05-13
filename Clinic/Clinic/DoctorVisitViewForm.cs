@@ -31,7 +31,7 @@ namespace Clinic
         {
             // refresh examination history
             //MessageBox.Show("Physical examination submited !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DoctorExaminationView examinationView = new DoctorExaminationView();
+            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm();
             examinationView.SetPhyExamMode();
             examinationView.ShowDialog(this);
         }
@@ -39,7 +39,7 @@ namespace Clinic
         private void doctorOrderLaboratoryExaminationButton_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Laboratory examination ordered !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DoctorExaminationView examinationView = new DoctorExaminationView();
+            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm();
             examinationView.SetLabExamMode();
             examinationView.ShowDialog(this);
         }
@@ -93,14 +93,14 @@ namespace Clinic
         {
             //to do :
             //zobacz jakiego typu jest badanie w zaznaczonej lini i wtedy albo LabExamination albo DoctorExaminationView oba w read only mode ofc
-            LabExamination labExamView = new LabExamination();
+            LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
             labExamView.SetReadOnlyMode();
             labExamView.ShowDialog(this);
         }
 
         private void doctorVisitViewVisitHistDetailsButton_Click(object sender, EventArgs e)
         {
-            VisitView visit = new VisitView();
+            VisitInfoViewForm visit = new VisitInfoViewForm();
             visit.ShowDialog(this);
         }
     }

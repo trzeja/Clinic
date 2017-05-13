@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Clinic
 {
-    public partial class LabExamination : Form
+    public partial class DoctorExaminationViewForm : Form
     {
-        public LabExamination()
+        public DoctorExaminationViewForm()
         {
             InitializeComponent();
-            SetReadOnlyMode();
+            SetWindowMode(-1);
         }
     }
 }

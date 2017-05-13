@@ -1,6 +1,6 @@
 ﻿namespace Clinic
 {
-    partial class DoctorExaminationView
+    partial class DoctorExaminationViewForm
     {
         /// <summary>
         /// Required designer variable.

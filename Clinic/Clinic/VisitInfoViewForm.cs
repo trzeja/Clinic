@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Clinic
 {
-    public partial class DoctorExaminationView : Form
+    public partial class VisitInfoViewForm : Form
     {
-        public DoctorExaminationView()
+        public VisitInfoViewForm()
         {
             InitializeComponent();
-            SetWindowMode(-1);
+            //to do :
+            //w zaleznosci od stanu zmien VisitViewExecCancelDateLabel.Text w na "Execution date" lub na "Cancel date" albo (...)Label.Visible=false
         }
     }
 }
