@@ -25,8 +25,11 @@ namespace Clinic
 
         private void labWorkerEditButton_Click(object sender, EventArgs e)
         {
-            Laboratory_worker_editForm labEditForm = new Laboratory_worker_editForm();
-            labEditForm.ShowDialog(this);
+            //Laboratory_worker_editForm labEditForm = new Laboratory_worker_editForm();
+            //labEditForm.ShowDialog(this);
+            LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
+            labExamView.SetLabWorkerMode();
+            labExamView.ShowDialog(this);
         }
 
         private void labWorkerShowButton_Click(object sender, EventArgs e)

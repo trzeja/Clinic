@@ -34,8 +34,11 @@ private void labManagerShowButton_Click(object sender, EventArgs e)
 
         private void labManagerEditButton_Click(object sender, EventArgs e)
         {
-            Laboratory_manager_editForm labEditForm = new Laboratory_manager_editForm();
-            labEditForm.ShowDialog(this);
+            //Laboratory_manager_editForm labEditForm = new Laboratory_manager_editForm();
+            //labEditForm.ShowDialog(this);
+            LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
+            labExamView.SetLabManagerMode();
+            labExamView.ShowDialog(this);
         }
     }
 }

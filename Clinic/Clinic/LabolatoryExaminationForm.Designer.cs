@@ -30,6 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.labExaminationInfoPanel = new System.Windows.Forms.Panel();
+            this.LabExaminationExamApprovalDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.LabExaminationExamApprovalDateLabel = new System.Windows.Forms.Label();
+            this.LabExaminationExamExaminationDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.LabExaminationExamExaminationDateLabel = new System.Windows.Forms.Label();
             this.LabExaminationExamOrderDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.LabExaminationExamOrderDateLabel = new System.Windows.Forms.Label();
             this.LabExaminationExamStateComboBox = new System.Windows.Forms.ComboBox();
@@ -83,6 +87,10 @@
             // labExaminationInfoPanel
             // 
             this.labExaminationInfoPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamApprovalDateTimePicker);
+            this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamApprovalDateLabel);
+            this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamExaminationDateTimePicker);
+            this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamExaminationDateLabel);
             this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamOrderDateTimePicker);
             this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamOrderDateLabel);
             this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamStateComboBox);
@@ -96,22 +104,58 @@
             this.labExaminationInfoPanel.Controls.Add(this.LabExaminationExamTypeLabel);
             this.labExaminationInfoPanel.Location = new System.Drawing.Point(12, 34);
             this.labExaminationInfoPanel.Name = "labExaminationInfoPanel";
-            this.labExaminationInfoPanel.Size = new System.Drawing.Size(584, 91);
+            this.labExaminationInfoPanel.Size = new System.Drawing.Size(584, 113);
             this.labExaminationInfoPanel.TabIndex = 3;
+            // 
+            // LabExaminationExamApprovalDateTimePicker
+            // 
+            this.LabExaminationExamApprovalDateTimePicker.Enabled = false;
+            this.LabExaminationExamApprovalDateTimePicker.Location = new System.Drawing.Point(374, 84);
+            this.LabExaminationExamApprovalDateTimePicker.Name = "LabExaminationExamApprovalDateTimePicker";
+            this.LabExaminationExamApprovalDateTimePicker.Size = new System.Drawing.Size(194, 20);
+            this.LabExaminationExamApprovalDateTimePicker.TabIndex = 14;
+            this.LabExaminationExamApprovalDateTimePicker.Value = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
+            // 
+            // LabExaminationExamApprovalDateLabel
+            // 
+            this.LabExaminationExamApprovalDateLabel.AutoSize = true;
+            this.LabExaminationExamApprovalDateLabel.Location = new System.Drawing.Point(296, 86);
+            this.LabExaminationExamApprovalDateLabel.Name = "LabExaminationExamApprovalDateLabel";
+            this.LabExaminationExamApprovalDateLabel.Size = new System.Drawing.Size(79, 13);
+            this.LabExaminationExamApprovalDateLabel.TabIndex = 13;
+            this.LabExaminationExamApprovalDateLabel.Text = "Approval date :";
+            // 
+            // LabExaminationExamExaminationDateTimePicker
+            // 
+            this.LabExaminationExamExaminationDateTimePicker.Enabled = false;
+            this.LabExaminationExamExaminationDateTimePicker.Location = new System.Drawing.Point(104, 84);
+            this.LabExaminationExamExaminationDateTimePicker.Name = "LabExaminationExamExaminationDateTimePicker";
+            this.LabExaminationExamExaminationDateTimePicker.Size = new System.Drawing.Size(188, 20);
+            this.LabExaminationExamExaminationDateTimePicker.TabIndex = 12;
+            this.LabExaminationExamExaminationDateTimePicker.Value = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
+            // 
+            // LabExaminationExamExaminationDateLabel
+            // 
+            this.LabExaminationExamExaminationDateLabel.AutoSize = true;
+            this.LabExaminationExamExaminationDateLabel.Location = new System.Drawing.Point(2, 86);
+            this.LabExaminationExamExaminationDateLabel.Name = "LabExaminationExamExaminationDateLabel";
+            this.LabExaminationExamExaminationDateLabel.Size = new System.Drawing.Size(94, 13);
+            this.LabExaminationExamExaminationDateLabel.TabIndex = 11;
+            this.LabExaminationExamExaminationDateLabel.Text = "Examination date :";
             // 
             // LabExaminationExamOrderDateTimePicker
             // 
             this.LabExaminationExamOrderDateTimePicker.Enabled = false;
-            this.LabExaminationExamOrderDateTimePicker.Location = new System.Drawing.Point(359, 58);
+            this.LabExaminationExamOrderDateTimePicker.Location = new System.Drawing.Point(374, 58);
             this.LabExaminationExamOrderDateTimePicker.Name = "LabExaminationExamOrderDateTimePicker";
-            this.LabExaminationExamOrderDateTimePicker.Size = new System.Drawing.Size(202, 20);
+            this.LabExaminationExamOrderDateTimePicker.Size = new System.Drawing.Size(194, 20);
             this.LabExaminationExamOrderDateTimePicker.TabIndex = 10;
             this.LabExaminationExamOrderDateTimePicker.Value = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             // 
             // LabExaminationExamOrderDateLabel
             // 
             this.LabExaminationExamOrderDateLabel.AutoSize = true;
-            this.LabExaminationExamOrderDateLabel.Location = new System.Drawing.Point(290, 60);
+            this.LabExaminationExamOrderDateLabel.Location = new System.Drawing.Point(312, 60);
             this.LabExaminationExamOrderDateLabel.Name = "LabExaminationExamOrderDateLabel";
             this.LabExaminationExamOrderDateLabel.Size = new System.Drawing.Size(63, 13);
             this.LabExaminationExamOrderDateLabel.TabIndex = 9;
@@ -129,7 +173,7 @@
             // LabExaminationExamStateLabel
             // 
             this.LabExaminationExamStateLabel.AutoSize = true;
-            this.LabExaminationExamStateLabel.Location = new System.Drawing.Point(13, 60);
+            this.LabExaminationExamStateLabel.Location = new System.Drawing.Point(2, 60);
             this.LabExaminationExamStateLabel.Name = "LabExaminationExamStateLabel";
             this.LabExaminationExamStateLabel.Size = new System.Drawing.Size(96, 13);
             this.LabExaminationExamStateLabel.TabIndex = 7;
@@ -140,22 +184,22 @@
             this.LabExaminationPatientPeselTextBox.Location = new System.Drawing.Point(461, 4);
             this.LabExaminationPatientPeselTextBox.Name = "LabExaminationPatientPeselTextBox";
             this.LabExaminationPatientPeselTextBox.ReadOnly = true;
-            this.LabExaminationPatientPeselTextBox.Size = new System.Drawing.Size(100, 20);
+            this.LabExaminationPatientPeselTextBox.Size = new System.Drawing.Size(107, 20);
             this.LabExaminationPatientPeselTextBox.TabIndex = 6;
             this.LabExaminationPatientPeselTextBox.Text = "PESEL";
             // 
             // LabExaminationPatientLastNameTextBox
             // 
-            this.LabExaminationPatientLastNameTextBox.Location = new System.Drawing.Point(200, 4);
+            this.LabExaminationPatientLastNameTextBox.Location = new System.Drawing.Point(210, 4);
             this.LabExaminationPatientLastNameTextBox.Name = "LabExaminationPatientLastNameTextBox";
             this.LabExaminationPatientLastNameTextBox.ReadOnly = true;
-            this.LabExaminationPatientLastNameTextBox.Size = new System.Drawing.Size(169, 20);
+            this.LabExaminationPatientLastNameTextBox.Size = new System.Drawing.Size(159, 20);
             this.LabExaminationPatientLastNameTextBox.TabIndex = 5;
             this.LabExaminationPatientLastNameTextBox.Text = "Patient last name";
             // 
             // LabExaminationPatientFirstNameTextBox
             // 
-            this.LabExaminationPatientFirstNameTextBox.Location = new System.Drawing.Point(94, 4);
+            this.LabExaminationPatientFirstNameTextBox.Location = new System.Drawing.Point(104, 4);
             this.LabExaminationPatientFirstNameTextBox.Name = "LabExaminationPatientFirstNameTextBox";
             this.LabExaminationPatientFirstNameTextBox.ReadOnly = true;
             this.LabExaminationPatientFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
@@ -174,7 +218,7 @@
             // LabExaminationPatientNameLabel
             // 
             this.LabExaminationPatientNameLabel.AutoSize = true;
-            this.LabExaminationPatientNameLabel.Location = new System.Drawing.Point(13, 7);
+            this.LabExaminationPatientNameLabel.Location = new System.Drawing.Point(2, 7);
             this.LabExaminationPatientNameLabel.Name = "LabExaminationPatientNameLabel";
             this.LabExaminationPatientNameLabel.Size = new System.Drawing.Size(75, 13);
             this.LabExaminationPatientNameLabel.TabIndex = 2;
@@ -186,13 +230,13 @@
             this.LabExaminationExamTypeComboBox.FormattingEnabled = true;
             this.LabExaminationExamTypeComboBox.Location = new System.Drawing.Point(128, 30);
             this.LabExaminationExamTypeComboBox.Name = "LabExaminationExamTypeComboBox";
-            this.LabExaminationExamTypeComboBox.Size = new System.Drawing.Size(433, 21);
+            this.LabExaminationExamTypeComboBox.Size = new System.Drawing.Size(440, 21);
             this.LabExaminationExamTypeComboBox.TabIndex = 1;
             // 
             // LabExaminationExamTypeLabel
             // 
             this.LabExaminationExamTypeLabel.AutoSize = true;
-            this.LabExaminationExamTypeLabel.Location = new System.Drawing.Point(13, 33);
+            this.LabExaminationExamTypeLabel.Location = new System.Drawing.Point(2, 33);
             this.LabExaminationExamTypeLabel.Name = "LabExaminationExamTypeLabel";
             this.LabExaminationExamTypeLabel.Size = new System.Drawing.Size(93, 13);
             this.LabExaminationExamTypeLabel.TabIndex = 0;
@@ -206,7 +250,7 @@
             this.LabExaminationDoctorPanel.Controls.Add(this.LabExaminationDoctorLastNameTextBox);
             this.LabExaminationDoctorPanel.Controls.Add(this.LabExaminationDoctorFirstNameTextBox);
             this.LabExaminationDoctorPanel.Controls.Add(this.LabExaminationDoctorNameLabel);
-            this.LabExaminationDoctorPanel.Location = new System.Drawing.Point(13, 132);
+            this.LabExaminationDoctorPanel.Location = new System.Drawing.Point(12, 153);
             this.LabExaminationDoctorPanel.Name = "LabExaminationDoctorPanel";
             this.LabExaminationDoctorPanel.Size = new System.Drawing.Size(583, 103);
             this.LabExaminationDoctorPanel.TabIndex = 4;
@@ -266,7 +310,7 @@
             this.LabExaminationLabWorkerPanel.Controls.Add(this.LabExaminationLabWorkerLastNameTextBox);
             this.LabExaminationLabWorkerPanel.Controls.Add(this.LabExaminationLabWorkerFirstNameTextBox);
             this.LabExaminationLabWorkerPanel.Controls.Add(this.LabExaminationLabWorkerNameLabel);
-            this.LabExaminationLabWorkerPanel.Location = new System.Drawing.Point(13, 241);
+            this.LabExaminationLabWorkerPanel.Location = new System.Drawing.Point(12, 262);
             this.LabExaminationLabWorkerPanel.Name = "LabExaminationLabWorkerPanel";
             this.LabExaminationLabWorkerPanel.Size = new System.Drawing.Size(583, 123);
             this.LabExaminationLabWorkerPanel.TabIndex = 5;
@@ -346,7 +390,7 @@
             this.LabExaminationLabManagerPanel.Controls.Add(this.LabExaminationLabManagerLastNameTextBox);
             this.LabExaminationLabManagerPanel.Controls.Add(this.LabExaminationLabManagerFirstNameTextBox);
             this.LabExaminationLabManagerPanel.Controls.Add(this.LabExaminationLabManagerNameLabel);
-            this.LabExaminationLabManagerPanel.Location = new System.Drawing.Point(13, 370);
+            this.LabExaminationLabManagerPanel.Location = new System.Drawing.Point(12, 391);
             this.LabExaminationLabManagerPanel.Name = "LabExaminationLabManagerPanel";
             this.LabExaminationLabManagerPanel.Size = new System.Drawing.Size(583, 123);
             this.LabExaminationLabManagerPanel.TabIndex = 6;
@@ -416,11 +460,11 @@
             this.LabExaminationLabManagerNameLabel.TabIndex = 0;
             this.LabExaminationLabManagerNameLabel.Text = "Lab manager :";
             // 
-            // LabExamination
+            // LabolatoryExaminationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 505);
+            this.ClientSize = new System.Drawing.Size(608, 526);
             this.Controls.Add(this.LabExaminationLabManagerPanel);
             this.Controls.Add(this.LabExaminationLabWorkerPanel);
             this.Controls.Add(this.LabExaminationDoctorPanel);
@@ -428,7 +472,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "LabExamination";
+            this.Name = "LabolatoryExaminationForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "LabExamination";
             this.labExaminationInfoPanel.ResumeLayout(false);
@@ -467,85 +511,85 @@
                 case 0:
                     {//lab worker
                         //patient
-                        LabExaminationPatientFirstNameTextBox.ReadOnly = true;
-                        LabExaminationPatientLastNameTextBox.ReadOnly = true;
-                        LabExaminationPatientPeselTextBox.ReadOnly = true;
-                        //doctor
-                        LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
-                        LabExaminationDoctorLastNameTextBox.ReadOnly = true;
-                        LabExaminationDoctorCommentsTextBox.ReadOnly = true;
+                        //LabExaminationPatientFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationPatientLastNameTextBox.ReadOnly = true;
+                        //LabExaminationPatientPeselTextBox.ReadOnly = true;
+                        ////doctor
+                        //LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationDoctorLastNameTextBox.ReadOnly = true;
+                        //LabExaminationDoctorCommentsTextBox.ReadOnly = true;
                         //lab worker
-                        LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
-                        LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
+                        //LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
                         LabExaminationExamResultTextBox.ReadOnly = false;
                         LabExaminationLabWorkerSubmitButton.Visible = true;
                         LabExaminationLabWorkerCancelButton.Visible = true;
                         //lab manager
-                        LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
-                        LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
+                        //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
                         LabExaminationLabManagerCommentsTextBox.ReadOnly = true;
                         LabExaminationLabManagerApproveButton.Visible = false;
                         LabExaminationLabManagerCancelButton.Visible = false;
                         //other
-                        LabExaminationExamStateComboBox.Enabled = false;
-                        LabExaminationExamTypeComboBox.Enabled = false;
-                        LabExaminationExamOrderDateTimePicker.Enabled = false;
+                        //LabExaminationExamStateComboBox.Enabled = false;
+                        //LabExaminationExamTypeComboBox.Enabled = false;
+                        //LabExaminationExamOrderDateTimePicker.Enabled = false;
                     }
                     break;
                 case 1:
                     {//lab manager
                         //patient
-                        LabExaminationPatientFirstNameTextBox.ReadOnly = true;
-                        LabExaminationPatientLastNameTextBox.ReadOnly = true;
-                        LabExaminationPatientPeselTextBox.ReadOnly = true;
-                        //doctor
-                        LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
-                        LabExaminationDoctorLastNameTextBox.ReadOnly = true;
-                        LabExaminationDoctorCommentsTextBox.ReadOnly = true;
+                        //LabExaminationPatientFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationPatientLastNameTextBox.ReadOnly = true;
+                        //LabExaminationPatientPeselTextBox.ReadOnly = true;
+                        ////doctor
+                        //LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationDoctorLastNameTextBox.ReadOnly = true;
+                        //LabExaminationDoctorCommentsTextBox.ReadOnly = true;
                         //lab worker
-                        LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
-                        LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
-                        LabExaminationExamResultTextBox.ReadOnly = false;
-                        LabExaminationLabWorkerSubmitButton.Visible = false;
-                        LabExaminationLabWorkerCancelButton.Visible = false;
-                        //lab manager
-                        LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
-                        LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
-                        LabExaminationLabManagerCommentsTextBox.ReadOnly = true;
-                        LabExaminationLabManagerApproveButton.Visible = true;
-                        LabExaminationLabManagerCancelButton.Visible = true;
-                        //other
-                        LabExaminationExamStateComboBox.Enabled = false;
-                        LabExaminationExamTypeComboBox.Enabled = false;
-                        LabExaminationExamOrderDateTimePicker.Enabled = false;
-                    }
-                    break;
-                default:
-                    {//read only
-                        //patient
-                        LabExaminationPatientFirstNameTextBox.ReadOnly = true;
-                        LabExaminationPatientLastNameTextBox.ReadOnly = true;
-                        LabExaminationPatientPeselTextBox.ReadOnly = true;
-                        //doctor
-                        LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
-                        LabExaminationDoctorLastNameTextBox.ReadOnly = true;
-                        LabExaminationDoctorCommentsTextBox.ReadOnly = true;
-                        //lab worker
-                        LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
-                        LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
+                        //LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
                         LabExaminationExamResultTextBox.ReadOnly = true;
                         LabExaminationLabWorkerSubmitButton.Visible = false;
                         LabExaminationLabWorkerCancelButton.Visible = false;
                         //lab manager
-                        LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
-                        LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
+                        //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
+                        LabExaminationLabManagerCommentsTextBox.ReadOnly = false;
+                        LabExaminationLabManagerApproveButton.Visible = true;
+                        LabExaminationLabManagerCancelButton.Visible = true;
+                        //other
+                        //LabExaminationExamStateComboBox.Enabled = false;
+                        //LabExaminationExamTypeComboBox.Enabled = false;
+                        //LabExaminationExamOrderDateTimePicker.Enabled = false;
+                    }
+                    break;
+                default:
+                    {//read only
+                        ////patient
+                        //LabExaminationPatientFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationPatientLastNameTextBox.ReadOnly = true;
+                        //LabExaminationPatientPeselTextBox.ReadOnly = true;
+                        ////doctor
+                        //LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationDoctorLastNameTextBox.ReadOnly = true;
+                        //LabExaminationDoctorCommentsTextBox.ReadOnly = true;
+                        ////lab worker
+                        //LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
+                        LabExaminationExamResultTextBox.ReadOnly = true;
+                        LabExaminationLabWorkerSubmitButton.Visible = false;
+                        LabExaminationLabWorkerCancelButton.Visible = false;
+                        //lab manager
+                        //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
+                        //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
                         LabExaminationLabManagerCommentsTextBox.ReadOnly = true;
                         LabExaminationLabManagerApproveButton.Visible = false;
                         LabExaminationLabManagerCancelButton.Visible = false;
                         //other
-                        LabExaminationExamStateComboBox.Enabled = false;
-                        LabExaminationExamTypeComboBox.Enabled = false;
-                        LabExaminationExamOrderDateTimePicker.Enabled = false;
+                        //LabExaminationExamStateComboBox.Enabled = false;
+                        //LabExaminationExamTypeComboBox.Enabled = false;
+                        //LabExaminationExamOrderDateTimePicker.Enabled = false;
                     }
                     break;
             }
@@ -585,5 +629,9 @@
         private System.Windows.Forms.Button LabExaminationLabWorkerCancelButton;
         private System.Windows.Forms.Button LabExaminationLabManagerCancelButton;
         private System.Windows.Forms.Button LabExaminationLabManagerApproveButton;
+        private System.Windows.Forms.DateTimePicker LabExaminationExamApprovalDateTimePicker;
+        private System.Windows.Forms.Label LabExaminationExamApprovalDateLabel;
+        private System.Windows.Forms.DateTimePicker LabExaminationExamExaminationDateTimePicker;
+        private System.Windows.Forms.Label LabExaminationExamExaminationDateLabel;
     }
 }
