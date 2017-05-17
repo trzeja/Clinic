@@ -33,15 +33,14 @@
             this.registrarTextBoxPatient = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataTimePickerRegDate = new System.Windows.Forms.DateTimePicker();
-            this.registrarCancelVisitButton = new System.Windows.Forms.Button();
             this.patientTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.stateLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxState = new System.Windows.Forms.TextBox();
-            this.registrarSelectPatientButton = new System.Windows.Forms.Button();
             this.registrarSelectDoctorButton = new System.Windows.Forms.Button();
+            this.registrarSelectPatientButton = new System.Windows.Forms.Button();
+            this.registrarStateComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,15 +85,6 @@
             this.dataTimePickerRegDate.Size = new System.Drawing.Size(132, 20);
             this.dataTimePickerRegDate.TabIndex = 24;
             // 
-            // registrarCancelVisitButton
-            // 
-            this.registrarCancelVisitButton.Location = new System.Drawing.Point(247, 144);
-            this.registrarCancelVisitButton.Name = "registrarCancelVisitButton";
-            this.registrarCancelVisitButton.Size = new System.Drawing.Size(75, 23);
-            this.registrarCancelVisitButton.TabIndex = 28;
-            this.registrarCancelVisitButton.Text = "Cancel Visit";
-            this.registrarCancelVisitButton.UseVisualStyleBackColor = true;
-            // 
             // patientTableAdapter1
             // 
             this.patientTableAdapter1.ClearBeforeFill = true;
@@ -117,24 +107,23 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "Doctor name";
             // 
-            // label2
+            // stateLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "State";
+            this.stateLabel.AutoSize = true;
+            this.stateLabel.Location = new System.Drawing.Point(70, 144);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(32, 13);
+            this.stateLabel.TabIndex = 33;
+            this.stateLabel.Text = "State";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.registrarStateComboBox);
             this.panel1.Controls.Add(this.registrarSelectDoctorButton);
-            this.panel1.Controls.Add(this.registrarCancelVisitButton);
             this.panel1.Controls.Add(this.registrarSelectPatientButton);
-            this.panel1.Controls.Add(this.textBoxState);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.stateLabel);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -146,12 +135,15 @@
             this.panel1.Size = new System.Drawing.Size(341, 201);
             this.panel1.TabIndex = 34;
             // 
-            // textBoxState
+            // registrarSelectDoctorButton
             // 
-            this.textBoxState.Location = new System.Drawing.Point(108, 141);
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(132, 20);
-            this.textBoxState.TabIndex = 34;
+            this.registrarSelectDoctorButton.Location = new System.Drawing.Point(247, 103);
+            this.registrarSelectDoctorButton.Name = "registrarSelectDoctorButton";
+            this.registrarSelectDoctorButton.Size = new System.Drawing.Size(75, 23);
+            this.registrarSelectDoctorButton.TabIndex = 36;
+            this.registrarSelectDoctorButton.Text = "Select";
+            this.registrarSelectDoctorButton.UseVisualStyleBackColor = true;
+            this.registrarSelectDoctorButton.Click += new System.EventHandler(this.registrarSelectDoctorButton_Click);
             // 
             // registrarSelectPatientButton
             // 
@@ -163,15 +155,16 @@
             this.registrarSelectPatientButton.UseVisualStyleBackColor = true;
             this.registrarSelectPatientButton.Click += new System.EventHandler(this.registrarSelectPatientButton_Click);
             // 
-            // registrarSelectDoctorButton
+            // registrarStateComboBox
             // 
-            this.registrarSelectDoctorButton.Location = new System.Drawing.Point(247, 103);
-            this.registrarSelectDoctorButton.Name = "registrarSelectDoctorButton";
-            this.registrarSelectDoctorButton.Size = new System.Drawing.Size(75, 23);
-            this.registrarSelectDoctorButton.TabIndex = 36;
-            this.registrarSelectDoctorButton.Text = "Select";
-            this.registrarSelectDoctorButton.UseVisualStyleBackColor = true;
-            this.registrarSelectDoctorButton.Click += new System.EventHandler(this.registrarSelectDoctorButton_Click);
+            this.registrarStateComboBox.FormattingEnabled = true;
+            this.registrarStateComboBox.Items.AddRange(new object[] {
+            "REGISTERED",
+            "CANCELED"});
+            this.registrarStateComboBox.Location = new System.Drawing.Point(110, 141);
+            this.registrarStateComboBox.Name = "registrarStateComboBox";
+            this.registrarStateComboBox.Size = new System.Drawing.Size(130, 21);
+            this.registrarStateComboBox.TabIndex = 37;
             // 
             // RegistrarAddFrom
             // 
@@ -195,14 +188,13 @@
         private System.Windows.Forms.TextBox registrarTextBoxPatient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dataTimePickerRegDate;
-        private System.Windows.Forms.Button registrarCancelVisitButton;
         private clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label stateLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxState;
         private System.Windows.Forms.Button registrarSelectDoctorButton;
         private System.Windows.Forms.Button registrarSelectPatientButton;
+        private System.Windows.Forms.ComboBox registrarStateComboBox;
     }
 }

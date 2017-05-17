@@ -31,7 +31,7 @@ namespace Clinic
         private void resgistrarAddVisitButton_Click(object sender, EventArgs e)
         {
             RegistrarAddFrom registrarAddFrom = new RegistrarAddFrom();
-            registrarAddFrom.setRegistrarCancelVisitButtonEnableDisable(false);
+            registrarAddFrom.setModifyTrueAddFalse(false);
             registrarAddFrom.ShowDialog(this);
            
 
@@ -43,9 +43,13 @@ namespace Clinic
 
         private void Initialize()
         {
-            this.registrarTextBoxPatient.ReadOnly = true;
-            this.registrarTextBoxDoctor.ReadOnly = true;
-            
+            //this.registrarTextBoxPatient.ReadOnly = true;
+            //this.registrarTextBoxDoctor.ReadOnly = true;
+
+            this.registrarSelectPatientButton.Visible = false;
+            this.registrarSelectDoctorButton.Visible = false;
+
+
 
         }
 
@@ -54,10 +58,10 @@ namespace Clinic
           
         }
 
-        private void registrarCancelButton_Click(object sender, EventArgs e)
+        private void registrarSelectDoctorButton_Click(object sender, EventArgs e)
         {
             RegistrarAddFrom registrarmodifyVisit= new RegistrarAddFrom();
-            registrarmodifyVisit.setRegistrarCancelVisitButtonEnableDisable(true);
+            registrarmodifyVisit.setModifyTrueAddFalse(true);
             registrarmodifyVisit.ShowDialog(this);
 
         }
@@ -70,11 +74,9 @@ namespace Clinic
 
         }
 
-        private void registrarSelectDoctorButton_Click(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
-            SelectPersonForm registrarSelectDoctor = new SelectPersonForm();
-            registrarSelectDoctor.setRegistrarAddButtonEnableDisable(false);
-            registrarSelectDoctor.ShowDialog(this);
+
         }
     }
 }

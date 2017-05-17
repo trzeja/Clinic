@@ -70,7 +70,7 @@
             this.adminAddButton.TabIndex = 1;
             this.adminAddButton.Text = "Add";
             this.adminAddButton.UseVisualStyleBackColor = true;
-            this.adminAddButton.Click += new System.EventHandler(this.adminSearchButton_Click);
+            this.adminAddButton.Click += new System.EventHandler(this.adminAddButton_Click);
             // 
             // dataGridAdmin
             // 

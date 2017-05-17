@@ -83,5 +83,10 @@ namespace Clinic
             this.lnameTextbox.Enter += new System.EventHandler(this.lnameTextbox_Enter);
 
         }
+
+        private void registrarSelectButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+    }
 }

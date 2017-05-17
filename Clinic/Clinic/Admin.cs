@@ -33,14 +33,16 @@ namespace Clinic
         private void adminEditButton_Click(object sender, EventArgs e)
         {
             AdminEditForm adminEditForm = new AdminEditForm();
+            adminEditForm.setValue("Modify", true);
             adminEditForm.ShowDialog(this);
 
         }
 
-        private void adminSearchButton_Click(object sender, EventArgs e)
+        private void adminAddButton_Click(object sender, EventArgs e)
         {
-            AdminAddForm adminSearchForm = new AdminAddForm();
-            adminSearchForm.ShowDialog(this);
+            AdminEditForm adminAddForm = new AdminEditForm();
+            adminAddForm.ShowDialog(this);
+            adminAddForm.setValue("Add", false);
         }
 
         private void label2_Click(object sender, EventArgs e)

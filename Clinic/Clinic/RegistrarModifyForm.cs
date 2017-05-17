@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Clinic
 {
+  
     public partial class RegistrarAddFrom : Form
     {
+        private bool modifyTrueAddFalse;
         public RegistrarAddFrom()
         {
             InitializeComponent();
@@ -47,8 +49,9 @@ namespace Clinic
         private void Initialize()
         {
 
-            this.textBoxState.ReadOnly = true;
-            this.textBoxState.BackColor = Color.White;
+            this.registrarTextBoxPatient.ReadOnly = true;
+            this.registrarTextBoxDoctor.ReadOnly = true;
+
 
 
 
@@ -66,15 +69,16 @@ namespace Clinic
 
         }
 
-        public void setRegistrarCancelVisitButtonEnableDisable(bool set)
+        public void setModifyTrueAddFalse(bool set)
         {
             //set==true --> Modify form acive
-            this.registrarCancelVisitButton.Enabled = set;
-            this.registrarCancelVisitButton.Visible = set;
+            modifyTrueAddFalse = set;
             this.registrarSelectPatientButton.Visible = !set;
-            this.registrarSelectDoctorButton.Visible = !set;
-            
-           
+            this.registrarSelectDoctorButton.Visible = true;
+            this.registrarStateComboBox.Visible = set;
+            this.stateLabel.Visible = set;
+
+
         }
 
 
@@ -88,7 +92,7 @@ namespace Clinic
         private void registrarSelectPatientButton_Click(object sender, EventArgs e)
         {
            
-            if (this.registrarCancelVisitButton.Enabled == true) return; // modify form active!
+            if (modifyTrueAddFalse == true) return; // modify form active!
             SelectPersonForm registrarSelectPatient = new SelectPersonForm();
             registrarSelectPatient.setRegistrarAddButtonEnableDisable(true);
             registrarSelectPatient.ShowDialog(this);
@@ -97,7 +101,7 @@ namespace Clinic
 
         private void registrarSelectDoctorButton_Click(object sender, EventArgs e)
         {
-            if (this.registrarCancelVisitButton.Enabled == true) return; // modify form active!
+           
             SelectPersonForm registrarSelectDoctor = new SelectPersonForm();
             registrarSelectDoctor.setRegistrarAddButtonEnableDisable(false);
             registrarSelectDoctor.ShowDialog(this);

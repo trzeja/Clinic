@@ -12,10 +12,25 @@ namespace Clinic
 {
     public partial class AdminEditForm : Form
     {
+        private bool modifyTrueAddFalse;
         public AdminEditForm()
         {
             InitializeComponent();
+            InitializeTextBoxes();
+            this.Name = "AdminAddForm";
+            this.Text = "Add user";
+
+
+        }
+      
+
+      private void InitializeTextBoxes()
+        {
            
+            this.ActiveControl = adminModifyButton;
+
+
+
         }
 
         private void adminCancelButton_Click(object sender, EventArgs e)
@@ -23,9 +38,21 @@ namespace Clinic
             this.Close();
         }
 
-        private void adminApproveButton_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void setValue(string text,bool modifyTrueAddFalse)
+        {
+            this.modifyTrueAddFalse = modifyTrueAddFalse;
+            this.adminModifyButton.Text = text;
+        }
+
+        private void adminModifyButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
     }
 }
+

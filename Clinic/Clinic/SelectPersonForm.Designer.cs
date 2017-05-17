@@ -34,10 +34,10 @@
             this.registrarSelectButton = new System.Windows.Forms.Button();
             this.patientTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.searchPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lnameTextbox = new System.Windows.Forms.TextBox();
             this.fnameTextbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.searchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,7 @@
             this.registrarSelectButton.TabIndex = 26;
             this.registrarSelectButton.Text = "Select";
             this.registrarSelectButton.UseVisualStyleBackColor = true;
+            this.registrarSelectButton.Click += new System.EventHandler(this.registrarSelectButton_Click);
             // 
             // patientTableAdapter1
             // 
@@ -96,6 +97,24 @@
             this.searchPanel.Size = new System.Drawing.Size(284, 80);
             this.searchPanel.TabIndex = 27;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Last name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(40, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "First name";
+            // 
             // lnameTextbox
             // 
             this.lnameTextbox.Location = new System.Drawing.Point(101, 36);
@@ -109,24 +128,6 @@
             this.fnameTextbox.Name = "fnameTextbox";
             this.fnameTextbox.Size = new System.Drawing.Size(100, 20);
             this.fnameTextbox.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "First name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Last name";
             // 
             // SelectPersonForm
             // 

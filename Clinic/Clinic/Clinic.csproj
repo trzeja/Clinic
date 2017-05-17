@@ -59,12 +59,6 @@
     <Compile Include="AdminEditForm.Designer.cs">
       <DependentUpon>AdminEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminAddForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminAddForm.Designer.cs">
-      <DependentUpon>AdminAddForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="clinicDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -166,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminEditForm.resx">
       <DependentUpon>AdminEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminAddForm.resx">
-      <DependentUpon>AdminAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
