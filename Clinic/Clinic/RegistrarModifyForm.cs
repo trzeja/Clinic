@@ -14,8 +14,25 @@ namespace Clinic
     public partial class RegistrarAddFrom : Form
     {
         private bool modifyTrueAddFalse;
+        private Point point;
         public RegistrarAddFrom()
         {
+            //425; 290
+            //318; 210
+            //this.Size = new Size(425, 290);
+            //if (modifyTrueAddFalse == false)
+            //{
+            //    this.Size = new Size(425, 290);
+               
+              
+            //}
+            //else
+            //{
+            //    this.Size = new Size(425, 550);
+            //    point = new Point(322, 210);
+            //   // this.registrarApproveButton.Location = point;
+
+            //}
             InitializeComponent();
             Initialize();
         }
