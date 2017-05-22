@@ -22,9 +22,19 @@ namespace Clinic
 
 
         }
-      
 
-      private void InitializeTextBoxes()
+        public AdminEditForm(string windowName, string buttonName, bool modifyTrueAddFalse)
+        {
+            InitializeComponent();
+            InitializeTextBoxes();
+            this.Name = windowName;
+            this.Text = windowName;
+            this.modifyTrueAddFalse = modifyTrueAddFalse;
+            this.adminModifyButton.Text = buttonName;
+        }
+
+
+        private void InitializeTextBoxes()
         {
            
             this.ActiveControl = adminModifyButton;

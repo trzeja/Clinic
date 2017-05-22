@@ -67,6 +67,7 @@
             // 
             this.labManagerComboboxState.FormattingEnabled = true;
             this.labManagerComboboxState.Items.AddRange(new object[] {
+            "",
             "DONE",
             "APPROVE",
             "CANCEL"});

@@ -10,12 +10,19 @@ using System.Windows.Forms;
 
 namespace Clinic
 {
-    public partial class RegistrarAddPatientForm : Form
+    public partial class RegistrarAddModifyPatientForm : Form
     {
-        public RegistrarAddPatientForm()
+        public RegistrarAddModifyPatientForm()
         {
             InitializeComponent();
             InitializeTextBoxes();
+        }
+        public RegistrarAddModifyPatientForm(string windowName, string buttonName)
+        {
+            InitializeComponent();
+            InitializeTextBoxes();
+            this.registrarAddPatientButtonApprove.Text = buttonName;
+            this.Text = windowName;
         }
 
         private void registrarAddPatientButtonCancel_Click(object sender, EventArgs e)

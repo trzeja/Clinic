@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.registrarAddButton = new System.Windows.Forms.Button();
+            this.registrarModifyButton = new System.Windows.Forms.Button();
             this.registrarSearchButton = new System.Windows.Forms.Button();
             this.registrarSelectButton = new System.Windows.Forms.Button();
             this.patientTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.PatientTableAdapter();
@@ -50,15 +50,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(284, 221);
             this.dataGridView1.TabIndex = 0;
             // 
-            // registrarAddButton
+            // registrarModifyButton
             // 
-            this.registrarAddButton.Location = new System.Drawing.Point(218, 323);
-            this.registrarAddButton.Name = "registrarAddButton";
-            this.registrarAddButton.Size = new System.Drawing.Size(75, 23);
-            this.registrarAddButton.TabIndex = 24;
-            this.registrarAddButton.Text = "Add";
-            this.registrarAddButton.UseVisualStyleBackColor = true;
-            this.registrarAddButton.Click += new System.EventHandler(this.registrarAddPatientButton_Click);
+            this.registrarModifyButton.Location = new System.Drawing.Point(218, 323);
+            this.registrarModifyButton.Name = "registrarModifyButton";
+            this.registrarModifyButton.Size = new System.Drawing.Size(75, 23);
+            this.registrarModifyButton.TabIndex = 24;
+            this.registrarModifyButton.Text = "Add";
+            this.registrarModifyButton.UseVisualStyleBackColor = true;
+            this.registrarModifyButton.Click += new System.EventHandler(this.registrarAddPatientButton_Click);
             // 
             // registrarSearchButton
             // 
@@ -136,7 +136,7 @@
             this.ClientSize = new System.Drawing.Size(305, 360);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.registrarSelectButton);
-            this.Controls.Add(this.registrarAddButton);
+            this.Controls.Add(this.registrarModifyButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SelectPersonForm";
             this.Text = "Select Person";
@@ -150,7 +150,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button registrarAddButton;
+        private System.Windows.Forms.Button registrarModifyButton;
         private System.Windows.Forms.Button registrarSearchButton;
         private System.Windows.Forms.Button registrarSelectButton;
         private clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;

@@ -1,6 +1,6 @@
 ﻿namespace Clinic
 {
-    partial class RegistrarAddPatientForm
+    partial class RegistrarAddModifyPatientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.placeBox = new System.Windows.Forms.TextBox();
+            this.streetBox = new System.Windows.Forms.TextBox();
+            this.zipCodeBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // peselBox
@@ -53,7 +59,7 @@
             // 
             // registrarAddPatientButtonApprove
             // 
-            this.registrarAddPatientButtonApprove.Location = new System.Drawing.Point(118, 133);
+            this.registrarAddPatientButtonApprove.Location = new System.Drawing.Point(130, 254);
             this.registrarAddPatientButtonApprove.Name = "registrarAddPatientButtonApprove";
             this.registrarAddPatientButtonApprove.Size = new System.Drawing.Size(75, 23);
             this.registrarAddPatientButtonApprove.TabIndex = 4;
@@ -71,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(28, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 5;
@@ -95,11 +101,65 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Last Name";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Place";
+            // 
+            // placeBox
+            // 
+            this.placeBox.Location = new System.Drawing.Point(81, 135);
+            this.placeBox.Name = "placeBox";
+            this.placeBox.Size = new System.Drawing.Size(100, 20);
+            this.placeBox.TabIndex = 9;
+            // 
+            // streetBox
+            // 
+            this.streetBox.Location = new System.Drawing.Point(81, 174);
+            this.streetBox.Name = "streetBox";
+            this.streetBox.Size = new System.Drawing.Size(100, 20);
+            this.streetBox.TabIndex = 10;
+            // 
+            // zipCodeBox
+            // 
+            this.zipCodeBox.Location = new System.Drawing.Point(81, 214);
+            this.zipCodeBox.Name = "zipCodeBox";
+            this.zipCodeBox.Size = new System.Drawing.Size(100, 20);
+            this.zipCodeBox.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(34, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Street";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 214);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Zip Code";
+            // 
             // RegistrarAddPatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(205, 168);
+            this.ClientSize = new System.Drawing.Size(217, 289);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.zipCodeBox);
+            this.Controls.Add(this.streetBox);
+            this.Controls.Add(this.placeBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -107,7 +167,7 @@
             this.Controls.Add(this.fnameBox);
             this.Controls.Add(this.lnameBox);
             this.Controls.Add(this.peselBox);
-            this.MaximumSize = new System.Drawing.Size(408, 206);
+            this.MaximumSize = new System.Drawing.Size(708, 406);
             this.MinimumSize = new System.Drawing.Size(208, 206);
             this.Name = "RegistrarAddPatientForm";
             this.Text = "Add Patient";
@@ -126,5 +186,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox placeBox;
+        private System.Windows.Forms.TextBox streetBox;
+        private System.Windows.Forms.TextBox zipCodeBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

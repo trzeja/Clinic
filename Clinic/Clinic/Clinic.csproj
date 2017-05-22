@@ -131,11 +131,11 @@
     <Compile Include="Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarAddPatientForm.cs">
+    <Compile Include="RegistrarAddModifyPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarAddPatientForm.Designer.cs">
-      <DependentUpon>RegistrarAddPatientForm.cs</DependentUpon>
+    <Compile Include="RegistrarAddModifyPatientForm.Designer.cs">
+      <DependentUpon>RegistrarAddModifyPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistrarModifyForm.cs">
       <SubType>Form</SubType>
@@ -197,8 +197,8 @@
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="registrarAddPatientForm.resx">
-      <DependentUpon>RegistrarAddPatientForm.cs</DependentUpon>
+    <EmbeddedResource Include="RegistrarAddModifyPatientForm.resx">
+      <DependentUpon>RegistrarAddModifyPatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarModifyForm.resx">
       <DependentUpon>RegistrarModifyForm.cs</DependentUpon>

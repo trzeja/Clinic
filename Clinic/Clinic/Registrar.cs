@@ -46,8 +46,7 @@ namespace Clinic
             //this.registrarTextBoxPatient.ReadOnly = true;
             //this.registrarTextBoxDoctor.ReadOnly = true;
 
-            this.registrarSelectPatientButton.Visible = false;
-            this.registrarSelectDoctorButton.Visible = false;
+           
 
 
 
@@ -77,6 +76,13 @@ namespace Clinic
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void registrarModifyPatientButton_Click(object sender, EventArgs e)
+        {
+
+            SelectPersonForm registrarSelectPatient = new SelectPersonForm("Modify", true);
+            registrarSelectPatient.ShowDialog(this);
         }
     }
 }

@@ -12,21 +12,44 @@ namespace Clinic
 {
     public partial class SelectPersonForm : Form
     {
+        private bool modifyTrueAddFalse;
         public SelectPersonForm()
         {
             InitializeComponent();
             InitializeTextBoxes();
         }
+        public SelectPersonForm(string buttonName, bool modifyTrueAddFalse)
+        {
+            InitializeComponent();
+            InitializeTextBoxes();
+            this.registrarModifyButton.Enabled = modifyTrueAddFalse;
+            this.modifyTrueAddFalse = modifyTrueAddFalse;
+            this.registrarModifyButton.Text = buttonName;
+            
+            if (modifyTrueAddFalse == true)
+            {
+                this.registrarSelectButton.Text = "Confirm";
+            }
+            else this.registrarSelectButton.Text = "Select";
+        }
 
         private void registrarAddPatientButton_Click(object sender, EventArgs e)
         {
-            RegistrarAddPatientForm registrarAddPatientForm = new RegistrarAddPatientForm();
-            registrarAddPatientForm.ShowDialog(this);
+            if (modifyTrueAddFalse == false)
+            {
+                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Add Patient","Add");
+                registrarAddPatientForm.ShowDialog(this);
+            }
+            else
+            {
+                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm");
+                registrarAddPatientForm.ShowDialog(this);
+            }
         }
 
         public void setRegistrarAddButtonEnableDisable(bool set)
         {
-            this.registrarAddButton.Enabled = set;
+            this.registrarModifyButton.Enabled = set;
         }
 
 

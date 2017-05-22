@@ -42,34 +42,33 @@
             this.registrarTextBoxPatientFName = new System.Windows.Forms.TextBox();
             this.registrarTextBoxDoctorFName = new System.Windows.Forms.TextBox();
             this.searchPanelRegistrar = new System.Windows.Forms.Panel();
-            this.registrarSelectDoctorButton = new System.Windows.Forms.Button();
-            this.registrarSelectPatientButton = new System.Windows.Forms.Button();
+            this.panelDoctor = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.registrarTextBoxDoctorLName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelPatient = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.registrarTextBoxPatientLName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.registrarSearchButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.registrarSearchButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.visitTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.VisitTableAdapter();
             this.dataGridViewRegistrar = new System.Windows.Forms.DataGridView();
             this.clinicDataSet11 = new Clinic.clinicDataSet1();
-            this.registrarTextBoxDoctorLName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.registrarTextBoxPatientLName = new System.Windows.Forms.TextBox();
-            this.panelPatient = new System.Windows.Forms.Panel();
-            this.panelDoctor = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.registrarModifyPatientButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.visitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSetBindingSource1)).BeginInit();
             this.searchPanelRegistrar.SuspendLayout();
+            this.panelDoctor.SuspendLayout();
+            this.panelPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegistrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).BeginInit();
-            this.panelPatient.SuspendLayout();
-            this.panelDoctor.SuspendLayout();
             this.SuspendLayout();
             // 
             // visitBindingSource
@@ -159,9 +158,7 @@
             this.searchPanelRegistrar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.searchPanelRegistrar.Controls.Add(this.panelDoctor);
             this.searchPanelRegistrar.Controls.Add(this.panelPatient);
-            this.searchPanelRegistrar.Controls.Add(this.registrarSelectDoctorButton);
             this.searchPanelRegistrar.Controls.Add(this.registrarSearchButton);
-            this.searchPanelRegistrar.Controls.Add(this.registrarSelectPatientButton);
             this.searchPanelRegistrar.Controls.Add(this.label4);
             this.searchPanelRegistrar.Controls.Add(this.comboBox1);
             this.searchPanelRegistrar.Controls.Add(this.label1);
@@ -171,25 +168,110 @@
             this.searchPanelRegistrar.Size = new System.Drawing.Size(644, 168);
             this.searchPanelRegistrar.TabIndex = 21;
             // 
-            // registrarSelectDoctorButton
+            // panelDoctor
             // 
-            this.registrarSelectDoctorButton.Location = new System.Drawing.Point(106, 107);
-            this.registrarSelectDoctorButton.Name = "registrarSelectDoctorButton";
-            this.registrarSelectDoctorButton.Size = new System.Drawing.Size(97, 23);
-            this.registrarSelectDoctorButton.TabIndex = 28;
-            this.registrarSelectDoctorButton.Text = "Select Doctor";
-            this.registrarSelectDoctorButton.UseVisualStyleBackColor = true;
-            this.registrarSelectDoctorButton.Click += new System.EventHandler(this.registrarSelectDoctorButton_Click);
+            this.panelDoctor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelDoctor.Controls.Add(this.label8);
+            this.panelDoctor.Controls.Add(this.label5);
+            this.panelDoctor.Controls.Add(this.registrarTextBoxDoctorLName);
+            this.panelDoctor.Controls.Add(this.label3);
+            this.panelDoctor.Controls.Add(this.registrarTextBoxDoctorFName);
+            this.panelDoctor.Location = new System.Drawing.Point(249, 70);
+            this.panelDoctor.Name = "panelDoctor";
+            this.panelDoctor.Size = new System.Drawing.Size(375, 59);
+            this.panelDoctor.TabIndex = 34;
             // 
-            // registrarSelectPatientButton
+            // label8
             // 
-            this.registrarSelectPatientButton.Location = new System.Drawing.Point(3, 91);
-            this.registrarSelectPatientButton.Name = "registrarSelectPatientButton";
-            this.registrarSelectPatientButton.Size = new System.Drawing.Size(97, 23);
-            this.registrarSelectPatientButton.TabIndex = 27;
-            this.registrarSelectPatientButton.Text = "Select Patient";
-            this.registrarSelectPatientButton.UseVisualStyleBackColor = true;
-            this.registrarSelectPatientButton.Click += new System.EventHandler(this.registrarSelectPatientButton_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(176, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Doctor";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(191, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Last name:";
+            // 
+            // registrarTextBoxDoctorLName
+            // 
+            this.registrarTextBoxDoctorLName.Location = new System.Drawing.Point(253, 32);
+            this.registrarTextBoxDoctorLName.Name = "registrarTextBoxDoctorLName";
+            this.registrarTextBoxDoctorLName.Size = new System.Drawing.Size(100, 20);
+            this.registrarTextBoxDoctorLName.TabIndex = 29;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "First name:";
+            // 
+            // panelPatient
+            // 
+            this.panelPatient.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelPatient.Controls.Add(this.label7);
+            this.panelPatient.Controls.Add(this.registrarTextBoxPatientLName);
+            this.panelPatient.Controls.Add(this.label6);
+            this.panelPatient.Controls.Add(this.label2);
+            this.panelPatient.Controls.Add(this.registrarTextBoxPatientFName);
+            this.panelPatient.Location = new System.Drawing.Point(249, 3);
+            this.panelPatient.Name = "panelPatient";
+            this.panelPatient.Size = new System.Drawing.Size(375, 59);
+            this.panelPatient.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(172, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Patient";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // registrarTextBoxPatientLName
+            // 
+            this.registrarTextBoxPatientLName.Location = new System.Drawing.Point(251, 32);
+            this.registrarTextBoxPatientLName.Name = "registrarTextBoxPatientLName";
+            this.registrarTextBoxPatientLName.Size = new System.Drawing.Size(100, 20);
+            this.registrarTextBoxPatientLName.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(189, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Last name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "First name:";
+            // 
+            // registrarSearchButton
+            // 
+            this.registrarSearchButton.Location = new System.Drawing.Point(562, 138);
+            this.registrarSearchButton.Name = "registrarSearchButton";
+            this.registrarSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.registrarSearchButton.TabIndex = 21;
+            this.registrarSearchButton.Text = "Search";
+            this.registrarSearchButton.UseVisualStyleBackColor = true;
+            this.registrarSearchButton.Click += new System.EventHandler(this.registrarSearchButton_Click);
             // 
             // label4
             // 
@@ -204,6 +286,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "",
             "DONE",
             "CANCELED",
             "REGISTERED"});
@@ -211,34 +294,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(147, 21);
             this.comboBox1.TabIndex = 25;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "First name:";
-            // 
-            // registrarSearchButton
-            // 
-            this.registrarSearchButton.Location = new System.Drawing.Point(562, 138);
-            this.registrarSearchButton.Name = "registrarSearchButton";
-            this.registrarSearchButton.Size = new System.Drawing.Size(75, 23);
-            this.registrarSearchButton.TabIndex = 21;
-            this.registrarSearchButton.Text = "Search";
-            this.registrarSearchButton.UseVisualStyleBackColor = true;
-            this.registrarSearchButton.Click += new System.EventHandler(this.registrarSearchButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "First name:";
             // 
             // visitTableAdapter1
             // 
@@ -257,88 +312,22 @@
             this.clinicDataSet11.DataSetName = "clinicDataSet1";
             this.clinicDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // registrarTextBoxDoctorLName
+            // registrarModifyPatientButton
             // 
-            this.registrarTextBoxDoctorLName.Location = new System.Drawing.Point(253, 32);
-            this.registrarTextBoxDoctorLName.Name = "registrarTextBoxDoctorLName";
-            this.registrarTextBoxDoctorLName.Size = new System.Drawing.Size(100, 20);
-            this.registrarTextBoxDoctorLName.TabIndex = 29;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(191, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Last name:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(189, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Last name:";
-            // 
-            // registrarTextBoxPatientLName
-            // 
-            this.registrarTextBoxPatientLName.Location = new System.Drawing.Point(251, 32);
-            this.registrarTextBoxPatientLName.Name = "registrarTextBoxPatientLName";
-            this.registrarTextBoxPatientLName.Size = new System.Drawing.Size(100, 20);
-            this.registrarTextBoxPatientLName.TabIndex = 32;
-            // 
-            // panelPatient
-            // 
-            this.panelPatient.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelPatient.Controls.Add(this.label7);
-            this.panelPatient.Controls.Add(this.registrarTextBoxPatientLName);
-            this.panelPatient.Controls.Add(this.label6);
-            this.panelPatient.Controls.Add(this.label2);
-            this.panelPatient.Controls.Add(this.registrarTextBoxPatientFName);
-            this.panelPatient.Location = new System.Drawing.Point(249, 3);
-            this.panelPatient.Name = "panelPatient";
-            this.panelPatient.Size = new System.Drawing.Size(375, 59);
-            this.panelPatient.TabIndex = 33;
-            // 
-            // panelDoctor
-            // 
-            this.panelDoctor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelDoctor.Controls.Add(this.label8);
-            this.panelDoctor.Controls.Add(this.label5);
-            this.panelDoctor.Controls.Add(this.registrarTextBoxDoctorLName);
-            this.panelDoctor.Controls.Add(this.label3);
-            this.panelDoctor.Controls.Add(this.registrarTextBoxDoctorFName);
-            this.panelDoctor.Location = new System.Drawing.Point(249, 70);
-            this.panelDoctor.Name = "panelDoctor";
-            this.panelDoctor.Size = new System.Drawing.Size(375, 59);
-            this.panelDoctor.TabIndex = 34;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(172, 8);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Patient";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(176, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 13);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Doctor";
+            this.registrarModifyPatientButton.Location = new System.Drawing.Point(656, 111);
+            this.registrarModifyPatientButton.Name = "registrarModifyPatientButton";
+            this.registrarModifyPatientButton.Size = new System.Drawing.Size(86, 23);
+            this.registrarModifyPatientButton.TabIndex = 23;
+            this.registrarModifyPatientButton.Text = "Modify Patient";
+            this.registrarModifyPatientButton.UseVisualStyleBackColor = true;
+            this.registrarModifyPatientButton.Click += new System.EventHandler(this.registrarModifyPatientButton_Click);
             // 
             // Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 355);
+            this.Controls.Add(this.registrarModifyPatientButton);
             this.Controls.Add(this.dataGridViewRegistrar);
             this.Controls.Add(this.searchPanelRegistrar);
             this.Controls.Add(this.registrarModifyButton);
@@ -353,12 +342,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSetBindingSource1)).EndInit();
             this.searchPanelRegistrar.ResumeLayout(false);
             this.searchPanelRegistrar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegistrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
-            this.panelPatient.ResumeLayout(false);
-            this.panelPatient.PerformLayout();
             this.panelDoctor.ResumeLayout(false);
             this.panelDoctor.PerformLayout();
+            this.panelPatient.ResumeLayout(false);
+            this.panelPatient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegistrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,8 +374,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button registrarSelectDoctorButton;
-        private System.Windows.Forms.Button registrarSelectPatientButton;
         private System.Windows.Forms.TextBox registrarTextBoxDoctorLName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox registrarTextBoxPatientLName;
@@ -395,5 +382,6 @@
         private System.Windows.Forms.Panel panelPatient;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button registrarModifyPatientButton;
     }
 }
