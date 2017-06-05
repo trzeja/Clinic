@@ -86,7 +86,7 @@
             // 
             // doctorFindPatientButton
             // 
-            this.doctorFindPatientButton.Location = new System.Drawing.Point(332, 6);
+            this.doctorFindPatientButton.Location = new System.Drawing.Point(303, 6);
             this.doctorFindPatientButton.Name = "doctorFindPatientButton";
             this.doctorFindPatientButton.Size = new System.Drawing.Size(121, 23);
             this.doctorFindPatientButton.TabIndex = 8;
@@ -124,10 +124,11 @@
             // 
             // doctorDateTimePickerExecDate
             // 
-            this.doctorDateTimePickerExecDate.Enabled = false;
-            this.doctorDateTimePickerExecDate.Location = new System.Drawing.Point(260, 36);
+            this.doctorDateTimePickerExecDate.Checked = false;
+            this.doctorDateTimePickerExecDate.Location = new System.Drawing.Point(217, 36);
             this.doctorDateTimePickerExecDate.Name = "doctorDateTimePickerExecDate";
-            this.doctorDateTimePickerExecDate.Size = new System.Drawing.Size(193, 20);
+            this.doctorDateTimePickerExecDate.ShowCheckBox = true;
+            this.doctorDateTimePickerExecDate.Size = new System.Drawing.Size(236, 20);
             this.doctorDateTimePickerExecDate.TabIndex = 4;
             // 
             // dataGridView1

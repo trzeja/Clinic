@@ -70,7 +70,7 @@
             this.doctorExaminationViewExamTypeHeadingLabel.Name = "doctorExaminationViewExamTypeHeadingLabel";
             this.doctorExaminationViewExamTypeHeadingLabel.Size = new System.Drawing.Size(398, 38);
             this.doctorExaminationViewExamTypeHeadingLabel.TabIndex = 3;
-            this.doctorExaminationViewExamTypeHeadingLabel.Text = "Labolatory Examination";
+            this.doctorExaminationViewExamTypeHeadingLabel.Text = "Laboratory Examination";
             this.doctorExaminationViewExamTypeHeadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // doctorExaminationViewCommentsResultLabel
@@ -88,7 +88,7 @@
             this.doctorExaminationViewSubmitButton.Name = "doctorExaminationViewSubmitButton";
             this.doctorExaminationViewSubmitButton.Size = new System.Drawing.Size(75, 23);
             this.doctorExaminationViewSubmitButton.TabIndex = 5;
-            this.doctorExaminationViewSubmitButton.Text = "Submit";
+            this.doctorExaminationViewSubmitButton.Text = "Confirm";
             this.doctorExaminationViewSubmitButton.UseVisualStyleBackColor = true;
             this.doctorExaminationViewSubmitButton.Visible = false;
             // 
@@ -102,7 +102,7 @@
             this.doctorExaminationViewOrderButton.UseVisualStyleBackColor = true;
             this.doctorExaminationViewOrderButton.Visible = false;
             // 
-            // DoctorExaminationView
+            // DoctorExaminationViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +116,7 @@
             this.Controls.Add(this.doctorExaminationViewExamTypeComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "DoctorExaminationView";
+            this.Name = "DoctorExaminationViewForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "DoctorExaminationView";
             this.ResumeLayout(false);
@@ -144,12 +144,11 @@
             {
                 case 0:
                     {//lab exam
-                        doctorExaminationViewExamTypeHeadingLabel.Text = "Labolatory Examination";
+                        doctorExaminationViewExamTypeHeadingLabel.Text = "Laboratory Examination";
                         doctorExaminationViewCommentsResultLabel.Text = "Comments :";
                         doctorExaminationViewSubmitButton.Visible = false;
                         doctorExaminationViewOrderButton.Visible = true;
                         doctorExaminationViewExamTypeComboBox.Enabled = true;
-                        doctorExaminationViewExamTypeComboBox.Text = "";
                         doctorExaminationViewCommentsResultTextBox.ReadOnly = false;
                     }
                     break;
@@ -159,8 +158,7 @@
                         doctorExaminationViewCommentsResultLabel.Text = "Results :";
                         doctorExaminationViewSubmitButton.Visible = true;
                         doctorExaminationViewOrderButton.Visible = false;
-                        doctorExaminationViewExamTypeComboBox.Enabled = false;
-                        doctorExaminationViewExamTypeComboBox.Text = "PHYEXAM_1 - Physical Examination";
+                        doctorExaminationViewExamTypeComboBox.Enabled = true;
                         doctorExaminationViewCommentsResultTextBox.ReadOnly = false;
                     }
                     break;
@@ -171,7 +169,6 @@
                         doctorExaminationViewSubmitButton.Visible = false;
                         doctorExaminationViewOrderButton.Visible = false;
                         doctorExaminationViewExamTypeComboBox.Enabled = false;
-                        doctorExaminationViewExamTypeComboBox.Text = "PHYEXAM_1 - Physical Examination";
                         doctorExaminationViewCommentsResultTextBox.ReadOnly = true;
                     }
                     break;

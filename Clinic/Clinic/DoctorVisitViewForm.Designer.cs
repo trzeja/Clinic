@@ -31,7 +31,7 @@
             this.doctorCancelVisitButton = new System.Windows.Forms.Button();
             this.doctorFinishVisitButton = new System.Windows.Forms.Button();
             this.doctorLaboratoryExaminationButton = new System.Windows.Forms.Button();
-            this.doctorVisitPanel = new System.Windows.Forms.Panel();
+            this.doctorVisitViewVisitPanel = new System.Windows.Forms.Panel();
             this.doctorPhysicalExaminationButton = new System.Windows.Forms.Button();
             this.doctorVisitDescriptionLabel = new System.Windows.Forms.Label();
             this.doctorVisitDiagnosisLabel = new System.Windows.Forms.Label();
@@ -43,25 +43,27 @@
             this.doctorVisitPatientLastNameTextBox = new System.Windows.Forms.TextBox();
             this.doctorVisitPatientFirstNameTextBox = new System.Windows.Forms.TextBox();
             this.doctorVisitViewExaminationListPanel = new System.Windows.Forms.Panel();
+            this.doctorVisitViewLoadExamHistButton = new System.Windows.Forms.Button();
             this.doctorVisitViewExaminationListLabel = new System.Windows.Forms.Label();
             this.doctorVisitViewExamHistDetailsButton = new System.Windows.Forms.Button();
             this.doctorVisitViewExaminationListDataGrid = new System.Windows.Forms.DataGridView();
             this.doctorVisitViewVisitListPanel = new System.Windows.Forms.Panel();
+            this.doctorVisitViewLoadVisitHistButton = new System.Windows.Forms.Button();
             this.doctorVisitViewVisitListLabel = new System.Windows.Forms.Label();
             this.doctorVisitViewVisitHistDetailsButton = new System.Windows.Forms.Button();
             this.doctorVisitViewVisitListDataGrid = new System.Windows.Forms.DataGridView();
-            this.doctorVisitViewLoadExamHistButton = new System.Windows.Forms.Button();
-            this.doctorVisitViewLoadVisitHistButton = new System.Windows.Forms.Button();
-            this.doctorVisitPanel.SuspendLayout();
+            this.doctorVisitViewPatientInfoPanel = new System.Windows.Forms.Panel();
+            this.doctorVisitViewVisitPanel.SuspendLayout();
             this.doctorVisitViewExaminationListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorVisitViewExaminationListDataGrid)).BeginInit();
             this.doctorVisitViewVisitListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorVisitViewVisitListDataGrid)).BeginInit();
+            this.doctorVisitViewPatientInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // doctorCancelVisitButton
             // 
-            this.doctorCancelVisitButton.Location = new System.Drawing.Point(556, 42);
+            this.doctorCancelVisitButton.Location = new System.Drawing.Point(431, 567);
             this.doctorCancelVisitButton.Name = "doctorCancelVisitButton";
             this.doctorCancelVisitButton.Size = new System.Drawing.Size(110, 23);
             this.doctorCancelVisitButton.TabIndex = 0;
@@ -71,7 +73,7 @@
             // 
             // doctorFinishVisitButton
             // 
-            this.doctorFinishVisitButton.Location = new System.Drawing.Point(556, 9);
+            this.doctorFinishVisitButton.Location = new System.Drawing.Point(188, 567);
             this.doctorFinishVisitButton.Name = "doctorFinishVisitButton";
             this.doctorFinishVisitButton.Size = new System.Drawing.Size(110, 23);
             this.doctorFinishVisitButton.TabIndex = 1;
@@ -81,7 +83,7 @@
             // 
             // doctorLaboratoryExaminationButton
             // 
-            this.doctorLaboratoryExaminationButton.Location = new System.Drawing.Point(382, 42);
+            this.doctorLaboratoryExaminationButton.Location = new System.Drawing.Point(407, 185);
             this.doctorLaboratoryExaminationButton.Name = "doctorLaboratoryExaminationButton";
             this.doctorLaboratoryExaminationButton.Size = new System.Drawing.Size(158, 23);
             this.doctorLaboratoryExaminationButton.TabIndex = 2;
@@ -89,30 +91,23 @@
             this.doctorLaboratoryExaminationButton.UseVisualStyleBackColor = true;
             this.doctorLaboratoryExaminationButton.Click += new System.EventHandler(this.doctorOrderLaboratoryExaminationButton_Click);
             // 
-            // doctorVisitPanel
+            // doctorVisitViewVisitPanel
             // 
-            this.doctorVisitPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.doctorVisitPanel.Controls.Add(this.doctorPhysicalExaminationButton);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitDescriptionLabel);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitDiagnosisLabel);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPeselLabel);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientNameLabel);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientDiagnosisTextBox);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientDescriptionTextBox);
-            this.doctorVisitPanel.Controls.Add(this.doctorCancelVisitButton);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientPeselTextBox);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientLastNameTextBox);
-            this.doctorVisitPanel.Controls.Add(this.doctorVisitPatientFirstNameTextBox);
-            this.doctorVisitPanel.Controls.Add(this.doctorFinishVisitButton);
-            this.doctorVisitPanel.Controls.Add(this.doctorLaboratoryExaminationButton);
-            this.doctorVisitPanel.Location = new System.Drawing.Point(12, 12);
-            this.doctorVisitPanel.Name = "doctorVisitPanel";
-            this.doctorVisitPanel.Size = new System.Drawing.Size(686, 245);
-            this.doctorVisitPanel.TabIndex = 3;
+            this.doctorVisitViewVisitPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.doctorVisitViewVisitPanel.Controls.Add(this.doctorPhysicalExaminationButton);
+            this.doctorVisitViewVisitPanel.Controls.Add(this.doctorVisitDescriptionLabel);
+            this.doctorVisitViewVisitPanel.Controls.Add(this.doctorVisitDiagnosisLabel);
+            this.doctorVisitViewVisitPanel.Controls.Add(this.doctorVisitPatientDiagnosisTextBox);
+            this.doctorVisitViewVisitPanel.Controls.Add(this.doctorVisitPatientDescriptionTextBox);
+            this.doctorVisitViewVisitPanel.Controls.Add(this.doctorLaboratoryExaminationButton);
+            this.doctorVisitViewVisitPanel.Location = new System.Drawing.Point(12, 51);
+            this.doctorVisitViewVisitPanel.Name = "doctorVisitViewVisitPanel";
+            this.doctorVisitViewVisitPanel.Size = new System.Drawing.Size(686, 215);
+            this.doctorVisitViewVisitPanel.TabIndex = 3;
             // 
             // doctorPhysicalExaminationButton
             // 
-            this.doctorPhysicalExaminationButton.Location = new System.Drawing.Point(205, 42);
+            this.doctorPhysicalExaminationButton.Location = new System.Drawing.Point(164, 185);
             this.doctorPhysicalExaminationButton.Name = "doctorPhysicalExaminationButton";
             this.doctorPhysicalExaminationButton.Size = new System.Drawing.Size(158, 23);
             this.doctorPhysicalExaminationButton.TabIndex = 14;
@@ -123,7 +118,7 @@
             // doctorVisitDescriptionLabel
             // 
             this.doctorVisitDescriptionLabel.AutoSize = true;
-            this.doctorVisitDescriptionLabel.Location = new System.Drawing.Point(18, 149);
+            this.doctorVisitDescriptionLabel.Location = new System.Drawing.Point(18, 4);
             this.doctorVisitDescriptionLabel.Name = "doctorVisitDescriptionLabel";
             this.doctorVisitDescriptionLabel.Size = new System.Drawing.Size(66, 13);
             this.doctorVisitDescriptionLabel.TabIndex = 13;
@@ -132,7 +127,7 @@
             // doctorVisitDiagnosisLabel
             // 
             this.doctorVisitDiagnosisLabel.AutoSize = true;
-            this.doctorVisitDiagnosisLabel.Location = new System.Drawing.Point(18, 60);
+            this.doctorVisitDiagnosisLabel.Location = new System.Drawing.Point(18, 93);
             this.doctorVisitDiagnosisLabel.Name = "doctorVisitDiagnosisLabel";
             this.doctorVisitDiagnosisLabel.Size = new System.Drawing.Size(59, 13);
             this.doctorVisitDiagnosisLabel.TabIndex = 12;
@@ -141,7 +136,7 @@
             // doctorVisitPeselLabel
             // 
             this.doctorVisitPeselLabel.AutoSize = true;
-            this.doctorVisitPeselLabel.Location = new System.Drawing.Point(351, 14);
+            this.doctorVisitPeselLabel.Location = new System.Drawing.Point(387, 15);
             this.doctorVisitPeselLabel.Name = "doctorVisitPeselLabel";
             this.doctorVisitPeselLabel.Size = new System.Drawing.Size(83, 13);
             this.doctorVisitPeselLabel.TabIndex = 11;
@@ -150,7 +145,7 @@
             // doctorVisitPatientNameLabel
             // 
             this.doctorVisitPatientNameLabel.AutoSize = true;
-            this.doctorVisitPatientNameLabel.Location = new System.Drawing.Point(18, 14);
+            this.doctorVisitPatientNameLabel.Location = new System.Drawing.Point(19, 15);
             this.doctorVisitPatientNameLabel.Name = "doctorVisitPatientNameLabel";
             this.doctorVisitPatientNameLabel.Size = new System.Drawing.Size(75, 13);
             this.doctorVisitPatientNameLabel.TabIndex = 10;
@@ -158,7 +153,7 @@
             // 
             // doctorVisitPatientDiagnosisTextBox
             // 
-            this.doctorVisitPatientDiagnosisTextBox.Location = new System.Drawing.Point(21, 76);
+            this.doctorVisitPatientDiagnosisTextBox.Location = new System.Drawing.Point(21, 109);
             this.doctorVisitPatientDiagnosisTextBox.Multiline = true;
             this.doctorVisitPatientDiagnosisTextBox.Name = "doctorVisitPatientDiagnosisTextBox";
             this.doctorVisitPatientDiagnosisTextBox.Size = new System.Drawing.Size(645, 70);
@@ -169,7 +164,7 @@
             // 
             // doctorVisitPatientDescriptionTextBox
             // 
-            this.doctorVisitPatientDescriptionTextBox.Location = new System.Drawing.Point(21, 165);
+            this.doctorVisitPatientDescriptionTextBox.Location = new System.Drawing.Point(21, 20);
             this.doctorVisitPatientDescriptionTextBox.Multiline = true;
             this.doctorVisitPatientDescriptionTextBox.Name = "doctorVisitPatientDescriptionTextBox";
             this.doctorVisitPatientDescriptionTextBox.Size = new System.Drawing.Size(645, 70);
@@ -181,7 +176,7 @@
             // doctorVisitPatientPeselTextBox
             // 
             this.doctorVisitPatientPeselTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.doctorVisitPatientPeselTextBox.Location = new System.Drawing.Point(440, 11);
+            this.doctorVisitPatientPeselTextBox.Location = new System.Drawing.Point(476, 12);
             this.doctorVisitPatientPeselTextBox.Name = "doctorVisitPatientPeselTextBox";
             this.doctorVisitPatientPeselTextBox.ReadOnly = true;
             this.doctorVisitPatientPeselTextBox.Size = new System.Drawing.Size(100, 20);
@@ -191,17 +186,17 @@
             // doctorVisitPatientLastNameTextBox
             // 
             this.doctorVisitPatientLastNameTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.doctorVisitPatientLastNameTextBox.Location = new System.Drawing.Point(205, 12);
+            this.doctorVisitPatientLastNameTextBox.Location = new System.Drawing.Point(206, 13);
             this.doctorVisitPatientLastNameTextBox.Name = "doctorVisitPatientLastNameTextBox";
             this.doctorVisitPatientLastNameTextBox.ReadOnly = true;
-            this.doctorVisitPatientLastNameTextBox.Size = new System.Drawing.Size(140, 20);
+            this.doctorVisitPatientLastNameTextBox.Size = new System.Drawing.Size(175, 20);
             this.doctorVisitPatientLastNameTextBox.TabIndex = 4;
             this.doctorVisitPatientLastNameTextBox.Text = "patient last name";
             // 
             // doctorVisitPatientFirstNameTextBox
             // 
             this.doctorVisitPatientFirstNameTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.doctorVisitPatientFirstNameTextBox.Location = new System.Drawing.Point(99, 11);
+            this.doctorVisitPatientFirstNameTextBox.Location = new System.Drawing.Point(100, 12);
             this.doctorVisitPatientFirstNameTextBox.Name = "doctorVisitPatientFirstNameTextBox";
             this.doctorVisitPatientFirstNameTextBox.ReadOnly = true;
             this.doctorVisitPatientFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
@@ -215,10 +210,19 @@
             this.doctorVisitViewExaminationListPanel.Controls.Add(this.doctorVisitViewExaminationListLabel);
             this.doctorVisitViewExaminationListPanel.Controls.Add(this.doctorVisitViewExamHistDetailsButton);
             this.doctorVisitViewExaminationListPanel.Controls.Add(this.doctorVisitViewExaminationListDataGrid);
-            this.doctorVisitViewExaminationListPanel.Location = new System.Drawing.Point(12, 263);
+            this.doctorVisitViewExaminationListPanel.Location = new System.Drawing.Point(12, 272);
             this.doctorVisitViewExaminationListPanel.Name = "doctorVisitViewExaminationListPanel";
             this.doctorVisitViewExaminationListPanel.Size = new System.Drawing.Size(686, 142);
             this.doctorVisitViewExaminationListPanel.TabIndex = 4;
+            // 
+            // doctorVisitViewLoadExamHistButton
+            // 
+            this.doctorVisitViewLoadExamHistButton.Location = new System.Drawing.Point(510, 4);
+            this.doctorVisitViewLoadExamHistButton.Name = "doctorVisitViewLoadExamHistButton";
+            this.doctorVisitViewLoadExamHistButton.Size = new System.Drawing.Size(75, 23);
+            this.doctorVisitViewLoadExamHistButton.TabIndex = 3;
+            this.doctorVisitViewLoadExamHistButton.Text = "Load history";
+            this.doctorVisitViewLoadExamHistButton.UseVisualStyleBackColor = true;
             // 
             // doctorVisitViewExaminationListLabel
             // 
@@ -257,10 +261,19 @@
             this.doctorVisitViewVisitListPanel.Controls.Add(this.doctorVisitViewVisitListLabel);
             this.doctorVisitViewVisitListPanel.Controls.Add(this.doctorVisitViewVisitHistDetailsButton);
             this.doctorVisitViewVisitListPanel.Controls.Add(this.doctorVisitViewVisitListDataGrid);
-            this.doctorVisitViewVisitListPanel.Location = new System.Drawing.Point(12, 411);
+            this.doctorVisitViewVisitListPanel.Location = new System.Drawing.Point(12, 420);
             this.doctorVisitViewVisitListPanel.Name = "doctorVisitViewVisitListPanel";
             this.doctorVisitViewVisitListPanel.Size = new System.Drawing.Size(686, 141);
             this.doctorVisitViewVisitListPanel.TabIndex = 5;
+            // 
+            // doctorVisitViewLoadVisitHistButton
+            // 
+            this.doctorVisitViewLoadVisitHistButton.Location = new System.Drawing.Point(510, 4);
+            this.doctorVisitViewLoadVisitHistButton.Name = "doctorVisitViewLoadVisitHistButton";
+            this.doctorVisitViewLoadVisitHistButton.Size = new System.Drawing.Size(75, 23);
+            this.doctorVisitViewLoadVisitHistButton.TabIndex = 3;
+            this.doctorVisitViewLoadVisitHistButton.Text = "Load history";
+            this.doctorVisitViewLoadVisitHistButton.UseVisualStyleBackColor = true;
             // 
             // doctorVisitViewVisitListLabel
             // 
@@ -292,44 +305,44 @@
             this.doctorVisitViewVisitListDataGrid.Size = new System.Drawing.Size(672, 105);
             this.doctorVisitViewVisitListDataGrid.TabIndex = 0;
             // 
-            // doctorVisitViewLoadExamHistButton
+            // doctorVisitViewPatientInfoPanel
             // 
-            this.doctorVisitViewLoadExamHistButton.Location = new System.Drawing.Point(510, 4);
-            this.doctorVisitViewLoadExamHistButton.Name = "doctorVisitViewLoadExamHistButton";
-            this.doctorVisitViewLoadExamHistButton.Size = new System.Drawing.Size(75, 23);
-            this.doctorVisitViewLoadExamHistButton.TabIndex = 3;
-            this.doctorVisitViewLoadExamHistButton.Text = "Load history";
-            this.doctorVisitViewLoadExamHistButton.UseVisualStyleBackColor = true;
-            // 
-            // doctorVisitViewLoadVisitHistButton
-            // 
-            this.doctorVisitViewLoadVisitHistButton.Location = new System.Drawing.Point(510, 4);
-            this.doctorVisitViewLoadVisitHistButton.Name = "doctorVisitViewLoadVisitHistButton";
-            this.doctorVisitViewLoadVisitHistButton.Size = new System.Drawing.Size(75, 23);
-            this.doctorVisitViewLoadVisitHistButton.TabIndex = 3;
-            this.doctorVisitViewLoadVisitHistButton.Text = "Load history";
-            this.doctorVisitViewLoadVisitHistButton.UseVisualStyleBackColor = true;
+            this.doctorVisitViewPatientInfoPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.doctorVisitViewPatientInfoPanel.Controls.Add(this.doctorVisitPatientLastNameTextBox);
+            this.doctorVisitViewPatientInfoPanel.Controls.Add(this.doctorVisitPatientFirstNameTextBox);
+            this.doctorVisitViewPatientInfoPanel.Controls.Add(this.doctorVisitPatientPeselTextBox);
+            this.doctorVisitViewPatientInfoPanel.Controls.Add(this.doctorVisitPeselLabel);
+            this.doctorVisitViewPatientInfoPanel.Controls.Add(this.doctorVisitPatientNameLabel);
+            this.doctorVisitViewPatientInfoPanel.Location = new System.Drawing.Point(12, 3);
+            this.doctorVisitViewPatientInfoPanel.Name = "doctorVisitViewPatientInfoPanel";
+            this.doctorVisitViewPatientInfoPanel.Size = new System.Drawing.Size(686, 42);
+            this.doctorVisitViewPatientInfoPanel.TabIndex = 6;
             // 
             // DoctorVisitViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 564);
+            this.ClientSize = new System.Drawing.Size(714, 596);
+            this.Controls.Add(this.doctorVisitViewPatientInfoPanel);
             this.Controls.Add(this.doctorVisitViewVisitListPanel);
             this.Controls.Add(this.doctorVisitViewExaminationListPanel);
-            this.Controls.Add(this.doctorVisitPanel);
+            this.Controls.Add(this.doctorVisitViewVisitPanel);
+            this.Controls.Add(this.doctorFinishVisitButton);
+            this.Controls.Add(this.doctorCancelVisitButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DoctorVisitViewForm";
             this.Text = "DoctorVisitView";
-            this.doctorVisitPanel.ResumeLayout(false);
-            this.doctorVisitPanel.PerformLayout();
+            this.doctorVisitViewVisitPanel.ResumeLayout(false);
+            this.doctorVisitViewVisitPanel.PerformLayout();
             this.doctorVisitViewExaminationListPanel.ResumeLayout(false);
             this.doctorVisitViewExaminationListPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorVisitViewExaminationListDataGrid)).EndInit();
             this.doctorVisitViewVisitListPanel.ResumeLayout(false);
             this.doctorVisitViewVisitListPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorVisitViewVisitListDataGrid)).EndInit();
+            this.doctorVisitViewPatientInfoPanel.ResumeLayout(false);
+            this.doctorVisitViewPatientInfoPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -339,7 +352,7 @@
         private System.Windows.Forms.Button doctorCancelVisitButton;
         private System.Windows.Forms.Button doctorFinishVisitButton;
         private System.Windows.Forms.Button doctorLaboratoryExaminationButton;
-        private System.Windows.Forms.Panel doctorVisitPanel;
+        private System.Windows.Forms.Panel doctorVisitViewVisitPanel;
         private System.Windows.Forms.TextBox doctorVisitPatientLastNameTextBox;
         private System.Windows.Forms.TextBox doctorVisitPatientFirstNameTextBox;
         private System.Windows.Forms.TextBox doctorVisitPatientPeselTextBox;
@@ -360,5 +373,6 @@
         private System.Windows.Forms.Button doctorPhysicalExaminationButton;
         private System.Windows.Forms.Button doctorVisitViewLoadExamHistButton;
         private System.Windows.Forms.Button doctorVisitViewLoadVisitHistButton;
+        private System.Windows.Forms.Panel doctorVisitViewPatientInfoPanel;
     }
 }

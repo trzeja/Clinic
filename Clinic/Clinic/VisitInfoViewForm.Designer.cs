@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.VisitViewDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.VisitViewDescriptionLabel = new System.Windows.Forms.Label();
             this.VisitViewDiagnosisTextBox = new System.Windows.Forms.TextBox();
             this.VisitViewDiagnosisLabel = new System.Windows.Forms.Label();
             this.VisitViewExecCancelDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -45,8 +47,6 @@
             this.VisitViewPatientLastNameTextBox = new System.Windows.Forms.TextBox();
             this.VisitViewPatientFirstNameTextBox = new System.Windows.Forms.TextBox();
             this.VisitViewPatientNameLabel = new System.Windows.Forms.Label();
-            this.VisitViewDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.VisitViewDescriptionLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,9 +76,27 @@
             this.panel1.Size = new System.Drawing.Size(588, 282);
             this.panel1.TabIndex = 0;
             // 
+            // VisitViewDescriptionTextBox
+            // 
+            this.VisitViewDescriptionTextBox.Location = new System.Drawing.Point(84, 82);
+            this.VisitViewDescriptionTextBox.Multiline = true;
+            this.VisitViewDescriptionTextBox.Name = "VisitViewDescriptionTextBox";
+            this.VisitViewDescriptionTextBox.ReadOnly = true;
+            this.VisitViewDescriptionTextBox.Size = new System.Drawing.Size(493, 90);
+            this.VisitViewDescriptionTextBox.TabIndex = 17;
+            // 
+            // VisitViewDescriptionLabel
+            // 
+            this.VisitViewDescriptionLabel.AutoSize = true;
+            this.VisitViewDescriptionLabel.Location = new System.Drawing.Point(3, 82);
+            this.VisitViewDescriptionLabel.Name = "VisitViewDescriptionLabel";
+            this.VisitViewDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.VisitViewDescriptionLabel.TabIndex = 16;
+            this.VisitViewDescriptionLabel.Text = "Desription :";
+            // 
             // VisitViewDiagnosisTextBox
             // 
-            this.VisitViewDiagnosisTextBox.Location = new System.Drawing.Point(84, 85);
+            this.VisitViewDiagnosisTextBox.Location = new System.Drawing.Point(84, 178);
             this.VisitViewDiagnosisTextBox.Multiline = true;
             this.VisitViewDiagnosisTextBox.Name = "VisitViewDiagnosisTextBox";
             this.VisitViewDiagnosisTextBox.ReadOnly = true;
@@ -88,7 +106,7 @@
             // VisitViewDiagnosisLabel
             // 
             this.VisitViewDiagnosisLabel.AutoSize = true;
-            this.VisitViewDiagnosisLabel.Location = new System.Drawing.Point(3, 85);
+            this.VisitViewDiagnosisLabel.Location = new System.Drawing.Point(3, 178);
             this.VisitViewDiagnosisLabel.Name = "VisitViewDiagnosisLabel";
             this.VisitViewDiagnosisLabel.Size = new System.Drawing.Size(59, 13);
             this.VisitViewDiagnosisLabel.TabIndex = 14;
@@ -219,25 +237,7 @@
             this.VisitViewPatientNameLabel.TabIndex = 0;
             this.VisitViewPatientNameLabel.Text = "Patient name :";
             // 
-            // VisitViewDescriptionTextBox
-            // 
-            this.VisitViewDescriptionTextBox.Location = new System.Drawing.Point(84, 181);
-            this.VisitViewDescriptionTextBox.Multiline = true;
-            this.VisitViewDescriptionTextBox.Name = "VisitViewDescriptionTextBox";
-            this.VisitViewDescriptionTextBox.ReadOnly = true;
-            this.VisitViewDescriptionTextBox.Size = new System.Drawing.Size(493, 90);
-            this.VisitViewDescriptionTextBox.TabIndex = 17;
-            // 
-            // VisitViewDescriptionLabel
-            // 
-            this.VisitViewDescriptionLabel.AutoSize = true;
-            this.VisitViewDescriptionLabel.Location = new System.Drawing.Point(3, 181);
-            this.VisitViewDescriptionLabel.Name = "VisitViewDescriptionLabel";
-            this.VisitViewDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.VisitViewDescriptionLabel.TabIndex = 16;
-            this.VisitViewDescriptionLabel.Text = "Desription :";
-            // 
-            // VisitView
+            // VisitInfoViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,7 +245,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "VisitView";
+            this.Name = "VisitInfoViewForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Visit Information";
             this.panel1.ResumeLayout(false);
