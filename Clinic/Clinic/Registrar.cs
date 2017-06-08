@@ -54,7 +54,7 @@ namespace Clinic
 
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
-          
+            
         }
 
         private void registrarSelectDoctorButton_Click(object sender, EventArgs e)

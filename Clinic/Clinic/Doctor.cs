@@ -26,7 +26,8 @@ namespace Clinic
 
         private void doctorSearchButton_Click(object sender, EventArgs e)
         {
-           // this.Controls.Add(this.dataGridViewDoctor)
+            // this.Controls.Add(this.dataGridViewDoctor)
+
         }
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)

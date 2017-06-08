@@ -68,6 +68,7 @@
             this.registrarSearchButton.TabIndex = 25;
             this.registrarSearchButton.Text = "Search";
             this.registrarSearchButton.UseVisualStyleBackColor = true;
+            this.registrarSearchButton.Click += new System.EventHandler(this.registrarSearchButton_Click);
             // 
             // registrarSelectButton
             // 

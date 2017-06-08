@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BizzLayer;
+using DataLayer;
 namespace Clinic
 {
     public partial class SelectPersonForm : Form
@@ -110,6 +111,18 @@ namespace Clinic
         private void registrarSelectButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void registrarSearchButton_Click(object sender, EventArgs e)
+        {
+            Patient patientSearchCriteria;
+            patientSearchCriteria = new Patient();
+            patientSearchCriteria.lname = lnameTextbox.Text;
+
+            // ładowanie obiektu dataGridView
+            dataGridView1.Columns.Clear();
+            // dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = RegistrationFacade.GetPatients(patientSearchCriteria);
         }
     }
 }
