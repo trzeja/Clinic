@@ -15,16 +15,25 @@ namespace Clinic
         public Form1()
         {
             InitializeComponent();
-            Registrar registrarForm = new Registrar();
-            registrarForm.Show();
+            
             Admin adminForm = new Admin();
             adminForm.Show();
-            Laboratory_worker laboratory_worker = new Laboratory_worker();
-            laboratory_worker.Show();
-            Laboratory_manager laboratory_manager = new Laboratory_manager();
-            laboratory_manager.Show();
-            Doctor doctor = new Doctor();
-            doctor.Show();
+
+            //Registrar registrarForm = new Registrar();
+            //registrarForm.Show();
+            //Doctor doctor = new Doctor();
+            //doctor.Show();
+            //Laboratory_worker laboratory_worker = new Laboratory_worker();
+            //laboratory_worker.Show();
+            //Laboratory_manager laboratory_manager = new Laboratory_manager();
+            //laboratory_manager.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // skrót hasła i pozostała magia
+            loginUsernameTextBox.Text = loginPasswordTextBox.Text;
         }
     }
 }
