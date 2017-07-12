@@ -29,9 +29,7 @@ namespace Clinic
             laboratory_manager = new Laboratory_manager();
             doctor = new Doctor();
             // loginUsernameTextBox.Text = MD5Hash(loginPasswordTextBox.Text);// to tylko przykład/do testowania
-
         }
-
 
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -39,10 +37,10 @@ namespace Clinic
             User userSearchCriteria = new User();
             userSearchCriteria.user_name = loginTextBox.Text;
             IQueryable<User> resultRecords = UserFacade.GetUser(userSearchCriteria);
-           
-            //próba dobicie sie do stringa z haslem
-           string  passwordLogin = MD5Hash(passwordTextBox.Text);
-           var passwordSQL = resultRecords.FirstOrDefault().password;
+
+            //próba dobicia sie do stringa z haslem
+            string passwordLogin = MD5Hash(passwordTextBox.Text);
+            var passwordSQL = resultRecords.FirstOrDefault().password;
             if (object.Equals(passwordSQL, passwordLogin))
             {
 
