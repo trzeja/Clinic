@@ -47,6 +47,7 @@ namespace Clinic
                 if (resultRecords.Where(a => a.roles == "DOC").Any())
                 {
                     doctor.Show();
+                   
                 }
                 else if (resultRecords.Where(a => a.roles == "REG").Any())
                 {
