@@ -43,7 +43,6 @@ namespace Clinic
             var passwordSQL = resultRecords.FirstOrDefault().password;
             if (object.Equals(passwordSQL, passwordLogin))
             {
-
                 if (resultRecords.Where(a => a.roles == "DOC").Any())
                 {
                     doctor.Show();
