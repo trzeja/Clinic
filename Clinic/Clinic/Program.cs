@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BizzLayer;
 
 namespace Clinic
 {
@@ -14,6 +15,9 @@ namespace Clinic
         [STAThread]
         static void Main()
         {
+
+            Seed s = new Seed();
+            s.SeedDatabse();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
