@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.registrarSearchButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.registrarStateComboBox = new System.Windows.Forms.ComboBox();
             this.visitTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.VisitTableAdapter();
             this.dataGridViewRegistrar = new System.Windows.Forms.DataGridView();
             this.clinicDataSet11 = new Clinic.clinicDataSet1();
@@ -139,7 +139,7 @@
             // 
             // registrarTextBoxPatientFName
             // 
-            this.registrarTextBoxPatientFName.Location = new System.Drawing.Point(68, 32);
+            this.registrarTextBoxPatientFName.Location = new System.Drawing.Point(74, 32);
             this.registrarTextBoxPatientFName.Name = "registrarTextBoxPatientFName";
             this.registrarTextBoxPatientFName.Size = new System.Drawing.Size(100, 20);
             this.registrarTextBoxPatientFName.TabIndex = 19;
@@ -160,7 +160,7 @@
             this.searchPanelRegistrar.Controls.Add(this.panelPatient);
             this.searchPanelRegistrar.Controls.Add(this.registrarSearchButton);
             this.searchPanelRegistrar.Controls.Add(this.label4);
-            this.searchPanelRegistrar.Controls.Add(this.comboBox1);
+            this.searchPanelRegistrar.Controls.Add(this.registrarStateComboBox);
             this.searchPanelRegistrar.Controls.Add(this.label1);
             this.searchPanelRegistrar.Controls.Add(this.dataTimePickerRegDate);
             this.searchPanelRegistrar.Location = new System.Drawing.Point(6, 5);
@@ -201,7 +201,7 @@
             // 
             // registrarTextBoxDoctorLName
             // 
-            this.registrarTextBoxDoctorLName.Location = new System.Drawing.Point(253, 32);
+            this.registrarTextBoxDoctorLName.Location = new System.Drawing.Point(251, 32);
             this.registrarTextBoxDoctorLName.Name = "registrarTextBoxDoctorLName";
             this.registrarTextBoxDoctorLName.Size = new System.Drawing.Size(100, 20);
             this.registrarTextBoxDoctorLName.TabIndex = 29;
@@ -282,18 +282,18 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "State";
             // 
-            // comboBox1
+            // registrarStateComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.registrarStateComboBox.FormattingEnabled = true;
+            this.registrarStateComboBox.Items.AddRange(new object[] {
             "",
             "DONE",
             "CANCELED",
             "REGISTERED"});
-            this.comboBox1.Location = new System.Drawing.Point(96, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 21);
-            this.comboBox1.TabIndex = 25;
+            this.registrarStateComboBox.Location = new System.Drawing.Point(96, 49);
+            this.registrarStateComboBox.Name = "registrarStateComboBox";
+            this.registrarStateComboBox.Size = new System.Drawing.Size(147, 21);
+            this.registrarStateComboBox.TabIndex = 25;
             // 
             // visitTableAdapter1
             // 
@@ -301,6 +301,8 @@
             // 
             // dataGridViewRegistrar
             // 
+            this.dataGridViewRegistrar.AllowUserToAddRows = false;
+            this.dataGridViewRegistrar.AllowUserToDeleteRows = false;
             this.dataGridViewRegistrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRegistrar.Location = new System.Drawing.Point(4, 203);
             this.dataGridViewRegistrar.Name = "dataGridViewRegistrar";
@@ -332,6 +334,7 @@
             this.Controls.Add(this.searchPanelRegistrar);
             this.Controls.Add(this.registrarModifyButton);
             this.Controls.Add(this.resgistrarAddVisitButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Registrar";
             this.Text = "Registrar";
             this.Load += new System.EventHandler(this.Registrar_Load);
@@ -371,7 +374,7 @@
         private System.Windows.Forms.DataGridView dataGridViewRegistrar;
         private clinicDataSet1 clinicDataSet11;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox registrarStateComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox registrarTextBoxDoctorLName;

@@ -22,7 +22,7 @@ namespace BizzLayer
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Clinic")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="clinic")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -63,21 +63,15 @@ namespace BizzLayer
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
-    #endregion
-		
-		public DataClasses1DataContext() : 
-				base(global::BizzLayer.Properties.Settings.Default.ClinicConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public DataClasses1DataContext(string connection) : 
-				base(connection, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
+        #endregion
+
+        public DataClasses1DataContext() :
+                base(global::BizzLayer.Properties.Settings.Default.ClinicConnectionString, mappingSource)
+        {
+            OnCreated();
+        }
+
+        public DataClasses1DataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -180,6 +174,14 @@ namespace BizzLayer
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<registrarVisitView> registrarVisitViews
+		{
+			get
+			{
+				return this.GetTable<registrarVisitView>();
 			}
 		}
 	}
@@ -2793,6 +2795,159 @@ namespace BizzLayer
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.registrarVisitView")]
+	public partial class registrarVisitView
+	{
+		
+		private int _id_visit;
+		
+		private string _patientFname;
+		
+		private string _patientLname;
+		
+		private string _doctorFname;
+		
+		private string _doctorLname;
+		
+		private string _state;
+		
+		private System.DateTime _registration_date;
+		
+		private System.Nullable<System.DateTime> _execution_cancel_datetime;
+		
+		public registrarVisitView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_visit", DbType="Int NOT NULL")]
+		public int id_visit
+		{
+			get
+			{
+				return this._id_visit;
+			}
+			set
+			{
+				if ((this._id_visit != value))
+				{
+					this._id_visit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientFname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string patientFname
+		{
+			get
+			{
+				return this._patientFname;
+			}
+			set
+			{
+				if ((this._patientFname != value))
+				{
+					this._patientFname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientLname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string patientLname
+		{
+			get
+			{
+				return this._patientLname;
+			}
+			set
+			{
+				if ((this._patientLname != value))
+				{
+					this._patientLname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_doctorFname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string doctorFname
+		{
+			get
+			{
+				return this._doctorFname;
+			}
+			set
+			{
+				if ((this._doctorFname != value))
+				{
+					this._doctorFname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_doctorLname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string doctorLname
+		{
+			get
+			{
+				return this._doctorLname;
+			}
+			set
+			{
+				if ((this._doctorLname != value))
+				{
+					this._doctorLname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_state", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string state
+		{
+			get
+			{
+				return this._state;
+			}
+			set
+			{
+				if ((this._state != value))
+				{
+					this._state = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_registration_date", DbType="DateTime NOT NULL")]
+		public System.DateTime registration_date
+		{
+			get
+			{
+				return this._registration_date;
+			}
+			set
+			{
+				if ((this._registration_date != value))
+				{
+					this._registration_date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_execution_cancel_datetime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> execution_cancel_datetime
+		{
+			get
+			{
+				return this._execution_cancel_datetime;
+			}
+			set
+			{
+				if ((this._execution_cancel_datetime != value))
+				{
+					this._execution_cancel_datetime = value;
+				}
+			}
 		}
 	}
 }
