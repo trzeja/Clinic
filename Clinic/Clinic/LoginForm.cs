@@ -39,6 +39,7 @@ namespace Clinic
             IQueryable<User> resultRecords = UserFacade.GetUser(userSearchCriteria);
 
             //próba dobicia sie do stringa z haslem
+
             string passwordLogin = MD5Hash(passwordTextBox.Text);
             var passwordSQL = resultRecords.FirstOrDefault().password;
             if (object.Equals(passwordSQL, passwordLogin))

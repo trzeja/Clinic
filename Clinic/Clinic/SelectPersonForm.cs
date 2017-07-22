@@ -43,7 +43,9 @@ namespace Clinic
             }
             else
             {
-                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm");
+                var patient = (Patient)dataGridView1.CurrentRow.DataBoundItem;
+                
+                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", patient);
                 registrarAddPatientForm.ShowDialog(this);
             }
         }
@@ -117,7 +119,8 @@ namespace Clinic
         {
             Patient patientSearchCriteria;
             patientSearchCriteria = new Patient();
-            patientSearchCriteria.lname = lnameTextbox.Text;
+            patientSearchCriteria.lname = "Kowalski";
+            //patientSearchCriteria.lname = lnameTextbox.Text;
 
             // ładowanie obiektu dataGridView
             dataGridView1.Columns.Clear();
