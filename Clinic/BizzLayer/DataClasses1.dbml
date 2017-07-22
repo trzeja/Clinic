@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Clinic" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=Clinic;Integrated Security=True" SettingsObjectName="BizzLayer.Properties.Settings" SettingsPropertyName="ClinicConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="clinic" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Table Name="dbo.Address" Member="Addresses">
     <Type Name="Address">
       <Column Name="id_patient" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -121,6 +120,18 @@
       <Association Name="User_Laboratory_manager" Member="Laboratory_managers" ThisKey="user_name" OtherKey="user_name" Type="Laboratory_manager" />
       <Association Name="User_Laboratory_worker" Member="Laboratory_workers" ThisKey="user_name" OtherKey="user_name" Type="Laboratory_worker" />
       <Association Name="User_Registration" Member="Registrations" ThisKey="user_name" OtherKey="user_name" Type="Registration" />
+    </Type>
+  </Table>
+  <Table Name="dbo.registrarVisitView" Member="registrarVisitViews">
+    <Type Name="registrarVisitView">
+      <Column Name="id_visit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="patientFname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="patientLname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="doctorFname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="doctorLname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="registration_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="execution_cancel_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

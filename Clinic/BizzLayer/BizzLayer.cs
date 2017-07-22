@@ -22,6 +22,27 @@ namespace BizzLayer
                       select el;
             return res;
         }
+
+        public static IQueryable<registrarVisitView> GetVisits(registrarVisitView searchCrit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from el in dc.registrarVisitViews
+                      where
+                      (String.IsNullOrEmpty(searchCrit.doctorFname) || el.doctorFname.StartsWith(searchCrit.doctorFname))
+                      &&
+                      (String.IsNullOrEmpty(searchCrit.doctorLname) || el.doctorLname.StartsWith(searchCrit.doctorLname))
+                      &&
+                      (String.IsNullOrEmpty(searchCrit.patientFname) || el.patientFname.StartsWith(searchCrit.patientFname))
+                      &&
+                      (String.IsNullOrEmpty(searchCrit.patientFname) || el.patientFname.StartsWith(searchCrit.patientFname))
+                      &&
+                      (String.IsNullOrEmpty(searchCrit.state) || el.state.StartsWith(searchCrit.state))
+                      &&
+                      ((searchCrit.registration_date.CompareTo(DateTime.MinValue) == 0) || (el.registration_date.Year == searchCrit.registration_date.Year) && (el.registration_date.Month == searchCrit.registration_date.Month) && (el.registration_date.Day == searchCrit.registration_date.Day))
+                      // && inne ...
+                      select el;
+            return res;
+        }
     }
 
     static public class UserFacade
@@ -44,7 +65,20 @@ namespace BizzLayer
 
     public class Seed
     {
+        public string MD5Hash(string input)
+        {
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = md5.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
 
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));//X2 = upper-case, x2 = lower-case
+            }
+
+            return sb.ToString();
+        }
         public void SeedDatabse()
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
@@ -104,6 +138,7 @@ namespace BizzLayer
             Doctor d = new Doctor();
             d.id_doc = 1;
             d.user_name = "doc";
+            d.medical_right_no = "qw3rtyu10p";
 
             if (!dc.Doctors.Contains(d))
                 dc.Doctors.InsertOnSubmit(d);
@@ -117,24 +152,52 @@ namespace BizzLayer
             if (!dc.Patients.Contains(p))
                 dc.Patients.InsertOnSubmit(p);
 
+            Registration r = new Registration();
+            r.id_registration = 1;
+            r.user_name = "reg";
 
+            if (!dc.Registrations.Contains(r))
+                dc.Registrations.InsertOnSubmit(r);
+
+            Visit v1 = new Visit();
+            v1.id_visit = 2;
+            v1.id_registration = 1;
+            v1.id_patient = 1;
+            v1.id_doctor = 1;
+            v1.description = "qwer";
+            v1.diagnosis = "asdf";
+            v1.state = "REGISTERED";
+            v1.registration_date = new DateTime(2017, 07, 20);
+
+            Visit v2 = new Visit();
+            v2.id_visit = 3;
+            v2.id_registration = 1;
+            v2.id_patient = 1;
+            v2.id_doctor = 1;
+            v2.description = "qwer";
+            v2.diagnosis = "asdf";
+            v2.state = "CANCELED";
+            v2.registration_date = new DateTime(2017, 07, 5);
+            v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
+
+            Visit v3 = new Visit();
+            v3.id_visit = 4;
+            v3.id_registration = 1;
+            v3.id_patient = 1;
+            v3.id_doctor = 1;
+            v3.description = "qwer";
+            v3.diagnosis = "asdf";
+            v3.state = "DONE";
+            v3.registration_date = new DateTime(2017, 07, 15);
+
+            if (!dc.Visits.Contains(v1))
+                dc.Visits.InsertOnSubmit(v1);
+            if (!dc.Visits.Contains(v2))
+                dc.Visits.InsertOnSubmit(v2);
+            if (!dc.Visits.Contains(v3))
+                dc.Visits.InsertOnSubmit(v3);
 
             dc.SubmitChanges();
-        }
-
-        private string MD5Hash(string input)
-        {
-            MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
-            byte[] hash = md5.ComputeHash(inputBytes);
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("X2"));//X2 = upper-case, x2 = lower-case
-            }
-
-            return sb.ToString();
         }
     }
 }

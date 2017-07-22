@@ -29,6 +29,7 @@ namespace Clinic
             laboratory_manager = new Laboratory_manager();
             doctor = new Doctor();
             // loginUsernameTextBox.Text = MD5Hash(loginPasswordTextBox.Text);// to tylko przykład/do testowania
+            //registrarForm.Show();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -39,30 +40,27 @@ namespace Clinic
             IQueryable<User> resultRecords = UserFacade.GetUser(userSearchCriteria);
 
             //próba dobicia sie do stringa z haslem
-
-            string passwordLogin = MD5Hash(passwordTextBox.Text);
+            Seed s = new Seed();
+            string passwordLogin = s.MD5Hash(passwordTextBox.Text);
             var passwordSQL = resultRecords.FirstOrDefault().password;
             if (object.Equals(passwordSQL, passwordLogin))
             {
                 if (resultRecords.Where(a => a.roles == "DOC").Any())
                 {
-                    doctor.Show();
-                   
+                    doctor.Show();                   
                 }
                 else if (resultRecords.Where(a => a.roles == "REG").Any())
                 {
-                    registrarForm.Show(); ;
+                    registrarForm.Show();
                 }
                 else if (resultRecords.Where(a => a.roles == "LABM").Any())
                 {
-                    laboratory_manager.Show(); ;
+                    laboratory_manager.Show();
                 }
-
                 else if (resultRecords.Where(a => a.roles == "LABW").Any())
                 {
-                    laboratory_worker.Show(); ;
+                    laboratory_worker.Show();
                 }
-
                 else if (resultRecords.Where(a => a.roles == "ADM").Any())
                 {
                     adminForm.Show();
@@ -74,19 +72,19 @@ namespace Clinic
 
 
         //hashowanie
-        public string MD5Hash(string input)
-        {
-            MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
-            byte[] hash = md5.ComputeHash(inputBytes);
-            StringBuilder sb = new StringBuilder();
+        //public string MD5Hash(string input)
+        //{
+        //    MD5 md5 = System.Security.Cryptography.MD5.Create();
+        //    byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+        //    byte[] hash = md5.ComputeHash(inputBytes);
+        //    StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("X2"));//X2 = upper-case, x2 = lower-case
-            }
+        //    for (int i = 0; i < hash.Length; i++)
+        //    {
+        //        sb.Append(hash[i].ToString("X2"));//X2 = upper-case, x2 = lower-case
+        //    }
 
-            return sb.ToString();
-        }
+        //    return sb.ToString();
+        //}
     }
 }
