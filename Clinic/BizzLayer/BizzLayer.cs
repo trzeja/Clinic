@@ -12,14 +12,22 @@ namespace BizzLayer
     {
         public static IQueryable<Patient> GetPatients(Patient searchCrit)
         {
+            //DataClasses1DataContext dc = new DataClasses1DataContext();
+            //var res = from el in dc.Patients
+            //          where
+            //          (String.IsNullOrEmpty(searchCrit.lname) || el.lname.StartsWith(searchCrit.lname))
+            //          &&
+            //          ((searchCrit.id_patient == 0) || el.id_patient == searchCrit.id_patient)
+            //          // && inne ...
+            //          select el;
+
             DataClasses1DataContext dc = new DataClasses1DataContext();
-            var res = from el in dc.Patients
+            var res = from patients in dc.Patients
+                      join adresses in dc.Addresses on patients.id_patient equals adresses.id_patient
                       where
-                      (String.IsNullOrEmpty(searchCrit.lname) || el.lname.StartsWith(searchCrit.lname))
-                      &&
-                      ((searchCrit.id_patient == 0) || el.id_patient == searchCrit.id_patient)
-                      // && inne ...
-                      select el;
+                      (String.IsNullOrEmpty(searchCrit.lname) || patients.lname.StartsWith(searchCrit.lname))
+
+                      select patients;
             return res;
         }
 

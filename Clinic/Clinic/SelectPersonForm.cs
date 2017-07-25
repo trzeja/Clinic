@@ -26,7 +26,7 @@ namespace Clinic
             this.registrarModifyButton.Enabled = modifyTrueAddFalse;
             this.modifyTrueAddFalse = modifyTrueAddFalse;
             this.registrarModifyButton.Text = buttonName;
-            
+
             if (modifyTrueAddFalse == true)
             {
                 this.registrarSelectButton.Text = "Confirm";
@@ -38,13 +38,34 @@ namespace Clinic
         {
             if (modifyTrueAddFalse == false)
             {
-                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Add Patient","Add");
+
+                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Add Patient", "Add");
                 registrarAddPatientForm.ShowDialog(this);
             }
             else
             {
-                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm");
-                registrarAddPatientForm.ShowDialog(this);
+                try
+                {
+
+                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                    var dataFromGrid = new List<string>();
+
+
+                    for (int col = 1; col < dataGridView1.Rows[rowIndex].Cells.Count; col++)
+                    {
+
+                        dataFromGrid.Add(dataGridView1.Rows[rowIndex].Cells[col].Value.ToString());
+
+                    }
+                    //temporary values
+                    RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[0], dataFromGrid[1], dataFromGrid[2], dataFromGrid[0], dataFromGrid[0], dataFromGrid[0]);
+                    registrarAddPatientForm.ShowDialog(this);
+                }
+                catch
+                {
+                    MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
+                }
+
             }
         }
 
@@ -110,7 +131,13 @@ namespace Clinic
 
         private void registrarSelectButton_Click(object sender, EventArgs e)
         {
+
             this.Close();
+
+
+
+
+
         }
 
         private void registrarSearchButton_Click(object sender, EventArgs e)

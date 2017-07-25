@@ -26,7 +26,7 @@ namespace Clinic.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=clinic;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhostInitial Catalog=clinic;Integrated Security=True")]
         public string clinicConnectionString {
             get {
                 return ((string)(this["clinicConnectionString"]));
@@ -36,8 +36,8 @@ namespace Clinic.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=clinic;Integrated Security=True;Encryp" +
-            "t=False;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhostInitial Catalog=clinic;Integrated Security=True;Encrypt=Fals" +
+            "e;TrustServerCertificate=True")]
         public string clinicConnectionString1 {
             get {
                 return ((string)(this["clinicConnectionString1"]));

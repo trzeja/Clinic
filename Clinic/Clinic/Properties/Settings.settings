@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE SettingsFile [
   <!-- .... ..................................................................TUTAJ PODMIENIAMY........................................................................................-->
-  <!ENTITY dataSource "localhost">
+  <!ENTITY dataSource "DESKTOP-COGSOBV">
   <!-- .... ..................................................................TUTAJ PODMIENIAMY........................................................................................-->
 ]>
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Clinic.Properties" GeneratedClassName="Settings">

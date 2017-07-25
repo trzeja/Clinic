@@ -24,10 +24,8 @@ namespace Clinic
         {
             InitializeComponent();
             registrarForm = new Registrar();
-            adminForm = new Admin();
-            laboratory_worker = new Laboratory_worker();
-            laboratory_manager = new Laboratory_manager();
-            doctor = new Doctor();
+            registrarForm.Show();
+
             // loginUsernameTextBox.Text = MD5Hash(loginPasswordTextBox.Text);// to tylko przykład/do testowania
             //registrarForm.Show();
         }
@@ -47,22 +45,29 @@ namespace Clinic
             {
                 if (resultRecords.Where(a => a.roles == "DOC").Any())
                 {
+                    doctor = new Doctor();
                     doctor.Show();                   
                 }
                 else if (resultRecords.Where(a => a.roles == "REG").Any())
                 {
+                    registrarForm = new Registrar();
                     registrarForm.Show();
                 }
                 else if (resultRecords.Where(a => a.roles == "LABM").Any())
                 {
+
+                    laboratory_manager = new Laboratory_manager();
                     laboratory_manager.Show();
                 }
                 else if (resultRecords.Where(a => a.roles == "LABW").Any())
                 {
+
+                    laboratory_worker = new Laboratory_worker();
                     laboratory_worker.Show();
                 }
                 else if (resultRecords.Where(a => a.roles == "ADM").Any())
                 {
+                    adminForm = new Admin();
                     adminForm.Show();
                 }
             }

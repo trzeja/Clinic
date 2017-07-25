@@ -18,7 +18,7 @@ namespace Clinic
         {
             InitializeComponent();
             Initialize();
-
+            
 
         }
 
@@ -55,8 +55,8 @@ namespace Clinic
 
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
-
-
+            this.Height = 600;
+            this.dataGridViewRegistrar.Size = new System.Drawing.Size(733, 300);
             //Patient patientSearchCriteria;
             //patientSearchCriteria = new Patient();
             //patientSearchCriteria.fname = registrarTextBoxPatientFName.Text;
@@ -106,6 +106,8 @@ namespace Clinic
             visitSearchCriteria.state = registrarStateComboBox.Text;
             if (dataTimePickerRegDate.Checked) visitSearchCriteria.registration_date = dataTimePickerRegDate.Value;
             else visitSearchCriteria.registration_date = DateTime.MinValue;
+
+            IQueryable<registrarVisitView> visits= RegistrationFacade.GetVisits(visitSearchCriteria);
             dataGridViewRegistrar.DataSource = RegistrationFacade.GetVisits(visitSearchCriteria);
             dataGridViewRegistrar.Columns[0].Visible = false;
             dataGridViewRegistrar.Columns[1].HeaderText = "Patient first name";
@@ -124,6 +126,7 @@ namespace Clinic
             registrarmodifyVisit.ShowDialog(this);
 
         }
+       
 
         private void registrarSelectPatientButton_Click(object sender, EventArgs e)
         {
