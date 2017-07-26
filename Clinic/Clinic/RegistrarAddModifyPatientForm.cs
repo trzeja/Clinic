@@ -17,12 +17,24 @@ namespace Clinic
             InitializeComponent();
             InitializeTextBoxes();
         }
-        public RegistrarAddModifyPatientForm(string windowName, string buttonName)
+
+
+        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string pesel = null, string fname = null, string lname = null, string place = null, string street = null, string zipcode = null)
         {
             InitializeComponent();
             InitializeTextBoxes();
             this.registrarAddPatientButtonApprove.Text = buttonName;
             this.Text = windowName;
+            if (pesel != null)
+            {
+                this.peselBox.Text = pesel;
+                this.fnameBox.Text = fname;
+                this.lnameBox.Text = lname;
+                this.placeBox.Text = place;
+                this.streetBox.Text = street;
+                this.zipCodeBox.Text = zipcode;
+
+            }
         }
 
         private void registrarAddPatientButtonCancel_Click(object sender, EventArgs e)
@@ -34,7 +46,7 @@ namespace Clinic
 
         private void InitializeTextBoxes()
         {
-      
+
 
         }
 
