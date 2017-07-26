@@ -44,28 +44,8 @@ namespace Clinic
             }
             else
             {
-                try
-                {
-
-                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                    var dataFromGrid = new List<string>();
-
-
-                    for (int col = 1; col < dataGridView1.Rows[rowIndex].Cells.Count; col++)
-                    {
-
-                        dataFromGrid.Add(dataGridView1.Rows[rowIndex].Cells[col].Value.ToString());
-
-                    }
-                    //temporary values
-                    RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[0], dataFromGrid[1], dataFromGrid[2], dataFromGrid[0], dataFromGrid[0], dataFromGrid[0]);
-                    registrarAddPatientForm.ShowDialog(this);
-                }
-                catch
-                {
-                    MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
-                }
-
+                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm");
+                registrarAddPatientForm.ShowDialog(this);
             }
         }
 
@@ -144,7 +124,8 @@ namespace Clinic
         {
             Patient patientSearchCriteria;
             patientSearchCriteria = new Patient();
-            patientSearchCriteria.lname = lnameTextbox.Text;
+            patientSearchCriteria.lname = "Kowalski";
+            //patientSearchCriteria.lname = lnameTextbox.Text;
 
             // ładowanie obiektu dataGridView
             dataGridView1.Columns.Clear();
