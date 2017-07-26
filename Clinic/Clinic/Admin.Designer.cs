@@ -54,9 +54,10 @@
             // 
             // adminEditButton
             // 
-            this.adminEditButton.Location = new System.Drawing.Point(535, 309);
+            this.adminEditButton.Location = new System.Drawing.Point(713, 380);
+            this.adminEditButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminEditButton.Name = "adminEditButton";
-            this.adminEditButton.Size = new System.Drawing.Size(75, 23);
+            this.adminEditButton.Size = new System.Drawing.Size(100, 28);
             this.adminEditButton.TabIndex = 2;
             this.adminEditButton.Text = "Edit";
             this.adminEditButton.UseVisualStyleBackColor = true;
@@ -64,9 +65,10 @@
             // 
             // adminAddButton
             // 
-            this.adminAddButton.Location = new System.Drawing.Point(357, 309);
+            this.adminAddButton.Location = new System.Drawing.Point(476, 380);
+            this.adminAddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminAddButton.Name = "adminAddButton";
-            this.adminAddButton.Size = new System.Drawing.Size(75, 23);
+            this.adminAddButton.Size = new System.Drawing.Size(100, 28);
             this.adminAddButton.TabIndex = 1;
             this.adminAddButton.Text = "Add";
             this.adminAddButton.UseVisualStyleBackColor = true;
@@ -98,18 +100,20 @@
             // 
             // adminDeleteButton
             // 
-            this.adminDeleteButton.Location = new System.Drawing.Point(445, 309);
+            this.adminDeleteButton.Location = new System.Drawing.Point(593, 380);
+            this.adminDeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminDeleteButton.Name = "adminDeleteButton";
-            this.adminDeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.adminDeleteButton.Size = new System.Drawing.Size(100, 28);
             this.adminDeleteButton.TabIndex = 4;
             this.adminDeleteButton.Text = "Delete";
             this.adminDeleteButton.UseVisualStyleBackColor = true;
             // 
             // registrarSearchButton
             // 
-            this.registrarSearchButton.Location = new System.Drawing.Point(492, 49);
+            this.registrarSearchButton.Location = new System.Drawing.Point(656, 60);
+            this.registrarSearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.registrarSearchButton.Name = "registrarSearchButton";
-            this.registrarSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.registrarSearchButton.Size = new System.Drawing.Size(100, 28);
             this.registrarSearchButton.TabIndex = 21;
             this.registrarSearchButton.Text = "Search";
             this.registrarSearchButton.UseVisualStyleBackColor = true;
@@ -117,34 +121,38 @@
             // 
             // adminTextBoxLastName
             // 
-            this.adminTextBoxLastName.Location = new System.Drawing.Point(302, 49);
+            this.adminTextBoxLastName.Location = new System.Drawing.Point(403, 60);
+            this.adminTextBoxLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminTextBoxLastName.Name = "adminTextBoxLastName";
-            this.adminTextBoxLastName.Size = new System.Drawing.Size(100, 20);
+            this.adminTextBoxLastName.Size = new System.Drawing.Size(132, 22);
             this.adminTextBoxLastName.TabIndex = 20;
             // 
             // adminTextBoxFirstName
             // 
-            this.adminTextBoxFirstName.Location = new System.Drawing.Point(302, 9);
+            this.adminTextBoxFirstName.Location = new System.Drawing.Point(403, 11);
+            this.adminTextBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminTextBoxFirstName.Name = "adminTextBoxFirstName";
-            this.adminTextBoxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.adminTextBoxFirstName.Size = new System.Drawing.Size(132, 22);
             this.adminTextBoxFirstName.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(4, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Retire date";
             // 
             // dataTimePickerRegDate
             // 
             this.dataTimePickerRegDate.Checked = false;
-            this.dataTimePickerRegDate.Location = new System.Drawing.Point(68, 7);
+            this.dataTimePickerRegDate.Location = new System.Drawing.Point(91, 9);
+            this.dataTimePickerRegDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataTimePickerRegDate.Name = "dataTimePickerRegDate";
             this.dataTimePickerRegDate.ShowCheckBox = true;
-            this.dataTimePickerRegDate.Size = new System.Drawing.Size(132, 20);
+            this.dataTimePickerRegDate.Size = new System.Drawing.Size(175, 22);
             this.dataTimePickerRegDate.TabIndex = 3;
             // 
             // panel1
@@ -159,57 +167,68 @@
             this.panel1.Controls.Add(this.adminTextBoxLastName);
             this.panel1.Controls.Add(this.dataTimePickerRegDate);
             this.panel1.Controls.Add(this.adminTextBoxFirstName);
-            this.panel1.Location = new System.Drawing.Point(5, 3);
+            this.panel1.Location = new System.Drawing.Point(7, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(570, 78);
+            this.panel1.Size = new System.Drawing.Size(760, 96);
             this.panel1.TabIndex = 22;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 49);
+            this.label4.Location = new System.Drawing.Point(24, 60);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(37, 17);
             this.label4.TabIndex = 25;
             this.label4.Text = "Role";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 44);
+            this.comboBox1.Items.AddRange(new object[] {
+            "DOC",
+            "REG",
+            "LABM",
+            "LABW",
+            "ADM"});
+            this.comboBox1.Location = new System.Drawing.Point(91, 54);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 21);
+            this.comboBox1.Size = new System.Drawing.Size(175, 24);
             this.comboBox1.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(236, 52);
+            this.label3.Location = new System.Drawing.Point(315, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 23;
             this.label3.Text = "Last name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(237, 9);
+            this.label2.Location = new System.Drawing.Point(316, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 22;
             this.label2.Text = "First name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 344);
+            this.ClientSize = new System.Drawing.Size(817, 423);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.adminDeleteButton);
-          //  this.Controls.Add(this.dataGridAdmin);
             this.Controls.Add(this.adminEditButton);
             this.Controls.Add(this.adminAddButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
