@@ -83,6 +83,7 @@ namespace BizzLayer
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
 
+            int index_reg = 0, index_doc = 0;
 
             User u = new User();
             u.user_name = "doc";
@@ -135,13 +136,7 @@ namespace BizzLayer
             if (!dc.Users.Contains(u4))
                 dc.Users.InsertOnSubmit(u4);
 
-            Doctor d = new Doctor();
-            d.id_doc = 1;
-            d.user_name = "doc";
-            d.medical_right_no = "qw3rtyu10p";
 
-            if (!dc.Doctors.Contains(d))
-                dc.Doctors.InsertOnSubmit(d);
 
             Patient p = new Patient();
             p.id_patient = 1;
@@ -152,28 +147,62 @@ namespace BizzLayer
             if (!dc.Patients.Contains(p))
                 dc.Patients.InsertOnSubmit(p);
 
-            Registration r = new Registration();
-            r.id_registration = 1;
-            r.user_name = "reg";
 
-            if (!dc.Registrations.Contains(r))
-                dc.Registrations.InsertOnSubmit(r);
+            var res1 = from el in dc.Registrations
+                       where el.user_name.Equals("reg")
+                       select el.id_registration;
+
+            if (res1.Any())
+            {
+                index_reg = res1.First();
+            }
+            else
+            {
+
+                Registration r = new Registration();
+                // r.id_registration = index;
+                r.user_name = "reg";
+
+
+                if (!dc.Registrations.Contains(r))
+                    dc.Registrations.InsertOnSubmit(r);
+            }
+            var res = from el in dc.Doctors
+                      where el.user_name.Equals("doc")
+                      select el.id_doc;
+
+            if (res.Any())
+            {
+                index_doc = res.First();
+            }
+            else
+            {
+
+                Doctor d = new Doctor();
+                //d.id_doc = index_doc;
+                d.user_name = "doc";
+                d.medical_right_no = "qw3rtyu10p";
+
+                if (!dc.Doctors.Contains(d))
+                    dc.Doctors.InsertOnSubmit(d);
+            }
+            dc.SubmitChanges();
 
             Visit v1 = new Visit();
-            v1.id_visit = 2;
-            v1.id_registration = 1;
+            //v1.id_visit = 2;
+            v1.id_registration = index_reg;
             v1.id_patient = 1;
-            v1.id_doctor = 1;
+            v1.id_doctor = index_doc;
             v1.description = "qwer";
             v1.diagnosis = "asdf";
             v1.state = "REGISTERED";
             v1.registration_date = new DateTime(2017, 07, 20);
 
             Visit v2 = new Visit();
-            v2.id_visit = 3;
-            v2.id_registration = 1;
-            v2.id_patient = 1;
-            v2.id_doctor = 1;
+            //v2.id_visit = 3;
+            v2.id_registration = index_reg;
+            // v2.id_patient = 1;
+            v2.id_doctor = index_doc;
             v2.description = "qwer";
             v2.diagnosis = "asdf";
             v2.state = "CANCELED";
@@ -181,10 +210,11 @@ namespace BizzLayer
             v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
 
             Visit v3 = new Visit();
-            v3.id_visit = 4;
-            v3.id_registration = 1;
-            v3.id_patient = 1;
-            v3.id_doctor = 1;
+            // v3.id_visit = 4;
+
+            v3.id_registration = index_reg;
+            //v3.id_patient = 1;
+            v3.id_doctor = index_doc;
             v3.description = "qwer";
             v3.diagnosis = "asdf";
             v3.state = "DONE";
