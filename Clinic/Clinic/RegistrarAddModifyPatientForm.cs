@@ -1,5 +1,4 @@
-﻿using BizzLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,21 +12,29 @@ namespace Clinic
 {
     public partial class RegistrarAddModifyPatientForm : Form
     {
-        private Patient _patient;
-        public Patient Patient { get; set; }
-
         public RegistrarAddModifyPatientForm()
         {
             InitializeComponent();
             InitializeTextBoxes();
         }
-        public RegistrarAddModifyPatientForm(string windowName, string buttonName, Patient patient = null)
+
+
+        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string pesel = null, string fname = null, string lname = null, string place = null, string street = null, string zipcode = null)
         {
-            _patient = patient;
-            InitializeComponent();  
+            InitializeComponent();
             InitializeTextBoxes();
             this.registrarAddPatientButtonApprove.Text = buttonName;
             this.Text = windowName;
+            if (pesel != null)
+            {
+                this.peselBox.Text = pesel;
+                this.fnameBox.Text = fname;
+                this.lnameBox.Text = lname;
+                this.placeBox.Text = place;
+                this.streetBox.Text = street;
+                this.zipCodeBox.Text = zipcode;
+
+            }
         }
 
         private void registrarAddPatientButtonCancel_Click(object sender, EventArgs e)
@@ -39,16 +46,8 @@ namespace Clinic
 
         private void InitializeTextBoxes()
         {
-            if (_patient != null)
-            {
-                peselBox.Text = _patient.PESEL;
-                fnameBox.Text = _patient.fname;
-                lnameBox.Text = _patient.lname;
-                placeBox.Text = _patient.Address.place;
-                streetBox.Text = _patient.Address.street;
-                zipCodeBox.Text = _patient.Address.zip_code;
-            }            
-            
+
+
         }
 
         private void RegistrarAddPatientForm_Load(object sender, EventArgs e)
