@@ -124,7 +124,7 @@ namespace Clinic
         {
             Patient patientSearchCriteria;
             patientSearchCriteria = new Patient();
-            patientSearchCriteria.lname = "Kowalski";
+            //patientSearchCriteria.lname = "Kowalski";
             //patientSearchCriteria.lname = lnameTextbox.Text;
 
             // ładowanie obiektu dataGridView
