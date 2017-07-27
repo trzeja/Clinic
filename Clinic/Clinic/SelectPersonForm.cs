@@ -26,7 +26,7 @@ namespace Clinic
             this.registrarModifyButton.Enabled = modifyTrueAddFalse;
             this.modifyTrueAddFalse = modifyTrueAddFalse;
             this.registrarModifyButton.Text = buttonName;
-            
+
             if (modifyTrueAddFalse == true)
             {
                 this.registrarSelectButton.Text = "Confirm";
@@ -38,7 +38,8 @@ namespace Clinic
         {
             if (modifyTrueAddFalse == false)
             {
-                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Add Patient","Add");
+
+                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Add Patient", "Add");
                 registrarAddPatientForm.ShowDialog(this);
             }
             else
@@ -110,14 +111,21 @@ namespace Clinic
 
         private void registrarSelectButton_Click(object sender, EventArgs e)
         {
+
             this.Close();
+
+
+
+
+
         }
 
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
             Patient patientSearchCriteria;
             patientSearchCriteria = new Patient();
-            patientSearchCriteria.lname = lnameTextbox.Text;
+            //patientSearchCriteria.lname = "Kowalski";
+            //patientSearchCriteria.lname = lnameTextbox.Text;
 
             // ładowanie obiektu dataGridView
             dataGridView1.Columns.Clear();

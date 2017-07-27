@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BizzLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,9 +51,27 @@ namespace Clinic
 
         }
 
+        //czy nie powinna się zmienić nazwa na adminSearchButton? 
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
+            User userSearchCriteria;
+            userSearchCriteria = new User();
+            userSearchCriteria.fname = adminTextBoxFirstName.Text;
+            userSearchCriteria.lname = adminTextBoxLastName.Text;
+            userSearchCriteria.roles = comboBox1.Text;
+            if (dataTimePickerRegDate.Checked)
+            {
+                userSearchCriteria.retire_date = dataTimePickerRegDate.Value;
+            }
             this.Controls.Add(this.dataGridAdmin);
+            dataGridAdmin.DataSource = AdminFacade.GetUsers(userSearchCriteria);
+            dataGridAdmin.Columns[0].Visible = false;
+            dataGridAdmin.Columns[1].Visible = false;
+            dataGridAdmin.Columns[2].HeaderText = "Retire date";
+            dataGridAdmin.Columns[3].HeaderText = "Role";
+            dataGridAdmin.Columns[4].HeaderText = "User last name";
+            dataGridAdmin.Columns[5].HeaderText = "User first name";
+            
         }
 
         private void initializeElements()
