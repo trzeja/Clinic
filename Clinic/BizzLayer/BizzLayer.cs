@@ -230,15 +230,15 @@ namespace BizzLayer
 
         private void SeedVisits(DataClasses1DataContext dc, ref int index_reg, ref int index_doc)
         {
-            var visitIdsOfCurrentVisits = from el in dc.Visits
-                                          select el.id_visit;
+            //var visitIdsOfCurrentVisits = from el in dc.Visits
+            //                              select el.id_visit;
 
-            if (visitIdsOfCurrentVisits.Any())
-            {
-                //do not add
-            }
-            else
-            {
+            //if (visitIdsOfCurrentVisits.Any())
+            //{
+            //    //do not add
+            //}
+            //else
+            //{
                 Visit v1 = new Visit();
                 //v1.id_visit = 2;
                 v1.id_registration = index_reg;
@@ -279,7 +279,7 @@ namespace BizzLayer
                     dc.Visits.InsertOnSubmit(v3);
 
                 dc.SubmitChanges();
-            }
+            //}
         }
     }
 }
