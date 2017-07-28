@@ -242,7 +242,7 @@ namespace BizzLayer
                 Visit v1 = new Visit();
                 //v1.id_visit = 2;
                 v1.id_registration = index_reg;
-                v1.id_patient = 1; //trza ustawiac ~Mikolaj
+                //v1.id_patient = 1; 
                 v1.id_doctor = index_doc;
                 v1.description = "qwer";
                 v1.diagnosis = "asdf";
@@ -252,7 +252,7 @@ namespace BizzLayer
                 Visit v2 = new Visit();
                 //v2.id_visit = 3;
                 v2.id_registration = index_reg;
-                v2.id_patient = 1; //trza ustawiac ~Mikolaj (docelowo z indexow)
+                //v2.id_patient = 1; 
                 v2.id_doctor = index_doc;
                 v2.description = "qwer";
                 v2.diagnosis = "asdf";
@@ -264,7 +264,7 @@ namespace BizzLayer
                 // v3.id_visit = 4;
 
                 v3.id_registration = index_reg;
-                v3.id_patient = 1; //trza ustawiac ~Mikolaj (docelowo z indexow)
+                //v3.id_patient = 1; 
                 v3.id_doctor = index_doc;
                 v3.description = "qwer";
                 v3.diagnosis = "asdf";
