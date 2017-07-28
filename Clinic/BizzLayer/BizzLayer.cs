@@ -16,10 +16,10 @@ namespace BizzLayer
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var result = from element in dc.Users
-                         //where
-                         //(String.IsNullOrEmpty(searchCrit.lname) || element.lname.StartsWith(searchCrit.lname))
-                         //&&
-                         //(String.IsNullOrEmpty(searchCrit.fname) || element.fname.StartsWith(searchCrit.fname))
+                             //where
+                             //(String.IsNullOrEmpty(searchCrit.lname) || element.lname.StartsWith(searchCrit.lname))
+                             //&&
+                             //(String.IsNullOrEmpty(searchCrit.fname) || element.fname.StartsWith(searchCrit.fname))
                          select element;
             return result;
         }
@@ -102,6 +102,24 @@ namespace BizzLayer
 
             int index_reg = 0, index_doc = 0;
 
+            SeedUsers(dc);
+            SeedPatients(dc);
+            SeedRegistrations(dc, ref index_reg);
+            SeedDoctors(dc, ref index_doc);
+            try
+            {
+                SeedVisits(dc, ref index_reg, ref index_doc);
+            }
+            catch (Exception)
+            {
+                throw;
+                //zcos zwalone z tymi indexami i kluczami prywatnymi,
+                //moze trzeba patient i users tak samo traktowac jak doc np
+            }
+        }
+
+        private void SeedUsers(DataClasses1DataContext dc)
+        {
             User u = new User();
             u.user_name = "doc";
             u.password = MD5Hash("doc");
@@ -152,49 +170,53 @@ namespace BizzLayer
 
             if (!dc.Users.Contains(u4))
                 dc.Users.InsertOnSubmit(u4);
+        }
 
-
-
+        public void SeedPatients(DataClasses1DataContext dc)
+        {
             Patient p = new Patient();
-            p.id_patient = 1;
+            //p.id_patient = 1;
             p.fname = "Jan";
             p.lname = "Kowalski";
             p.PESEL = "12345678901";
 
             if (!dc.Patients.Contains(p))
                 dc.Patients.InsertOnSubmit(p);
+        }
 
+        private void SeedRegistrations(DataClasses1DataContext dc, ref int index_reg)
+        {
+            var registrationIdsOfCurrentRegistrars = from el in dc.Registrations
+                                                     where el.user_name.Equals("reg")
+                                                     select el.id_registration;
 
-            var res1 = from el in dc.Registrations
-                       where el.user_name.Equals("reg")
-                       select el.id_registration;
-
-            if (res1.Any())
+            if (registrationIdsOfCurrentRegistrars.Any())
             {
-                index_reg = res1.First();
+                index_reg = registrationIdsOfCurrentRegistrars.First();
             }
             else
             {
-
                 Registration r = new Registration();
                 // r.id_registration = index;
                 r.user_name = "reg";
 
-
                 if (!dc.Registrations.Contains(r))
                     dc.Registrations.InsertOnSubmit(r);
             }
-            var res = from el in dc.Doctors
-                      where el.user_name.Equals("doc")
-                      select el.id_doc;
+        }
 
-            if (res.Any())
+        private void SeedDoctors(DataClasses1DataContext dc, ref int index_doc)
+        {
+            var doctorIdsOfCurrentDoctors = from el in dc.Doctors
+                                            where el.user_name.Equals("doc")
+                                            select el.id_doc;
+
+            if (doctorIdsOfCurrentDoctors.Any())
             {
-                index_doc = res.First();
+                index_doc = doctorIdsOfCurrentDoctors.First();
             }
             else
             {
-
                 Doctor d = new Doctor();
                 //d.id_doc = index_doc;
                 d.user_name = "doc";
@@ -204,47 +226,60 @@ namespace BizzLayer
                     dc.Doctors.InsertOnSubmit(d);
             }
             dc.SubmitChanges();
+        }
 
-            Visit v1 = new Visit();
-            //v1.id_visit = 2;
-            v1.id_registration = index_reg;
-            v1.id_patient = 1;
-            v1.id_doctor = index_doc;
-            v1.description = "qwer";
-            v1.diagnosis = "asdf";
-            v1.state = "REGISTERED";
-            v1.registration_date = new DateTime(2017, 07, 20);
+        private void SeedVisits(DataClasses1DataContext dc, ref int index_reg, ref int index_doc)
+        {
+            var visitIdsOfCurrentVisits = from el in dc.Visits
+                                          select el.id_visit;
 
-            Visit v2 = new Visit();
-            //v2.id_visit = 3;
-            v2.id_registration = index_reg;
-            // v2.id_patient = 1;
-            v2.id_doctor = index_doc;
-            v2.description = "qwer";
-            v2.diagnosis = "asdf";
-            v2.state = "CANCELED";
-            v2.registration_date = new DateTime(2017, 07, 5);
-            v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
+            if (visitIdsOfCurrentVisits.Any())
+            {
+                //do not add
+            }
+            else
+            {
+                Visit v1 = new Visit();
+                //v1.id_visit = 2;
+                v1.id_registration = index_reg;
+                v1.id_patient = 1; //trza ustawiac ~Mikolaj
+                v1.id_doctor = index_doc;
+                v1.description = "qwer";
+                v1.diagnosis = "asdf";
+                v1.state = "REGISTERED";
+                v1.registration_date = new DateTime(2017, 07, 20);
 
-            Visit v3 = new Visit();
-            // v3.id_visit = 4;
+                Visit v2 = new Visit();
+                //v2.id_visit = 3;
+                v2.id_registration = index_reg;
+                v2.id_patient = 1; //trza ustawiac ~Mikolaj (docelowo z indexow)
+                v2.id_doctor = index_doc;
+                v2.description = "qwer";
+                v2.diagnosis = "asdf";
+                v2.state = "CANCELED";
+                v2.registration_date = new DateTime(2017, 07, 5);
+                v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
 
-            v3.id_registration = index_reg;
-            //v3.id_patient = 1;
-            v3.id_doctor = index_doc;
-            v3.description = "qwer";
-            v3.diagnosis = "asdf";
-            v3.state = "DONE";
-            v3.registration_date = new DateTime(2017, 07, 15);
+                Visit v3 = new Visit();
+                // v3.id_visit = 4;
 
-            if (!dc.Visits.Contains(v1))
-                dc.Visits.InsertOnSubmit(v1);
-            if (!dc.Visits.Contains(v2))
-                dc.Visits.InsertOnSubmit(v2);
-            if (!dc.Visits.Contains(v3))
-                dc.Visits.InsertOnSubmit(v3);
+                v3.id_registration = index_reg;
+                v3.id_patient = 1; //trza ustawiac ~Mikolaj (docelowo z indexow)
+                v3.id_doctor = index_doc;
+                v3.description = "qwer";
+                v3.diagnosis = "asdf";
+                v3.state = "DONE";
+                v3.registration_date = new DateTime(2017, 07, 15);
 
-            dc.SubmitChanges();
+                if (!dc.Visits.Contains(v1))
+                    dc.Visits.InsertOnSubmit(v1);
+                if (!dc.Visits.Contains(v2))
+                    dc.Visits.InsertOnSubmit(v2);
+                if (!dc.Visits.Contains(v3))
+                    dc.Visits.InsertOnSubmit(v3);
+
+                dc.SubmitChanges();
+            }
         }
     }
 }
