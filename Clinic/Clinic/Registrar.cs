@@ -144,5 +144,10 @@ namespace Clinic
             SelectPersonForm registrarSelectPatient = new SelectPersonForm("Modify", true);
             registrarSelectPatient.ShowDialog(this);
         }
+
+        private void Registrar_ResizeEnd(object sender, EventArgs e)
+        {// autoscale datagrid with visits to fit whole available space
+            dataGridViewRegistrar.Height = 131 + this.Height - 394;
+        }
     }
 }

@@ -334,10 +334,12 @@
             this.Controls.Add(this.searchPanelRegistrar);
             this.Controls.Add(this.registrarModifyButton);
             this.Controls.Add(this.resgistrarAddVisitButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(765, 800);
+            this.MinimumSize = new System.Drawing.Size(765, 394);
             this.Name = "Registrar";
             this.Text = "Registrar";
             this.Load += new System.EventHandler(this.Registrar_Load);
+            this.ResizeEnd += new System.EventHandler(this.Registrar_ResizeEnd);
             ((System.ComponentModel.ISupportInitialize)(this.visitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
