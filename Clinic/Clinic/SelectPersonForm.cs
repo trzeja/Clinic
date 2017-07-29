@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BizzLayer;
 using DataLayer;
+using BizzLayer.Facades;
+
 namespace Clinic
 {
     public partial class SelectPersonForm : Form

@@ -1,4 +1,5 @@
 ﻿using BizzLayer;
+using BizzLayer.Facades;
 using Clinic;
 using System;
 using System.Collections.Generic;
