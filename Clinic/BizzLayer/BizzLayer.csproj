@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Facades\AdminFacade.cs" />
     <Compile Include="BizzLayer.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DataClasses1.cs">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
