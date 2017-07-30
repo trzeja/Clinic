@@ -19,7 +19,7 @@ namespace Clinic
         }
 
 
-        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string pesel = null, string fname = null, string lname = null, string place = null, string street = null, string zipcode = null)
+        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string pesel = null, string fname = null, string lname = null, string place = null, string street = null, string zipcode = null,string house=null,string flat=null)
         {
             InitializeComponent();
             InitializeTextBoxes();
@@ -33,7 +33,8 @@ namespace Clinic
                 this.placeBox.Text = place;
                 this.streetBox.Text = street;
                 this.zipCodeBox.Text = zipcode;
-
+                this.houseBox.Text = house;
+                this.flatBox.Text = flat;
             }
         }
 

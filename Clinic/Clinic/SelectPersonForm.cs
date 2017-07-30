@@ -46,8 +46,33 @@ namespace Clinic
             }
             else
             {
-                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm");
-                registrarAddPatientForm.ShowDialog(this);
+                try
+                {
+
+                    int curRowIndex = dataGridView1.CurrentCell.RowIndex;
+                    var dataFromGrid = new List<string>();
+                    string tmpValue = null;
+
+
+                    for (int col = 1; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
+                    {
+                        if (dataGridView1.Rows[curRowIndex].Cells[col].Value == null) continue;
+                        tmpValue = dataGridView1.Rows[curRowIndex].Cells[col].Value.ToString();
+                        dataFromGrid.Add(tmpValue);
+                    }
+
+
+                    while (dataFromGrid.Count < 8) dataFromGrid.Add(null);
+
+                    RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[0], dataFromGrid[1], dataFromGrid[2],
+                                                                                                                dataFromGrid[3], dataFromGrid[4], dataFromGrid[5], dataFromGrid[6], dataFromGrid[7]);
+                    registrarAddPatientForm.ShowDialog(this);
+                }
+                catch
+                {
+                    MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
+                }
+
             }
         }
 
@@ -132,7 +157,7 @@ namespace Clinic
             // ładowanie obiektu dataGridView
             dataGridView1.Columns.Clear();
             // dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = RegistrationFacade.GetPatients(patientSearchCriteria);
+            dataGridView1.DataSource = RegistrationFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
     }
 }
