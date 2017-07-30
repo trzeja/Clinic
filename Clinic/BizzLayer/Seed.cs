@@ -100,14 +100,25 @@ namespace BizzLayer
 
         public void SeedPatients(DataClasses1DataContext dc)
         {
-            Patient p = new Patient();
-            //p.id_patient = 1;
-            p.fname = "Jan";
-            p.lname = "Kowalski";
-            p.PESEL = "12345678901";
+            var patientsIdsOfCurrentPatients = from el in dc.Patients
+                                               select el.id_patient;
 
-            if (!dc.Patients.Contains(p))
-                dc.Patients.InsertOnSubmit(p);
+            if (patientsIdsOfCurrentPatients.Any())
+            {
+                //do not add
+            }
+            else
+            {
+                Patient p = new Patient();
+                //p.id_patient = 1;
+                p.fname = "Jan";
+                p.lname = "Kowalski";
+                p.PESEL = "12345678901";
+
+                if (!dc.Patients.Contains(p))
+                    dc.Patients.InsertOnSubmit(p);
+            }
+           
         }
 
         private void SeedRegistrations(DataClasses1DataContext dc, ref int index_reg)
