@@ -106,7 +106,7 @@ namespace BizzLayer
             p.lname = "Kowalski";
             p.PESEL = "12345678901";
 
-            if (!dc.Patients.Contains(p))
+            if (!dc.Patients.Any((b => b.PESEL == p.PESEL)))
                 dc.Patients.InsertOnSubmit(p);
         }
 
