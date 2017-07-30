@@ -26,10 +26,11 @@ namespace BizzLayer
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
 
-            int index_reg = 0, index_doc = 0;
+            int index_reg = 0, index_doc = 0, index_pat = 0;
 
             SeedUsers(dc);
-            SeedPatients(dc);
+            SeedPatients(dc, ref index_pat);
+            SeedAddresses(dc, ref index_pat);
             SeedRegistrations(dc, ref index_reg);
             SeedDoctors(dc, ref index_doc);
             try
@@ -44,6 +45,7 @@ namespace BizzLayer
             }
         }
 
+        
         private void SeedUsers(DataClasses1DataContext dc)
         {
             User u = new User();
@@ -53,7 +55,7 @@ namespace BizzLayer
             u.lname = "Kowalski";
             u.roles = "DOC";
 
-            if (!dc.Users.Contains(u))
+           if (!dc.Users.Contains(u))
                 dc.Users.InsertOnSubmit(u);
 
             User u1 = new User();
@@ -74,7 +76,7 @@ namespace BizzLayer
             u2.lname = "Kowalski";
             u2.roles = "REG";
 
-            if (!dc.Users.Contains(u2))
+           if (!dc.Users.Contains(u2))
                 dc.Users.InsertOnSubmit(u2);
 
             User u3 = new User();
@@ -96,16 +98,18 @@ namespace BizzLayer
 
             if (!dc.Users.Contains(u4))
                 dc.Users.InsertOnSubmit(u4);
+
+            dc.SubmitChanges();
         }
 
-        public void SeedPatients(DataClasses1DataContext dc)
+        public void SeedPatients(DataClasses1DataContext dc, ref int index_pat)
         {
             var patientsIdsOfCurrentPatients = from el in dc.Patients
                                                select el.id_patient;
 
             if (patientsIdsOfCurrentPatients.Any())
             {
-                //do not add
+                index_pat = patientsIdsOfCurrentPatients.First();
             }
             else
             {
@@ -115,11 +119,38 @@ namespace BizzLayer
                 p.lname = "Kowalski";
                 p.PESEL = "12345678901";
 
-                if (!dc.Patients.Contains(p))
+                //if (!dc.Patients.Contains(p))
                     dc.Patients.InsertOnSubmit(p);
+
+                dc.SubmitChanges();
             }
            
         }
+
+        private void SeedAddresses(DataClasses1DataContext dc, ref int index_pat)
+        {
+            var addressIdsOfCurrentAddresses = from el in dc.Addresses
+                                               select el.id_patient;
+            if (addressIdsOfCurrentAddresses.Any())
+            {
+                //nothing
+            }
+            else
+            {
+                Address a = new Address
+                {
+                    id_patient = index_pat,
+                    place = "Sikornik",
+                    street = "Drozdow",
+                    zip_code = "44-100",
+                    house = "21",
+                    flat = "13"
+                };
+
+                dc.Addresses.InsertOnSubmit(a);
+            }
+        }
+
 
         private void SeedRegistrations(DataClasses1DataContext dc, ref int index_reg)
         {
@@ -137,8 +168,9 @@ namespace BizzLayer
                 // r.id_registration = index;
                 r.user_name = "reg";
 
-                if (!dc.Registrations.Contains(r))
+                //if (!dc.Registrations.Contains(r))
                     dc.Registrations.InsertOnSubmit(r);
+                dc.SubmitChanges();
             }
         }
 
@@ -159,7 +191,7 @@ namespace BizzLayer
                 d.user_name = "doc";
                 d.medical_right_no = "qw3rtyu10p";
 
-                if (!dc.Doctors.Contains(d))
+                //if (!dc.Doctors.Contains(d))
                     dc.Doctors.InsertOnSubmit(d);
             }
             dc.SubmitChanges();
