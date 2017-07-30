@@ -55,5 +55,26 @@ namespace BizzLayer.Facades
                       select el;
             return res;
         }
+
+        public static void AddVisit(Visit searchCrit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            dc.Visits.InsertOnSubmit(searchCrit);
+            dc.SubmitChanges();
+        }
+
+        public static void ModifyVisit(Visit searchCrit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from el in dc.Visits
+                      where el.id_visit.Equals(searchCrit.id_visit)
+
+                      select el;
+            res.FirstOrDefault().state = searchCrit.state;
+
+            dc.SubmitChanges();
+
+        }
+
     }
 }
