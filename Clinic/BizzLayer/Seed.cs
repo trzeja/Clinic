@@ -118,6 +118,7 @@ namespace BizzLayer
                 if (!dc.Patients.Any((b => b.PESEL == p.PESEL)))
                     dc.Patients.InsertOnSubmit(p);
             }
+        }
 
         private void SeedRegistrations(DataClasses1DataContext dc, ref int index_reg)
         {
