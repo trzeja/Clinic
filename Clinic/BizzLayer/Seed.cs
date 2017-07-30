@@ -176,7 +176,7 @@ namespace BizzLayer
             //else
             //{
             Visit v1 = new Visit();
-            v1.id_visit = 2;
+           // v1.id_visit = 2;
             v1.id_registration = index_reg;
             v1.id_patient = 1;
             v1.id_doctor = index_doc;
@@ -186,7 +186,7 @@ namespace BizzLayer
             v1.registration_date = new DateTime(2017, 07, 20);
 
             Visit v2 = new Visit();
-            v2.id_visit = 3;
+           // v2.id_visit = 3;
             v2.id_registration = index_reg;
             v2.id_patient = 1;
             v2.id_doctor = index_doc;
@@ -197,7 +197,7 @@ namespace BizzLayer
             v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
 
             Visit v3 = new Visit();
-            v3.id_visit = 4;
+           // v3.id_visit = 4;
             v3.id_registration = index_reg;
             v3.id_patient = 1;
             v3.id_doctor = index_doc;
@@ -206,12 +206,23 @@ namespace BizzLayer
             v3.state = "DONE";
             v3.registration_date = new DateTime(2017, 07, 15);
 
-            if (!dc.Visits.Contains(v1))
+            if (dc.Patients.Any(b => b.id_patient == v1.id_patient) && dc.Doctors.Any(b => b.id_doc == v1.id_doctor) && dc.Registrations.Any(b => b.id_registration == v1.id_registration))
                 dc.Visits.InsertOnSubmit(v1);
-            if (!dc.Visits.Contains(v2))
+
+            if (dc.Patients.Any(b => b.id_patient == v2.id_patient) && dc.Doctors.Any(b => b.id_doc == v2.id_doctor) && dc.Registrations.Any(b => b.id_registration == v2.id_registration))
                 dc.Visits.InsertOnSubmit(v2);
-            if (!dc.Visits.Contains(v3))
+
+            if (dc.Patients.Any(b => b.id_patient == v3.id_patient) && dc.Doctors.Any(b => b.id_doc == v3.id_doctor) && dc.Registrations.Any(b => b.id_registration == v3.id_registration))
                 dc.Visits.InsertOnSubmit(v3);
+
+
+
+            //if (!dc.Visits.Contains(v1))
+            //    dc.Visits.InsertOnSubmit(v1);
+            //if (!dc.Visits.Contains(v2))
+            //    dc.Visits.InsertOnSubmit(v2);
+            //if (!dc.Visits.Contains(v3))
+            //    dc.Visits.InsertOnSubmit(v3);
 
             dc.SubmitChanges();
             //}
