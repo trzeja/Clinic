@@ -35,6 +35,23 @@ namespace BizzLayer.Facades
 
         }
 
+        public static void updatePatientData(Patient patient)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from p in dc.Patients
+                      where p.id_patient == patient.id_patient
+                      select p;
+            res.FirstOrDefault().PESEL = patient.PESEL;
+            res.FirstOrDefault().fname = patient.fname;
+            res.FirstOrDefault().lname = patient.lname;
+            //res.FirstOrDefault().Address.place = patient.Address.place;
+            //res.FirstOrDefault().Address.street = patient.Address.street;
+            //res.FirstOrDefault().Address.zip_code = patient.Address.zip_code;
+            //res.FirstOrDefault().Address.house = patient.Address.house;
+            //res.FirstOrDefault().Address.flat = patient.Address.flat;
+            dc.SubmitChanges();
+        }
+
         public static IQueryable<registrarVisitView> GetVisits(registrarVisitView searchCrit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();

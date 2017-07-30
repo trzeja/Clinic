@@ -54,7 +54,7 @@ namespace Clinic
                     string tmpValue = null;
 
 
-                    for (int col = 1; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
+                    for (int col = 0; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
                     {
                         if (dataGridView1.Rows[curRowIndex].Cells[col].Value == null) continue;
                         tmpValue = dataGridView1.Rows[curRowIndex].Cells[col].Value.ToString();
@@ -62,11 +62,12 @@ namespace Clinic
                     }
 
 
-                    while (dataFromGrid.Count < 8) dataFromGrid.Add(null);
+                    while (dataFromGrid.Count < dataGridView1.Rows[curRowIndex].Cells.Count) dataFromGrid.Add(null);
 
                     RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[0], dataFromGrid[1], dataFromGrid[2],
-                                                                                                                dataFromGrid[3], dataFromGrid[4], dataFromGrid[5], dataFromGrid[6], dataFromGrid[7]);
+                                                                                                                dataFromGrid[3], dataFromGrid[4], dataFromGrid[5], dataFromGrid[6], dataFromGrid[7], dataFromGrid[8]);
                     registrarAddPatientForm.ShowDialog(this);
+                    refreshGrid();
                 }
                 catch
                 {
@@ -148,6 +149,11 @@ namespace Clinic
         }
 
         private void registrarSearchButton_Click(object sender, EventArgs e)
+        {
+            refreshGrid();
+        }
+
+        private void refreshGrid()
         {
             Patient patientSearchCriteria;
             patientSearchCriteria = new Patient();
