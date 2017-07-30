@@ -22,7 +22,7 @@ namespace Clinic
         }
 
 
-        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string id = null, string fname = null, string lname = null, string pesel = null, string place = null, string street = null, string zipcode = null,string house=null,string flat=null)
+        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string id = null, string fname = null, string lname = null, string pesel = null, string place = null, string street = null, string zipcode = null, string house = null, string flat = null)
         {
             InitializeComponent();
             InitializeTextBoxes();
@@ -39,7 +39,7 @@ namespace Clinic
                 this.zipCodeBox.Text = zipcode;
                 this.houseBox.Text = house;
                 this.flatBox.Text = flat;
-              
+
             }
         }
 
@@ -64,19 +64,22 @@ namespace Clinic
         private void registrarAddPatientButtonApprove_Click(object sender, EventArgs e)
         {
             Patient patientSearchCriteria;
-            Address adres = new Address();
+            Address address = new Address();
             patientSearchCriteria = new Patient();
             patientSearchCriteria.id_patient = id_patient;
-            patientSearchCriteria.PESEL = peselBox.Text.ToString();
-            patientSearchCriteria.fname=this.fnameBox.Text.ToString();
+            patientSearchCriteria.PESEL = this.peselBox.Text.ToString();
+            patientSearchCriteria.fname = this.fnameBox.Text.ToString();
             patientSearchCriteria.lname = this.lnameBox.Text.ToString();
-            //patientSearchCriteria.Address.place= placeBox.Text.ToString();
-            //patientSearchCriteria.Address.street= this.streetBox.Text.ToString();
-            //patientSearchCriteria.Address.zip_code= this.zipCodeBox.Text.ToString();
-            //patientSearchCriteria.Address.house= this.houseBox.Text.ToString();
-            //patientSearchCriteria.Address.flat= this.flatBox.Text.ToString();
+
+            address.id_patient = id_patient;
+            address.place = this.placeBox.Text.ToString();
+            address.street = this.streetBox.Text.ToString();
+            address.zip_code = this.zipCodeBox.Text.ToString();
+            address.house = this.houseBox.Text.ToString();
+            address.flat = this.flatBox.Text.ToString();
             RegistrationFacade.updatePatientData(patientSearchCriteria);
-            
+            RegistrationFacade.updateAdressData(address);
+
             this.Close();
         }
     }

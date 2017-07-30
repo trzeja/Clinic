@@ -44,11 +44,20 @@ namespace BizzLayer.Facades
             res.FirstOrDefault().PESEL = patient.PESEL;
             res.FirstOrDefault().fname = patient.fname;
             res.FirstOrDefault().lname = patient.lname;
-            //res.FirstOrDefault().Address.place = patient.Address.place;
-            //res.FirstOrDefault().Address.street = patient.Address.street;
-            //res.FirstOrDefault().Address.zip_code = patient.Address.zip_code;
-            //res.FirstOrDefault().Address.house = patient.Address.house;
-            //res.FirstOrDefault().Address.flat = patient.Address.flat;
+            dc.SubmitChanges();
+        }
+        public static void updateAdressData(Address address)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from ad in dc.Addresses
+                      where ad.id_patient == address.id_patient
+                      select ad;
+
+            res.FirstOrDefault().place = address.place;
+            res.FirstOrDefault().street = address.street;
+            res.FirstOrDefault().zip_code = address.zip_code;
+            res.FirstOrDefault().house = address.house;
+            res.FirstOrDefault().flat = address.flat;
             dc.SubmitChanges();
         }
 
