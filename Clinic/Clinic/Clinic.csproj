@@ -47,150 +47,150 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="Forms\Admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
+    <Compile Include="Forms\Admin\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminEditForm.cs">
+    <Compile Include="Forms\Admin\AdminEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminEditForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdminEditForm.Designer.cs">
       <DependentUpon>AdminEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="clinicDataSet.Designer.cs">
+    <Compile Include="DataSets\clinicDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="clinicDataSet1.Designer.cs">
+    <Compile Include="DataSets\clinicDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="clinicDataSet2.Designer.cs">
+    <Compile Include="DataSets\clinicDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>clinicDataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Doctor.cs">
+    <Compile Include="Forms\Doctor\Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctor.Designer.cs">
+    <Compile Include="Forms\Doctor\Doctor.Designer.cs">
       <DependentUpon>Doctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorExaminationViewForm.cs">
+    <Compile Include="Forms\Doctor\DoctorExaminationViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorExaminationViewForm.Designer.cs">
+    <Compile Include="Forms\Doctor\DoctorExaminationViewForm.Designer.cs">
       <DependentUpon>DoctorExaminationViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorVisitViewForm.cs">
+    <Compile Include="Forms\Doctor\DoctorVisitViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorVisitViewForm.Designer.cs">
+    <Compile Include="Forms\Doctor\DoctorVisitViewForm.Designer.cs">
       <DependentUpon>DoctorVisitViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LabolatoryExaminationForm.cs">
+    <Compile Include="Forms\Laboratory\LabolatoryExaminationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LabolatoryExaminationForm.Designer.cs">
+    <Compile Include="Forms\Laboratory\LabolatoryExaminationForm.Designer.cs">
       <DependentUpon>LabolatoryExaminationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laboratory_manager.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laboratory_manager.Designer.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_manager.Designer.cs">
       <DependentUpon>Laboratory_manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laboratory_manager_editForm.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_manager_editForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laboratory_manager_editForm.Designer.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_manager_editForm.Designer.cs">
       <DependentUpon>Laboratory_manager_editForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laboratory_worker.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_worker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laboratory_worker.Designer.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_worker.Designer.cs">
       <DependentUpon>Laboratory_worker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laboratory_worker_editForm.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_worker_editForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laboratory_worker_editForm.Designer.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_worker_editForm.Designer.cs">
       <DependentUpon>Laboratory_worker_editForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrar.cs">
+    <Compile Include="Forms\Registrar\Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registrar.Designer.cs">
+    <Compile Include="Forms\Registrar\Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarAddModifyPatientForm.cs">
+    <Compile Include="Forms\Registrar\RegistrarAddModifyPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarAddModifyPatientForm.Designer.cs">
+    <Compile Include="Forms\Registrar\RegistrarAddModifyPatientForm.Designer.cs">
       <DependentUpon>RegistrarAddModifyPatientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarModifyForm.cs">
+    <Compile Include="Forms\Registrar\RegistrarModifyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarModifyForm.Designer.cs">
+    <Compile Include="Forms\Registrar\RegistrarModifyForm.Designer.cs">
       <DependentUpon>RegistrarModifyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectPersonForm.cs">
+    <Compile Include="Forms\Common\SelectPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectPersonForm.Designer.cs">
+    <Compile Include="Forms\Common\SelectPersonForm.Designer.cs">
       <DependentUpon>SelectPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisitInfoViewForm.cs">
+    <Compile Include="Forms\Common\VisitInfoViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VisitInfoViewForm.Designer.cs">
+    <Compile Include="Forms\Common\VisitInfoViewForm.Designer.cs">
       <DependentUpon>VisitInfoViewForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin.resx">
+    <EmbeddedResource Include="Forms\Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminEditForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminEditForm.resx">
       <DependentUpon>AdminEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor.resx">
+    <EmbeddedResource Include="Forms\Doctor\Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorExaminationViewForm.resx">
+    <EmbeddedResource Include="Forms\Doctor\DoctorExaminationViewForm.resx">
       <DependentUpon>DoctorExaminationViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorVisitViewForm.resx">
+    <EmbeddedResource Include="Forms\Doctor\DoctorVisitViewForm.resx">
       <DependentUpon>DoctorVisitViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LabolatoryExaminationForm.resx">
+    <EmbeddedResource Include="Forms\Laboratory\LabolatoryExaminationForm.resx">
       <DependentUpon>LabolatoryExaminationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laboratory_manager.resx">
+    <EmbeddedResource Include="Forms\Laboratory\Laboratory_manager.resx">
       <DependentUpon>Laboratory_manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laboratory_manager_editForm.resx">
+    <EmbeddedResource Include="Forms\Laboratory\Laboratory_manager_editForm.resx">
       <DependentUpon>Laboratory_manager_editForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laboratory_worker.resx">
+    <EmbeddedResource Include="Forms\Laboratory\Laboratory_worker.resx">
       <DependentUpon>Laboratory_worker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laboratory_worker_editForm.resx">
+    <EmbeddedResource Include="Forms\Laboratory\Laboratory_worker_editForm.resx">
       <DependentUpon>Laboratory_worker_editForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -202,52 +202,52 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Registrar.resx">
+    <EmbeddedResource Include="Forms\Registrar\Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarAddModifyPatientForm.resx">
+    <EmbeddedResource Include="Forms\Registrar\RegistrarAddModifyPatientForm.resx">
       <DependentUpon>RegistrarAddModifyPatientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarModifyForm.resx">
+    <EmbeddedResource Include="Forms\Registrar\RegistrarModifyForm.resx">
       <DependentUpon>RegistrarModifyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectPersonForm.resx">
+    <EmbeddedResource Include="Forms\Common\SelectPersonForm.resx">
       <DependentUpon>SelectPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisitInfoViewForm.resx">
+    <EmbeddedResource Include="Forms\Common\VisitInfoViewForm.resx">
       <DependentUpon>VisitInfoViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="clinicDataSet.xsc">
+    <None Include="DataSets\clinicDataSet.xsc">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>
     </None>
-    <None Include="clinicDataSet.xsd">
+    <None Include="DataSets\clinicDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>clinicDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="clinicDataSet.xss">
+    <None Include="DataSets\clinicDataSet.xss">
       <DependentUpon>clinicDataSet.xsd</DependentUpon>
     </None>
-    <None Include="clinicDataSet1.xsc">
+    <None Include="DataSets\clinicDataSet1.xsc">
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="clinicDataSet1.xsd">
+    <None Include="DataSets\clinicDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>clinicDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="clinicDataSet1.xss">
+    <None Include="DataSets\clinicDataSet1.xss">
       <DependentUpon>clinicDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="clinicDataSet2.xsc">
+    <None Include="DataSets\clinicDataSet2.xsc">
       <DependentUpon>clinicDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="clinicDataSet2.xsd">
+    <None Include="DataSets\clinicDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>clinicDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="clinicDataSet2.xss">
+    <None Include="DataSets\clinicDataSet2.xss">
       <DependentUpon>clinicDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

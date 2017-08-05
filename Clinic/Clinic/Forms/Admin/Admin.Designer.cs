@@ -1,4 +1,6 @@
-﻿namespace Clinic
+﻿using Clinic.DataSets;
+
+namespace Clinic
 {
     partial class Admin
     {
@@ -33,8 +35,8 @@
             this.adminAddButton = new System.Windows.Forms.Button();
             this.dataGridAdmin = new System.Windows.Forms.DataGridView();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clinicDataSet = new Clinic.clinicDataSet();
-            this.userTableAdapter = new Clinic.clinicDataSetTableAdapters.UserTableAdapter();
+            this.clinicDataSet = new Clinic.DataSets.clinicDataSet();
+            this.userTableAdapter = new Clinic.DataSets.clinicDataSetTableAdapters.UserTableAdapter();
             this.adminDeleteButton = new System.Windows.Forms.Button();
             this.registrarSearchButton = new System.Windows.Forms.Button();
             this.adminTextBoxLastName = new System.Windows.Forms.TextBox();
@@ -247,7 +249,7 @@
         private System.Windows.Forms.DataGridView dataGridAdmin;
         private clinicDataSet clinicDataSet;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private clinicDataSetTableAdapters.UserTableAdapter userTableAdapter;
+        private DataSets.clinicDataSetTableAdapters.UserTableAdapter userTableAdapter;
         private System.Windows.Forms.Button adminDeleteButton;
         private System.Windows.Forms.Button registrarSearchButton;
         private System.Windows.Forms.TextBox adminTextBoxLastName;

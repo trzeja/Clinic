@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Clinic {
+namespace Clinic.DataSets {
     
     
     /// <summary>
@@ -1308,7 +1308,7 @@ namespace Clinic {
         }
     }
 }
-namespace Clinic.clinicDataSet1TableAdapters {
+namespace Clinic.DataSets.clinicDataSet1TableAdapters {
     
     
     /// <summary>

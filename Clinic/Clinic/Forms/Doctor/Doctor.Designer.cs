@@ -1,4 +1,6 @@
-﻿namespace Clinic
+﻿using Clinic.DataSets;
+
+namespace Clinic
 {
     partial class Doctor
     {
@@ -39,7 +41,7 @@
             this.doctorDateTimePickerExecDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.clinicDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clinicDataSet1 = new Clinic.clinicDataSet1();
+            this.clinicDataSet1 = new Clinic.DataSets.clinicDataSet1();
             this.doctorSelectVisitbutton = new System.Windows.Forms.Button();
             this.doctorSearchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();

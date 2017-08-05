@@ -1,4 +1,6 @@
-﻿namespace Clinic
+﻿using Clinic.DataSets;
+
+namespace Clinic
 {
     partial class Registrar
     {
@@ -30,12 +32,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.visitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clinicDataSet1 = new Clinic.clinicDataSet1();
+            this.clinicDataSet1 = new Clinic.DataSets.clinicDataSet1();
             this.resgistrarAddVisitButton = new System.Windows.Forms.Button();
             this.registrarModifyButton = new System.Windows.Forms.Button();
-            this.clinicDataSet = new Clinic.clinicDataSet();
+            this.clinicDataSet = new Clinic.DataSets.clinicDataSet();
             this.clinicDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.visitTableAdapter = new Clinic.clinicDataSet1TableAdapters.VisitTableAdapter();
+            this.visitTableAdapter = new Clinic.DataSets.clinicDataSet1TableAdapters.VisitTableAdapter();
             this.clinicDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataTimePickerRegDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,9 +57,9 @@
             this.registrarSearchButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.registrarStateComboBox = new System.Windows.Forms.ComboBox();
-            this.visitTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.VisitTableAdapter();
+            this.visitTableAdapter1 = new Clinic.DataSets.clinicDataSet1TableAdapters.VisitTableAdapter();
             this.dataGridViewRegistrar = new System.Windows.Forms.DataGridView();
-            this.clinicDataSet11 = new Clinic.clinicDataSet1();
+            this.clinicDataSet11 = new Clinic.DataSets.clinicDataSet1();
             this.registrarModifyPatientButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.visitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).BeginInit();
@@ -364,7 +366,7 @@
         private System.Windows.Forms.BindingSource clinicDataSetBindingSource;
         private clinicDataSet clinicDataSet;
         private System.Windows.Forms.BindingSource visitBindingSource;
-        private clinicDataSet1TableAdapters.VisitTableAdapter visitTableAdapter;
+        private DataSets.clinicDataSet1TableAdapters.VisitTableAdapter visitTableAdapter;
         private System.Windows.Forms.BindingSource clinicDataSetBindingSource1;
         private System.Windows.Forms.DateTimePicker dataTimePickerRegDate;
         private System.Windows.Forms.Label label1;
@@ -372,7 +374,7 @@
         private System.Windows.Forms.TextBox registrarTextBoxDoctorFName;
         private System.Windows.Forms.Panel searchPanelRegistrar;
         private System.Windows.Forms.Button registrarSearchButton;
-        private clinicDataSet1TableAdapters.VisitTableAdapter visitTableAdapter1;
+        private DataSets.clinicDataSet1TableAdapters.VisitTableAdapter visitTableAdapter1;
         private System.Windows.Forms.DataGridView dataGridViewRegistrar;
         private clinicDataSet1 clinicDataSet11;
         private System.Windows.Forms.Label label4;

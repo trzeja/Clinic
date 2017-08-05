@@ -32,7 +32,7 @@
             this.registrarModifyButton = new System.Windows.Forms.Button();
             this.registrarSearchButton = new System.Windows.Forms.Button();
             this.registrarSelectButton = new System.Windows.Forms.Button();
-            this.patientTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.PatientTableAdapter();
+            this.patientTableAdapter1 = new Clinic.DataSets.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Button registrarModifyButton;
         private System.Windows.Forms.Button registrarSearchButton;
         private System.Windows.Forms.Button registrarSelectButton;
-        private clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;
+        private DataSets.clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;
         private System.Windows.Forms.Panel searchPanel;
         private System.Windows.Forms.TextBox lnameTextbox;
         private System.Windows.Forms.TextBox fnameTextbox;

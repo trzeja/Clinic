@@ -33,7 +33,7 @@
             this.registrarTextBoxPatient = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataTimePickerRegDate = new System.Windows.Forms.DateTimePicker();
-            this.patientTableAdapter1 = new Clinic.clinicDataSet1TableAdapters.PatientTableAdapter();
+            this.patientTableAdapter1 = new Clinic.DataSets.clinicDataSet1TableAdapters.PatientTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.stateLabel = new System.Windows.Forms.Label();
@@ -285,7 +285,7 @@
         private System.Windows.Forms.TextBox registrarTextBoxPatient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dataTimePickerRegDate;
-        private clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;
+        private DataSets.clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label stateLabel;
