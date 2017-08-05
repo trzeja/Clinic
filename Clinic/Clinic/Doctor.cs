@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BizzLayer;
+using BizzLayer.Facades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,8 +28,17 @@ namespace Clinic
 
         private void doctorSearchButton_Click(object sender, EventArgs e)
         {
-            // this.Controls.Add(this.dataGridViewDoctor)
+            //this.Controls.Add(this.dataGridViewDoctor);
 
+            Patient mockPatient = new Patient();
+            mockPatient.id_patient = 1;
+
+            Visit visitSearchCriteria = new Visit();
+            visitSearchCriteria.id_patient = mockPatient.id_patient;
+            visitSearchCriteria.state = doctorVisitStateComboBox.Text;
+            visitSearchCriteria.registration_date = doctorDateTimePickerExecDate.Value;
+
+            VisitFacade.GetPatientsVisits(visitSearchCriteria);
         }
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)

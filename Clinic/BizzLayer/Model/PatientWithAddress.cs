@@ -38,6 +38,7 @@ namespace BizzLayer.Model
             this.street = street;
             this.zipcode = zipcode;
             this.house = house;
+            this.flat = flat;
         }    
     }
 }

@@ -51,20 +51,16 @@ namespace Clinic
 
         private void InitializeTextBoxes()
         {
-
-
         }
 
         private void RegistrarAddPatientForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void registrarAddPatientButtonApprove_Click(object sender, EventArgs e)
         {
-            Patient patientSearchCriteria;
-            Address address = new Address();
-            patientSearchCriteria = new Patient();
+            Patient patientSearchCriteria = new Patient();
+            Address address = new Address();           
             patientSearchCriteria.id_patient = id_patient;
             patientSearchCriteria.PESEL = this.peselBox.Text.ToString();
             patientSearchCriteria.fname = this.fnameBox.Text.ToString();

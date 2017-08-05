@@ -31,8 +31,6 @@ namespace BizzLayer.Facades
 
                       select new { p.id_patient, p.fname, p.lname, p.PESEL, p.Address.place, p.Address.street, p.Address.zip_code, p.Address.house, p.Address.flat };
             return res;
-
-
         }
 
         public static void updatePatientData(Patient patient)
