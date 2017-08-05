@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BizzLayer;
 using BizzLayer.Facades;
+using BizzLayer.Model;
 
 namespace Clinic
 {
@@ -21,25 +22,23 @@ namespace Clinic
             InitializeTextBoxes();
         }
 
-
-        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string id = null, string fname = null, string lname = null, string pesel = null, string place = null, string street = null, string zipcode = null, string house = null, string flat = null)
+        public RegistrarAddModifyPatientForm(string windowName, string buttonName, PatientWithAddress patientWithAddress = null)
         {
             InitializeComponent();
             InitializeTextBoxes();
             this.registrarAddPatientButtonApprove.Text = buttonName;
             this.Text = windowName;
-            if (id != null)
+            if (patientWithAddress.id != null)
             {
-                id_patient = Int32.Parse(id);
-                this.peselBox.Text = pesel;
-                this.fnameBox.Text = fname;
-                this.lnameBox.Text = lname;
-                this.placeBox.Text = place;
-                this.streetBox.Text = street;
-                this.zipCodeBox.Text = zipcode;
-                this.houseBox.Text = house;
-                this.flatBox.Text = flat;
-
+                id_patient = Int32.Parse(patientWithAddress.id);
+                this.peselBox.Text = patientWithAddress.pesel;
+                this.fnameBox.Text = patientWithAddress.fname;
+                this.lnameBox.Text = patientWithAddress.lname;
+                this.placeBox.Text = patientWithAddress.place;
+                this.streetBox.Text = patientWithAddress.street;
+                this.zipCodeBox.Text = patientWithAddress.zipcode;
+                this.houseBox.Text = patientWithAddress.house;
+                this.flatBox.Text = patientWithAddress.flat;
             }
         }
 
@@ -77,6 +76,7 @@ namespace Clinic
             address.zip_code = this.zipCodeBox.Text.ToString();
             address.house = this.houseBox.Text.ToString();
             address.flat = this.flatBox.Text.ToString();
+
             RegistrationFacade.updatePatientData(patientSearchCriteria);
             RegistrationFacade.updateAdressData(address);
 

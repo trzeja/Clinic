@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BizzLayer;
 using DataLayer;
 using BizzLayer.Facades;
+using BizzLayer.Model;
 
 namespace Clinic
 {
@@ -48,11 +49,9 @@ namespace Clinic
             {
                 try
                 {
-
                     int curRowIndex = dataGridView1.CurrentCell.RowIndex;
                     var dataFromGrid = new List<string>();
                     string tmpValue = null;
-
 
                     for (int col = 0; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
                     {
@@ -61,11 +60,20 @@ namespace Clinic
                         dataFromGrid.Add(tmpValue);
                     }
 
-
                     while (dataFromGrid.Count < dataGridView1.Rows[curRowIndex].Cells.Count) dataFromGrid.Add(null);
 
-                    RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[0], dataFromGrid[1], dataFromGrid[2],
-                                                                                                                dataFromGrid[3], dataFromGrid[4], dataFromGrid[5], dataFromGrid[6], dataFromGrid[7], dataFromGrid[8]);
+                    var patientWithAddress = new PatientWithAddress(
+                        dataFromGrid[0],
+                        dataFromGrid[1],
+                        dataFromGrid[2],
+                        dataFromGrid[3],
+                        dataFromGrid[4],
+                        dataFromGrid[5],
+                        dataFromGrid[6],
+                        dataFromGrid[7],
+                        dataFromGrid[8]);                    
+
+                    var registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", patientWithAddress);
                     registrarAddPatientForm.ShowDialog(this);
                     refreshGrid();
                 }
