@@ -64,15 +64,35 @@ namespace Clinic
             {
                 userSearchCriteria.retire_date = dataTimePickerRegDate.Value;
             }
+            else
+            {
+                userSearchCriteria.retire_date = null;
+            }
+            //jeśli nie jest zaznaczony, to chyba null, trzeba przy logowaniu sprawdzać
+            //czy nie ma już tej daty
+            //dlaczego to tutaj a nie gdzie indziej
             this.Controls.Add(this.dataGridAdmin);
+
             dataGridAdmin.DataSource = AdminFacade.GetUsers(userSearchCriteria);
-            dataGridAdmin.Columns[0].Visible = false;
+            dataGridAdmin.Columns[0].HeaderText = "Username";
+            dataGridAdmin.Columns[0].DisplayIndex = 0;
             dataGridAdmin.Columns[1].Visible = false;
-            dataGridAdmin.Columns[2].HeaderText = "Retire date";
+            dataGridAdmin.Columns[1].DisplayIndex = 5;
+            //dataGridAdmin.Columns[1].HeaderText = "Password";
+
             dataGridAdmin.Columns[3].HeaderText = "Role";
-            dataGridAdmin.Columns[4].HeaderText = "User last name";
+            dataGridAdmin.Columns[3].DisplayIndex = 3;
+
             dataGridAdmin.Columns[5].HeaderText = "User first name";
-            
+            dataGridAdmin.Columns[5].DisplayIndex = 1;
+
+            dataGridAdmin.Columns[4].HeaderText = "User last name";
+            dataGridAdmin.Columns[4].DisplayIndex = 2;
+
+            dataGridAdmin.Columns[2].HeaderText = "Retire date";
+            dataGridAdmin.Columns[2].DisplayIndex = 4;
+
+
         }
 
         private void initializeElements()
