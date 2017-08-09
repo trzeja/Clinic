@@ -49,7 +49,8 @@ namespace Clinic
 
         private void doctorFindPatientButton_Click(object sender, EventArgs e)
         {
-            SelectPersonForm doctorSelectPatient = new SelectPersonForm();
+            Patient p=new Patient();
+            SelectPersonForm doctorSelectPatient = new SelectPersonForm(p);
             doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
             doctorSelectPatient.ShowDialog(this);
         }

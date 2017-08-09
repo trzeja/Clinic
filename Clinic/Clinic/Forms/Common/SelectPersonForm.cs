@@ -17,6 +17,7 @@ namespace Clinic
     public partial class SelectPersonForm : Form
     {
         private bool modifyTrueAddFalse;
+        Patient patient;
         public SelectPersonForm()
         {
             InitializeComponent();
@@ -35,6 +36,20 @@ namespace Clinic
                 this.registrarSelectButton.Text = "Confirm";
             }
             else this.registrarSelectButton.Text = "Select";
+        }
+
+
+        public SelectPersonForm(Patient p)
+        {
+            InitializeComponent();
+            InitializeTextBoxes();
+
+            patient = p;
+
+            this.registrarModifyButton.Text = "wybierz osobe";
+
+  
+            this.registrarSelectButton.Text = "Select";
         }
 
         private void registrarAddPatientButton_Click(object sender, EventArgs e)
@@ -147,6 +162,11 @@ namespace Clinic
 
         private void registrarSelectButton_Click(object sender, EventArgs e)
         {
+
+
+            DataGridViewRow row = this.dataGridView1.SelectedRows[0];
+            string id = row.Cells["id_patient"].Value.ToString();
+            patient.id_patient = Int32.Parse(id);
 
             this.Close();
 
