@@ -166,6 +166,7 @@ namespace Clinic
 
             DataGridViewRow row = this.dataGridView1.SelectedRows[0];
             string id = row.Cells["id_patient"].Value.ToString();
+            patient.lname= row.Cells["lname"].Value.ToString();
             patient.id_patient = Int32.Parse(id);
 
             this.Close();

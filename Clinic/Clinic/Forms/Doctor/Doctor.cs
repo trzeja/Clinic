@@ -14,6 +14,7 @@ namespace Clinic
 {
     public partial class Doctor : Form
     {
+        Patient p;
         public Doctor()
         {
             InitializeComponent();
@@ -22,8 +23,8 @@ namespace Clinic
 
         private void Initialize()
         {
-            
-          
+            p = new Patient();
+
         }
 
         private void doctorSearchButton_Click(object sender, EventArgs e)
@@ -48,11 +49,11 @@ namespace Clinic
         }
 
         private void doctorFindPatientButton_Click(object sender, EventArgs e)
-        {
-            Patient p=new Patient();
-            SelectPersonForm doctorSelectPatient = new SelectPersonForm(p);
+        {         
+            SelectPersonForm doctorSelectPatient = new SelectPersonForm(p);            
             doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
             doctorSelectPatient.ShowDialog(this);
+            this.doctorPatientNameTextBox.Text = p.lname;
         }
     }
 }
