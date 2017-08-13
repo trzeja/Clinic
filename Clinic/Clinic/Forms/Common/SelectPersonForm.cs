@@ -48,7 +48,7 @@ namespace Clinic
 
             this.registrarModifyButton.Text = "wybierz osobe";
 
-  
+
             this.registrarSelectButton.Text = "Select";
         }
 
@@ -86,7 +86,7 @@ namespace Clinic
                         dataFromGrid[5],
                         dataFromGrid[6],
                         dataFromGrid[7],
-                        dataFromGrid[8]);                    
+                        dataFromGrid[8]);
 
                     var registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", patientWithAddress);
                     registrarAddPatientForm.ShowDialog(this);
@@ -163,12 +163,36 @@ namespace Clinic
         private void registrarSelectButton_Click(object sender, EventArgs e)
         {
 
+            try
+            {
 
-            DataGridViewRow row = this.dataGridView1.SelectedRows[0];
-            string id = row.Cells["id_patient"].Value.ToString();
-            patient.lname= row.Cells["lname"].Value.ToString();
-            patient.id_patient = Int32.Parse(id);
+                int curRowIndex = dataGridView1.CurrentCell.RowIndex;
+                var dataFromGrid = new List<string>();
+                string tmpValue = null;
 
+                for (int col = 0; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
+                {
+                    if (dataGridView1.Rows[curRowIndex].Cells[col].Value == null) continue;
+                    tmpValue = dataGridView1.Rows[curRowIndex].Cells[col].Value.ToString();
+                    dataFromGrid.Add(tmpValue);
+                }
+
+                while (dataFromGrid.Count < dataGridView1.Rows[curRowIndex].Cells.Count) dataFromGrid.Add(null);
+
+                //DataGridViewRow row = this.dataGridView1.SelectedRows[0];
+                //string id = row.Cells["id_patient"].Value.ToString();
+                //patient.lname = row.Cells["lname"].Value.ToString();
+                //patient.id_patient = Int32.Parse(id);
+
+                patient.id_patient = Int32.Parse(dataFromGrid[0]);
+                patient.fname = dataFromGrid[1];
+                patient.lname = dataFromGrid[2];
+                patient.PESEL = dataFromGrid[3];
+            }
+            catch
+            {
+                MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
+            }
             this.Close();
 
 
