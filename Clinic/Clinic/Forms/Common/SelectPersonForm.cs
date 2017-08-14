@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using BizzLayer;
 using DataLayer;
 using BizzLayer.Facades;
-using BizzLayer.Model;
 
 namespace Clinic
 {
     public partial class SelectPersonForm : Form
     {
         private bool modifyTrueAddFalse;
-        Patient patient;
+        private List<string> dataFromGrid = new List<string>();
+        private enum index { ID = 0, FNAME, LNAME, PESEL, PLACE, STREET, ZIPCODE, HOUSE, FLAT };
         public SelectPersonForm()
         {
             InitializeComponent();
@@ -34,27 +34,13 @@ namespace Clinic
             if (modifyTrueAddFalse == true)
             {
                 this.registrarSelectButton.Text = "Confirm";
-                this.registrarSelectButton.Visible = false;
             }
             else this.registrarSelectButton.Text = "Select";
         }
 
-
-        public SelectPersonForm(Patient p)
-        {
-            InitializeComponent();
-            InitializeTextBoxes();
-
-            patient = p;
-
-            this.registrarModifyButton.Text = "wybierz osobe";
-
-
-            this.registrarSelectButton.Text = "Select";
-        }
-
         private void registrarAddPatientButton_Click(object sender, EventArgs e)
         {
+            dataFromGrid.Clear();
             if (modifyTrueAddFalse == false)
             {
 
@@ -65,9 +51,11 @@ namespace Clinic
             {
                 try
                 {
+
                     int curRowIndex = dataGridView1.CurrentCell.RowIndex;
-                    var dataFromGrid = new List<string>();
+                    // var dataFromGrid = new List<string>();
                     string tmpValue = null;
+
 
                     for (int col = 0; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
                     {
@@ -76,20 +64,11 @@ namespace Clinic
                         dataFromGrid.Add(tmpValue);
                     }
 
+
                     while (dataFromGrid.Count < dataGridView1.Rows[curRowIndex].Cells.Count) dataFromGrid.Add(null);
 
-                    var patientWithAddress = new PatientWithAddress(
-                        dataFromGrid[0],
-                        dataFromGrid[1],
-                        dataFromGrid[2],
-                        dataFromGrid[3],
-                        dataFromGrid[4],
-                        dataFromGrid[5],
-                        dataFromGrid[6],
-                        dataFromGrid[7],
-                        dataFromGrid[8]);
-
-                    var registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", patientWithAddress);
+                    RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[(int)index.ID], dataFromGrid[(int)index.FNAME], dataFromGrid[(int)index.LNAME], dataFromGrid[(int)index.PESEL],
+                                                                                                                dataFromGrid[(int)index.PLACE], dataFromGrid[(int)index.STREET], dataFromGrid[(int)index.ZIPCODE]);
                     registrarAddPatientForm.ShowDialog(this);
                     refreshGrid();
                 }
@@ -163,13 +142,15 @@ namespace Clinic
 
         private void registrarSelectButton_Click(object sender, EventArgs e)
         {
+            dataFromGrid.Clear();
 
             try
             {
 
                 int curRowIndex = dataGridView1.CurrentCell.RowIndex;
-                var dataFromGrid = new List<string>();
+
                 string tmpValue = null;
+
 
                 for (int col = 0; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
                 {
@@ -178,23 +159,23 @@ namespace Clinic
                     dataFromGrid.Add(tmpValue);
                 }
 
+
                 while (dataFromGrid.Count < dataGridView1.Rows[curRowIndex].Cells.Count) dataFromGrid.Add(null);
 
-                //DataGridViewRow row = this.dataGridView1.SelectedRows[0];
-                //string id = row.Cells["id_patient"].Value.ToString();
-                //patient.lname = row.Cells["lname"].Value.ToString();
-                //patient.id_patient = Int32.Parse(id);
-                                
-                patient.id_patient = Int32.Parse(dataFromGrid[0]);
-                patient.fname = dataFromGrid[1];
-                patient.lname = dataFromGrid[2];
-                patient.PESEL = dataFromGrid[3];
+
+
+
             }
             catch
             {
                 MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
             }
+
             this.Close();
+
+
+
+
 
         }
 
@@ -211,9 +192,25 @@ namespace Clinic
             //patientSearchCriteria.lname = lnameTextbox.Text;
 
             // ładowanie obiektu dataGridView
-            dataGridView1.Columns.Clear();
+            //  dataGridView1.Columns.Clear();
             // dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = RegistrationFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
+
+
+        //gettery
+
+        public string getLname()
+        {
+            return dataFromGrid[(int)index.LNAME];
+        }
+
+        public string getID()
+        {
+            return dataFromGrid[(int)index.ID];
+        }
     }
+
+
+
 }

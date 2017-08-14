@@ -1,6 +1,4 @@
-﻿using BizzLayer;
-using BizzLayer.Facades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BizzLayer;
+using DataLayer;
+using BizzLayer.Facades;
 
 namespace Clinic
 {
     public partial class Doctor : Form
     {
         Patient p;
+        private List<string> dataFromGrid = new List<string>();
+        // private enum index { ID = 0, FNAME, LNAME, PESEL, PLACE, STREET, ZIPCODE, HOUSE, FLAT };
         public Doctor()
         {
             InitializeComponent();
@@ -31,15 +34,31 @@ namespace Clinic
         {
             //this.Controls.Add(this.dataGridViewDoctor);
 
-            Patient mockPatient = new Patient();
-            mockPatient.id_patient = 1;
+            //Patient mockPatient = new Patient();
+            //mockPatient.id_patient = 1;
 
-            Visit visitSearchCriteria = new Visit();
-            visitSearchCriteria.id_patient = mockPatient.id_patient;
-            visitSearchCriteria.state = doctorVisitStateComboBox.Text;
-            visitSearchCriteria.registration_date = doctorDateTimePickerExecDate.Value;
+            //Visit visitSearchCriteria = new Visit();
+            //visitSearchCriteria.id_patient = mockPatient.id_patient;
+            //visitSearchCriteria.state = doctorVisitStateComboBox.Text;
+            //visitSearchCriteria.registration_date = doctorDateTimePickerExecDate.Value;
 
-            VisitFacade.GetPatientsVisits(visitSearchCriteria);
+            //VisitFacade.GetPatientsVisits(visitSearchCriteria);
+
+            // this.Controls.Add(this.dataGridViewDoctor)
+            //GetPatientsWithAdresses()
+            Patient patientSearchCriteria = new Patient();
+            Visit visit = new Visit();
+
+
+            patientSearchCriteria = new Patient();
+            patientSearchCriteria.id_patient = _id;
+
+
+            visit.id_patient = _id;
+            //chwilowo
+            visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();
+
+            this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria,visit);
         }
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)
@@ -49,11 +68,27 @@ namespace Clinic
         }
 
         private void doctorFindPatientButton_Click(object sender, EventArgs e)
-        {         
-            SelectPersonForm doctorSelectPatient = new SelectPersonForm(p);            
+        {
+            //SelectPersonForm doctorSelectPatient = new SelectPersonForm(p);            
+            //doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
+            //doctorSelectPatient.ShowDialog(this);
+            //this.doctorPatientNameTextBox.Text = p.lname;
+
+            SelectPersonForm doctorSelectPatient = new SelectPersonForm();
             doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
             doctorSelectPatient.ShowDialog(this);
-            this.doctorPatientNameTextBox.Text = p.lname;
+
+
+            _id = 0;
+
+            Int32.TryParse(doctorSelectPatient.getID(), out _id);
+            Patient patientSearchCriteria;
+            patientSearchCriteria = new Patient();
+            patientSearchCriteria.id_patient = _id;
+            this.doctorPatientNameTextBox.Text = doctorSelectPatient.getLname();
+
+            // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
+        private int _id = 0;
     }
 }
