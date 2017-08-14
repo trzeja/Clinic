@@ -32,43 +32,51 @@ namespace Clinic
         private void loginButton_Click(object sender, EventArgs e)
         {
             //data from BizzLayer
-            User userSearchCriteria = new User();
-            userSearchCriteria.user_name = loginTextBox.Text;
-            IQueryable<User> resultRecords = UserFacade.GetUser(userSearchCriteria);
 
+            //User userSearchCriteria = new User();
+            //userSearchCriteria.user_name = loginTextBox.Text;
+            //IQueryable<User> resultRecords = UserFacade.GetUser(userSearchCriteria);
+            User user = CommonFacade.GetUserByUsername(loginTextBox.Text);
             //próba dobicia sie do stringa z haslem
-            Seed s = new Seed();
-            string passwordLogin = CryptoService.MD5Hash(passwordTextBox.Text);
-            var passwordSQL = resultRecords.FirstOrDefault().password;
-            if (object.Equals(passwordSQL, passwordLogin))
-            {
-                if (resultRecords.Where(a => a.roles == "DOC").Any())
+            if (user != null) {
+                string passwordLogin = CryptoService.MD5Hash(passwordTextBox.Text);
+                //var passwordSQL = resultRecords.FirstOrDefault().password;
+                if (object.Equals(user.password, passwordLogin))
                 {
-                    doctor = new Doctor();
-                    doctor.Show();                   
+                    if (user.retire_date == null
+                        || user.retire_date.Value < DateTime.Now.Date)
+                    {
+                        if (user.roles == "DOC")
+                        {
+                            doctor = new Doctor();
+                            doctor.Show();
+                        }
+                        else if (user.roles == "REG")
+                        {
+                            registrarForm = new Registrar();
+                            registrarForm.Show();
+                        }
+                        else if (user.roles == "LABM")
+                        {
+                            laboratory_manager = new Laboratory_manager();
+                            laboratory_manager.Show();
+                        }
+                        else if (user.roles == "LABW")
+                        {
+                            laboratory_worker = new Laboratory_worker();
+                            laboratory_worker.Show();
+                        }
+                        else if (user.roles == "ADM")
+                    {
+                            adminForm = new Admin();
+                            adminForm.Show();
+                        }
+                    }
+                    else MessageBox.Show("Can't access account because of retire date. Contact administrator");
                 }
-                else if (resultRecords.Where(a => a.roles == "REG").Any())
-                {
-                    registrarForm = new Registrar();
-                    registrarForm.Show();
-                }
-                else if (resultRecords.Where(a => a.roles == "LABM").Any())
-                {
-                    laboratory_manager = new Laboratory_manager();
-                    laboratory_manager.Show();
-                }
-                else if (resultRecords.Where(a => a.roles == "LABW").Any())
-                {
-                    laboratory_worker = new Laboratory_worker();
-                    laboratory_worker.Show();
-                }
-                else if (resultRecords.Where(a => a.roles == "ADM").Any())
-                {
-                    adminForm = new Admin();
-                    adminForm.Show();
-                }
+                else MessageBox.Show("Wrong login or password");
             }
-            else MessageBox.Show("Wrong login or password");
+            else MessageBox.Show("Wrong login");
            
         }
 

@@ -10,6 +10,7 @@ namespace BizzLayer.Facades
     //AdminEditForm - czy przy Add nie powinno być też loginu do podania?
     static public class AdminFacade
     {
+
         public static IQueryable<User> GetUsers(User searchCrit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
@@ -30,6 +31,7 @@ namespace BizzLayer.Facades
         {
             //walidacja
             //pole username powinno być dostępne do edycji tylko w add
+            //by nie mozna bylo wpisac sobie nowego rekordu
             DataClasses1DataContext dc = new DataClasses1DataContext();
             dc.Users.InsertOnSubmit(user);
             dc.SubmitChanges();

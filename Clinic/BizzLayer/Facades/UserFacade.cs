@@ -8,17 +8,17 @@ namespace BizzLayer.Facades
 {
     static public class UserFacade
     {
-        public static IQueryable<User> GetUser(User searchCrit)
-        {
-            DataClasses1DataContext dc = new DataClasses1DataContext();
-            var res = from el in dc.Users
-                      where
+        //public static IQueryable<User> GetUser(User searchCrit)
+        //{
+        //    DataClasses1DataContext dc = new DataClasses1DataContext();
+        //    var res = from el in dc.Users
+        //              where
 
-                      (el.user_name.Equals(searchCrit.user_name))
-                      // && inne ...
-                      select el;
+        //              (el.user_name.Equals(searchCrit.user_name))
+        //              // && inne ...
+        //              select el;
 
-            return res;
-        }
+        //    return res;
+        //}
     }
 }

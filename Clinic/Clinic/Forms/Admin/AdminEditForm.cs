@@ -25,7 +25,7 @@ namespace Clinic
 
         }
 
-        public AdminEditForm(string windowName, string buttonName, bool modifyTrueAddFalse)
+        public AdminEditForm(string windowName, string buttonName, bool modifyTrueAddFalse, User userToModify)
         {
             InitializeComponent();
             InitializeTextBoxes();
@@ -33,6 +33,20 @@ namespace Clinic
             this.Text = windowName;
             this.modifyTrueAddFalse = modifyTrueAddFalse;
             this.adminModifyButton.Text = buttonName;
+            if (userToModify != null)
+            {
+                adminTextBoxUsername.Text = userToModify.user_name;
+                adminTextBoxUsername.Enabled = false;
+                // czy haslo jest dostepne dla administratora
+                comboBoxRole.Text = userToModify.roles;
+                adminTextBoxLname.Text = userToModify.lname;
+                adminTextBoxFname.Text = userToModify.fname;
+                if (userToModify.retire_date != null)
+                {
+                    dataTimeCheckerRetireDate.Checked = true;
+                    dataTimeCheckerRetireDate.Value = userToModify.retire_date.Value;
+                }
+            }
         }
 
 
@@ -63,12 +77,13 @@ namespace Clinic
 
         private void adminModifyButton_Click(object sender, EventArgs e)
         {
+            // TODO przekazywanie usera do wyswitlania
             //sprawdzenie czy coś może/nie może byc nullami
             User user;
             user = new User();
             user.user_name = adminTextBoxUsername.Text;
-            String password = adminTextBoxPassword.Text;
-            user.password = adminTextBoxPassword.Text;//Seed.MD5Hash(password);
+            
+            user.password = BizzLayer.Services.CryptoService.MD5Hash(adminTextBoxPassword.Text);
             user.roles = comboBoxRole.Text;
             user.lname = adminTextBoxLname.Text;
             user.fname = adminTextBoxFname.Text;

@@ -17,7 +17,7 @@ namespace Clinic
         public Admin()
         {
             InitializeComponent();
-           
+
         }
 
         private void Admin_Load(object sender, EventArgs e)
@@ -34,15 +34,22 @@ namespace Clinic
 
         private void adminEditButton_Click(object sender, EventArgs e)
         {
+            User user = null;
+            //CurrentRow nie bedzie nigdy nullem bo jest pierwsze wybrane 
+            //bedzie nullem! trzeba sprawdzic
+            int userIndex = dataGridAdmin.CurrentRow.Index;
+            string username = dataGridAdmin.Rows[userIndex].Cells[0].Value.ToString();
+            user = CommonFacade.GetUserByUsername(username);
 
-            AdminEditForm adminAddForm = new AdminEditForm("Edit user", "Confirm", true);
-            adminAddForm.ShowDialog(this);
-            
+            AdminEditForm adminEditForm = new AdminEditForm("Edit user", "Confirm", true, user);
+            adminEditForm.ShowDialog(this);
+
+
         }
 
         private void adminAddButton_Click(object sender, EventArgs e)
         {
-            AdminEditForm adminAddForm = new AdminEditForm("Add user", "Confirm", true);
+            AdminEditForm adminAddForm = new AdminEditForm("Add user", "Confirm", true, null);
             adminAddForm.ShowDialog(this);
             //czy tu powinniśmy pokazywać od razu w formularzu?
             //chyba nie, bo możemy mieć niepasujące kryterium
