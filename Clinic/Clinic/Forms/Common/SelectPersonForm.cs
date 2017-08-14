@@ -34,6 +34,7 @@ namespace Clinic
             if (modifyTrueAddFalse == true)
             {
                 this.registrarSelectButton.Text = "Confirm";
+                this.registrarSelectButton.Visible = false;
             }
             else this.registrarSelectButton.Text = "Select";
         }
@@ -183,7 +184,7 @@ namespace Clinic
                 //string id = row.Cells["id_patient"].Value.ToString();
                 //patient.lname = row.Cells["lname"].Value.ToString();
                 //patient.id_patient = Int32.Parse(id);
-
+                                
                 patient.id_patient = Int32.Parse(dataFromGrid[0]);
                 patient.fname = dataFromGrid[1];
                 patient.lname = dataFromGrid[2];
@@ -194,10 +195,6 @@ namespace Clinic
                 MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
             }
             this.Close();
-
-
-
-
 
         }
 
