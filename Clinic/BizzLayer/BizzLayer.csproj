@@ -61,7 +61,7 @@
     </Compile>
     <Compile Include="Facades\RegistrationFacade.cs" />
     <Compile Include="Facades\UserFacade.cs" />
-    <Compile Include="Seed.cs" />
+    <Compile Include="Services\Seed.cs" />
     <Compile Include="Services\CryptoService.cs" />
   </ItemGroup>
   <ItemGroup>

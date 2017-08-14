@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BizzLayer.Services;
 
-namespace BizzLayer
+namespace BizzLayer.Services
 {
     public class Seed
     {
