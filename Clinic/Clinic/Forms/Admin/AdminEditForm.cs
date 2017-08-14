@@ -68,7 +68,7 @@ namespace Clinic
             user = new User();
             user.user_name = adminTextBoxUsername.Text;
             String password = adminTextBoxPassword.Text;
-            user.password = Seed.MD5Hash(password);
+            user.password = adminTextBoxPassword.Text;//Seed.MD5Hash(password);
             user.roles = comboBoxRole.Text;
             user.lname = adminTextBoxLname.Text;
             user.fname = adminTextBoxFname.Text;
