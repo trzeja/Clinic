@@ -52,6 +52,7 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
     <Compile Include="Facades\CommonFacade.cs" />
+    <Compile Include="Facades\DoctorFacade.cs" />
     <Compile Include="Facades\VisitFacade.cs" />
     <Compile Include="Model\PatientWithAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

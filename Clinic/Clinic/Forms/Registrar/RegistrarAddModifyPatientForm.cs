@@ -9,36 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BizzLayer;
 using BizzLayer.Facades;
-using BizzLayer.Model;
 
 namespace Clinic
 {
     public partial class RegistrarAddModifyPatientForm : Form
     {
         private int id_patient = 0;
+
         public RegistrarAddModifyPatientForm()
         {
             InitializeComponent();
             InitializeTextBoxes();
         }
 
-        public RegistrarAddModifyPatientForm(string windowName, string buttonName, PatientWithAddress patientWithAddress = null)
+
+        public RegistrarAddModifyPatientForm(string windowName, string buttonName, string id = null, string fname = null, string lname = null, string pesel = null, string place = null, string street = null, string zipcode = null, string house = null, string flat = null)
         {
             InitializeComponent();
             InitializeTextBoxes();
             this.registrarAddPatientButtonApprove.Text = buttonName;
             this.Text = windowName;
-            if (patientWithAddress.id != null)
+            if (id != null)
             {
-                id_patient = Int32.Parse(patientWithAddress.id);
-                this.peselBox.Text = patientWithAddress.pesel;
-                this.fnameBox.Text = patientWithAddress.fname;
-                this.lnameBox.Text = patientWithAddress.lname;
-                this.placeBox.Text = patientWithAddress.place;
-                this.streetBox.Text = patientWithAddress.street;
-                this.zipCodeBox.Text = patientWithAddress.zipcode;
-                this.houseBox.Text = patientWithAddress.house;
-                this.flatBox.Text = patientWithAddress.flat;
+                id_patient = Int32.Parse(id);
+                this.peselBox.Text = pesel;
+                this.fnameBox.Text = fname;
+                this.lnameBox.Text = lname;
+                this.placeBox.Text = place;
+                this.streetBox.Text = street;
+                this.zipCodeBox.Text = zipcode;
+                this.houseBox.Text = house;
+                this.flatBox.Text = flat;
+
             }
         }
 
@@ -51,16 +53,20 @@ namespace Clinic
 
         private void InitializeTextBoxes()
         {
+
+
         }
 
         private void RegistrarAddPatientForm_Load(object sender, EventArgs e)
         {
+
         }
 
         private void registrarAddPatientButtonApprove_Click(object sender, EventArgs e)
         {
-            Patient patientSearchCriteria = new Patient();
-            Address address = new Address();           
+            Patient patientSearchCriteria;
+            Address address = new Address();
+            patientSearchCriteria = new Patient();
             patientSearchCriteria.id_patient = id_patient;
             patientSearchCriteria.PESEL = this.peselBox.Text.ToString();
             patientSearchCriteria.fname = this.fnameBox.Text.ToString();
@@ -72,7 +78,6 @@ namespace Clinic
             address.zip_code = this.zipCodeBox.Text.ToString();
             address.house = this.houseBox.Text.ToString();
             address.flat = this.flatBox.Text.ToString();
-
             RegistrationFacade.updatePatientData(patientSearchCriteria);
             RegistrationFacade.updateAdressData(address);
 
