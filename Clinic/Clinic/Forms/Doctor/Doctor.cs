@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BizzLayer;
 using DataLayer;
 using BizzLayer.Facades;
+using System.Globalization;
 
 namespace Clinic
 {
@@ -50,15 +51,26 @@ namespace Clinic
             Visit visit = new Visit();
 
 
-            patientSearchCriteria = new Patient();
-            patientSearchCriteria.id_patient = _id;
+
+            if (_id != 0)
+            {
+                patientSearchCriteria.id_patient = _id;
 
 
-            visit.id_patient = _id;
-            //chwilowo
-            visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();
-
-            this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria,visit);
+                visit.id_patient = _id;
+                visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();
+                if (doctorDateTimePickerExecDate.Checked == true)
+                {
+                    DateTime loadedDate = DateTime.ParseExact(doctorDateTimePickerExecDate.Value.ToString(), "dd.MM.yyyy HH:mm:ss",
+                                            System.Globalization.CultureInfo.InvariantCulture);
+                    visit.registration_date = loadedDate;
+                }
+                this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria, visit);
+            }
+            else
+            {
+                MessageBox.Show("Invalid Data", "Error");
+            }
         }
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)
@@ -80,12 +92,20 @@ namespace Clinic
 
 
             _id = 0;
+            try
+            {
+                Int32.TryParse(doctorSelectPatient.getID(), out _id);
+                Patient patientSearchCriteria;
+                patientSearchCriteria = new Patient();
+                patientSearchCriteria.id_patient = _id;
+                this.doctorPatientNameTextBox.Text = doctorSelectPatient.getLname();
 
-            Int32.TryParse(doctorSelectPatient.getID(), out _id);
-            Patient patientSearchCriteria;
-            patientSearchCriteria = new Patient();
-            patientSearchCriteria.id_patient = _id;
-            this.doctorPatientNameTextBox.Text = doctorSelectPatient.getLname();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ivalid ID", "Error");
+            }
 
             // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }

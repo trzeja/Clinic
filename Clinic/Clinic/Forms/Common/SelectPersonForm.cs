@@ -21,7 +21,7 @@ namespace Clinic
         public SelectPersonForm()
         {
             InitializeComponent();
-            InitializeTextBoxes();
+           // InitializeTextBoxes();
         }
         public SelectPersonForm(string buttonName, bool modifyTrueAddFalse)
         {
@@ -188,6 +188,8 @@ namespace Clinic
         {
             Patient patientSearchCriteria;
             patientSearchCriteria = new Patient();
+            patientSearchCriteria.fname = fnameTextbox.Text.ToString();
+            patientSearchCriteria.lname = lnameTextbox.Text.ToString();
             //patientSearchCriteria.lname = "Kowalski";
             //patientSearchCriteria.lname = lnameTextbox.Text;
 

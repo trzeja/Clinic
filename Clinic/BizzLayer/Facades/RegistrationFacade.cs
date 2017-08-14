@@ -25,9 +25,11 @@ namespace BizzLayer.Facades
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var res = from p in dc.Patients
+                      where ((String.IsNullOrEmpty(searchCrit.fname) || p.fname.StartsWith(searchCrit.fname)) && (String.IsNullOrEmpty(searchCrit.lname) || p.lname.StartsWith(searchCrit.lname)))
                       join ad in dc.Addresses on p.id_patient equals ad.id_patient
                       into joined
                       from j in joined.DefaultIfEmpty()
+
 
                       select new { p.id_patient, p.fname, p.lname, p.PESEL, p.Address.place, p.Address.street, p.Address.zip_code, p.Address.house, p.Address.flat };
             return res;
