@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BizzLayer;
+using BizzLayer.Facades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,8 +63,36 @@ namespace Clinic
 
         private void adminModifyButton_Click(object sender, EventArgs e)
         {
+            //sprawdzenie czy coś może/nie może byc nullami
+            User user;
+            user = new User();
+            user.user_name = adminTextBoxUsername.Text;
+            String password = adminTextBoxPassword.Text;
+            user.password = Seed.MD5Hash(password);
+            user.roles = comboBoxRole.Text;
+            user.lname = adminTextBoxLname.Text;
+            user.fname = adminTextBoxFname.Text;
+            if (dataTimeCheckerRetireDate.Checked)
+            {
+                user.retire_date = dataTimeCheckerRetireDate.Value;
+            }
+            else
+            {
+                user.retire_date = null;
+            }
+            
+            if (this.Name.Equals("Add user")) 
+            {
+                AdminFacade.AddUser(user);
+            }
+            else
+            {
+                //czy tu powinniśmy wyświetlać na początku wybranego usera?
+                AdminFacade.ModifyUser(user);
+            }
             this.Close();
         }
+
     }
 }
 

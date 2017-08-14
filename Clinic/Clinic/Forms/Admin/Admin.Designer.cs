@@ -57,7 +57,7 @@ namespace Clinic
             // adminEditButton
             // 
             this.adminEditButton.Location = new System.Drawing.Point(713, 380);
-            this.adminEditButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminEditButton.Margin = new System.Windows.Forms.Padding(4);
             this.adminEditButton.Name = "adminEditButton";
             this.adminEditButton.Size = new System.Drawing.Size(100, 28);
             this.adminEditButton.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace Clinic
             // adminAddButton
             // 
             this.adminAddButton.Location = new System.Drawing.Point(476, 380);
-            this.adminAddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminAddButton.Margin = new System.Windows.Forms.Padding(4);
             this.adminAddButton.Name = "adminAddButton";
             this.adminAddButton.Size = new System.Drawing.Size(100, 28);
             this.adminAddButton.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace Clinic
             // dataGridAdmin
             // 
             this.dataGridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAdmin.Location = new System.Drawing.Point(5, 87);
+            this.dataGridAdmin.Location = new System.Drawing.Point(6, 117);
             this.dataGridAdmin.MultiSelect = false;
             this.dataGridAdmin.Name = "dataGridAdmin";
             this.dataGridAdmin.Size = new System.Drawing.Size(570, 174);
@@ -103,7 +103,7 @@ namespace Clinic
             // adminDeleteButton
             // 
             this.adminDeleteButton.Location = new System.Drawing.Point(593, 380);
-            this.adminDeleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminDeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.adminDeleteButton.Name = "adminDeleteButton";
             this.adminDeleteButton.Size = new System.Drawing.Size(100, 28);
             this.adminDeleteButton.TabIndex = 4;
@@ -113,7 +113,7 @@ namespace Clinic
             // registrarSearchButton
             // 
             this.registrarSearchButton.Location = new System.Drawing.Point(656, 60);
-            this.registrarSearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.registrarSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.registrarSearchButton.Name = "registrarSearchButton";
             this.registrarSearchButton.Size = new System.Drawing.Size(100, 28);
             this.registrarSearchButton.TabIndex = 21;
@@ -124,7 +124,7 @@ namespace Clinic
             // adminTextBoxLastName
             // 
             this.adminTextBoxLastName.Location = new System.Drawing.Point(403, 60);
-            this.adminTextBoxLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminTextBoxLastName.Margin = new System.Windows.Forms.Padding(4);
             this.adminTextBoxLastName.Name = "adminTextBoxLastName";
             this.adminTextBoxLastName.Size = new System.Drawing.Size(132, 22);
             this.adminTextBoxLastName.TabIndex = 20;
@@ -132,7 +132,7 @@ namespace Clinic
             // adminTextBoxFirstName
             // 
             this.adminTextBoxFirstName.Location = new System.Drawing.Point(403, 11);
-            this.adminTextBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminTextBoxFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.adminTextBoxFirstName.Name = "adminTextBoxFirstName";
             this.adminTextBoxFirstName.Size = new System.Drawing.Size(132, 22);
             this.adminTextBoxFirstName.TabIndex = 19;
@@ -151,7 +151,7 @@ namespace Clinic
             // 
             this.dataTimePickerRegDate.Checked = false;
             this.dataTimePickerRegDate.Location = new System.Drawing.Point(91, 9);
-            this.dataTimePickerRegDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataTimePickerRegDate.Margin = new System.Windows.Forms.Padding(4);
             this.dataTimePickerRegDate.Name = "dataTimePickerRegDate";
             this.dataTimePickerRegDate.ShowCheckBox = true;
             this.dataTimePickerRegDate.Size = new System.Drawing.Size(175, 22);
@@ -170,7 +170,7 @@ namespace Clinic
             this.panel1.Controls.Add(this.dataTimePickerRegDate);
             this.panel1.Controls.Add(this.adminTextBoxFirstName);
             this.panel1.Location = new System.Drawing.Point(7, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 96);
             this.panel1.TabIndex = 22;
@@ -195,7 +195,7 @@ namespace Clinic
             "LABW",
             "ADM"});
             this.comboBox1.Location = new System.Drawing.Point(91, 54);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 24);
             this.comboBox1.TabIndex = 24;
@@ -226,11 +226,12 @@ namespace Clinic
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 423);
+            this.Controls.Add(this.dataGridAdmin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.adminDeleteButton);
             this.Controls.Add(this.adminEditButton);
             this.Controls.Add(this.adminAddButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);

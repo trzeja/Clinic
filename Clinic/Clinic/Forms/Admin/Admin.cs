@@ -37,14 +37,15 @@ namespace Clinic
 
             AdminEditForm adminAddForm = new AdminEditForm("Edit user", "Confirm", true);
             adminAddForm.ShowDialog(this);
-
+            
         }
 
         private void adminAddButton_Click(object sender, EventArgs e)
         {
             AdminEditForm adminAddForm = new AdminEditForm("Add user", "Confirm", true);
             adminAddForm.ShowDialog(this);
-          
+            //czy tu powinniśmy pokazywać od razu w formularzu?
+            //chyba nie, bo możemy mieć niepasujące kryterium
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -71,7 +72,7 @@ namespace Clinic
             //jeśli nie jest zaznaczony, to chyba null, trzeba przy logowaniu sprawdzać
             //czy nie ma już tej daty
             //dlaczego to tutaj a nie gdzie indziej
-            this.Controls.Add(this.dataGridAdmin);
+            dataGridAdmin.Visible = true;
 
             dataGridAdmin.DataSource = AdminFacade.GetUsers(userSearchCriteria);
             dataGridAdmin.Columns[0].HeaderText = "Username";

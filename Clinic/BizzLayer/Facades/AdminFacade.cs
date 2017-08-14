@@ -25,5 +25,31 @@ namespace BizzLayer.Facades
                          select element;
             return result;
         }
+
+        public static void AddUser(User user)
+        {
+            //walidacja
+            //pole username powinno być dostępne do edycji tylko w add
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            dc.Users.InsertOnSubmit(user);
+            dc.SubmitChanges();
+        }
+
+        public static void ModifyUser(User user)
+        {
+            //walidacja
+            //tu pole username niedostępne do edycji
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var old = from element in dc.Users
+                      where element.user_name.Equals(user.user_name)
+                      select element;
+            old.FirstOrDefault().password = user.password;
+            old.FirstOrDefault().roles = user.roles;
+            old.FirstOrDefault().fname = user.fname;
+            old.FirstOrDefault().lname = user.lname;
+            //albo reture date albo znowu null
+            old.FirstOrDefault().retire_date = user.retire_date;
+            dc.SubmitChanges();
+        }
     }
 }
