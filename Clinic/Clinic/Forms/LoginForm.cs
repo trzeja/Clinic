@@ -11,6 +11,7 @@ using BizzLayer.Facades;
 using BizzLayer;
 using DataLayer;
 using System.Security.Cryptography;//do md5
+using BizzLayer.Services;
 
 namespace Clinic
 {
@@ -37,7 +38,7 @@ namespace Clinic
 
             //próba dobicia sie do stringa z haslem
             Seed s = new Seed();
-            string passwordLogin = s.MD5Hash(passwordTextBox.Text);
+            string passwordLogin = CryptoService.MD5Hash(passwordTextBox.Text);
             var passwordSQL = resultRecords.FirstOrDefault().password;
             if (object.Equals(passwordSQL, passwordLogin))
             {

@@ -3,25 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BizzLayer.Services;
 
 namespace BizzLayer
 {
     public class Seed
     {
-        public string MD5Hash(string input)
-        {
-            System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
-            byte[] hash = md5.ComputeHash(inputBytes);
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("X2"));//X2 = upper-case, x2 = lower-case
-            }
-
-            return sb.ToString();
-        }
         public void SeedDatabse()
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
@@ -50,7 +37,7 @@ namespace BizzLayer
         {
             User u = new User();
             u.user_name = "doc";
-            u.password = MD5Hash("doc");
+            u.password = CryptoService.MD5Hash("doc");
             u.fname = "Jan";
             u.lname = "Kowalski";
             u.roles = "DOC";
@@ -60,7 +47,7 @@ namespace BizzLayer
 
             User u1 = new User();
             u1.user_name = "admin";
-            u1.password = MD5Hash("admin");
+            u1.password = CryptoService.MD5Hash("admin");
             u1.fname = "Jan";
             u1.lname = "Kowalski";
             u1.roles = "ADM";
@@ -71,7 +58,7 @@ namespace BizzLayer
 
             User u2 = new User();
             u2.user_name = "reg";
-            u2.password = MD5Hash("reg");
+            u2.password = CryptoService.MD5Hash("reg");
             u2.fname = "Jan";
             u2.lname = "Kowalski";
             u2.roles = "REG";
@@ -81,7 +68,7 @@ namespace BizzLayer
 
             User u3 = new User();
             u3.user_name = "labm";
-            u3.password = MD5Hash("labm");
+            u3.password = CryptoService.MD5Hash("labm");
             u3.fname = "Jan";
             u3.lname = "Kowalski";
             u3.roles = "LABM";
@@ -91,7 +78,7 @@ namespace BizzLayer
 
             User u4 = new User();
             u4.user_name = "labw";
-            u4.password = MD5Hash("labw");
+            u4.password = CryptoService.MD5Hash("labw");
             u4.fname = "Jan";
             u4.lname = "Kowalski";
             u4.roles = "LABW";
