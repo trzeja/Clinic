@@ -21,7 +21,7 @@ namespace Clinic
         public SelectPersonForm()
         {
             InitializeComponent();
-           // InitializeTextBoxes();
+            // InitializeTextBoxes();
         }
         public SelectPersonForm(string buttonName, bool modifyTrueAddFalse)
         {
@@ -148,32 +148,47 @@ namespace Clinic
             {
 
                 int curRowIndex = dataGridView1.CurrentCell.RowIndex;
+                string tmpID = null;
+                Patient patientSearchCriteria = new Patient();
+                Address addressSearchCriteria = new Address();
 
-                string tmpValue = null;
+                if (dataGridView1.Rows[curRowIndex].Cells[0].Value == null) throw new Exception();
+
+                tmpID = dataGridView1.Rows[curRowIndex].Cells[0].Value.ToString();
+                int id = Int32.Parse(tmpID);
+                
+                patientSearchCriteria.id_patient = id;
+                addressSearchCriteria.id_patient = id;
 
 
-                for (int col = 0; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
+                Patient patient = RegistrationFacade.GetPatientByID(patientSearchCriteria);
+                Address address = RegistrationFacade.GetAdressByID(addressSearchCriteria);
+                if (patient == null) throw new Exception();
+
+
+                dataFromGrid.Add(tmpID);
+                dataFromGrid.Add(patient.fname.ToString());
+                dataFromGrid.Add(patient.lname.ToString());
+                dataFromGrid.Add(patient.PESEL.ToString());
+
+                if (address != null)
                 {
-                    if (dataGridView1.Rows[curRowIndex].Cells[col].Value == null) continue;
-                    tmpValue = dataGridView1.Rows[curRowIndex].Cells[col].Value.ToString();
-                    dataFromGrid.Add(tmpValue);
+                    dataFromGrid.Add(address.place.ToString());
+                    dataFromGrid.Add(address.street.ToString());
+                    dataFromGrid.Add(address.zip_code.ToString());
+                    dataFromGrid.Add(address.house.ToString());
+                    dataFromGrid.Add(address.flat.ToString());
                 }
-
-
-                while (dataFromGrid.Count < dataGridView1.Rows[curRowIndex].Cells.Count) dataFromGrid.Add(null);
-
 
 
 
             }
             catch
             {
-                MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
+                MessageBox.Show("No data !", "ERROR!");
             }
 
             this.Close();
-
-
 
 
 
@@ -190,12 +205,6 @@ namespace Clinic
             patientSearchCriteria = new Patient();
             patientSearchCriteria.fname = fnameTextbox.Text.ToString();
             patientSearchCriteria.lname = lnameTextbox.Text.ToString();
-            //patientSearchCriteria.lname = "Kowalski";
-            //patientSearchCriteria.lname = lnameTextbox.Text;
-
-            // ładowanie obiektu dataGridView
-            //  dataGridView1.Columns.Clear();
-            // dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = RegistrationFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
 

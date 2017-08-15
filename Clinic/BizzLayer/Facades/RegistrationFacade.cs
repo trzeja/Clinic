@@ -102,5 +102,28 @@ namespace BizzLayer.Facades
 
         }
 
+        public static Patient GetPatientByID(Patient searchCrit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from p in dc.Patients
+                      where (p.id_patient == searchCrit.id_patient)
+                      select p;
+            return res.FirstOrDefault();
+
+        }
+
+        public static Address GetAdressByID(Address searchCrit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from ad in dc.Addresses
+                      where (ad.id_patient == searchCrit.id_patient)
+                      select ad;
+            return res.FirstOrDefault();
+
+
+
+
+        }
+
     }
 }

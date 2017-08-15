@@ -65,6 +65,17 @@ namespace Clinic
                                             System.Globalization.CultureInfo.InvariantCulture);
                     visit.registration_date = loadedDate;
                 }
+
+                else
+                {
+
+                    //na razie nic lepszego do glowy mi nie przychodzi, chyba ze druga funkcja w doctorFacade // MW
+                    DateTime loadedDate = DateTime.ParseExact("01.01.1754 00:00:00", "dd.MM.yyyy HH:mm:ss",
+                                            System.Globalization.CultureInfo.InvariantCulture);
+                    visit.registration_date = loadedDate;
+
+                }
+
                 this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria, visit);
             }
             else
@@ -104,7 +115,7 @@ namespace Clinic
 
             catch (Exception ex)
             {
-                MessageBox.Show("Ivalid ID", "Error");
+                MessageBox.Show("Check again patient", "Error");
             }
 
             // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
