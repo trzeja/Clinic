@@ -26,7 +26,7 @@ namespace Clinic
         public SelectPersonForm(string buttonName, bool modifyTrueAddFalse)
         {
             InitializeComponent();
-            InitializeTextBoxes();
+            // InitializeTextBoxes();
             this.registrarModifyButton.Enabled = modifyTrueAddFalse;
             this.modifyTrueAddFalse = modifyTrueAddFalse;
             this.registrarModifyButton.Text = buttonName;
@@ -38,46 +38,27 @@ namespace Clinic
             else this.registrarSelectButton.Text = "Select";
         }
 
+
         private void registrarAddPatientButton_Click(object sender, EventArgs e)
         {
-            dataFromGrid.Clear();
-            if (modifyTrueAddFalse == false)
+
+            try
             {
 
-                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Add Patient", "Add");
+
+                modifyData();
+                RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[(int)index.ID], dataFromGrid[(int)index.FNAME], dataFromGrid[(int)index.LNAME], dataFromGrid[(int)index.PESEL],
+                                                                                                            dataFromGrid[(int)index.PLACE], dataFromGrid[(int)index.STREET], dataFromGrid[(int)index.ZIPCODE]);
                 registrarAddPatientForm.ShowDialog(this);
+                refreshGrid();
             }
-            else
+
+            catch
             {
-                try
-                {
-
-                    int curRowIndex = dataGridView1.CurrentCell.RowIndex;
-                    // var dataFromGrid = new List<string>();
-                    string tmpValue = null;
-
-
-                    for (int col = 0; col < dataGridView1.Rows[curRowIndex].Cells.Count; col++)
-                    {
-                        if (dataGridView1.Rows[curRowIndex].Cells[col].Value == null) continue;
-                        tmpValue = dataGridView1.Rows[curRowIndex].Cells[col].Value.ToString();
-                        dataFromGrid.Add(tmpValue);
-                    }
-
-
-                    while (dataFromGrid.Count < dataGridView1.Rows[curRowIndex].Cells.Count) dataFromGrid.Add(null);
-
-                    RegistrarAddModifyPatientForm registrarAddPatientForm = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[(int)index.ID], dataFromGrid[(int)index.FNAME], dataFromGrid[(int)index.LNAME], dataFromGrid[(int)index.PESEL],
-                                                                                                                dataFromGrid[(int)index.PLACE], dataFromGrid[(int)index.STREET], dataFromGrid[(int)index.ZIPCODE]);
-                    registrarAddPatientForm.ShowDialog(this);
-                    refreshGrid();
-                }
-                catch
-                {
-                    MessageBox.Show("Kaj mosz parametry :D ?", "ERROR!");
-                }
-
+                ;
             }
+
+
         }
 
         public void setRegistrarAddButtonEnableDisable(bool set)
@@ -142,6 +123,12 @@ namespace Clinic
 
         private void registrarSelectButton_Click(object sender, EventArgs e)
         {
+            modifyData();
+        }
+
+
+        private void modifyData()
+        {
             dataFromGrid.Clear();
 
             try
@@ -156,7 +143,7 @@ namespace Clinic
 
                 tmpID = dataGridView1.Rows[curRowIndex].Cells[0].Value.ToString();
                 int id = Int32.Parse(tmpID);
-                
+
                 patientSearchCriteria.id_patient = id;
                 addressSearchCriteria.id_patient = id;
 
@@ -189,9 +176,6 @@ namespace Clinic
             }
 
             this.Close();
-
-
-
         }
 
         private void registrarSearchButton_Click(object sender, EventArgs e)

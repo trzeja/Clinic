@@ -12,7 +12,7 @@ namespace Clinic
 {
     public partial class DoctorVisitViewForm : Form
     {
-        public DoctorVisitViewForm()
+        public DoctorVisitViewForm(int id=0)
         {
             InitializeComponent();
             //initialize data
@@ -20,6 +20,7 @@ namespace Clinic
             doctorVisitPatientDescriptionTextBox.ForeColor = SystemColors.GrayText;
             doctorVisitPatientDiagnosisTextBox.Text = "Diagnosis";
             doctorVisitPatientDiagnosisTextBox.ForeColor = SystemColors.GrayText;
+            this.id = id;
         }
 
         private void doctorFinishVisitButton_Click(object sender, EventArgs e)
@@ -39,7 +40,8 @@ namespace Clinic
         private void doctorOrderLaboratoryExaminationButton_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Laboratory examination ordered !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm();
+
+            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(id);
             examinationView.SetLabExamMode();
             examinationView.ShowDialog(this);
         }
@@ -103,5 +105,6 @@ namespace Clinic
             VisitInfoViewForm visit = new VisitInfoViewForm();
             visit.ShowDialog(this);
         }
+        private int id = 0;
     }
 }

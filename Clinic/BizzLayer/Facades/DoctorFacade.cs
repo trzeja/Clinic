@@ -18,10 +18,29 @@ namespace BizzLayer.Facades
                       into joined
                       from j in joined.DefaultIfEmpty()
                       where ((j.state == visit.state && j.id_patient == patient.id_patient) &&  (visit.registration_date <= j.registration_date))
-                      select new { p.fname, p.lname, p.PESEL, j.state, j.registration_date };
+                      select new { p.fname, p.lname, p.PESEL, j.state, j.registration_date,j.id_visit };
             return res;
 
 
         }
+
+        public static IQueryable GetLaboratoryExaminationType()
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = 
+               (from dbo in dc.Examination_dictionaries
+                select dbo.code).Distinct().OrderBy(name => name);
+            return res;
+
+
+        }
+        public static void AddLabExam(Laboratory_examination lab)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            dc.Laboratory_examinations.InsertOnSubmit(lab);
+            dc.SubmitChanges();
+        }
+
+
     }
 }

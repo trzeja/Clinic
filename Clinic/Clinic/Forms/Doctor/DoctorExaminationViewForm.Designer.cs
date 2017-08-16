@@ -101,6 +101,7 @@
             this.doctorExaminationViewOrderButton.Text = "Order";
             this.doctorExaminationViewOrderButton.UseVisualStyleBackColor = true;
             this.doctorExaminationViewOrderButton.Visible = false;
+            this.doctorExaminationViewOrderButton.Click += new System.EventHandler(this.doctorExaminationViewOrderButton_Click);
             // 
             // DoctorExaminationViewForm
             // 
