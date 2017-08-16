@@ -20,8 +20,8 @@ namespace Clinic
         public Doctor doctor;
         public Registrar registrarForm;
         public Admin adminForm;
-        public Laboratory_worker laboratory_worker;
-        public Laboratory_manager laboratory_manager;
+        //public Laboratory_worker laboratory_worker;
+        public Laboratory_MW laboratory_mw;
         public LoginForm()
         {
             InitializeComponent();
@@ -58,13 +58,13 @@ namespace Clinic
                         }
                         else if (user.roles == "LABM")
                         {
-                            laboratory_manager = new Laboratory_manager();
-                            laboratory_manager.Show();
+                            laboratory_mw = new Laboratory_MW(user.roles, loginTextBox.Text);
+                            laboratory_mw.Show();
                         }
                         else if (user.roles == "LABW")
                         {
-                            laboratory_worker = new Laboratory_worker();
-                            laboratory_worker.Show();
+                            laboratory_mw = new Laboratory_MW(user.roles, loginTextBox.Text);
+                            laboratory_mw.Show();
                         }
                         else if (user.roles == "ADM")
                     {

@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -104,29 +119,17 @@
     <Compile Include="Forms\Laboratory\LabolatoryExaminationForm.Designer.cs">
       <DependentUpon>LabolatoryExaminationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Laboratory\Laboratory_manager.cs">
+    <Compile Include="Forms\Laboratory\Laboratory_MW.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Laboratory\Laboratory_manager.Designer.cs">
-      <DependentUpon>Laboratory_manager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Laboratory\Laboratory_manager_editForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Laboratory\Laboratory_manager_editForm.Designer.cs">
-      <DependentUpon>Laboratory_manager_editForm.cs</DependentUpon>
+    <Compile Include="Forms\Laboratory\Laboratory_MW.Designer.cs">
+      <DependentUpon>Laboratory_MW.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Laboratory\Laboratory_worker.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Laboratory\Laboratory_worker.Designer.cs">
       <DependentUpon>Laboratory_worker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Laboratory\Laboratory_worker_editForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Laboratory\Laboratory_worker_editForm.Designer.cs">
-      <DependentUpon>Laboratory_worker_editForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -175,23 +178,17 @@
     <EmbeddedResource Include="Forms\Doctor\DoctorVisitViewForm.resx">
       <DependentUpon>DoctorVisitViewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Laboratory\Laboratory_MW.resx">
+      <DependentUpon>Laboratory_MW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Laboratory\LabolatoryExaminationForm.resx">
       <DependentUpon>LabolatoryExaminationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Laboratory\Laboratory_manager.resx">
-      <DependentUpon>Laboratory_manager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Laboratory\Laboratory_manager_editForm.resx">
-      <DependentUpon>Laboratory_manager_editForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Laboratory\Laboratory_worker.resx">
       <DependentUpon>Laboratory_worker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Laboratory\Laboratory_worker_editForm.resx">
-      <DependentUpon>Laboratory_worker_editForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -274,6 +271,18 @@
       <Project>{3392de43-4ed9-4c2c-9fe2-2208ef718710}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

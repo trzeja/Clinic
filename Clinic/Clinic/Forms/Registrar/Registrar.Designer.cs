@@ -124,7 +124,7 @@ namespace Clinic
             // 
             // dataTimePickerRegDate
             // 
-            this.dataTimePickerRegDate.Location = new System.Drawing.Point(96, 7);
+            this.dataTimePickerRegDate.Location = new System.Drawing.Point(96, 13);
             this.dataTimePickerRegDate.Name = "dataTimePickerRegDate";
             this.dataTimePickerRegDate.ShowCheckBox = true;
             this.dataTimePickerRegDate.Size = new System.Drawing.Size(147, 20);
@@ -133,11 +133,11 @@ namespace Clinic
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Registration date";
+            this.label1.Text = "Registration date :";
             // 
             // registrarTextBoxPatientFName
             // 
@@ -278,11 +278,11 @@ namespace Clinic
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 49);
+            this.label4.Location = new System.Drawing.Point(58, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 26;
-            this.label4.Text = "State";
+            this.label4.Text = "State :";
             // 
             // registrarStateComboBox
             // 
@@ -307,6 +307,7 @@ namespace Clinic
             this.dataGridViewRegistrar.AllowUserToDeleteRows = false;
             this.dataGridViewRegistrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRegistrar.Location = new System.Drawing.Point(4, 203);
+            this.dataGridViewRegistrar.MultiSelect = false;
             this.dataGridViewRegistrar.Name = "dataGridViewRegistrar";
             this.dataGridViewRegistrar.Size = new System.Drawing.Size(733, 131);
             this.dataGridViewRegistrar.TabIndex = 22;
@@ -341,7 +342,7 @@ namespace Clinic
             this.Name = "Registrar";
             this.Text = "Registrar";
             this.Load += new System.EventHandler(this.Registrar_Load);
-            this.ResizeEnd += new System.EventHandler(this.Registrar_ResizeEnd);
+            this.Resize += new System.EventHandler(this.Registrar_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.visitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();

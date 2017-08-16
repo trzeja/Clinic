@@ -20,8 +20,11 @@ namespace Clinic
             s.SeedDatabse();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          //  Application.Run(new LoginForm());
-            Application.Run(new Doctor());
+            //Application.Run(new LoginForm());
+            //Application.Run(new Doctor());
+            //Application.Run(new Registrar());
+            //Application.Run(new Laboratory_MW("LABM","wazniak"));
+            Application.Run(new Laboratory_MW("LABW","robol"));
             //Application.Run(new SelectPersonForm("Modify", true));
         }
     }
