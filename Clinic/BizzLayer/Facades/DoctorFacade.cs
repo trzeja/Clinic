@@ -10,6 +10,26 @@ namespace BizzLayer.Facades
 {
     static public class DoctorFacade
     {
+
+        public static Visit GetVisitById(int idVisit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from visit in dc.Visits
+                         where visit.id_visit == idVisit
+                         select visit;
+            return result.FirstOrDefault();
+        }
+
+        public static Doctor GetDoctorByVisit(int idVisit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from doctor in dc.Doctors
+                         join visit in dc.Visits on doctor.id_doc equals visit.id_doctor
+                         where visit.id_visit == idVisit
+                         select doctor;
+            return result.FirstOrDefault();
+        }
+
         public static Patient GetPatientByVisit(int idVisit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
@@ -24,9 +44,11 @@ namespace BizzLayer.Facades
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var result = from visit in dc.Visits
+                         join doctor in dc.Doctors on visit.id_doctor equals doctor.id_doc
                          where visit.id_patient == idPatient
-                         && visit.registration_date >= (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault()
-                         select new { visit.registration_date, visit.execution_cancel_datetime, visit.state };
+                         && visit.registration_date <= (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault()
+                         orderby visit.registration_date, visit.execution_cancel_datetime, visit.state
+                         select new { visit.registration_date, visit.execution_cancel_datetime, visit.state, doctor.User.fname, doctor.User.lname, visit.id_visit };
             return result;
         }
 

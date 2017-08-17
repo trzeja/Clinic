@@ -60,25 +60,25 @@ namespace Clinic
             this.doctorSearchPanel.Controls.Add(this.doctorSearchButton);
             this.doctorSearchPanel.Controls.Add(this.doctorDateTimePickerExecDate);
             this.doctorSearchPanel.Location = new System.Drawing.Point(4, 9);
-            this.doctorSearchPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doctorSearchPanel.Margin = new System.Windows.Forms.Padding(4);
             this.doctorSearchPanel.Name = "doctorSearchPanel";
             this.doctorSearchPanel.Size = new System.Drawing.Size(628, 110);
             this.doctorSearchPanel.TabIndex = 0;
             // 
             // doctorVisitStateComboBox
             // 
+            this.doctorVisitStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.doctorVisitStateComboBox.FormattingEnabled = true;
             this.doctorVisitStateComboBox.Items.AddRange(new object[] {
             "Registered",
             "Done",
             "Canceled"});
+            this.doctorVisitStateComboBox.Text = "Registered";
             this.doctorVisitStateComboBox.Location = new System.Drawing.Point(120, 43);
-            this.doctorVisitStateComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doctorVisitStateComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.doctorVisitStateComboBox.Name = "doctorVisitStateComboBox";
             this.doctorVisitStateComboBox.Size = new System.Drawing.Size(160, 24);
             this.doctorVisitStateComboBox.TabIndex = 10;
-            this.doctorVisitStateComboBox.Text = "Registered";
-            //this.doctorVisitStateComboBox.SelectedIndexChanged += new System.EventHandler(this.doctorVisitStateComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -93,7 +93,7 @@ namespace Clinic
             // doctorFindPatientButton
             // 
             this.doctorFindPatientButton.Location = new System.Drawing.Point(404, 7);
-            this.doctorFindPatientButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doctorFindPatientButton.Margin = new System.Windows.Forms.Padding(4);
             this.doctorFindPatientButton.Name = "doctorFindPatientButton";
             this.doctorFindPatientButton.Size = new System.Drawing.Size(161, 28);
             this.doctorFindPatientButton.TabIndex = 8;
@@ -115,7 +115,7 @@ namespace Clinic
             // 
             this.doctorPatientNameTextBox.Enabled = false;
             this.doctorPatientNameTextBox.Location = new System.Drawing.Point(120, 10);
-            this.doctorPatientNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doctorPatientNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.doctorPatientNameTextBox.Name = "doctorPatientNameTextBox";
             this.doctorPatientNameTextBox.ReadOnly = true;
             this.doctorPatientNameTextBox.Size = new System.Drawing.Size(275, 22);
@@ -125,7 +125,7 @@ namespace Clinic
             // doctorSearchButton
             // 
             this.doctorSearchButton.Location = new System.Drawing.Point(215, 75);
-            this.doctorSearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doctorSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.doctorSearchButton.Name = "doctorSearchButton";
             this.doctorSearchButton.Size = new System.Drawing.Size(197, 28);
             this.doctorSearchButton.TabIndex = 5;
@@ -137,7 +137,7 @@ namespace Clinic
             // 
             this.doctorDateTimePickerExecDate.Checked = false;
             this.doctorDateTimePickerExecDate.Location = new System.Drawing.Point(289, 44);
-            this.doctorDateTimePickerExecDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doctorDateTimePickerExecDate.Margin = new System.Windows.Forms.Padding(4);
             this.doctorDateTimePickerExecDate.Name = "doctorDateTimePickerExecDate";
             this.doctorDateTimePickerExecDate.ShowCheckBox = true;
             this.doctorDateTimePickerExecDate.Size = new System.Drawing.Size(313, 22);
@@ -156,7 +156,7 @@ namespace Clinic
             // doctorSelectVisitbutton
             // 
             this.doctorSelectVisitbutton.Location = new System.Drawing.Point(447, 455);
-            this.doctorSelectVisitbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doctorSelectVisitbutton.Margin = new System.Windows.Forms.Padding(4);
             this.doctorSelectVisitbutton.Name = "doctorSelectVisitbutton";
             this.doctorSelectVisitbutton.Size = new System.Drawing.Size(161, 28);
             this.doctorSelectVisitbutton.TabIndex = 2;
@@ -168,7 +168,7 @@ namespace Clinic
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 142);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(621, 290);
             this.dataGridView1.TabIndex = 3;
@@ -182,7 +182,7 @@ namespace Clinic
             this.Controls.Add(this.doctorSelectVisitbutton);
             this.Controls.Add(this.doctorSearchPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Doctor";
             this.Text = "Doctor";

@@ -118,13 +118,32 @@ namespace Clinic
             doctorVisitViewVisitListDataGrid.Columns[0].HeaderText = "Registered";
             doctorVisitViewVisitListDataGrid.Columns[1].HeaderText = "Executed/canceled";
             doctorVisitViewVisitListDataGrid.Columns[2].HeaderText = "State";
+            doctorVisitViewVisitListDataGrid.Columns[3].HeaderText = "Doctor's first name";
+            doctorVisitViewVisitListDataGrid.Columns[4].HeaderText = "Doctor's last name";
+            doctorVisitViewVisitListDataGrid.Columns[5].Visible = false;
+            doctorVisitViewVisitListDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //MessageBox.Show("Test");
         }
 
         private void doctorVisitViewVisitHistDetailsButton_Click(object sender, EventArgs e)
         {
-            VisitInfoViewForm visit = new VisitInfoViewForm();
-            visit.ShowDialog(this);
+            //Visit selected = null;
+            if (doctorVisitViewVisitListDataGrid.RowCount == 0 || doctorVisitViewVisitListDataGrid.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("No visit selected", "Error");
+            }
+            else if (doctorVisitViewVisitListDataGrid.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Selected too many visits, please select just one", "Error");
+            }
+            else
+            {
+                int selectedIndex = doctorVisitViewVisitListDataGrid.CurrentRow.Index;
+                int idSelected = Int32.Parse(doctorVisitViewVisitListDataGrid.Rows[selectedIndex].Cells[5].Value.ToString());
+                //selected = DoctorFacade.GetVisitById(idSelected);
+                VisitInfoViewForm visit = new VisitInfoViewForm(idSelected);
+                visit.ShowDialog(this);
+            }
         }
 
         private void doctorVisitStateComboBox_SelectedIndexChanged()
