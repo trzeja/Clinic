@@ -239,6 +239,7 @@
             this.doctorVisitViewLoadExamHistButton.TabIndex = 3;
             this.doctorVisitViewLoadExamHistButton.Text = "Load history";
             this.doctorVisitViewLoadExamHistButton.UseVisualStyleBackColor = true;
+            this.doctorVisitViewLoadExamHistButton.Click += new System.EventHandler(this.doctorVisitViewLoadExamHistButton_Click);
             // 
             // doctorVisitViewExaminationListLabel
             // 
@@ -272,6 +273,7 @@
             this.doctorVisitViewExaminationListDataGrid.ReadOnly = true;
             this.doctorVisitViewExaminationListDataGrid.Size = new System.Drawing.Size(896, 130);
             this.doctorVisitViewExaminationListDataGrid.TabIndex = 0;
+
             // 
             // doctorVisitViewVisitListPanel
             // 

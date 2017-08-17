@@ -10,6 +10,10 @@ namespace BizzLayer.Facades
 {
     static public class DoctorFacade
     {
+        public static IQueryable GetExaminationsByVisit(int idVisit)
+        {
+            return null;
+        }
 
         public static Visit GetVisitById(int idVisit)
         {

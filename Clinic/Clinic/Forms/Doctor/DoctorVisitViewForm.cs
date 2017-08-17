@@ -22,6 +22,8 @@ namespace Clinic
             //initialize data
             this.patient = patient;
             this.idVisit = idVisit;
+
+
             //this.id = patient.id_patient;
             doctorVisitPatientFirstNameTextBox.Text = patient.fname;
             doctorVisitPatientFirstNameTextBox.Enabled = false;
@@ -110,6 +112,12 @@ namespace Clinic
             LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
             labExamView.SetReadOnlyMode();
             labExamView.ShowDialog(this);
+        }
+
+        private void doctorVisitViewLoadExamHistButton_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Test");
         }
 
         private void doctorVisitViewLoadVisitHistButton_Click(object sender, EventArgs e)
