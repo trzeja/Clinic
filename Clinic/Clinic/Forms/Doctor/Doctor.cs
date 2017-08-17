@@ -61,9 +61,10 @@ namespace Clinic
                 visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();
                 if (doctorDateTimePickerExecDate.Checked == true)
                 {
-                    DateTime loadedDate = DateTime.ParseExact(doctorDateTimePickerExecDate.Value.ToString(), "dd.MM.yyyy HH:mm:ss",
-                                            System.Globalization.CultureInfo.InvariantCulture);
-                    visit.registration_date = loadedDate;
+                    //DateTime loadedDate = DateTime.ParseExact(doctorDateTimePickerExecDate.Value.ToString(), "dd.MM.yyyy HH:mm:ss",
+                    //                        System.Globalization.CultureInfo.InvariantCulture);
+                    //visit.registration_date = loadedDate;
+                    visit.registration_date = doctorDateTimePickerExecDate.Value;
                 }
 
                 else
@@ -73,10 +74,11 @@ namespace Clinic
                     DateTime loadedDate = DateTime.ParseExact("01.01.1754 00:00:00", "dd.MM.yyyy HH:mm:ss",
                                             System.Globalization.CultureInfo.InvariantCulture);
                     visit.registration_date = loadedDate;
-
+                    // visit.registration_date = DateTime.MinValue;
                 }
 
                 this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria, visit);
+                this.dataGridView1.Columns[0].Visible = false;
             }
             else
             {
@@ -86,7 +88,11 @@ namespace Clinic
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)
         {
-            DoctorVisitViewForm doctorViewVisit = new DoctorVisitViewForm();
+            int visitIndex = dataGridView1.CurrentRow.Index;
+            int idVisit = Int32.Parse(dataGridView1.Rows[visitIndex].Cells[0].Value.ToString());
+            Patient patient = DoctorFacade.GetPatientByVisit(idVisit);
+            //tu musimy wyciagnac wszstko z wizyty
+            DoctorVisitViewForm doctorViewVisit = new DoctorVisitViewForm(patient);
             doctorViewVisit.ShowDialog(this);
         }
 
@@ -121,5 +127,10 @@ namespace Clinic
             // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
         private int _id = 0;
+
+        private void doctorVisitStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

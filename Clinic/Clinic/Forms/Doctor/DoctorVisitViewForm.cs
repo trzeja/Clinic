@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BizzLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,16 @@ namespace Clinic
 {
     public partial class DoctorVisitViewForm : Form
     {
-        public DoctorVisitViewForm()
+        public DoctorVisitViewForm(Patient patient)
         {
             InitializeComponent();
             //initialize data
+            doctorVisitPatientFirstNameTextBox.Text = patient.fname;
+            doctorVisitPatientFirstNameTextBox.Enabled = false;
+            doctorVisitPatientLastNameTextBox.Text = patient.lname;
+            doctorVisitPatientLastNameTextBox.Enabled = false;
+            doctorVisitPatientPeselTextBox.Text = patient.PESEL;
+            doctorVisitPatientPeselTextBox.Enabled = false;
             doctorVisitPatientDescriptionTextBox.Text = "Description";
             doctorVisitPatientDescriptionTextBox.ForeColor = SystemColors.GrayText;
             doctorVisitPatientDiagnosisTextBox.Text = "Diagnosis";
@@ -96,6 +103,11 @@ namespace Clinic
             LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
             labExamView.SetReadOnlyMode();
             labExamView.ShowDialog(this);
+        }
+
+        private void doctorVisitViewLoadVisitHistButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test");
         }
 
         private void doctorVisitViewVisitHistDetailsButton_Click(object sender, EventArgs e)

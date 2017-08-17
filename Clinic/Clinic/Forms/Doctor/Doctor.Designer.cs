@@ -59,9 +59,10 @@ namespace Clinic
             this.doctorSearchPanel.Controls.Add(this.doctorPatientNameTextBox);
             this.doctorSearchPanel.Controls.Add(this.doctorSearchButton);
             this.doctorSearchPanel.Controls.Add(this.doctorDateTimePickerExecDate);
-            this.doctorSearchPanel.Location = new System.Drawing.Point(3, 7);
+            this.doctorSearchPanel.Location = new System.Drawing.Point(4, 9);
+            this.doctorSearchPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorSearchPanel.Name = "doctorSearchPanel";
-            this.doctorSearchPanel.Size = new System.Drawing.Size(471, 89);
+            this.doctorSearchPanel.Size = new System.Drawing.Size(628, 110);
             this.doctorSearchPanel.TabIndex = 0;
             // 
             // doctorVisitStateComboBox
@@ -71,26 +72,30 @@ namespace Clinic
             "Registered",
             "Done",
             "Cancelled"});
-            this.doctorVisitStateComboBox.Location = new System.Drawing.Point(90, 35);
+            this.doctorVisitStateComboBox.Location = new System.Drawing.Point(120, 43);
+            this.doctorVisitStateComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorVisitStateComboBox.Name = "doctorVisitStateComboBox";
-            this.doctorVisitStateComboBox.Size = new System.Drawing.Size(121, 21);
+            this.doctorVisitStateComboBox.Size = new System.Drawing.Size(160, 24);
             this.doctorVisitStateComboBox.TabIndex = 10;
             this.doctorVisitStateComboBox.Text = "Registered";
+            this.doctorVisitStateComboBox.SelectedIndexChanged += new System.EventHandler(this.doctorVisitStateComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 38);
+            this.label2.Location = new System.Drawing.Point(28, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Visit status :";
             // 
             // doctorFindPatientButton
             // 
-            this.doctorFindPatientButton.Location = new System.Drawing.Point(303, 6);
+            this.doctorFindPatientButton.Location = new System.Drawing.Point(404, 7);
+            this.doctorFindPatientButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorFindPatientButton.Name = "doctorFindPatientButton";
-            this.doctorFindPatientButton.Size = new System.Drawing.Size(121, 23);
+            this.doctorFindPatientButton.Size = new System.Drawing.Size(161, 28);
             this.doctorFindPatientButton.TabIndex = 8;
             this.doctorFindPatientButton.Text = "Find patient";
             this.doctorFindPatientButton.UseVisualStyleBackColor = true;
@@ -99,26 +104,30 @@ namespace Clinic
             // doctorPatientNameLabel
             // 
             this.doctorPatientNameLabel.AutoSize = true;
-            this.doctorPatientNameLabel.Location = new System.Drawing.Point(9, 11);
+            this.doctorPatientNameLabel.Location = new System.Drawing.Point(12, 14);
+            this.doctorPatientNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.doctorPatientNameLabel.Name = "doctorPatientNameLabel";
-            this.doctorPatientNameLabel.Size = new System.Drawing.Size(75, 13);
+            this.doctorPatientNameLabel.Size = new System.Drawing.Size(99, 17);
             this.doctorPatientNameLabel.TabIndex = 7;
             this.doctorPatientNameLabel.Text = "Patient name :";
             // 
             // doctorPatientNameTextBox
             // 
-            this.doctorPatientNameTextBox.Location = new System.Drawing.Point(90, 8);
+            this.doctorPatientNameTextBox.Enabled = false;
+            this.doctorPatientNameTextBox.Location = new System.Drawing.Point(120, 10);
+            this.doctorPatientNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorPatientNameTextBox.Name = "doctorPatientNameTextBox";
             this.doctorPatientNameTextBox.ReadOnly = true;
-            this.doctorPatientNameTextBox.Size = new System.Drawing.Size(207, 20);
+            this.doctorPatientNameTextBox.Size = new System.Drawing.Size(275, 22);
             this.doctorPatientNameTextBox.TabIndex = 6;
             this.doctorPatientNameTextBox.Text = "Patient name";
             // 
             // doctorSearchButton
             // 
-            this.doctorSearchButton.Location = new System.Drawing.Point(161, 61);
+            this.doctorSearchButton.Location = new System.Drawing.Point(215, 75);
+            this.doctorSearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorSearchButton.Name = "doctorSearchButton";
-            this.doctorSearchButton.Size = new System.Drawing.Size(148, 23);
+            this.doctorSearchButton.Size = new System.Drawing.Size(197, 28);
             this.doctorSearchButton.TabIndex = 5;
             this.doctorSearchButton.Text = "Search";
             this.doctorSearchButton.UseVisualStyleBackColor = true;
@@ -127,10 +136,11 @@ namespace Clinic
             // doctorDateTimePickerExecDate
             // 
             this.doctorDateTimePickerExecDate.Checked = false;
-            this.doctorDateTimePickerExecDate.Location = new System.Drawing.Point(217, 36);
+            this.doctorDateTimePickerExecDate.Location = new System.Drawing.Point(289, 44);
+            this.doctorDateTimePickerExecDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorDateTimePickerExecDate.Name = "doctorDateTimePickerExecDate";
             this.doctorDateTimePickerExecDate.ShowCheckBox = true;
-            this.doctorDateTimePickerExecDate.Size = new System.Drawing.Size(236, 20);
+            this.doctorDateTimePickerExecDate.Size = new System.Drawing.Size(313, 22);
             this.doctorDateTimePickerExecDate.TabIndex = 4;
             // 
             // clinicDataSet1BindingSource
@@ -145,9 +155,10 @@ namespace Clinic
             // 
             // doctorSelectVisitbutton
             // 
-            this.doctorSelectVisitbutton.Location = new System.Drawing.Point(335, 370);
+            this.doctorSelectVisitbutton.Location = new System.Drawing.Point(447, 455);
+            this.doctorSelectVisitbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorSelectVisitbutton.Name = "doctorSelectVisitbutton";
-            this.doctorSelectVisitbutton.Size = new System.Drawing.Size(121, 23);
+            this.doctorSelectVisitbutton.Size = new System.Drawing.Size(161, 28);
             this.doctorSelectVisitbutton.TabIndex = 2;
             this.doctorSelectVisitbutton.Text = "Select Visit";
             this.doctorSelectVisitbutton.UseVisualStyleBackColor = true;
@@ -156,20 +167,22 @@ namespace Clinic
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 115);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 142);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(466, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(621, 290);
             this.dataGridView1.TabIndex = 3;
             // 
             // Doctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 402);
+            this.ClientSize = new System.Drawing.Size(641, 495);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.doctorSelectVisitbutton);
             this.Controls.Add(this.doctorSearchPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Doctor";
             this.Text = "Doctor";
