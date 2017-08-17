@@ -274,7 +274,7 @@
             this.doctorVisitViewLoadVisitHistButton.TabIndex = 3;
             this.doctorVisitViewLoadVisitHistButton.Text = "Load history";
             this.doctorVisitViewLoadVisitHistButton.UseVisualStyleBackColor = true;
-
+            this.doctorVisitViewLoadVisitHistButton.Click += new System.EventHandler(this.doctorVisitViewLoadVisitHistButton_Click);
             // 
             // doctorVisitViewVisitListLabel
             // 

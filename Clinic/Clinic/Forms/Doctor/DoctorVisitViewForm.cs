@@ -1,4 +1,5 @@
 ﻿using BizzLayer;
+using BizzLayer.Facades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,15 @@ namespace Clinic
 {
     public partial class DoctorVisitViewForm : Form
     {
-        public DoctorVisitViewForm(Patient patient)
+        Patient patient;
+        int idVisit;
+        public DoctorVisitViewForm(Patient patient, int idVisit)
         {
             InitializeComponent();
             //initialize data
-            this.id = patient.id_patient;
+            this.patient = patient;
+            this.idVisit = idVisit;
+            //this.id = patient.id_patient;
             doctorVisitPatientFirstNameTextBox.Text = patient.fname;
             doctorVisitPatientFirstNameTextBox.Enabled = false;
             doctorVisitPatientLastNameTextBox.Text = patient.lname;
@@ -48,7 +53,7 @@ namespace Clinic
         {
             //MessageBox.Show("Laboratory examination ordered !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(id);
+            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.patient.id_patient);
             examinationView.SetLabExamMode();
             examinationView.ShowDialog(this);
         }
@@ -109,7 +114,11 @@ namespace Clinic
 
         private void doctorVisitViewLoadVisitHistButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            this.doctorVisitViewVisitListDataGrid.DataSource = DoctorFacade.GetVisitsByPatient(patient.id_patient,idVisit);
+            doctorVisitViewVisitListDataGrid.Columns[0].HeaderText = "Registered";
+            doctorVisitViewVisitListDataGrid.Columns[1].HeaderText = "Executed/canceled";
+            doctorVisitViewVisitListDataGrid.Columns[2].HeaderText = "State";
+            //MessageBox.Show("Test");
         }
 
         private void doctorVisitViewVisitHistDetailsButton_Click(object sender, EventArgs e)
@@ -123,6 +132,6 @@ namespace Clinic
 
         }
 
-        private int id = 0;
+        //private int id = 0;
     }
 }

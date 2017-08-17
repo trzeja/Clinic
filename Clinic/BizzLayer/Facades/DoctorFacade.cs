@@ -20,6 +20,16 @@ namespace BizzLayer.Facades
             return result.FirstOrDefault();
         }
 
+        public static IQueryable GetVisitsByPatient(int idPatient, int idVisit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from visit in dc.Visits
+                         where visit.id_patient == idPatient
+                         && visit.registration_date >= (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault()
+                         select new { visit.registration_date, visit.execution_cancel_datetime, visit.state };
+            return result;
+        }
+
         public static IQueryable GetPatientsWithAdresses(Patient patient, Visit visit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();

@@ -71,7 +71,7 @@ namespace Clinic
             this.doctorVisitStateComboBox.Items.AddRange(new object[] {
             "Registered",
             "Done",
-            "Cancelled"});
+            "Canceled"});
             this.doctorVisitStateComboBox.Location = new System.Drawing.Point(120, 43);
             this.doctorVisitStateComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.doctorVisitStateComboBox.Name = "doctorVisitStateComboBox";

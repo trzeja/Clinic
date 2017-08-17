@@ -78,7 +78,7 @@ namespace Clinic
                 }
 
                 this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria, visit);
-                this.dataGridView1.Columns[0].Visible = false;
+                this.dataGridView1.Columns[5].Visible = false;
             }
             else
             {
@@ -88,12 +88,23 @@ namespace Clinic
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)
         {
-            int visitIndex = dataGridView1.CurrentRow.Index;
-            int idVisit = Int32.Parse(dataGridView1.Rows[visitIndex].Cells[0].Value.ToString());
-            Patient patient = DoctorFacade.GetPatientByVisit(idVisit);
-            //tu musimy wyciagnac wszstko z wizyty
-            DoctorVisitViewForm doctorViewVisit = new DoctorVisitViewForm(patient);
-            doctorViewVisit.ShowDialog(this);
+            if (dataGridView1.RowCount == 0 || dataGridView1.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("No visit selected", "Error");
+            }
+            else if (dataGridView1.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Selected too many visits, please select just one", "Error");
+            }
+            else
+            {
+                int visitIndex = dataGridView1.CurrentRow.Index;
+                int idVisit = Int32.Parse(dataGridView1.Rows[visitIndex].Cells[5].Value.ToString());
+                Patient patient = DoctorFacade.GetPatientByVisit(idVisit);
+                //tu musimy wyciagnac wszstko z wizyty
+                DoctorVisitViewForm doctorViewVisit = new DoctorVisitViewForm(patient, idVisit);
+                doctorViewVisit.ShowDialog(this);
+            }
         }
 
         private void doctorFindPatientButton_Click(object sender, EventArgs e)
