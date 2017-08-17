@@ -17,6 +17,7 @@ namespace Clinic
         {
             InitializeComponent();
             //initialize data
+            this.id = patient.id_patient;
             doctorVisitPatientFirstNameTextBox.Text = patient.fname;
             doctorVisitPatientFirstNameTextBox.Enabled = false;
             doctorVisitPatientLastNameTextBox.Text = patient.lname;
@@ -116,6 +117,12 @@ namespace Clinic
             VisitInfoViewForm visit = new VisitInfoViewForm();
             visit.ShowDialog(this);
         }
+
+        private void doctorVisitStateComboBox_SelectedIndexChanged()
+        {
+
+        }
+
         private int id = 0;
     }
 }

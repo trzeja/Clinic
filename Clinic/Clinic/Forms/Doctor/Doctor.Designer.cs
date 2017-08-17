@@ -78,7 +78,7 @@ namespace Clinic
             this.doctorVisitStateComboBox.Size = new System.Drawing.Size(160, 24);
             this.doctorVisitStateComboBox.TabIndex = 10;
             this.doctorVisitStateComboBox.Text = "Registered";
-            this.doctorVisitStateComboBox.SelectedIndexChanged += new System.EventHandler(this.doctorVisitStateComboBox_SelectedIndexChanged);
+            //this.doctorVisitStateComboBox.SelectedIndexChanged += new System.EventHandler(this.doctorVisitStateComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
