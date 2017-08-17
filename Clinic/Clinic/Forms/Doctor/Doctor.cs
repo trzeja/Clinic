@@ -52,12 +52,12 @@ namespace Clinic
 
 
 
-            if (_id != 0)
+            if (id_patient != 0)
             {
-                patientSearchCriteria.id_patient = _id;
+                patientSearchCriteria.id_patient = id_patient;
 
 
-                visit.id_patient = _id;
+                visit.id_patient = id_patient;
                 visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();
                 if (doctorDateTimePickerExecDate.Checked == true)
                 {
@@ -98,23 +98,18 @@ namespace Clinic
 
         private void doctorFindPatientButton_Click(object sender, EventArgs e)
         {
-            //SelectPersonForm doctorSelectPatient = new SelectPersonForm(p);            
-            //doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
-            //doctorSelectPatient.ShowDialog(this);
-            //this.doctorPatientNameTextBox.Text = p.lname;
-
             SelectPersonForm doctorSelectPatient = new SelectPersonForm();
             doctorSelectPatient.setRegistrarAddButtonEnableDisable(false);
             doctorSelectPatient.ShowDialog(this);
 
 
-            _id = 0;
+            id_patient = 0;
             try
             {
-                Int32.TryParse(doctorSelectPatient.getID(), out _id);
+                Int32.TryParse(doctorSelectPatient.getID(), out id_patient);
                 Patient patientSearchCriteria;
                 patientSearchCriteria = new Patient();
-                patientSearchCriteria.id_patient = _id;
+                patientSearchCriteria.id_patient = id_patient;
                 this.doctorPatientNameTextBox.Text = doctorSelectPatient.getLname();
 
             }
@@ -126,11 +121,6 @@ namespace Clinic
 
             // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
-        private int _id = 0;
-
-        private void doctorVisitStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        private int id_patient = 0;
     }
 }
