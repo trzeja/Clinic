@@ -39,11 +39,11 @@
   </Table>
   <Table Name="dbo.Examination_dictionary" Member="Examination_dictionaries">
     <Type Name="Examination_dictionary">
-      <Column Name="code" Type="System.String" DbType="NVarChar(254) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="type" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
-      <Association Name="Examination_dictionary_Laboratory_examination" Member="Laboratory_examinations" ThisKey="code" OtherKey="result" Type="Laboratory_examination" />
-      <Association Name="Examination_dictionary_Physical_examination" Member="Physical_examinations" ThisKey="code" OtherKey="result" Type="Physical_examination" />
+      <Association Name="Examination_dictionary_Laboratory_examination" Member="Laboratory_examinations" ThisKey="code" OtherKey="code" Type="Laboratory_examination" />
+      <Association Name="Examination_dictionary_Physical_examination" Member="Physical_examinations" ThisKey="code" OtherKey="code" Type="Physical_examination" />
     </Type>
   </Table>
   <Table Name="dbo.Laboratory_examination" Member="Laboratory_examinations">
@@ -59,7 +59,8 @@
       <Column Name="id_visit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_laboratory_woker" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_laboratory_manager" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Examination_dictionary_Laboratory_examination" Member="Examination_dictionary" ThisKey="result" OtherKey="code" Type="Examination_dictionary" IsForeignKey="true" />
+      <Column Name="code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Examination_dictionary_Laboratory_examination" Member="Examination_dictionary" ThisKey="code" OtherKey="code" Type="Examination_dictionary" IsForeignKey="true" />
       <Association Name="Visit_Laboratory_examination" Member="Visit" ThisKey="id_visit" OtherKey="id_visit" Type="Visit" IsForeignKey="true" />
       <Association Name="Laboratory_manager_Laboratory_examination" Member="Laboratory_manager" ThisKey="id_laboratory_manager" OtherKey="id_laboratory_manager" Type="Laboratory_manager" IsForeignKey="true" />
       <Association Name="Laboratory_worker_Laboratory_examination" Member="Laboratory_worker" ThisKey="id_laboratory_woker" OtherKey="id_laboratory_worker" Type="Laboratory_worker" IsForeignKey="true" />
@@ -96,7 +97,8 @@
       <Column Name="id_physical_examination" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="result" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="id_visit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Examination_dictionary_Physical_examination" Member="Examination_dictionary" ThisKey="result" OtherKey="code" Type="Examination_dictionary" IsForeignKey="true" />
+      <Column Name="code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Examination_dictionary_Physical_examination" Member="Examination_dictionary" ThisKey="code" OtherKey="code" Type="Examination_dictionary" IsForeignKey="true" />
       <Association Name="Visit_Physical_examination" Member="Visit" ThisKey="id_visit" OtherKey="id_visit" Type="Visit" IsForeignKey="true" />
     </Type>
   </Table>
