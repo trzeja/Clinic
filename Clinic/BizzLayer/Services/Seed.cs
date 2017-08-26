@@ -202,7 +202,7 @@ namespace BizzLayer.Services
             v1.id_doctor = index_doc;
             v1.description = "qwer";
             v1.diagnosis = "asdf";
-            v1.state = "REGISTERED";
+            v1.state = "REG";
             v1.registration_date = new DateTime(2017, 07, 20);
 
             Visit v2 = new Visit();
@@ -212,7 +212,7 @@ namespace BizzLayer.Services
             v2.id_doctor = index_doc;
             v2.description = "qwer";
             v2.diagnosis = "asdf";
-            v2.state = "CANCELED";
+            v2.state = "CANC";
             v2.registration_date = new DateTime(2017, 07, 5);
             v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
 
