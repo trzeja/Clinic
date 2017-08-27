@@ -32,7 +32,7 @@ namespace BizzLayer.Services
             }
         }
 
-        
+
         private void SeedUsers(DataClasses1DataContext dc)
         {
             User u = new User();
@@ -42,7 +42,7 @@ namespace BizzLayer.Services
             u.lname = "Kowalski";
             u.roles = "DOC";
 
-           if (!dc.Users.Contains(u))
+            if (!dc.Users.Contains(u))
                 dc.Users.InsertOnSubmit(u);
 
             User u1 = new User();
@@ -63,7 +63,7 @@ namespace BizzLayer.Services
             u2.lname = "Kowalski";
             u2.roles = "REG";
 
-           if (!dc.Users.Contains(u2))
+            if (!dc.Users.Contains(u2))
                 dc.Users.InsertOnSubmit(u2);
 
             User u3 = new User();
@@ -111,7 +111,7 @@ namespace BizzLayer.Services
 
                 dc.SubmitChanges();
             }
-           
+
         }
 
         private void SeedAddresses(DataClasses1DataContext dc, ref int index_pat)
@@ -156,7 +156,7 @@ namespace BizzLayer.Services
                 r.user_name = "reg";
 
                 //if (!dc.Registrations.Contains(r))
-                    dc.Registrations.InsertOnSubmit(r);
+                dc.Registrations.InsertOnSubmit(r);
                 dc.SubmitChanges();
             }
         }
@@ -179,7 +179,7 @@ namespace BizzLayer.Services
                 d.medical_right_no = "qw3rtyu10p";
 
                 //if (!dc.Doctors.Contains(d))
-                    dc.Doctors.InsertOnSubmit(d);
+                dc.Doctors.InsertOnSubmit(d);
             }
             dc.SubmitChanges();
         }
@@ -196,7 +196,7 @@ namespace BizzLayer.Services
             //else
             //{
             Visit v1 = new Visit();
-           // v1.id_visit = 2;
+            // v1.id_visit = 2;
             v1.id_registration = index_reg;
             v1.id_patient = 1;
             v1.id_doctor = index_doc;
@@ -206,7 +206,7 @@ namespace BizzLayer.Services
             v1.registration_date = new DateTime(2017, 07, 20);
 
             Visit v2 = new Visit();
-           // v2.id_visit = 3;
+            // v2.id_visit = 3;
             v2.id_registration = index_reg;
             v2.id_patient = 1;
             v2.id_doctor = index_doc;
@@ -217,7 +217,7 @@ namespace BizzLayer.Services
             v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
 
             Visit v3 = new Visit();
-           // v3.id_visit = 4;
+            // v3.id_visit = 4;
             v3.id_registration = index_reg;
             v3.id_patient = 1;
             v3.id_doctor = index_doc;
@@ -226,16 +226,18 @@ namespace BizzLayer.Services
             v3.state = "DONE";
             v3.registration_date = new DateTime(2017, 07, 15);
 
-            if (dc.Patients.Any(b => b.id_patient == v1.id_patient) && dc.Doctors.Any(b => b.id_doc == v1.id_doctor) && dc.Registrations.Any(b => b.id_registration == v1.id_registration))
-                dc.Visits.InsertOnSubmit(v1);
+            //if (dc.Patients.Any(b => b.id_patient == v1.id_patient) && dc.Doctors.Any(b => b.id_doc == v1.id_doctor) && dc.Registrations.Any(b => b.id_registration == v1.id_registration))
+            //    dc.Visits.InsertOnSubmit(v1);
 
-            if (dc.Patients.Any(b => b.id_patient == v2.id_patient) && dc.Doctors.Any(b => b.id_doc == v2.id_doctor) && dc.Registrations.Any(b => b.id_registration == v2.id_registration))
-                dc.Visits.InsertOnSubmit(v2);
+            //if (dc.Patients.Any(b => b.id_patient == v2.id_patient) && dc.Doctors.Any(b => b.id_doc == v2.id_doctor) && dc.Registrations.Any(b => b.id_registration == v2.id_registration))
+            //    dc.Visits.InsertOnSubmit(v2);
 
-            if (dc.Patients.Any(b => b.id_patient == v3.id_patient) && dc.Doctors.Any(b => b.id_doc == v3.id_doctor) && dc.Registrations.Any(b => b.id_registration == v3.id_registration))
-                dc.Visits.InsertOnSubmit(v3);
+            //if (dc.Patients.Any(b => b.id_patient == v3.id_patient) && dc.Doctors.Any(b => b.id_doc == v3.id_doctor) && dc.Registrations.Any(b => b.id_registration == v3.id_registration))
+            //    dc.Visits.InsertOnSubmit(v3);
 
-
+            addVisit(v1, dc);
+            addVisit(v2, dc);
+            addVisit(v3, dc);
 
             //if (!dc.Visits.Contains(v1))
             //    dc.Visits.InsertOnSubmit(v1);
@@ -247,5 +249,21 @@ namespace BizzLayer.Services
             dc.SubmitChanges();
             //}
         }
+
+        private void addVisit(Visit v1, DataClasses1DataContext dc)
+        {
+            if (dc.Patients.Any(b => b.id_patient == v1.id_patient) && dc.Doctors.Any(b => b.id_doc == v1.id_doctor) && dc.Registrations.Any(b => b.id_registration == v1.id_registration))
+            {
+
+                if (!(dc.Visits.Any(x => x.id_patient == v1.id_patient) && dc.Visits.Any(x => x.id_doctor == v1.id_doctor) && dc.Visits.Any(x => x.description == v1.description) &&
+                    dc.Visits.Any(x => x.registration_date == v1.registration_date) && dc.Visits.Any(x => x.state == v1.state)))
+                {
+                    dc.Visits.InsertOnSubmit(v1);
+
+                }
+
+            }
+            dc.SubmitChanges();
+        }
     }
-    }
+}
