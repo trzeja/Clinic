@@ -78,7 +78,13 @@ namespace Clinic
                 }
 
                 this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria, visit);
+                this.dataGridView1.Columns[0].HeaderText = "Patient's first name";
+                this.dataGridView1.Columns[1].HeaderText = "Patient's last name";
+                this.dataGridView1.Columns[3].HeaderText = "State of visit";
+                this.dataGridView1.Columns[4].HeaderText = "Registration date";
+                // this.dataGridView1.Columns[0].Name = "Patient's first name";
                 this.dataGridView1.Columns[5].Visible = false;
+                this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             else
             {
