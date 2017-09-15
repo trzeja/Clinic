@@ -27,7 +27,16 @@ namespace Clinic
             VisitViewDoctorLastNameTextBox.Text = doctor.User.lname;
             VisitViewVisitStateComboBox.Text = visit.state;
             VisitViewRegisterDateTimePicker.Value = visit.registration_date;
-            VisitViewExecCancelDateTimePicker.Value = visit.execution_cancel_datetime.Value;
+            //tu wywala jak nie ma
+            if (visit.execution_cancel_datetime == null)
+            {
+                VisitViewExecCancelDateTimePicker.CustomFormat = " ";
+                VisitViewExecCancelDateTimePicker.Format = DateTimePickerFormat.Custom;
+            } else
+            {
+                VisitViewExecCancelDateTimePicker.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+                VisitViewExecCancelDateTimePicker.Value = visit.execution_cancel_datetime.Value;
+            }
             VisitViewDescriptionTextBox.Text = visit.description;
             VisitViewDiagnosisTextBox.Text = visit.diagnosis;
 
