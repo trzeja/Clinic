@@ -58,7 +58,22 @@ namespace Clinic
 
 
                 visit.id_patient = id_patient;
-                visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();
+                if (this.doctorVisitStateComboBox.SelectedItem != null)
+                {
+                    string visitState = this.doctorVisitStateComboBox.SelectedItem.ToString();
+                    if (visitState.Equals("Registered"))
+                    {
+                        visit.state = "REG";
+                    }
+                    else if (visitState.Equals("Done"))
+                    {
+                        visit.state = "DONE";
+                    }
+                    else if (visitState.Equals("Canceled"))
+                    {
+                        visit.state = "CANC";
+                    }
+                }
                 if (doctorDateTimePickerExecDate.Checked == true)
                 {
                     //DateTime loadedDate = DateTime.ParseExact(doctorDateTimePickerExecDate.Value.ToString(), "dd.MM.yyyy HH:mm:ss",

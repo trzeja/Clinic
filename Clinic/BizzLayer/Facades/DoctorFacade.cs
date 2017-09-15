@@ -63,7 +63,7 @@ namespace BizzLayer.Facades
                       join v in dc.Visits on p.id_patient equals v.id_patient
                       into joined
                       from j in joined.DefaultIfEmpty()
-                      where ((j.state == visit.state && j.id_patient == patient.id_patient) &&  (visit.registration_date <= j.registration_date))
+                      where (((j.state == visit.state || visit.state == null) && j.id_patient == patient.id_patient) &&  (visit.registration_date <= j.registration_date))
                       select new { p.fname, p.lname, p.PESEL, j.state, j.registration_date,j.id_visit };
             return res;
 

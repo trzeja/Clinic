@@ -70,10 +70,10 @@ namespace Clinic
             this.doctorVisitStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.doctorVisitStateComboBox.FormattingEnabled = true;
             this.doctorVisitStateComboBox.Items.AddRange(new object[] {
+            "",
             "Registered",
             "Done",
             "Canceled"});
-            this.doctorVisitStateComboBox.Text = "Registered";
             this.doctorVisitStateComboBox.Location = new System.Drawing.Point(120, 43);
             this.doctorVisitStateComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.doctorVisitStateComboBox.Name = "doctorVisitStateComboBox";
