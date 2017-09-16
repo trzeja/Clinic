@@ -55,10 +55,9 @@ namespace Clinic
             // 
             // adminEditButton
             // 
-            this.adminEditButton.Location = new System.Drawing.Point(524, 363);
-            this.adminEditButton.Margin = new System.Windows.Forms.Padding(4);
+            this.adminEditButton.Location = new System.Drawing.Point(483, 345);
             this.adminEditButton.Name = "adminEditButton";
-            this.adminEditButton.Size = new System.Drawing.Size(100, 28);
+            this.adminEditButton.Size = new System.Drawing.Size(75, 23);
             this.adminEditButton.TabIndex = 2;
             this.adminEditButton.Text = "Modify";
             this.adminEditButton.UseVisualStyleBackColor = true;
@@ -66,10 +65,9 @@ namespace Clinic
             // 
             // adminAddButton
             // 
-            this.adminAddButton.Location = new System.Drawing.Point(416, 363);
-            this.adminAddButton.Margin = new System.Windows.Forms.Padding(4);
+            this.adminAddButton.Location = new System.Drawing.Point(402, 345);
             this.adminAddButton.Name = "adminAddButton";
-            this.adminAddButton.Size = new System.Drawing.Size(100, 28);
+            this.adminAddButton.Size = new System.Drawing.Size(75, 23);
             this.adminAddButton.TabIndex = 1;
             this.adminAddButton.Text = "Add";
             this.adminAddButton.UseVisualStyleBackColor = true;
@@ -79,10 +77,11 @@ namespace Clinic
             // 
             this.dataGridAdmin.AllowUserToAddRows = false;
             this.dataGridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAdmin.Location = new System.Drawing.Point(40, 114);
+            this.dataGridAdmin.Location = new System.Drawing.Point(5, 98);
+            this.dataGridAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridAdmin.MultiSelect = false;
             this.dataGridAdmin.Name = "dataGridAdmin";
-            this.dataGridAdmin.Size = new System.Drawing.Size(564, 238);
+            this.dataGridAdmin.Size = new System.Drawing.Size(554, 229);
             this.dataGridAdmin.TabIndex = 3;
             this.dataGridAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAdmin_CellContentClick);
             // 
@@ -102,10 +101,9 @@ namespace Clinic
             // 
             // registrarSearchButton
             // 
-            this.registrarSearchButton.Location = new System.Drawing.Point(517, 33);
-            this.registrarSearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.registrarSearchButton.Location = new System.Drawing.Point(439, 27);
             this.registrarSearchButton.Name = "registrarSearchButton";
-            this.registrarSearchButton.Size = new System.Drawing.Size(100, 28);
+            this.registrarSearchButton.Size = new System.Drawing.Size(75, 23);
             this.registrarSearchButton.TabIndex = 21;
             this.registrarSearchButton.Text = "Search";
             this.registrarSearchButton.UseVisualStyleBackColor = true;
@@ -113,38 +111,34 @@ namespace Clinic
             // 
             // adminTextBoxLastName
             // 
-            this.adminTextBoxLastName.Location = new System.Drawing.Point(369, 60);
-            this.adminTextBoxLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.adminTextBoxLastName.Location = new System.Drawing.Point(277, 49);
             this.adminTextBoxLastName.Name = "adminTextBoxLastName";
-            this.adminTextBoxLastName.Size = new System.Drawing.Size(132, 22);
+            this.adminTextBoxLastName.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxLastName.TabIndex = 20;
             // 
             // adminTextBoxFirstName
             // 
-            this.adminTextBoxFirstName.Location = new System.Drawing.Point(369, 11);
-            this.adminTextBoxFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.adminTextBoxFirstName.Location = new System.Drawing.Point(277, 9);
             this.adminTextBoxFirstName.Name = "adminTextBoxFirstName";
-            this.adminTextBoxFirstName.Size = new System.Drawing.Size(132, 22);
+            this.adminTextBoxFirstName.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxFirstName.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Retire date";
             // 
             // dataTimePickerRegDate
             // 
             this.dataTimePickerRegDate.Checked = false;
-            this.dataTimePickerRegDate.Location = new System.Drawing.Point(91, 9);
-            this.dataTimePickerRegDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dataTimePickerRegDate.Location = new System.Drawing.Point(68, 7);
             this.dataTimePickerRegDate.Name = "dataTimePickerRegDate";
             this.dataTimePickerRegDate.ShowCheckBox = true;
-            this.dataTimePickerRegDate.Size = new System.Drawing.Size(175, 22);
+            this.dataTimePickerRegDate.Size = new System.Drawing.Size(132, 20);
             this.dataTimePickerRegDate.TabIndex = 3;
             // 
             // panel1
@@ -159,19 +153,17 @@ namespace Clinic
             this.panel1.Controls.Add(this.adminTextBoxLastName);
             this.panel1.Controls.Add(this.dataTimePickerRegDate);
             this.panel1.Controls.Add(this.adminTextBoxFirstName);
-            this.panel1.Location = new System.Drawing.Point(7, 7);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(632, 96);
+            this.panel1.Size = new System.Drawing.Size(553, 78);
             this.panel1.TabIndex = 22;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 60);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(18, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 17);
+            this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 25;
             this.label4.Text = "Role";
             // 
@@ -185,42 +177,38 @@ namespace Clinic
             "LABM",
             "LABW",
             "ADM"});
-            this.comboBox1.Location = new System.Drawing.Point(91, 54);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(68, 44);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 24);
+            this.comboBox1.Size = new System.Drawing.Size(132, 21);
             this.comboBox1.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(281, 64);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(211, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 17);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "Last name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(282, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(212, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "First name";
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 399);
+            this.ClientSize = new System.Drawing.Size(570, 380);
             this.Controls.Add(this.dataGridAdmin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.adminEditButton);
             this.Controls.Add(this.adminAddButton);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
