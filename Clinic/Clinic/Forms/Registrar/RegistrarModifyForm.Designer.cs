@@ -1,4 +1,6 @@
-﻿namespace Clinic
+﻿using BizzLayer.Model;
+
+namespace Clinic
 {
     partial class RegistrarAddModifyForm
     {
@@ -212,8 +214,8 @@
             // 
             this.registrarStateComboBox.FormattingEnabled = true;
             this.registrarStateComboBox.Items.AddRange(new object[] {
-            "REG",
-            "CANC"});
+            Consts.visitStateRegistered,
+            Consts.visitStateCancelled});
             this.registrarStateComboBox.Location = new System.Drawing.Point(110, 141);
             this.registrarStateComboBox.Name = "registrarStateComboBox";
             this.registrarStateComboBox.Size = new System.Drawing.Size(130, 21);
