@@ -81,9 +81,9 @@ namespace Clinic
             this.dataGridAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridAdmin.MultiSelect = false;
             this.dataGridAdmin.Name = "dataGridAdmin";
+            this.dataGridAdmin.ReadOnly = true;
             this.dataGridAdmin.Size = new System.Drawing.Size(554, 229);
             this.dataGridAdmin.TabIndex = 3;
-            this.dataGridAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAdmin_CellContentClick);
             // 
             // userBindingSource
             // 

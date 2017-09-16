@@ -26,12 +26,7 @@ namespace Clinic
             this.userTableAdapter.Fill(this.clinicDataSet.User);
 
         }
-
-        private void dataGridAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show("test");
-        }
-
+        
         private void adminEditButton_Click(object sender, EventArgs e)
         {
             User user = null;
