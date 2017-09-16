@@ -17,29 +17,10 @@ namespace Clinic
         private Point point;
         public RegistrarAddFrom()
         {
-            //425; 290
-            //318; 210
-            //this.Size = new Size(425, 290);
-            //if (modifyTrueAddFalse == false)
-            //{
-            //    this.Size = new Size(425, 290);
-               
-              
-            //}
-            //else
-            //{
-            //    this.Size = new Size(425, 550);
-            //    point = new Point(322, 210);
-            //   // this.registrarApproveButton.Location = point;
-
-            //}
             InitializeComponent();
             Initialize();
         }
-
-       
-
-
+        
         /*///////////////////////////////////////////////////////////////////////*/
         //registrarTextBoxIDRegistration
 
@@ -60,22 +41,16 @@ namespace Clinic
         //        registrarTextBoxIDRegistration.ForeColor = SystemColors.GrayText;
         //    }
         //}
-
-      
+             
 
         private void Initialize()
         {
 
             this.registrarTextBoxPatient.ReadOnly = true;
             this.registrarTextBoxDoctor.ReadOnly = true;
-
-
-
-
         }
 
-
-
+        
         private void registrarApproveButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -94,12 +69,8 @@ namespace Clinic
             this.registrarSelectDoctorButton.Visible = true;
             this.registrarStateComboBox.Visible = set;
             this.stateLabel.Visible = set;
-
-
+            
         }
-
-
-       
 
         private void RegistrarAddFrom_Load(object sender, EventArgs e)
         {

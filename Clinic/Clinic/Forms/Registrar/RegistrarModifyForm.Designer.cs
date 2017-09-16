@@ -45,15 +45,12 @@
             this.registrarStateComboBox = new System.Windows.Forms.ComboBox();
             this.registrarSelectDoctorButton = new System.Windows.Forms.Button();
             this.registrarSelectPatientButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // registrarApproveButton
             // 
-            this.registrarApproveButton.Location = new System.Drawing.Point(322, 477);
+            this.registrarApproveButton.Location = new System.Drawing.Point(322, 210);
             this.registrarApproveButton.Name = "registrarApproveButton";
             this.registrarApproveButton.Size = new System.Drawing.Size(75, 23);
             this.registrarApproveButton.TabIndex = 12;
@@ -242,31 +239,11 @@
             this.registrarSelectPatientButton.UseVisualStyleBackColor = true;
             this.registrarSelectPatientButton.Click += new System.EventHandler(this.registrarSelectPatientButton_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 242);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(388, 229);
-            this.dataGridView1.TabIndex = 35;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 226);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Visits";
-            // 
             // RegistrarAddFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 512);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(406, 242);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.registrarApproveButton);
             this.Name = "RegistrarAddFrom";
@@ -274,9 +251,7 @@
             this.Load += new System.EventHandler(this.RegistrarAddFrom_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -298,7 +273,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label6;
     }
 }
