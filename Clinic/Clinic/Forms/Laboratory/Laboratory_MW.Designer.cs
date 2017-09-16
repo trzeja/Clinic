@@ -116,6 +116,7 @@
             this.labMWDataGridView.Location = new System.Drawing.Point(12, 90);
             this.labMWDataGridView.MultiSelect = false;
             this.labMWDataGridView.Name = "labMWDataGridView";
+            this.labMWDataGridView.ReadOnly = true;
             this.labMWDataGridView.Size = new System.Drawing.Size(445, 235);
             this.labMWDataGridView.TabIndex = 10;
             // 

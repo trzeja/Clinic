@@ -154,5 +154,6 @@ namespace Clinic
             // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
         private int id_patient = 0;
+        
     }
 }

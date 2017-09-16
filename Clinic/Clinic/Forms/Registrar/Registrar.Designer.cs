@@ -309,6 +309,7 @@ namespace Clinic
             this.dataGridViewRegistrar.Location = new System.Drawing.Point(4, 203);
             this.dataGridViewRegistrar.MultiSelect = false;
             this.dataGridViewRegistrar.Name = "dataGridViewRegistrar";
+            this.dataGridViewRegistrar.ReadOnly = true;
             this.dataGridViewRegistrar.Size = new System.Drawing.Size(733, 131);
             this.dataGridViewRegistrar.TabIndex = 22;
             // 

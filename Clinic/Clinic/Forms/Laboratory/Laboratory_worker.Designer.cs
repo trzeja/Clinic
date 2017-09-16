@@ -128,6 +128,7 @@
             this.dataGridViewLabWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLabWorker.Location = new System.Drawing.Point(6, 60);
             this.dataGridViewLabWorker.Name = "dataGridViewLabWorker";
+            this.dataGridViewLabWorker.ReadOnly = true;
             this.dataGridViewLabWorker.Size = new System.Drawing.Size(460, 222);
             this.dataGridViewLabWorker.TabIndex = 11;
             // 
