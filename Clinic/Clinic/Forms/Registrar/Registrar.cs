@@ -19,8 +19,6 @@ namespace Clinic
         {
             InitializeComponent();
             Initialize();
-
-
         }
 
         private void Registrar_Load(object sender, EventArgs e)
@@ -32,40 +30,40 @@ namespace Clinic
 
         private void resgistrarAddVisitButton_Click(object sender, EventArgs e)
         {
-            RegistrarAddFrom registrarAddFrom = new RegistrarAddFrom();
+            RegistrarAddModifyForm registrarAddFrom = new RegistrarAddModifyForm();
             registrarAddFrom.setModifyTrueAddFalse(false);
             registrarAddFrom.ShowDialog(this);
-           
-
-
-
         }
 
- 
 
         private void Initialize()
         {
             //this.registrarTextBoxPatient.ReadOnly = true;
             //this.registrarTextBoxDoctor.ReadOnly = true;
 
-           
-
-
-
         }
 
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
-            registrarVisitView visitSearchCriteria;
-            visitSearchCriteria = new registrarVisitView();
-            visitSearchCriteria.doctorFname= registrarTextBoxDoctorFName.Text;
+            registrarVisitView visitSearchCriteria = new registrarVisitView();
+
+            visitSearchCriteria.doctorFname = registrarTextBoxDoctorFName.Text;
             visitSearchCriteria.doctorLname = registrarTextBoxDoctorLName.Text;
             visitSearchCriteria.patientFname = registrarTextBoxPatientFName.Text;
-            visitSearchCriteria.patientLname = registrarTextBoxPatientLName.Text;            
+            visitSearchCriteria.patientLname = registrarTextBoxPatientLName.Text;
             visitSearchCriteria.state = registrarStateComboBox.Text;
-            if (dataTimePickerRegDate.Checked) visitSearchCriteria.registration_date = dataTimePickerRegDate.Value;
-            else visitSearchCriteria.registration_date = DateTime.MinValue;
+
+            if (dataTimePickerRegDate.Checked)
+            {
+                visitSearchCriteria.registration_date = dataTimePickerRegDate.Value;
+            }
+            else
+            {
+                visitSearchCriteria.registration_date = DateTime.MinValue;
+            }
+
             dataGridViewRegistrar.DataSource = RegistrationFacade.GetVisits(visitSearchCriteria);
+
             dataGridViewRegistrar.Columns[0].Visible = false;
             dataGridViewRegistrar.Columns[1].HeaderText = "Patient first name";
             dataGridViewRegistrar.Columns[2].HeaderText = "Patient last name";
@@ -76,12 +74,21 @@ namespace Clinic
             dataGridViewRegistrar.Columns[7].HeaderText = "Cancel date";
         }
 
-        private void registrarSelectDoctorButton_Click(object sender, EventArgs e)
+        private void registrarModifyVisitButton_Click(object sender, EventArgs e)
         {
-            RegistrarAddFrom registrarmodifyVisit= new RegistrarAddFrom();
-            registrarmodifyVisit.setModifyTrueAddFalse(true);
-            registrarmodifyVisit.ShowDialog(this);
-
+            if (dataGridViewRegistrar.CurrentRow != null)
+            {
+                int visitIndex = dataGridViewRegistrar.CurrentRow.Index;
+                int id_visit = (int)dataGridViewRegistrar.Rows[visitIndex].Cells[0].Value;
+                
+                RegistrarAddModifyForm registrarModifyVisit = new RegistrarAddModifyForm(id_visit);
+                registrarModifyVisit.setModifyTrueAddFalse(true);
+                registrarModifyVisit.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Please select visit first");
+            }
         }
 
         private void registrarSelectPatientButton_Click(object sender, EventArgs e)
@@ -89,11 +96,6 @@ namespace Clinic
             SelectPersonForm registrarSelectPatient = new SelectPersonForm();
             registrarSelectPatient.setRegistrarAddButtonEnableDisable(false);
             registrarSelectPatient.ShowDialog(this);
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
 
         }
 

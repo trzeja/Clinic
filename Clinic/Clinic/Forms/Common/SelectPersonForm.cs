@@ -57,8 +57,6 @@ namespace Clinic
             {
                 ;
             }
-
-
         }
 
         public void setRegistrarAddButtonEnableDisable(bool set)

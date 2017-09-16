@@ -1,6 +1,6 @@
 ﻿namespace Clinic
 {
-    partial class RegistrarAddFrom
+    partial class RegistrarAddModifyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.registrarApproveButton = new System.Windows.Forms.Button();
             this.registrarTextBoxDoctor = new System.Windows.Forms.TextBox();
-            this.registrarTextBoxPatient = new System.Windows.Forms.TextBox();
+            this.registrarTextBoxPatientName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataTimePickerRegDate = new System.Windows.Forms.DateTimePicker();
             this.patientTableAdapter1 = new Clinic.DataSets.clinicDataSet1TableAdapters.PatientTableAdapter();
@@ -67,11 +67,11 @@
             // 
             // registrarTextBoxPatient
             // 
-            this.registrarTextBoxPatient.Location = new System.Drawing.Point(109, 59);
-            this.registrarTextBoxPatient.Name = "registrarTextBoxPatient";
-            this.registrarTextBoxPatient.Size = new System.Drawing.Size(132, 20);
-            this.registrarTextBoxPatient.TabIndex = 20;
-            this.registrarTextBoxPatient.TextChanged += new System.EventHandler(this.registrarTextBoxPatient_TextChanged);
+            this.registrarTextBoxPatientName.Location = new System.Drawing.Point(109, 59);
+            this.registrarTextBoxPatientName.Name = "registrarTextBoxPatient";
+            this.registrarTextBoxPatientName.Size = new System.Drawing.Size(132, 20);
+            this.registrarTextBoxPatientName.TabIndex = 20;
+            this.registrarTextBoxPatientName.TextChanged += new System.EventHandler(this.registrarTextBoxPatient_TextChanged);
             // 
             // label1
             // 
@@ -137,7 +137,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataTimePickerRegDate);
             this.panel1.Controls.Add(this.registrarTextBoxDoctor);
-            this.panel1.Controls.Add(this.registrarTextBoxPatient);
+            this.panel1.Controls.Add(this.registrarTextBoxPatientName);
             this.panel1.Location = new System.Drawing.Point(7, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(390, 201);
@@ -212,8 +212,8 @@
             // 
             this.registrarStateComboBox.FormattingEnabled = true;
             this.registrarStateComboBox.Items.AddRange(new object[] {
-            "REGISTERED",
-            "CANCELED"});
+            "REG",
+            "CANC"});
             this.registrarStateComboBox.Location = new System.Drawing.Point(110, 141);
             this.registrarStateComboBox.Name = "registrarStateComboBox";
             this.registrarStateComboBox.Size = new System.Drawing.Size(130, 21);
@@ -258,7 +258,7 @@
         #endregion
         private System.Windows.Forms.Button registrarApproveButton;
         private System.Windows.Forms.TextBox registrarTextBoxDoctor;
-        private System.Windows.Forms.TextBox registrarTextBoxPatient;
+        private System.Windows.Forms.TextBox registrarTextBoxPatientName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dataTimePickerRegDate;
         private DataSets.clinicDataSet1TableAdapters.PatientTableAdapter patientTableAdapter1;

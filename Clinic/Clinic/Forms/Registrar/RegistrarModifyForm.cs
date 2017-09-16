@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BizzLayer;
+using BizzLayer.Facades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,14 +13,13 @@ using System.Windows.Forms;
 namespace Clinic
 {
   
-    public partial class RegistrarAddFrom : Form
+    public partial class RegistrarAddModifyForm : Form
     {
         private bool modifyTrueAddFalse;
-        private Point point;
-        public RegistrarAddFrom()
+        public RegistrarAddModifyForm(int? idVisit = null)
         {
             InitializeComponent();
-            Initialize();
+            Initialize(idVisit);
         }
         
         /*///////////////////////////////////////////////////////////////////////*/
@@ -43,11 +44,22 @@ namespace Clinic
         //}
              
 
-        private void Initialize()
+        private void Initialize(int? idVisit = null)
         {
-
-            this.registrarTextBoxPatient.ReadOnly = true;
+            this.registrarTextBoxPatientName.ReadOnly = true;
             this.registrarTextBoxDoctor.ReadOnly = true;
+
+            if (idVisit != null)
+            {
+                registrarVisitView visitSearchCriteria = new registrarVisitView();
+                visitSearchCriteria.id_visit = (int)idVisit;
+                var visit = RegistrationFacade.GetVisits(visitSearchCriteria).FirstOrDefault();
+
+                this.dataTimePickerRegDate.Value = visit.registration_date;
+                this.registrarTextBoxPatientName.Text = visit.patientLname;
+                this.registrarTextBoxDoctor.Text = visit.doctorLname;
+                this.registrarStateComboBox.SelectedIndex = this.registrarStateComboBox.FindStringExact(visit.state);
+            }
         }
 
         
@@ -69,7 +81,10 @@ namespace Clinic
             this.registrarSelectDoctorButton.Visible = true;
             this.registrarStateComboBox.Visible = set;
             this.stateLabel.Visible = set;
-            
+            if (set == false)
+            {
+                this.Text = "Add";
+            }            
         }
 
         private void RegistrarAddFrom_Load(object sender, EventArgs e)
