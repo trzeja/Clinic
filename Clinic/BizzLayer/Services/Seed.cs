@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BizzLayer.Services;
+using BizzLayer.Model;
 
 namespace BizzLayer.Services
 {
@@ -202,7 +203,7 @@ namespace BizzLayer.Services
             v1.id_doctor = index_doc;
             v1.description = "qwer";
             v1.diagnosis = "asdf";
-            v1.state = "REG";
+            v1.state = Consts.visitStateRegistered;
             v1.registration_date = new DateTime(2017, 07, 20);
 
             Visit v2 = new Visit();
@@ -212,7 +213,7 @@ namespace BizzLayer.Services
             v2.id_doctor = index_doc;
             v2.description = "qwer";
             v2.diagnosis = "asdf";
-            v2.state = "CANC";
+            v2.state = Consts.visitStateCancelled;
             v2.registration_date = new DateTime(2017, 07, 5);
             v2.execution_cancel_datetime = new DateTime(2017, 07, 1);
 
@@ -223,7 +224,7 @@ namespace BizzLayer.Services
             v3.id_doctor = index_doc;
             v3.description = "qwer";
             v3.diagnosis = "asdf";
-            v3.state = "DONE";
+            v3.state = Consts.visitStateDone;
             v3.registration_date = new DateTime(2017, 07, 15);
 
             //if (dc.Patients.Any(b => b.id_patient == v1.id_patient) && dc.Doctors.Any(b => b.id_doc == v1.id_doctor) && dc.Registrations.Any(b => b.id_registration == v1.id_registration))

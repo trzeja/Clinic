@@ -60,19 +60,7 @@ namespace Clinic
                 visit.id_patient = id_patient;
                 if (this.doctorVisitStateComboBox.SelectedItem != null)
                 {
-                    string visitState = this.doctorVisitStateComboBox.SelectedItem.ToString();
-                    if (visitState.Equals("Registered"))
-                    {
-                        visit.state = "REG";
-                    }
-                    else if (visitState.Equals("Done"))
-                    {
-                        visit.state = "DONE";
-                    }
-                    else if (visitState.Equals("Canceled"))
-                    {
-                        visit.state = "CANC";
-                    }
+                    string visitState = this.doctorVisitStateComboBox.SelectedItem.ToString();                    
                 }
                 if (doctorDateTimePickerExecDate.Checked == true)
                 {

@@ -51,7 +51,7 @@
     <Compile Include="Facades\CommonFacade.cs" />
     <Compile Include="Facades\DoctorFacade.cs" />
     <Compile Include="Facades\LaboratoryFacade.cs" />
-    <Compile Include="Facades\VisitFacade.cs" />
+    <Compile Include="Model\Consts.cs" />
     <Compile Include="Model\PatientWithAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -60,7 +60,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Facades\RegistrationFacade.cs" />
-    <Compile Include="Facades\UserFacade.cs" />
     <Compile Include="Services\Seed.cs" />
     <Compile Include="Services\CryptoService.cs" />
   </ItemGroup>
@@ -71,7 +70,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>

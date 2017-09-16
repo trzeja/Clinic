@@ -1,4 +1,5 @@
-﻿using Clinic.DataSets;
+﻿using BizzLayer.Model;
+using Clinic.DataSets;
 
 namespace Clinic
 {
@@ -101,7 +102,7 @@ namespace Clinic
             this.registrarModifyButton.TabIndex = 2;
             this.registrarModifyButton.Text = "Modify Visit";
             this.registrarModifyButton.UseVisualStyleBackColor = true;
-            this.registrarModifyButton.Click += new System.EventHandler(this.registrarSelectDoctorButton_Click);
+            this.registrarModifyButton.Click += new System.EventHandler(this.registrarModifyVisitButton_Click);
             // 
             // clinicDataSet
             // 
@@ -238,7 +239,6 @@ namespace Clinic
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 33;
             this.label7.Text = "Patient";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // registrarTextBoxPatientLName
             // 
@@ -289,9 +289,9 @@ namespace Clinic
             this.registrarStateComboBox.FormattingEnabled = true;
             this.registrarStateComboBox.Items.AddRange(new object[] {
             "",
-            "DONE",
-            "CANCELED",
-            "REGISTERED"});
+            Consts.visitStateDone,
+            Consts.visitStateCancelled,
+            Consts.visitStateRegistered});
             this.registrarStateComboBox.Location = new System.Drawing.Point(96, 49);
             this.registrarStateComboBox.Name = "registrarStateComboBox";
             this.registrarStateComboBox.Size = new System.Drawing.Size(147, 21);

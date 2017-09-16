@@ -1,4 +1,5 @@
-﻿using Clinic.DataSets;
+﻿using BizzLayer.Model;
+using Clinic.DataSets;
 
 namespace Clinic
 {
@@ -70,9 +71,9 @@ namespace Clinic
             this.doctorVisitStateComboBox.FormattingEnabled = true;
             this.doctorVisitStateComboBox.Items.AddRange(new object[] {
             "",
-            "Registered",
-            "Done",
-            "Canceled"});
+            Consts.visitStateRegistered,
+            Consts.visitStateDone,
+            Consts.visitStateCancelled});
             this.doctorVisitStateComboBox.Location = new System.Drawing.Point(90, 35);
             this.doctorVisitStateComboBox.Name = "doctorVisitStateComboBox";
             this.doctorVisitStateComboBox.Size = new System.Drawing.Size(121, 21);
