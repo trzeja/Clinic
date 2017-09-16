@@ -51,20 +51,18 @@ namespace Clinic
         {
             AdminEditForm adminAddForm = new AdminEditForm("Add user", "Confirm", true, null);
             adminAddForm.ShowDialog(this);
-            //czy tu powinniśmy pokazywać od razu w formularzu?
-            //chyba nie, bo możemy mieć niepasujące kryterium
+            RefreshGrid();
         }
-
-        private void label2_Click(object sender, EventArgs e)
+                
+        private void adminSearchButton_Click(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
+        
+        private void RefreshGrid()
         {
 
-        }
-
-        //czy nie powinna się zmienić nazwa na adminSearchButton? 
-        private void registrarSearchButton_Click(object sender, EventArgs e)
-        {
-            User userSearchCriteria;
-            userSearchCriteria = new User();
+            User userSearchCriteria = new User();
             userSearchCriteria.fname = adminTextBoxFirstName.Text;
             userSearchCriteria.lname = adminTextBoxLastName.Text;
             userSearchCriteria.roles = comboBox1.Text;
@@ -99,13 +97,6 @@ namespace Clinic
 
             dataGridAdmin.Columns[2].HeaderText = "Retire date";
             dataGridAdmin.Columns[2].DisplayIndex = 4;
-
-
-        }
-
-        private void initializeElements()
-        {
-            ;
         }
     }
 }

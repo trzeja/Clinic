@@ -109,7 +109,7 @@ namespace Clinic
             this.registrarSearchButton.TabIndex = 21;
             this.registrarSearchButton.Text = "Search";
             this.registrarSearchButton.UseVisualStyleBackColor = true;
-            this.registrarSearchButton.Click += new System.EventHandler(this.registrarSearchButton_Click);
+            this.registrarSearchButton.Click += new System.EventHandler(this.adminSearchButton_Click);
             // 
             // adminTextBoxLastName
             // 
@@ -210,7 +210,6 @@ namespace Clinic
             this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 22;
             this.label2.Text = "First name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Admin
             // 
