@@ -117,6 +117,8 @@
             this.labMWDataGridView.MultiSelect = false;
             this.labMWDataGridView.Name = "labMWDataGridView";
             this.labMWDataGridView.ReadOnly = true;
+            this.labMWDataGridView.RowTemplate.ReadOnly = true;
+            this.labMWDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.labMWDataGridView.Size = new System.Drawing.Size(445, 235);
             this.labMWDataGridView.TabIndex = 10;
             // 

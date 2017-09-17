@@ -140,6 +140,8 @@
             this.Controls.Add(this.registrarSelectButton);
             this.Controls.Add(this.registrarModifyButton);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "SelectPersonForm";
             this.Text = "Select Person";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

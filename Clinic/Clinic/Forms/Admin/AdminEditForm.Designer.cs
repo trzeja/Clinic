@@ -45,34 +45,30 @@
             // 
             // adminTextBoxFname
             // 
-            this.adminTextBoxFname.Location = new System.Drawing.Point(139, 272);
-            this.adminTextBoxFname.Margin = new System.Windows.Forms.Padding(4);
+            this.adminTextBoxFname.Location = new System.Drawing.Point(104, 221);
             this.adminTextBoxFname.Name = "adminTextBoxFname";
-            this.adminTextBoxFname.Size = new System.Drawing.Size(132, 22);
+            this.adminTextBoxFname.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxFname.TabIndex = 17;
             // 
             // adminTextBoxLname
             // 
-            this.adminTextBoxLname.Location = new System.Drawing.Point(139, 225);
-            this.adminTextBoxLname.Margin = new System.Windows.Forms.Padding(4);
+            this.adminTextBoxLname.Location = new System.Drawing.Point(104, 183);
             this.adminTextBoxLname.Name = "adminTextBoxLname";
-            this.adminTextBoxLname.Size = new System.Drawing.Size(132, 22);
+            this.adminTextBoxLname.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxLname.TabIndex = 16;
             // 
             // adminTextBoxPassword
             // 
-            this.adminTextBoxPassword.Location = new System.Drawing.Point(139, 81);
-            this.adminTextBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.adminTextBoxPassword.Location = new System.Drawing.Point(104, 66);
             this.adminTextBoxPassword.Name = "adminTextBoxPassword";
-            this.adminTextBoxPassword.Size = new System.Drawing.Size(132, 22);
+            this.adminTextBoxPassword.Size = new System.Drawing.Size(100, 20);
             this.adminTextBoxPassword.TabIndex = 13;
             // 
             // adminModifyButton
             // 
-            this.adminModifyButton.Location = new System.Drawing.Point(139, 330);
-            this.adminModifyButton.Margin = new System.Windows.Forms.Padding(4);
+            this.adminModifyButton.Location = new System.Drawing.Point(104, 268);
             this.adminModifyButton.Name = "adminModifyButton";
-            this.adminModifyButton.Size = new System.Drawing.Size(100, 28);
+            this.adminModifyButton.Size = new System.Drawing.Size(75, 23);
             this.adminModifyButton.TabIndex = 18;
             this.adminModifyButton.Text = "Add";
             this.adminModifyButton.UseVisualStyleBackColor = true;
@@ -81,20 +77,18 @@
             // dataTimeCheckerRetireDate
             // 
             this.dataTimeCheckerRetireDate.Checked = false;
-            this.dataTimeCheckerRetireDate.Location = new System.Drawing.Point(139, 131);
-            this.dataTimeCheckerRetireDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dataTimeCheckerRetireDate.Location = new System.Drawing.Point(104, 106);
             this.dataTimeCheckerRetireDate.Name = "dataTimeCheckerRetireDate";
             this.dataTimeCheckerRetireDate.ShowCheckBox = true;
-            this.dataTimeCheckerRetireDate.Size = new System.Drawing.Size(203, 22);
+            this.dataTimeCheckerRetireDate.Size = new System.Drawing.Size(153, 20);
             this.dataTimeCheckerRetireDate.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 139);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(28, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 21;
             this.label1.Text = "Retire date";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -102,40 +96,36 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 85);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(34, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "Password";
             // 
             // Role
             // 
             this.Role.AutoSize = true;
-            this.Role.Location = new System.Drawing.Point(77, 183);
-            this.Role.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Role.Location = new System.Drawing.Point(58, 149);
             this.Role.Name = "Role";
-            this.Role.Size = new System.Drawing.Size(37, 17);
+            this.Role.Size = new System.Drawing.Size(29, 13);
             this.Role.TabIndex = 24;
             this.Role.Text = "Role";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 225);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(34, 183);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 17);
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 25;
             this.label5.Text = "Last name";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 272);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(34, 221);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 17);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 26;
             this.label6.Text = "First Name";
             // 
@@ -149,33 +139,34 @@
             "LABM",
             "LABW",
             "ADM"});
-            this.comboBoxRole.Location = new System.Drawing.Point(139, 179);
-            this.comboBoxRole.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxRole.Location = new System.Drawing.Point(104, 145);
             this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(125, 24);
+            this.comboBoxRole.Size = new System.Drawing.Size(95, 21);
             this.comboBoxRole.TabIndex = 27;
             // 
             // adminTextBoxUsername
             // 
-            this.adminTextBoxUsername.Location = new System.Drawing.Point(140, 36);
+            this.adminTextBoxUsername.Location = new System.Drawing.Point(105, 29);
+            this.adminTextBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adminTextBoxUsername.Name = "adminTextBoxUsername";
-            this.adminTextBoxUsername.Size = new System.Drawing.Size(131, 22);
+            this.adminTextBoxUsername.Size = new System.Drawing.Size(99, 20);
             this.adminTextBoxUsername.TabIndex = 28;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 36);
+            this.label2.Location = new System.Drawing.Point(31, 29);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 29;
             this.label2.Text = "Username";
             // 
             // AdminEditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 397);
+            this.ClientSize = new System.Drawing.Size(282, 323);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.adminTextBoxUsername);
             this.Controls.Add(this.comboBoxRole);
@@ -189,10 +180,10 @@
             this.Controls.Add(this.adminTextBoxFname);
             this.Controls.Add(this.adminTextBoxLname);
             this.Controls.Add(this.adminTextBoxPassword);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(394, 605);
-            this.MinimumSize = new System.Drawing.Size(247, 371);
+            this.MaximumSize = new System.Drawing.Size(300, 499);
+            this.MinimumSize = new System.Drawing.Size(189, 309);
             this.Name = "AdminEditForm";
             this.Text = "Add";
             this.ResumeLayout(false);
