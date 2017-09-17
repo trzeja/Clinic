@@ -71,9 +71,9 @@ namespace Clinic
             this.doctorVisitStateComboBox.FormattingEnabled = true;
             this.doctorVisitStateComboBox.Items.AddRange(new object[] {
             "",
-            Consts.visitStateRegistered,
-            Consts.visitStateDone,
-            Consts.visitStateCancelled});
+            "REG",
+            "DONE",
+            "CANC"});
             this.doctorVisitStateComboBox.Location = new System.Drawing.Point(90, 35);
             this.doctorVisitStateComboBox.Name = "doctorVisitStateComboBox";
             this.doctorVisitStateComboBox.Size = new System.Drawing.Size(121, 21);
@@ -158,10 +158,13 @@ namespace Clinic
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(466, 236);
             this.dataGridView1.TabIndex = 3;
             // 

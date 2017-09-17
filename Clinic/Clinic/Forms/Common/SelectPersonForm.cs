@@ -170,7 +170,8 @@ namespace Clinic
             }
             catch
             {
-                MessageBox.Show("No data !", "ERROR!");
+                //MessageBox.Show("No data !", "ERROR!");
+                MessageBox.Show("No data !", "ERROR !", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             this.Close();

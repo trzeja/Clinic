@@ -91,7 +91,8 @@ namespace Clinic
             }
             else
             {
-                MessageBox.Show("Invalid Data", "Error");
+                //MessageBox.Show("Invalid Data", "Error");
+                MessageBox.Show("Invalid Data !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -99,11 +100,13 @@ namespace Clinic
         {
             if (dataGridView1.RowCount == 0 || dataGridView1.SelectedCells.Count == 0)
             {
-                MessageBox.Show("No visit selected", "Error");
+                //MessageBox.Show("No visit selected", "Error");
+                MessageBox.Show("No visit selected !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (dataGridView1.SelectedRows.Count > 1)
             {
-                MessageBox.Show("Selected too many visits, please select just one", "Error");
+                //MessageBox.Show("Selected too many visits, please select just one", "Error");
+                MessageBox.Show("Selected too many visits ! \nPlease select just one...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -136,7 +139,8 @@ namespace Clinic
 
             catch (Exception ex)
             {
-                MessageBox.Show("Check again patient", "Error");
+                //MessageBox.Show("Check again patient", "Error");
+                MessageBox.Show("Check again patient !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);

@@ -38,7 +38,8 @@ namespace Clinic
             //IQueryable<User> resultRecords = UserFacade.GetUser(userSearchCriteria);
             User user = CommonFacade.GetUserByUsername(loginTextBox.Text);
             //próba dobicia sie do stringa z haslem
-            if (user != null) {
+            if (user != null)
+            {
                 string passwordLogin = CryptoService.MD5Hash(passwordTextBox.Text);
                 //var passwordSQL = resultRecords.FirstOrDefault().password;
                 if (object.Equals(user.password, passwordLogin))
@@ -67,16 +68,29 @@ namespace Clinic
                             laboratory_mw.Show();
                         }
                         else if (user.roles == "ADM")
-                    {
+                        {
                             adminForm = new Admin();
                             adminForm.Show();
                         }
                     }
-                    else MessageBox.Show("Can't access account because of retire date. Contact administrator");
+                    else
+                    {
+                        //MessageBox.Show("Can't access account because of retire date. Contact administrator");
+                        MessageBox.Show("Can't access account because of retire date. Contact administrator", "Contact administrator ...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
-                else MessageBox.Show("Wrong login or password");
+                else
+                {
+                    //MessageBox.Show("Wrong login or password");
+                    MessageBox.Show("Wrong login or password ! \nPlease check CapsLock and try again or contact administrator", "Wrong login or password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else MessageBox.Show("Wrong login");
+            else
+            {
+                //MessageBox.Show("Wrong login");
+                MessageBox.Show("Wrong login or password", "Wrong login or password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
            
         }
 

@@ -310,6 +310,7 @@ namespace Clinic
             this.dataGridViewRegistrar.MultiSelect = false;
             this.dataGridViewRegistrar.Name = "dataGridViewRegistrar";
             this.dataGridViewRegistrar.ReadOnly = true;
+            this.dataGridViewRegistrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRegistrar.Size = new System.Drawing.Size(733, 131);
             this.dataGridViewRegistrar.TabIndex = 22;
             // 

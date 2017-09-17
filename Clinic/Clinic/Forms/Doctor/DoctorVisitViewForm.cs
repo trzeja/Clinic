@@ -146,11 +146,13 @@ namespace Clinic
             //Visit selected = null;
             if (doctorVisitViewVisitListDataGrid.RowCount == 0 || doctorVisitViewVisitListDataGrid.SelectedCells.Count == 0)
             {
-                MessageBox.Show("No visit selected", "Error");
+                //MessageBox.Show("No visit selected", "Error");
+                MessageBox.Show("No visit selected !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (doctorVisitViewVisitListDataGrid.SelectedRows.Count > 1)
             {
-                MessageBox.Show("Selected too many visits, please select just one", "Error");
+                //MessageBox.Show("Selected too many visits, please select just one", "Error");
+                MessageBox.Show("Selected too many visits ! \nPlease select just one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

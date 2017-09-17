@@ -76,12 +76,14 @@ namespace Clinic
             // dataGridAdmin
             // 
             this.dataGridAdmin.AllowUserToAddRows = false;
+            this.dataGridAdmin.AllowUserToDeleteRows = false;
             this.dataGridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridAdmin.Location = new System.Drawing.Point(5, 98);
             this.dataGridAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridAdmin.MultiSelect = false;
             this.dataGridAdmin.Name = "dataGridAdmin";
             this.dataGridAdmin.ReadOnly = true;
+            this.dataGridAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridAdmin.Size = new System.Drawing.Size(554, 229);
             this.dataGridAdmin.TabIndex = 3;
             // 

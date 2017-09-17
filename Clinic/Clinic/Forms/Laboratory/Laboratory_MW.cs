@@ -99,6 +99,10 @@ namespace Clinic
                 labExamView.SetLabManagerMode();
                 labExamView.ShowDialog(this);
             }
+            else
+            {
+                MessageBox.Show("Select laboratory examination !", "Select row ...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void Laboratory_MW_Resize(object sender, EventArgs e)
