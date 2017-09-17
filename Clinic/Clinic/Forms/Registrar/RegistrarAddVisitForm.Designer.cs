@@ -164,6 +164,8 @@
             this.ClientSize = new System.Drawing.Size(505, 355);
             this.Controls.Add(this.RegistrarAddVisitSearchPanel);
             this.Controls.Add(this.RegistrarAddVisitDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "RegistrarAddVisitForm";
             this.Text = "Add Visit";
             ((System.ComponentModel.ISupportInitialize)(this.RegistrarAddVisitDataGridView)).EndInit();
