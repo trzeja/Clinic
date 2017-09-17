@@ -36,19 +36,12 @@ namespace Clinic
                         doctorExaminationViewExamTypeComboBox.Enabled = true;
                         doctorExaminationViewCommentsResultTextBox.ReadOnly = false;
 
-                      
-                        dateToComboBox = new List<string>();
-                        var query= DoctorFacade.GetLaboratoryExaminationType();
-                        foreach (var x in query) dateToComboBox.Add( x.ToString());
-                        doctorExaminationViewExamTypeComboBox.DataSource = dateToComboBox;
 
-                      
-
-                        
-
-                        
-
-                       
+                        //dateToComboBox = new List<string>();
+                        //var query= DoctorFacade.GetLaboratoryExaminationType();
+                        //foreach (var x in query) dateToComboBox.Add( x.ToString());
+                        //doctorExaminationViewExamTypeComboBox.DataSource = dateToComboBox;
+                        doctorExaminationViewExamTypeComboBox.DataSource = DoctorFacade.GetLaboratoryExaminationType();
                     }
                     break;
                 case 1:

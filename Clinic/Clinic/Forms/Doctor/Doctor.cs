@@ -28,7 +28,8 @@ namespace Clinic
         private void Initialize()
         {
             p = new Patient();
-
+            // doctorDateTimePickerExecDate.Checked = true;
+           // this.dataGridView1.DataSource = DoctorFacade.GetVisitsFromToday(int idDoctor);
         }
 
         private void doctorSearchButton_Click(object sender, EventArgs e)
