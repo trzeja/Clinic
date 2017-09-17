@@ -83,12 +83,11 @@ namespace BizzLayer.Facades
         public static IQueryable GetLaboratoryExaminationType()
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
-            var res = 
+            var result = 
                (from dbo in dc.Examination_dictionaries
+                where dbo.type == 'L'
                 select dbo.code).Distinct().OrderBy(name => name);
-            return res;
-
-
+            return result;
         }
         public static void AddLabExam(Laboratory_examination lab)
         {
