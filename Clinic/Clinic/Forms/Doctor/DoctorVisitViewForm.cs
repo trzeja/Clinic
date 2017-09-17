@@ -22,8 +22,16 @@ namespace Clinic
             //initialize data
             this.patient = patient;
             this.idVisit = idVisit;
-
-
+            string state = DoctorFacade.GetVisitState(idVisit);
+            if (!state.Equals("REG"))
+            {
+                doctorVisitPatientDescriptionTextBox.Enabled = false;
+                doctorVisitPatientDiagnosisTextBox.Enabled = false;
+                doctorPhysicalExaminationButton.Enabled = false;
+                doctorLaboratoryExaminationButton.Enabled = false;
+                doctorFinishVisitButton.Enabled = false;
+                doctorCancelVisitButton.Enabled = false;
+            }
             //this.id = patient.id_patient;
             doctorVisitPatientFirstNameTextBox.Text = patient.fname;
             doctorVisitPatientFirstNameTextBox.Enabled = false;
@@ -155,6 +163,16 @@ namespace Clinic
         }
 
         private void doctorVisitStateComboBox_SelectedIndexChanged()
+        {
+
+        }
+
+        private void doctorVisitViewVisitListPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void doctorVisitViewExaminationListPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

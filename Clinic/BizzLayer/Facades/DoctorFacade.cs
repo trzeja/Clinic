@@ -10,6 +10,16 @@ namespace BizzLayer.Facades
 {
     static public class DoctorFacade
     {
+
+        public static String GetVisitState(int idVisit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from visit in dc.Visits
+                         where visit.id_visit == idVisit
+                         select visit.state;
+            return result.FirstOrDefault().ToString();
+        }
+
         public static IQueryable GetExaminationsByVisit(int idVisit)
         {
             return null;
