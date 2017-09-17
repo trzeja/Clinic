@@ -95,17 +95,26 @@ namespace Clinic
             {
                 user.retire_date = null;
             }
-            
-            if (this.Name.Equals("Add user")) 
+
+            try
             {
-                AdminFacade.AddUser(user);
+                if (this.Name.Equals("Add user"))
+                {
+                    AdminFacade.AddUser(user);
+                }
+                else
+                {
+                    //czy tu powinniśmy wyświetlać na początku wybranego usera?
+                    AdminFacade.ModifyUser(user);
+                }
+
+                this.Close();
             }
-            else
+            catch (Exception)
             {
-                //czy tu powinniśmy wyświetlać na początku wybranego usera?
-                AdminFacade.ModifyUser(user);
-            }
-            this.Close();
+                //MessageBox.Show("Nie wszystkie dane sa poprawne!");
+                MessageBox.Show("Invalid data !", "ERROR !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }                      
         }
 
     }

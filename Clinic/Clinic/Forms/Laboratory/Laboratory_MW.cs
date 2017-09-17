@@ -62,7 +62,7 @@ namespace Clinic
             labMWDataGridView.DataSource = BizzLayer.Facades.LaboratoryFacade.GetExaminations(searchCriteria);
             labMWDataGridView.Columns[0].Visible = false;//id examination
             labMWDataGridView.Columns[1].HeaderText = "Order date";
-            labMWDataGridView.Columns[2].HeaderText = "Execution ate";
+            labMWDataGridView.Columns[2].HeaderText = "Execution date";
             labMWDataGridView.Columns[3].HeaderText = "Approval date";
             labMWDataGridView.Columns[4].Visible = false;
             labMWDataGridView.Columns[5].Visible = false;
@@ -75,6 +75,9 @@ namespace Clinic
             labMWDataGridView.Columns[12].Visible = false;
             labMWDataGridView.Columns[13].Visible = false;
             labMWDataGridView.Columns[14].Visible = false;
+            labMWDataGridView.Columns[15].Visible = false;
+
+            labMWDataGridView.ClearSelection();// żeby nie było problemow pozniej
         }
 
         private void Initialize()
@@ -84,8 +87,9 @@ namespace Clinic
 
         private void labManagerEditButton_Click(object sender, EventArgs e)
         {
-            if (labMWDataGridView.SelectedRows.Count == 1)
+            if (labMWDataGridView.SelectedRows.Count == 1 && labMWDataGridView.Rows.Count > 0)
             {
+                
                 //kzp : do przekazania proponuję id_laboraory_examination i username
                 int tmp_id_exam = (int)labMWDataGridView.CurrentRow.Cells[0].Value; //kzp: tutaj id zaznaczonego badania 
                 string tmp_username = username; //kzp: tutaj username zalogowanego usera - potem można wyszukać w odpowiedniej tabeli jego id
@@ -94,6 +98,10 @@ namespace Clinic
                 LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(); 
                 labExamView.SetLabManagerMode();
                 labExamView.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Select laboratory examination !", "Select row ...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

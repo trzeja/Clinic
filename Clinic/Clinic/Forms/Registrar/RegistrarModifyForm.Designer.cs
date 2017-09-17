@@ -67,10 +67,10 @@ namespace Clinic
             this.registrarTextBoxDoctor.Size = new System.Drawing.Size(132, 20);
             this.registrarTextBoxDoctor.TabIndex = 22;
             // 
-            // registrarTextBoxPatient
+            // registrarTextBoxPatientName
             // 
             this.registrarTextBoxPatientName.Location = new System.Drawing.Point(109, 59);
-            this.registrarTextBoxPatientName.Name = "registrarTextBoxPatient";
+            this.registrarTextBoxPatientName.Name = "registrarTextBoxPatientName";
             this.registrarTextBoxPatientName.Size = new System.Drawing.Size(132, 20);
             this.registrarTextBoxPatientName.TabIndex = 20;
             this.registrarTextBoxPatientName.TextChanged += new System.EventHandler(this.registrarTextBoxPatient_TextChanged);
@@ -214,8 +214,8 @@ namespace Clinic
             // 
             this.registrarStateComboBox.FormattingEnabled = true;
             this.registrarStateComboBox.Items.AddRange(new object[] {
-            Consts.visitStateRegistered,
-            Consts.visitStateCancelled});
+            "REG",
+            "CANC"});
             this.registrarStateComboBox.Location = new System.Drawing.Point(110, 141);
             this.registrarStateComboBox.Name = "registrarStateComboBox";
             this.registrarStateComboBox.Size = new System.Drawing.Size(130, 21);
@@ -241,14 +241,16 @@ namespace Clinic
             this.registrarSelectPatientButton.UseVisualStyleBackColor = true;
             this.registrarSelectPatientButton.Click += new System.EventHandler(this.registrarSelectPatientButton_Click);
             // 
-            // RegistrarAddFrom
+            // RegistrarAddModifyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 242);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.registrarApproveButton);
-            this.Name = "RegistrarAddFrom";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
+            this.Name = "RegistrarAddModifyForm";
             this.Text = "Change";
             this.Load += new System.EventHandler(this.RegistrarAddFrom_Load);
             this.panel1.ResumeLayout(false);

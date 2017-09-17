@@ -87,7 +87,8 @@ namespace Clinic
             }
             else
             {
-                MessageBox.Show("Please select visit first");
+                //MessageBox.Show("Please select visit first");
+                MessageBox.Show("Please select visit !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

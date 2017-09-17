@@ -29,16 +29,22 @@ namespace Clinic
         
         private void adminEditButton_Click(object sender, EventArgs e)
         {
-            User user = null;
-            //CurrentRow nie bedzie nigdy nullem bo jest pierwsze wybrane 
-            //bedzie nullem! trzeba sprawdzic
-            int userIndex = dataGridAdmin.CurrentRow.Index;
-            string username = dataGridAdmin.Rows[userIndex].Cells[0].Value.ToString();
-            user = CommonFacade.GetUserByUsername(username);
+            if (dataGridAdmin.SelectedRows.Count == 1 && dataGridAdmin.Rows.Count > 0)
+            {
+                User user = null;
+                //CurrentRow nie bedzie nigdy nullem bo jest pierwsze wybrane 
+                //bedzie nullem! trzeba sprawdzic
+                int userIndex = dataGridAdmin.CurrentRow.Index;
+                string username = dataGridAdmin.Rows[userIndex].Cells[0].Value.ToString();
+                user = CommonFacade.GetUserByUsername(username);
 
-            AdminEditForm adminEditForm = new AdminEditForm("Edit user", "Confirm", true, user);
-            adminEditForm.ShowDialog(this);
-
+                AdminEditForm adminEditForm = new AdminEditForm("Edit user", "Confirm", true, user);
+                adminEditForm.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Select user !", "Select row ...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 

@@ -289,9 +289,9 @@ namespace Clinic
             this.registrarStateComboBox.FormattingEnabled = true;
             this.registrarStateComboBox.Items.AddRange(new object[] {
             "",
-            Consts.visitStateDone,
-            Consts.visitStateCancelled,
-            Consts.visitStateRegistered});
+            "DONE",
+            "CANC",
+            "REG"});
             this.registrarStateComboBox.Location = new System.Drawing.Point(96, 49);
             this.registrarStateComboBox.Name = "registrarStateComboBox";
             this.registrarStateComboBox.Size = new System.Drawing.Size(147, 21);
@@ -310,6 +310,7 @@ namespace Clinic
             this.dataGridViewRegistrar.MultiSelect = false;
             this.dataGridViewRegistrar.Name = "dataGridViewRegistrar";
             this.dataGridViewRegistrar.ReadOnly = true;
+            this.dataGridViewRegistrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRegistrar.Size = new System.Drawing.Size(733, 131);
             this.dataGridViewRegistrar.TabIndex = 22;
             // 
@@ -338,7 +339,9 @@ namespace Clinic
             this.Controls.Add(this.searchPanelRegistrar);
             this.Controls.Add(this.registrarModifyButton);
             this.Controls.Add(this.resgistrarAddVisitButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximumSize = new System.Drawing.Size(765, 800);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(765, 394);
             this.Name = "Registrar";
             this.Text = "Registrar";
