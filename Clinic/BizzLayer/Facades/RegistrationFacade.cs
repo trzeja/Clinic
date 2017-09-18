@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DataLayer;
 namespace BizzLayer.Facades
 {
     static public class RegistrationFacade
@@ -89,7 +89,7 @@ namespace BizzLayer.Facades
             dc.SubmitChanges();
         }
 
-        public static void ModifyVisit(Visit searchCrit)
+        public static void updateVisit(Visit searchCrit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var res = from el in dc.Visits
@@ -97,6 +97,9 @@ namespace BizzLayer.Facades
 
                       select el;
             res.FirstOrDefault().state = searchCrit.state;
+            res.FirstOrDefault().registration_date = searchCrit.registration_date;
+            res.FirstOrDefault().id_doctor = searchCrit.id_doctor;
+           
 
             dc.SubmitChanges();
 
@@ -119,11 +122,49 @@ namespace BizzLayer.Facades
                       where (ad.id_patient == searchCrit.id_patient)
                       select ad;
             return res.FirstOrDefault();
+            
+        }
 
-
-
+        public static void setCancelStatus(int id)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from v in dc.Visits
+                      where (v.id_visit == id)
+                      select v;
+            res.FirstOrDefault().state = "CANC";
+            dc.SubmitChanges();
 
         }
 
+        public static int? GetRegIdByUsername(string username)//get id_reg of given username
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from p in dc.Registrations
+                      where ( p.user_name.Equals( username ) )
+                      select p;
+            Registration tmp = res.FirstOrDefault();
+            if ( tmp != null )
+            {
+                return res.FirstOrDefault().id_registration;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        //public static void updateVisit(Visit visit)
+        //{
+        //    DataClasses1DataContext dc = new DataClasses1DataContext();
+        //    var res = from v in dc.Visits
+        //              where (v.id_visit == visit.id_visit)
+        //              select v;
+        //    res.FirstOrDefault().registration_date = visit.registration_date;
+        //    res.FirstOrDefault().state = visit.state;
+
+        //    dc.SubmitChanges();
+
+        //}
     }
 }

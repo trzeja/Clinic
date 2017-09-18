@@ -12,21 +12,34 @@ namespace Clinic
 {
     public partial class RegistrarMainForm : Form
     {
-        public RegistrarMainForm()
+        private int? id_reg;
+        public RegistrarMainForm( string reg_username )
         {
+            id_reg = BizzLayer.Facades.RegistrationFacade.GetRegIdByUsername(reg_username);
             InitializeComponent();
+            if (id_reg == null)
+            {
+                MessageBox.Show("Your id_registration does not exist !\nPlease try to log in again or contact administrator", "Wrong ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RegistratarMainFormAddVisitButton.Enabled = false;
+                RegistratarMainFormManageVisitsButton.Enabled = false;
+            }
         }
 
         private void RegistratarMainFormAddVisitButton_Click(object sender, EventArgs e)
         {
-            //nowa formatka
+            //add visit aka patient grid form
+
+            // w id_reg (int) jest id rejetratorki - potrzebne do przekazania jeśli robimy add visit
+            //RegistrarAddVisitForm addVisits = new RegistrarAddVisitForm( id_reg );
             RegistrarAddVisitForm addVisits = new RegistrarAddVisitForm();
             addVisits.ShowDialog(this);
         }
 
         private void RegistratarMainFormManageVisitsButton_Click(object sender, EventArgs e)
         {
-            //stara po reworku
+            //manage visit aka visit grid form
+            // nie wiem czy tu będzie potrzebne ale ...
+            // w id_reg (int) jest id rejetratorki - potrzebne do przekazania jeśli robimy add visit
             RegistrarManageVisitsForm manageVisits = new RegistrarManageVisitsForm();
             manageVisits.ShowDialog(this);
 

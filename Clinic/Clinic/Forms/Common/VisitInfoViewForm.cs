@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DataLayer;
 namespace Clinic
 {
     public partial class VisitInfoViewForm : Form
@@ -19,7 +19,7 @@ namespace Clinic
             InitializeComponent();
             Visit visit = DoctorFacade.GetVisitById(idVisit);
             Patient patient = DoctorFacade.GetPatientByVisit(idVisit);
-            BizzLayer.Doctor doctor = DoctorFacade.GetDoctorByVisit(idVisit);
+            DataLayer.Doctor doctor = DoctorFacade.GetDoctorByVisit(idVisit);
             VisitViewPatientFirstNameTextBox.Text = patient.fname;
             VisitViewPatientLastNameTextBox.Text = patient.lname;
             VisitViewPatientPeselTextBox.Text = patient.PESEL;

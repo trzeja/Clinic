@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BizzLayer;
+using BizzLayer.Facades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
+
 
 namespace Clinic
 {
@@ -51,6 +55,11 @@ namespace Clinic
         private void RegistrarAddVisitSearchButton_Click(object sender, EventArgs e)
         {
             //search patients
+            Patient search = new Patient();
+            search.fname = registrarTextBoxPatientFName.Text.ToString();
+            search.lname = registrarTextBoxPatientLName.Text.ToString();
+
+            RegistrarAddVisitDataGridView.DataSource = RegistrationFacade.GetPatients(search);
 
         }
     }
