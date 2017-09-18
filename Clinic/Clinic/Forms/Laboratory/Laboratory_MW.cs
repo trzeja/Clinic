@@ -138,11 +138,11 @@ namespace Clinic
 
         private void Laboratory_MW_Resize(object sender, EventArgs e)
         {
-            labMWEditButton.Location = new Point(
-                Width - 137,
-                Height - 69                
-              );
-            labMWDataGridView.Height = 235 - 400 + Height;
+            //labMWEditButton.Location = new Point(
+            //    Width - 137,
+            //    Height - 69                
+            //  );
+            //labMWDataGridView.Height = 235 - 400 + Height;
         }
     }
 }
