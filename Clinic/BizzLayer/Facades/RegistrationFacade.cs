@@ -89,7 +89,7 @@ namespace BizzLayer.Facades
             dc.SubmitChanges();
         }
 
-        public static void ModifyVisit(Visit searchCrit)
+        public static void updateVisit(Visit searchCrit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var res = from el in dc.Visits
@@ -97,6 +97,9 @@ namespace BizzLayer.Facades
 
                       select el;
             res.FirstOrDefault().state = searchCrit.state;
+            res.FirstOrDefault().registration_date = searchCrit.registration_date;
+            res.FirstOrDefault().id_doctor = searchCrit.id_doctor;
+           
 
             dc.SubmitChanges();
 
@@ -149,5 +152,19 @@ namespace BizzLayer.Facades
                 return null;
             }
         }
+
+
+        //public static void updateVisit(Visit visit)
+        //{
+        //    DataClasses1DataContext dc = new DataClasses1DataContext();
+        //    var res = from v in dc.Visits
+        //              where (v.id_visit == visit.id_visit)
+        //              select v;
+        //    res.FirstOrDefault().registration_date = visit.registration_date;
+        //    res.FirstOrDefault().state = visit.state;
+
+        //    dc.SubmitChanges();
+
+        //}
     }
 }

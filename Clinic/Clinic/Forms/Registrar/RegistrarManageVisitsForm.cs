@@ -55,7 +55,8 @@ namespace Clinic
                     RegistrarAddModifyForm registrarModifyVisit = new RegistrarAddModifyForm(id_visit);
                     registrarModifyVisit.setModifyTrueAddFalse(true);
                     registrarModifyVisit.ShowDialog(this);
-                    refreshGrid();
+                    registrarModifyVisit.updateVisit();
+
                 }
                 else
                 {
@@ -67,6 +68,7 @@ namespace Clinic
                 //MessageBox.Show("Please select visit first");
                 MessageBox.Show("Please select visit !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            refreshGrid();
         }
 
         private void registrarSelectPatientButton_Click(object sender, EventArgs e)
