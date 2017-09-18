@@ -16,13 +16,15 @@ namespace BizzLayer.Services
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
 
-            int index_reg = 0, index_doc = 0, index_pat = 0;
+            int index_reg = 0, index_doc = 0, index_pat = 0, index_labm = 0, index_labw = 0;
 
             SeedUsers(dc);
             SeedPatients(dc, ref index_pat);
             SeedAddresses(dc, ref index_pat);
             SeedRegistrations(dc, ref index_reg);
             SeedDoctors(dc, ref index_doc);
+            SeedLaboratoryManagers(dc, ref index_labm);
+            SeedLaboratoryWorkers(dc, ref index_labw);
             try
             {
                 SeedVisits(dc, ref index_reg, ref index_doc);
@@ -141,6 +143,41 @@ namespace BizzLayer.Services
             }
         }
 
+        private void SeedLaboratoryWorkers(DataClasses1DataContext dc, ref int index_labw)
+        {
+            var labwIdsOfCurrentLabws = from el in dc.Laboratory_workers
+                                        where el.user_name.Equals("labw")
+                                        select el.id_laboratory_worker;
+            if (labwIdsOfCurrentLabws.Any())
+            {
+                index_labw = labwIdsOfCurrentLabws.First();
+            }
+            else
+            {
+                Laboratory_worker labw = new Laboratory_worker();
+                labw.user_name = "labw";
+                dc.Laboratory_workers.InsertOnSubmit(labw);
+                dc.SubmitChanges();
+            }
+        }
+
+        private void SeedLaboratoryManagers(DataClasses1DataContext dc, ref int index_labm)
+        {
+            var labmIdsOfCurrentLabms = from el in dc.Laboratory_managers
+                                        where el.user_name.Equals("labm")
+                                        select el.id_laboratory_manager;
+            if (labmIdsOfCurrentLabms.Any())
+            {
+                index_labm = labmIdsOfCurrentLabms.First();
+            }
+            else
+            {
+                Laboratory_manager labm = new Laboratory_manager();
+                labm.user_name = "labm";
+                dc.Laboratory_managers.InsertOnSubmit(labm);
+                dc.SubmitChanges();
+            }
+        }
 
         private void SeedRegistrations(DataClasses1DataContext dc, ref int index_reg)
         {

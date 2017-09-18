@@ -55,7 +55,7 @@ namespace Clinic
                     RegistrarAddModifyForm registrarModifyVisit = new RegistrarAddModifyForm(id_visit);
                     registrarModifyVisit.setModifyTrueAddFalse(true);
                     registrarModifyVisit.ShowDialog(this);
-                    registrarModifyVisit.updateVisit();
+                    registrarModifyVisit.updateVisit(id_visit);
 
                 }
                 else
@@ -81,7 +81,7 @@ namespace Clinic
 
         private void Registrar_Resize(object sender, EventArgs e)
         {
-            dataGridViewRegistrar.Height = 181 + this.Height - 394;
+            //dataGridViewRegistrar.Height = 181 + this.Height - 394;
         }
 
         private void RegistrarManageVisitCanceVisitButton_Click(object sender, EventArgs e)
@@ -94,6 +94,8 @@ namespace Clinic
                 {
                     int visitIndex = r.Index;
                     int id_visit = (int)dataGridViewRegistrar.Rows[visitIndex].Cells[0].Value;
+                    
+
                     RegistrationFacade.setCancelStatus(id_visit);
 
                 }
@@ -134,6 +136,7 @@ namespace Clinic
             dataGridViewRegistrar.Columns[5].HeaderText = "State";
             dataGridViewRegistrar.Columns[6].HeaderText = "Registration date";
             dataGridViewRegistrar.Columns[7].HeaderText = "Cancel date";
+            dataGridViewRegistrar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

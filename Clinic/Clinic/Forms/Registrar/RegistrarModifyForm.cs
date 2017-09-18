@@ -22,6 +22,7 @@ namespace Clinic
         {
             InitializeComponent();
             Initialize(idVisit);
+            this.idDoctor = -1;
             
         }
 
@@ -61,6 +62,7 @@ namespace Clinic
                 this.dataTimePickerRegDate.Value = visit.registration_date;
                 this.registrarTextBoxPatientName.Text = visit.patientLname;
                 this.registrarTextBoxDoctor.Text = visit.doctorLname;
+                
                 this.registrarStateComboBox.SelectedIndex = this.registrarStateComboBox.FindStringExact(visit.state);
             }
         }
@@ -126,7 +128,7 @@ namespace Clinic
             }
 
         }
-        public void updateVisit()
+        public void updateVisit(int id)
         {
             // this.idVisit;
             if (!(this.idDoctor < 0))
@@ -134,10 +136,19 @@ namespace Clinic
 
 
                 Visit visitToset = new Visit() ;
-                visitToset.id_doctor = idDoctor;
-                visitToset.id_visit = this.idVisit;
+                visitToset.id_doctor = this.idDoctor;
+                visitToset.id_visit = id;
                 visitToset.registration_date = this.dataTimePickerRegDate.Value;
                 visitToset.state = this.registrarStateComboBox.SelectedItem.ToString();
+                if (visitToset.state == "REG")
+                {
+                    
+                    visitToset.execution_cancel_datetime = null;
+                }
+                else
+                {
+                    visitToset.execution_cancel_datetime = DateTime.Today;
+                }
                 RegistrationFacade.updateVisit(visitToset);
             }
         }
