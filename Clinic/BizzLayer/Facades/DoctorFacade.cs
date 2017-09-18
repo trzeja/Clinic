@@ -41,11 +41,6 @@ namespace BizzLayer.Facades
             return result.FirstOrDefault().ToString();
         }
 
-        public static IQueryable GetExaminationsByVisit(int idVisit)
-        {
-            return null;
-        }
-
         public static Visit GetVisitById(int idVisit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
@@ -81,7 +76,7 @@ namespace BizzLayer.Facades
             var result = from visit in dc.Visits
                          join doctor in dc.Doctors on visit.id_doctor equals doctor.id_doc
                          where visit.id_patient == idPatient
-                         && visit.registration_date <= (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault()
+                         && visit.registration_date < (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault()
                          orderby visit.registration_date, visit.execution_cancel_datetime, visit.state
                          select new { visit.registration_date, visit.execution_cancel_datetime, visit.state, doctor.User.fname, doctor.User.lname, visit.id_visit };
             return result;
@@ -145,5 +140,45 @@ namespace BizzLayer.Facades
             dc.SubmitChanges();
         }
 
+        //dodać datę mniejszą od obecnej wizyty
+        public static IQueryable GetExamHist(int idPatient,int idVisit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = (from labexam in dc.Laboratory_examinations
+                         join visit in dc.Visits on labexam.id_visit equals visit.id_visit
+                         into joined
+                         from j in joined
+                         where (j.id_patient == idPatient) && (j.registration_date<(from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault())
+                         select new { labexam.code,type="Laboratory", order_date = new DateTime?(labexam.order_date), labexam.state, labexam.examination_execution_date, labexam.examination_approval_date, labexam.result })
+                         .Union(
+           /* var resultPhy =*/ from labphy in dc.Physical_examinations
+                            join visit in dc.Visits on labphy.id_visit equals visit.id_visit
+                            into joined
+                            from j in joined
+                            where j.id_patient == idPatient && (j.registration_date < (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault())
+                            select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = new DateTime?(), examination_approval_date = new DateTime?(), labphy.result });
+            //var resultSum = resultLab.ToList().Add(resultPhy.ToList());
+            return result;
+        }
+
+        public static IQueryable GetExaminationsByVisit(int idVisit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = (from labexam in dc.Laboratory_examinations
+                          join visit in dc.Visits on labexam.id_visit equals visit.id_visit
+                          into joined
+                          from j in joined
+                          where j.id_visit == idVisit
+                          select new { labexam.code, type = "Laboratory", order_date = new DateTime?(labexam.order_date), labexam.state, labexam.examination_execution_date, labexam.examination_approval_date, labexam.result })
+                         .Union(
+           /* var resultPhy =*/ from labphy in dc.Physical_examinations
+                                join visit in dc.Visits on labphy.id_visit equals visit.id_visit
+                                into joined
+                                from j in joined
+                                where j.id_visit == idVisit
+                                select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = new DateTime?(), examination_approval_date = new DateTime?(), labphy.result });
+            //var resultSum = resultLab.ToList().Add(resultPhy.ToList());
+            return result;
+        }
     }
 }
