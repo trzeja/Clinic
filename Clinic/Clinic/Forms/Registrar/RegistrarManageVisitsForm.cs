@@ -81,7 +81,7 @@ namespace Clinic
 
         private void Registrar_Resize(object sender, EventArgs e)
         {
-            dataGridViewRegistrar.Height = 181 + this.Height - 394;
+            //dataGridViewRegistrar.Height = 181 + this.Height - 394;
         }
 
         private void RegistrarManageVisitCanceVisitButton_Click(object sender, EventArgs e)
@@ -136,6 +136,7 @@ namespace Clinic
             dataGridViewRegistrar.Columns[5].HeaderText = "State";
             dataGridViewRegistrar.Columns[6].HeaderText = "Registration date";
             dataGridViewRegistrar.Columns[7].HeaderText = "Cancel date";
+            dataGridViewRegistrar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
