@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DataLayer;
 namespace Clinic
 {
     public partial class Laboratory_MW : Form
     {
         private string roles, username;
+        int? id_worker = null;
+        int? id_manager = null;
 
         public Laboratory_MW()
         {
@@ -27,19 +29,37 @@ namespace Clinic
             Initialize();
             this.roles = roles;
             this.username = username;
-            if (roles.Equals("LABM"))
+            if (roles.Equals("LABW"))
             {
-                Text = "Laboratory Manager";
-                labMWComboboxState.Text = "DONE";
+                id_worker = BizzLayer.Facades.LaboratoryFacade.GetWorkerIdByUsername( username );
             }
-            else if (roles.Equals("LABW"))
+            else if (roles.Equals("LABM"))
             {
-                Text = "Laboratory Worker";
-                labMWComboboxState.Text = "ORD";
+                id_manager = BizzLayer.Facades.LaboratoryFacade.GetManagerIdByUsername( username );
+            }
+            if (id_manager != null || id_worker != null)
+            {
+                //this.username = username;
+                if (roles.Equals("LABM"))
+                {
+                    Text = "Laboratory Manager";
+                    labMWComboboxState.Text = "DONE";
+                }
+                else if (roles.Equals("LABW"))
+                {
+                    Text = "Laboratory Worker";
+                    labMWComboboxState.Text = "ORD";
+                }
+                else
+                {
+                    disable_all();
+                    MessageBox.Show("Wrong role !\nPlease try to log in again or contact administrator", "Wrong role", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
                 disable_all();
+                MessageBox.Show("Your ID does not exist !\nPlease try to log in again or contact administrator", "Wrong ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -54,8 +74,8 @@ namespace Clinic
         private void labManagerShowButton_Click(object sender, EventArgs e)
         {
             this.Controls.Add(this.labMWDataGridView);
-            BizzLayer.Laboratory_examination searchCriteria;
-            searchCriteria = new BizzLayer.Laboratory_examination();
+            DataLayer.Laboratory_examination searchCriteria;
+            searchCriteria = new DataLayer.Laboratory_examination();
             if (labMWDataTimePickerOrderDate.Checked) searchCriteria.order_date = labMWDataTimePickerOrderDate.Value;
             else searchCriteria.order_date = DateTime.MinValue;
             searchCriteria.state = labMWComboboxState.Text;
@@ -91,13 +111,24 @@ namespace Clinic
             {
                 
                 //kzp : do przekazania proponuję id_laboraory_examination i username
-                int tmp_id_exam = (int)labMWDataGridView.CurrentRow.Cells[0].Value; //kzp: tutaj id zaznaczonego badania 
-                string tmp_username = username; //kzp: tutaj username zalogowanego usera - potem można wyszukać w odpowiedniej tabeli jego id
-                //LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(tmp_id_exam, username); //kzp: tak to mogloby wygladac a reszte danych u siebie se pobierzesz
+                int tmp_id_exam = (int)labMWDataGridView.CurrentRow.Cells[0].Value; // id zaznaczonego badania w gridzie
 
-                LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(); 
-                labExamView.SetLabManagerMode();
-                labExamView.ShowDialog(this);
+                if (roles.Equals("LABM"))
+                {
+                    // roles -> rola czyli "LABM" lub "LABW", id_worker -> id managera z "Laboratory_manager", username - user_name z "User"
+                    //LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(roles, id_manager, username, tmp_id_exam);
+                    LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
+                    labExamView.SetLabManagerMode();
+                    labExamView.ShowDialog(this);
+                }
+                else if (roles.Equals("LABW"))
+                {
+                    // roles -> rola czyli "LABM" lub "LABW", id_worker -> id workera z "Laboratory_worker", username - user_name z "User"
+                    //LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(roles, id_worker, username, tmp_id_exam);
+                    LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
+                    labExamView.SetLabManagerMode();
+                    labExamView.ShowDialog(this);
+                }                
             }
             else
             {

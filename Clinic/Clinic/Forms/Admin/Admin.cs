@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BizzLayer.Facades;
-
+using DataLayer;
 namespace Clinic
 {
     public partial class Admin : Form

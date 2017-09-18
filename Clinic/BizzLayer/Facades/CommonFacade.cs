@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using DataLayer;
+
 namespace BizzLayer.Facades
 {
     static public class CommonFacade
