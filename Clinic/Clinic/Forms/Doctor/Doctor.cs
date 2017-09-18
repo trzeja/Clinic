@@ -128,11 +128,10 @@ namespace Clinic
 
             catch (Exception ex)
             {
-                //MessageBox.Show("Check again patient", "Error");
-                MessageBox.Show("Check again patient !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //MessageBox.Show("Check again patient !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                idPatient = 0;
+                this.doctorPatientNameTextBox.Text = "All patients";
             }
-
-            // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
     }
 }
