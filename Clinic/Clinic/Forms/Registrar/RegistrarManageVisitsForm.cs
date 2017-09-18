@@ -38,33 +38,7 @@ namespace Clinic
 
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
-            registrarVisitView visitSearchCriteria = new registrarVisitView();
-
-            visitSearchCriteria.doctorFname = registrarTextBoxDoctorFName.Text;
-            visitSearchCriteria.doctorLname = registrarTextBoxDoctorLName.Text;
-            visitSearchCriteria.patientFname = registrarTextBoxPatientFName.Text;
-            visitSearchCriteria.patientLname = registrarTextBoxPatientLName.Text;
-            visitSearchCriteria.state = registrarStateComboBox.Text;
-
-            if (dataTimePickerRegDate.Checked)
-            {
-                visitSearchCriteria.registration_date = dataTimePickerRegDate.Value;
-            }
-            else
-            {
-                visitSearchCriteria.registration_date = DateTime.MinValue;
-            }
-
-            dataGridViewRegistrar.DataSource = RegistrationFacade.GetVisits(visitSearchCriteria);
-
-            dataGridViewRegistrar.Columns[0].Visible = false;
-            dataGridViewRegistrar.Columns[1].HeaderText = "Patient first name";
-            dataGridViewRegistrar.Columns[2].HeaderText = "Patient last name";
-            dataGridViewRegistrar.Columns[3].HeaderText = "Doctor first name";
-            dataGridViewRegistrar.Columns[4].HeaderText = "Doctor last name";
-            dataGridViewRegistrar.Columns[5].HeaderText = "State";
-            dataGridViewRegistrar.Columns[6].HeaderText = "Registration date";
-            dataGridViewRegistrar.Columns[7].HeaderText = "Cancel date";
+            refreshGrid();
         }
 
         private void registrarModifyVisitButton_Click(object sender, EventArgs e)
@@ -80,6 +54,7 @@ namespace Clinic
                     RegistrarAddModifyForm registrarModifyVisit = new RegistrarAddModifyForm(id_visit);
                     registrarModifyVisit.setModifyTrueAddFalse(true);
                     registrarModifyVisit.ShowDialog(this);
+                    refreshGrid();
                 }
                 else
                 {
@@ -112,12 +87,50 @@ namespace Clinic
 
             if (dataGridViewRegistrar.SelectedRows.Count >= 1)
             {
-                //tutaj logika anulowania
+                foreach (DataGridViewRow r in dataGridViewRegistrar.SelectedRows)
+                {
+                    int visitIndex = r.Index;
+                    int id_visit = (int)dataGridViewRegistrar.Rows[visitIndex].Cells[0].Value;
+                    RegistrationFacade.setCancelStatus(id_visit);
+
+                }
+                refreshGrid();
             }
             else
             {
                 MessageBox.Show("Please select at least ONE visit !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void refreshGrid()
+        {
+            registrarVisitView visitSearchCriteria = new registrarVisitView();
+
+            visitSearchCriteria.doctorFname = registrarTextBoxDoctorFName.Text;
+            visitSearchCriteria.doctorLname = registrarTextBoxDoctorLName.Text;
+            visitSearchCriteria.patientFname = registrarTextBoxPatientFName.Text;
+            visitSearchCriteria.patientLname = registrarTextBoxPatientLName.Text;
+            visitSearchCriteria.state = registrarStateComboBox.Text;
+
+            if (dataTimePickerRegDate.Checked)
+            {
+                visitSearchCriteria.registration_date = dataTimePickerRegDate.Value;
+            }
+            else
+            {
+                visitSearchCriteria.registration_date = DateTime.MinValue;
+            }
+
+            dataGridViewRegistrar.DataSource = RegistrationFacade.GetVisits(visitSearchCriteria);
+
+            dataGridViewRegistrar.Columns[0].Visible = false;
+            dataGridViewRegistrar.Columns[1].HeaderText = "Patient first name";
+            dataGridViewRegistrar.Columns[2].HeaderText = "Patient last name";
+            dataGridViewRegistrar.Columns[3].HeaderText = "Doctor first name";
+            dataGridViewRegistrar.Columns[4].HeaderText = "Doctor last name";
+            dataGridViewRegistrar.Columns[5].HeaderText = "State";
+            dataGridViewRegistrar.Columns[6].HeaderText = "Registration date";
+            dataGridViewRegistrar.Columns[7].HeaderText = "Cancel date";
         }
     }
 }

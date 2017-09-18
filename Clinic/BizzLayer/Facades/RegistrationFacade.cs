@@ -119,9 +119,17 @@ namespace BizzLayer.Facades
                       where (ad.id_patient == searchCrit.id_patient)
                       select ad;
             return res.FirstOrDefault();
+            
+        }
 
-
-
+        public static void setCancelStatus(int id)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from v in dc.Visits
+                      where (v.id_visit == id)
+                      select v;
+            res.FirstOrDefault().state = "CANC";
+            dc.SubmitChanges();
 
         }
 
