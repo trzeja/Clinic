@@ -55,7 +55,7 @@ namespace Clinic
                     RegistrarAddModifyForm registrarModifyVisit = new RegistrarAddModifyForm(id_visit);
                     registrarModifyVisit.setModifyTrueAddFalse(true);
                     registrarModifyVisit.ShowDialog(this);
-                    registrarModifyVisit.updateVisit();
+                    registrarModifyVisit.updateVisit(id_visit);
 
                 }
                 else
