@@ -49,7 +49,8 @@ namespace Clinic
                     {
                         if (user.roles == "DOC")
                         {
-                            doctor = new Doctor();
+                            int idDoctor = DoctorFacade.GetDoctorIdByUsername(user.user_name);
+                            doctor = new Doctor(idDoctor);
                             doctor.Show();
                         }
                         else if (user.roles == "REG")

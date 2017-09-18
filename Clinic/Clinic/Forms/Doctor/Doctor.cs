@@ -16,85 +16,73 @@ namespace Clinic
 {
     public partial class Doctor : Form
     {
-        Patient p;
-        private List<string> dataFromGrid = new List<string>();
-        // private enum index { ID = 0, FNAME, LNAME, PESEL, PLACE, STREET, ZIPCODE, HOUSE, FLAT };
-        public Doctor()
+        private int idDoctor;
+        private int idPatient = 0;
+        
+        public Doctor(int idDoctor)
         {
             InitializeComponent();
-            Initialize();
+            Initialize(idDoctor);
         }
 
-        private void Initialize()
+        private void Initialize(int idDoctor)
         {
-            p = new Patient();
-            // doctorDateTimePickerExecDate.Checked = true;
-           // this.dataGridView1.DataSource = DoctorFacade.GetVisitsFromToday(int idDoctor);
+            this.idDoctor = idDoctor;
+            doctorDateTimePickerExecDate.Checked = true;
+            //doctorVisitStateComboBox.SelectedIndex = doctorVisitStateComboBox.FindStringExact("REG");
+            int index = doctorVisitStateComboBox.Items.IndexOf("REG");
+            doctorVisitStateComboBox.SelectedItem = doctorVisitStateComboBox.Items[index];
+            this.doctorPatientNameTextBox.Text = "All patients";
+            Visit visit = new Visit();
+            visit.registration_date = doctorDateTimePickerExecDate.Value;
+            visit.state = doctorVisitStateComboBox.SelectedItem.ToString();
+            visit.id_doctor = idDoctor;
+            this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(idDoctor,idPatient,visit);
+            //this.dataGridView1.DataSource = DoctorFacade.GetVisitsFromToday(idDoctor, doctorDateTimePickerExecDate.Value);
+            this.dataGridView1.Columns[0].HeaderText = "Patient's first name";
+            this.dataGridView1.Columns[1].HeaderText = "Patient's last name";
+            this.dataGridView1.Columns[3].HeaderText = "State of visit";
+            this.dataGridView1.Columns[4].HeaderText = "Registration date";
+            this.dataGridView1.Columns[5].Visible = false;
+            this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void doctorAllPatientsButton_Click(object sender, EventArgs e)
+        {
+            idPatient = 0;
+            this.doctorPatientNameTextBox.Text = "All patients";
         }
 
         private void doctorSearchButton_Click(object sender, EventArgs e)
         {
-            //this.Controls.Add(this.dataGridViewDoctor);
-
-            //Patient mockPatient = new Patient();
-            //mockPatient.id_patient = 1;
-
-            //Visit visitSearchCriteria = new Visit();
-            //visitSearchCriteria.id_patient = mockPatient.id_patient;
-            //visitSearchCriteria.state = doctorVisitStateComboBox.Text;
-            //visitSearchCriteria.registration_date = doctorDateTimePickerExecDate.Value;
-
-            //VisitFacade.GetPatientsVisits(visitSearchCriteria);
-
-            // this.Controls.Add(this.dataGridViewDoctor)
-            //GetPatientsWithAdresses()
-            Patient patientSearchCriteria = new Patient();
+            
+            //Patient patientSearchCriteria = new Patient();
             Visit visit = new Visit();
-
-
-
-            if (id_patient != 0)
+            visit.id_patient = idPatient;
+            if (this.doctorVisitStateComboBox.SelectedItem != null)
             {
-                patientSearchCriteria.id_patient = id_patient;
+                visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();                    
+            }
 
-
-                visit.id_patient = id_patient;
-                if (this.doctorVisitStateComboBox.SelectedItem != null)
-                {
-                    string visitState = this.doctorVisitStateComboBox.SelectedItem.ToString();                    
-                }
-                if (doctorDateTimePickerExecDate.Checked == true)
-                {
-                    //DateTime loadedDate = DateTime.ParseExact(doctorDateTimePickerExecDate.Value.ToString(), "dd.MM.yyyy HH:mm:ss",
-                    //                        System.Globalization.CultureInfo.InvariantCulture);
-                    //visit.registration_date = loadedDate;
-                    visit.registration_date = doctorDateTimePickerExecDate.Value;
-                }
-
-                else
-                {
-
-                    //na razie nic lepszego do glowy mi nie przychodzi, chyba ze druga funkcja w doctorFacade // MW
-                    DateTime loadedDate = DateTime.ParseExact("01.01.1754 00:00:00", "dd.MM.yyyy HH:mm:ss",
-                                            System.Globalization.CultureInfo.InvariantCulture);
-                    visit.registration_date = loadedDate;
-                    // visit.registration_date = DateTime.MinValue;
-                }
-
-                this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria, visit);
-                this.dataGridView1.Columns[0].HeaderText = "Patient's first name";
-                this.dataGridView1.Columns[1].HeaderText = "Patient's last name";
-                this.dataGridView1.Columns[3].HeaderText = "State of visit";
-                this.dataGridView1.Columns[4].HeaderText = "Registration date";
-                // this.dataGridView1.Columns[0].Name = "Patient's first name";
-                this.dataGridView1.Columns[5].Visible = false;
-                this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            if (doctorDateTimePickerExecDate.Checked == true)
+            {
+                visit.registration_date = doctorDateTimePickerExecDate.Value;
             }
             else
             {
-                //MessageBox.Show("Invalid Data", "Error");
-                MessageBox.Show("Invalid Data !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //na razie nic lepszego do glowy mi nie przychodzi, chyba ze druga funkcja w doctorFacade // MW
+                DateTime loadedDate = DateTime.ParseExact("01.01.1754 00:00:00", "dd.MM.yyyy HH:mm:ss",
+                                        System.Globalization.CultureInfo.InvariantCulture);
+                visit.registration_date = loadedDate;
             }
+
+            this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(idDoctor,idPatient, visit);
+            this.dataGridView1.Columns[0].HeaderText = "Patient's first name";
+            this.dataGridView1.Columns[1].HeaderText = "Patient's last name";
+            this.dataGridView1.Columns[3].HeaderText = "State of visit";
+            this.dataGridView1.Columns[4].HeaderText = "Registration date";
+            this.dataGridView1.Columns[5].Visible = false;
+            this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)
@@ -127,13 +115,13 @@ namespace Clinic
             doctorSelectPatient.ShowDialog(this);
 
 
-            id_patient = 0;
+            idPatient = 0;
             try
             {
-                Int32.TryParse(doctorSelectPatient.getID(), out id_patient);
+                Int32.TryParse(doctorSelectPatient.getID(), out idPatient);
                 Patient patientSearchCriteria;
                 patientSearchCriteria = new Patient();
-                patientSearchCriteria.id_patient = id_patient;
+                patientSearchCriteria.id_patient = idPatient;
                 this.doctorPatientNameTextBox.Text = doctorSelectPatient.getLname();
 
             }
@@ -146,7 +134,5 @@ namespace Clinic
 
             // dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(patientSearchCriteria);
         }
-        private int id_patient = 0;
-        
     }
 }

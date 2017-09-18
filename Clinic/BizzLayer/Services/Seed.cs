@@ -257,7 +257,7 @@ namespace BizzLayer.Services
             {
 
                 if (!(dc.Visits.Any(x => x.id_patient == v1.id_patient &&  x.id_doctor == v1.id_doctor &&  x.description == v1.description &&
-                    > x.registration_date == v1.registration_date && x.state == v1.state)))
+                     x.registration_date == v1.registration_date && x.state == v1.state)))
                 {
                     dc.Visits.InsertOnSubmit(v1);
 
