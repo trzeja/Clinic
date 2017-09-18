@@ -94,6 +94,8 @@ namespace Clinic
                 {
                     int visitIndex = r.Index;
                     int id_visit = (int)dataGridViewRegistrar.Rows[visitIndex].Cells[0].Value;
+                    
+
                     RegistrationFacade.setCancelStatus(id_visit);
 
                 }

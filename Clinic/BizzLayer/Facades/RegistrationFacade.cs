@@ -97,9 +97,11 @@ namespace BizzLayer.Facades
 
                       select el;
             res.FirstOrDefault().state = searchCrit.state;
+            res.FirstOrDefault().execution_cancel_datetime = null;
             res.FirstOrDefault().registration_date = searchCrit.registration_date;
-            res.FirstOrDefault().id_doctor = searchCrit.id_doctor;
-           
+            res.FirstOrDefault().execution_cancel_datetime = searchCrit.execution_cancel_datetime;
+            // res.FirstOrDefault().id_doctor = searchCrit.id_doctor;
+
 
             dc.SubmitChanges();
 
@@ -127,11 +129,13 @@ namespace BizzLayer.Facades
 
         public static void setCancelStatus(int id)
         {
+            DateTime? date = DateTime.Today;
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var res = from v in dc.Visits
                       where (v.id_visit == id)
                       select v;
             res.FirstOrDefault().state = "CANC";
+            res.FirstOrDefault().execution_cancel_datetime = date;
             dc.SubmitChanges();
 
         }

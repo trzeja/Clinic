@@ -138,6 +138,15 @@ namespace Clinic
                 visitToset.id_visit = this.idVisit;
                 visitToset.registration_date = this.dataTimePickerRegDate.Value;
                 visitToset.state = this.registrarStateComboBox.SelectedItem.ToString();
+                if (visitToset.state == "REG")
+                {
+                    
+                    visitToset.execution_cancel_datetime = null;
+                }
+                else
+                {
+                    visitToset.execution_cancel_datetime = DateTime.Today;
+                }
                 RegistrationFacade.updateVisit(visitToset);
             }
         }
