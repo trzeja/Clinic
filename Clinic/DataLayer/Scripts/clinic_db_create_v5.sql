@@ -206,6 +206,7 @@ GO
 CREATE TABLE [dbo].[Physical_examination](
 	[id_physical_examination] [int] IDENTITY(1,1) NOT NULL,
 	[result] [nvarchar](254) NULL,
+	[execution_datetime] [datetime] NULL,
 	[id_visit] [int] NOT NULL,
 	[code] [int] NOT NULL,
 
