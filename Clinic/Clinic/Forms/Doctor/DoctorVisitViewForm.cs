@@ -57,6 +57,20 @@ namespace Clinic
             DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit);
             examinationView.SetPhyExamMode();
             examinationView.ShowDialog(this);
+            RefreshExamGrid();
+        }
+
+        private void RefreshExamGrid()
+        {
+            doctorVisitViewCurrExamDataGrid.DataSource = DoctorFacade.GetExaminationsByVisit(this.idVisit);
+            doctorVisitViewCurrExamDataGrid.Columns[0].HeaderText = "Code";
+            doctorVisitViewCurrExamDataGrid.Columns[1].HeaderText = "Type";
+            doctorVisitViewCurrExamDataGrid.Columns[2].HeaderText = "Ordered";
+            doctorVisitViewCurrExamDataGrid.Columns[3].HeaderText = "State";
+            doctorVisitViewCurrExamDataGrid.Columns[4].HeaderText = "Executed";
+            doctorVisitViewCurrExamDataGrid.Columns[5].HeaderText = "Approved";
+            doctorVisitViewCurrExamDataGrid.Columns[6].HeaderText = "Result";
+            doctorVisitViewCurrExamDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void doctorOrderLaboratoryExaminationButton_Click(object sender, EventArgs e)
@@ -66,6 +80,7 @@ namespace Clinic
             DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit);
             examinationView.SetLabExamMode();
             examinationView.ShowDialog(this);
+            RefreshExamGrid();
         }
 
         private void doctorVisitPatientDescriptionTextBox_Enter(object sender, EventArgs e)
@@ -124,8 +139,16 @@ namespace Clinic
 
         private void doctorVisitViewLoadExamHistButton_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Test");
+            this.doctorVisitViewExaminationListDataGrid.DataSource = DoctorFacade.GetExamHist(patient.id_patient,idVisit);
+            doctorVisitViewExaminationListDataGrid.Columns[0].HeaderText = "Code";
+            doctorVisitViewExaminationListDataGrid.Columns[1].HeaderText = "Type";
+            doctorVisitViewExaminationListDataGrid.Columns[2].HeaderText = "Ordered";
+            doctorVisitViewExaminationListDataGrid.Columns[3].HeaderText = "State";
+            doctorVisitViewExaminationListDataGrid.Columns[4].HeaderText = "Executed";
+            doctorVisitViewExaminationListDataGrid.Columns[5].HeaderText = "Approved";
+            doctorVisitViewExaminationListDataGrid.Columns[6].HeaderText = "Result";
+            doctorVisitViewExaminationListDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //MessageBox.Show("Test");
         }
 
         private void doctorVisitViewLoadVisitHistButton_Click(object sender, EventArgs e)
