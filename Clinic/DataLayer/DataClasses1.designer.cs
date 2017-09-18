@@ -66,7 +66,7 @@ namespace DataLayer
         #endregion
 
         public DataClasses1DataContext() :
-        base(global::DataLayer.Properties.Settings.Default.ClinicConnectionString, mappingSource)
+        base(global::DataLayer.Properties.Settings.Default.ClinicConnectionString1, mappingSource)
         {
             OnCreated();
         }

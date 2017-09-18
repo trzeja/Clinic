@@ -1,6 +1,6 @@
 ﻿using BizzLayer.Model;
 using Clinic.DataSets;
-
+using DataLayer;
 namespace Clinic
 {
     partial class Doctor

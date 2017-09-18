@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using BizzLayer.Services;
 using BizzLayer.Model;
 
+using DataLayer;
+
 namespace BizzLayer.Services
 {
     public class Seed

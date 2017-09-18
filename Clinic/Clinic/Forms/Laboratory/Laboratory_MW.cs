@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DataLayer;
 namespace Clinic
 {
     public partial class Laboratory_MW : Form
@@ -74,8 +74,8 @@ namespace Clinic
         private void labManagerShowButton_Click(object sender, EventArgs e)
         {
             this.Controls.Add(this.labMWDataGridView);
-            BizzLayer.Laboratory_examination searchCriteria;
-            searchCriteria = new BizzLayer.Laboratory_examination();
+            DataLayer.Laboratory_examination searchCriteria;
+            searchCriteria = new DataLayer.Laboratory_examination();
             if (labMWDataTimePickerOrderDate.Checked) searchCriteria.order_date = labMWDataTimePickerOrderDate.Value;
             else searchCriteria.order_date = DateTime.MinValue;
             searchCriteria.state = labMWComboboxState.Text;

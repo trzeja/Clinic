@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DataLayer;
 namespace BizzLayer.Facades
 {
     static public class LaboratoryFacade
     {
-        public static IQueryable<BizzLayer.Laboratory_examination> GetExaminations(BizzLayer.Laboratory_examination searchCrit)
+        public static IQueryable<DataLayer.Laboratory_examination> GetExaminations(DataLayer.Laboratory_examination searchCrit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var res = from el in dc.Laboratory_examinations
