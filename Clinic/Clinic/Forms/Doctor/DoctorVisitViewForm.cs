@@ -54,7 +54,7 @@ namespace Clinic
         {
             // refresh examination history
             //MessageBox.Show("Physical examination submited !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm();
+            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit);
             examinationView.SetPhyExamMode();
             examinationView.ShowDialog(this);
         }
@@ -63,7 +63,7 @@ namespace Clinic
         {
             //MessageBox.Show("Laboratory examination ordered !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.patient.id_patient);
+            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit);
             examinationView.SetLabExamMode();
             examinationView.ShowDialog(this);
         }

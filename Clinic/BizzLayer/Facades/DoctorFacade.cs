@@ -111,6 +111,26 @@ namespace BizzLayer.Facades
                 select dbo.code).Distinct().OrderBy(name => name);
             return result;
         }
+
+        public static IQueryable GetPhysicalExaminationType()
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result =
+               (from dbo in dc.Examination_dictionaries
+                where dbo.type == 'P'
+                select dbo.code).Distinct().OrderBy(name => name);
+            return result;
+        }
+
+        public static string GetNameForExam(int code)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from ed in dc.Examination_dictionaries
+                         where ed.code == code
+                         select ed.name;
+            return result.FirstOrDefault();
+        }
+
         public static void AddLabExam(Laboratory_examination lab)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
@@ -118,6 +138,12 @@ namespace BizzLayer.Facades
             dc.SubmitChanges();
         }
 
+        public static void AddPhyExam(Physical_examination phy)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            dc.Physical_examinations.InsertOnSubmit(phy);
+            dc.SubmitChanges();
+        }
 
     }
 }
