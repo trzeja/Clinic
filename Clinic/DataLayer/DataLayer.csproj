@@ -48,6 +48,7 @@
   <ItemGroup>
     <Content Include="Scripts\clinic_db_create_v4.sql" />
     <Content Include="Scripts\clinic_db_create_v5.sql" />
+    <Content Include="Scripts\clinic_db_create_v6.sql" />
     <Content Include="Scripts\RegistrarPatientsUndVisits.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
