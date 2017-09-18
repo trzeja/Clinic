@@ -18,9 +18,8 @@ namespace Clinic
     public partial class LoginForm : Form
     {
         public Doctor doctor;
-        public Registrar registrarForm;
+        public RegistrarMainForm registrarForm;
         public Admin adminForm;
-        //public Laboratory_worker laboratory_worker;
         public Laboratory_MW laboratory_mw;
         public LoginForm()
         {
@@ -55,23 +54,23 @@ namespace Clinic
                         }
                         else if (user.roles == "REG")
                         {
-                            registrarForm = new Registrar();
-                            registrarForm.Show();
+                            registrarForm = new RegistrarMainForm();
+                            registrarForm.ShowDialog(this);
                         }
                         else if (user.roles == "LABM")
                         {
                             laboratory_mw = new Laboratory_MW(user.roles, loginTextBox.Text);
-                            laboratory_mw.Show();
+                            laboratory_mw.ShowDialog(this);
                         }
                         else if (user.roles == "LABW")
                         {
                             laboratory_mw = new Laboratory_MW(user.roles, loginTextBox.Text);
-                            laboratory_mw.Show();
+                            laboratory_mw.ShowDialog(this);
                         }
                         else if (user.roles == "ADM")
                         {
                             adminForm = new Admin();
-                            adminForm.Show();
+                            adminForm.ShowDialog(this);
                         }
                     }
                     else

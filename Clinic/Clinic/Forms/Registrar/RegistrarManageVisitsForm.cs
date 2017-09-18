@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Clinic
 {
-    public partial class Registrar : Form
+    public partial class RegistrarManageVisitsForm : Form
     {
-        public Registrar()
+        public RegistrarManageVisitsForm()
         {
             InitializeComponent();
             Initialize();
@@ -26,13 +26,6 @@ namespace Clinic
             // TODO: This line of code loads data into the 'clinicDataSet1.Visit' table. You can move, or remove it, as needed.
             this.visitTableAdapter.Fill(this.clinicDataSet1.Visit);
 
-        }
-
-        private void resgistrarAddVisitButton_Click(object sender, EventArgs e)
-        {
-            RegistrarAddModifyForm registrarAddFrom = new RegistrarAddModifyForm();
-            registrarAddFrom.setModifyTrueAddFalse(false);
-            registrarAddFrom.ShowDialog(this);
         }
 
 
@@ -78,12 +71,20 @@ namespace Clinic
         {
             if (dataGridViewRegistrar.CurrentRow != null)
             {
-                int visitIndex = dataGridViewRegistrar.CurrentRow.Index;
-                int id_visit = (int)dataGridViewRegistrar.Rows[visitIndex].Cells[0].Value;
-                
-                RegistrarAddModifyForm registrarModifyVisit = new RegistrarAddModifyForm(id_visit);
-                registrarModifyVisit.setModifyTrueAddFalse(true);
-                registrarModifyVisit.ShowDialog(this);
+
+                if (dataGridViewRegistrar.SelectedRows.Count == 1)
+                {
+                    int visitIndex = dataGridViewRegistrar.CurrentRow.Index;
+                    int id_visit = (int)dataGridViewRegistrar.Rows[visitIndex].Cells[0].Value;
+
+                    RegistrarAddModifyForm registrarModifyVisit = new RegistrarAddModifyForm(id_visit);
+                    registrarModifyVisit.setModifyTrueAddFalse(true);
+                    registrarModifyVisit.ShowDialog(this);
+                }
+                else
+                {
+                    MessageBox.Show("Please select ONE visit !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
@@ -100,16 +101,23 @@ namespace Clinic
 
         }
 
-        private void registrarModifyPatientButton_Click(object sender, EventArgs e)
-        {
-
-            SelectPersonForm registrarSelectPatient = new SelectPersonForm("Modify", true);
-            registrarSelectPatient.ShowDialog(this);
-        }
-
         private void Registrar_Resize(object sender, EventArgs e)
         {
-            dataGridViewRegistrar.Height = 131 + this.Height - 394;
+            dataGridViewRegistrar.Height = 181 + this.Height - 394;
+        }
+
+        private void RegistrarManageVisitCanceVisitButton_Click(object sender, EventArgs e)
+        {
+            //cancel visits
+
+            if (dataGridViewRegistrar.SelectedRows.Count >= 1)
+            {
+                //tutaj logika anulowania
+            }
+            else
+            {
+                MessageBox.Show("Please select at least ONE visit !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
