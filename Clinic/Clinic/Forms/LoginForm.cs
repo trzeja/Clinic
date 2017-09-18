@@ -54,7 +54,7 @@ namespace Clinic
                         }
                         else if (user.roles == "REG")
                         {
-                            registrarForm = new RegistrarMainForm();
+                            registrarForm = new RegistrarMainForm(loginTextBox.Text);
                             registrarForm.ShowDialog(this);
                         }
                         else if (user.roles == "LABM")
