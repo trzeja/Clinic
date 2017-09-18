@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BizzLayer
+namespace DataLayer
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -66,7 +66,7 @@ namespace BizzLayer
         #endregion
 
         public DataClasses1DataContext() :
-        base(global::BizzLayer.Properties.Settings.Default.ClinicConnectionString, mappingSource)
+        base(global::DataLayer.Properties.Settings.Default.ClinicConnectionString, mappingSource)
         {
             OnCreated();
         }
