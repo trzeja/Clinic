@@ -19,5 +19,39 @@ namespace BizzLayer.Facades
                       select el;
             return res;
         }
+
+        public static int? GetWorkerIdByUsername(string username)//get id of given username
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from p in dc.Laboratory_workers
+                      where (p.user_name.Equals(username))
+                      select p;
+            Laboratory_worker tmp = res.FirstOrDefault();
+            if (tmp != null)
+            {
+                return res.FirstOrDefault().id_laboratory_worker;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static int? GetManagerIdByUsername(string username)//get id of given username
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from p in dc.Laboratory_managers
+                      where (p.user_name.Equals(username))
+                      select p;
+            Laboratory_manager tmp = res.FirstOrDefault();
+            if (tmp != null)
+            {
+                return res.FirstOrDefault().id_laboratory_manager;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
