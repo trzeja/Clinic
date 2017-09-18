@@ -125,5 +125,21 @@ namespace BizzLayer.Facades
 
         }
 
+        public static int? GetRegIdByUsername(string username)//get id_reg of given username
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var res = from p in dc.Registrations
+                      where ( p.user_name.Equals( username ) )
+                      select p;
+            Registration tmp = res.FirstOrDefault();
+            if ( tmp != null )
+            {
+                return res.FirstOrDefault().id_registration;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
