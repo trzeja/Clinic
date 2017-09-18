@@ -119,13 +119,13 @@
             this.labMWDataGridView.ReadOnly = true;
             this.labMWDataGridView.RowTemplate.ReadOnly = true;
             this.labMWDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.labMWDataGridView.Size = new System.Drawing.Size(445, 235);
+            this.labMWDataGridView.Size = new System.Drawing.Size(445, 502);
             this.labMWDataGridView.TabIndex = 10;
             // 
             // labMWEditButton
             // 
             this.labMWEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.labMWEditButton.Location = new System.Drawing.Point(348, 331);
+            this.labMWEditButton.Location = new System.Drawing.Point(348, 598);
             this.labMWEditButton.Name = "labMWEditButton";
             this.labMWEditButton.Size = new System.Drawing.Size(79, 23);
             this.labMWEditButton.TabIndex = 10;
@@ -137,10 +137,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 361);
+            this.ClientSize = new System.Drawing.Size(469, 633);
             this.Controls.Add(this.labMWDataGridView);
             this.Controls.Add(this.labMWEditButton);
             this.Controls.Add(this.LabWorkerPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(485, 800);
             this.MinimumSize = new System.Drawing.Size(485, 400);

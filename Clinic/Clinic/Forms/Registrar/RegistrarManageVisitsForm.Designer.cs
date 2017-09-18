@@ -298,7 +298,7 @@ namespace Clinic
             this.dataGridViewRegistrar.Name = "dataGridViewRegistrar";
             this.dataGridViewRegistrar.ReadOnly = true;
             this.dataGridViewRegistrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewRegistrar.Size = new System.Drawing.Size(745, 181);
+            this.dataGridViewRegistrar.Size = new System.Drawing.Size(745, 396);
             this.dataGridViewRegistrar.TabIndex = 22;
             // 
             // clinicDataSet11
@@ -320,12 +320,13 @@ namespace Clinic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 355);
+            this.ClientSize = new System.Drawing.Size(769, 570);
             this.Controls.Add(this.RegistrarManageVisitCanceVisitButton);
             this.Controls.Add(this.dataGridViewRegistrar);
             this.Controls.Add(this.RegistrarManageVisitSearchPanel);
             this.Controls.Add(this.RegistrarManageVisitSearchButton);
             this.Controls.Add(this.RegistrarManageVisitModifyVisitButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximumSize = new System.Drawing.Size(785, 800);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(785, 394);
