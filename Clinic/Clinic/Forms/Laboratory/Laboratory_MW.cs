@@ -96,6 +96,7 @@ namespace Clinic
             labMWDataGridView.Columns[13].Visible = false;
             labMWDataGridView.Columns[14].Visible = false;
             labMWDataGridView.Columns[15].Visible = false;
+            labMWDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             labMWDataGridView.ClearSelection();// żeby nie było problemow pozniej
         }
@@ -118,15 +119,15 @@ namespace Clinic
                     // roles -> rola czyli "LABM" lub "LABW", id_worker -> id managera z "Laboratory_manager", username - user_name z "User"
                     //LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(roles, id_manager, username, tmp_id_exam);
                     LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
-                    labExamView.SetLabManagerMode();
+                    labExamView.SetLabManagerMode(id_manager.Value);
                     labExamView.ShowDialog(this);
                 }
                 else if (roles.Equals("LABW"))
                 {
                     // roles -> rola czyli "LABM" lub "LABW", id_worker -> id workera z "Laboratory_worker", username - user_name z "User"
                     //LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(roles, id_worker, username, tmp_id_exam);
-                    LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
-                    labExamView.SetLabManagerMode();
+                    LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(tmp_id_exam);
+                    labExamView.SetLabWorkerMode(id_worker.Value);
                     labExamView.ShowDialog(this);
                 }                
             }
