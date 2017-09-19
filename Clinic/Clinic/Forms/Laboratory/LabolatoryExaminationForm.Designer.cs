@@ -568,19 +568,31 @@
                         //LabExaminationPatientFirstNameTextBox.ReadOnly = true;
                         //LabExaminationPatientLastNameTextBox.ReadOnly = true;
                         //LabExaminationPatientPeselTextBox.ReadOnly = true;
+                        LabExaminationPatientFirstNameTextBox.Enabled = false;
+                        LabExaminationPatientLastNameTextBox.Enabled = false;
+                        LabExaminationPatientPeselTextBox.Enabled = false;
                         ////doctor
                         //LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
                         //LabExaminationDoctorLastNameTextBox.ReadOnly = true;
                         //LabExaminationDoctorCommentsTextBox.ReadOnly = true;
+                        LabExaminationDoctorFirstNameTextBox.Enabled = false;
+                        LabExaminationDoctorLastNameTextBox.Enabled = false;
+                        LabExaminationDoctorCommentsTextBox.Enabled = false;
                         ////lab worker
                         //LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
                         //LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
+                        LabExaminationLabWorkerFirstNameTextBox.Enabled = false;
+                        LabExaminationLabWorkerLastNameTextBox.Enabled = false;
+                        LabExaminationExamResultTextBox.Enabled = false;
                         LabExaminationExamResultTextBox.ReadOnly = true;
                         LabExaminationLabWorkerSubmitButton.Enabled = false;
                         LabExaminationLabWorkerCancelButton.Enabled = false;
                         //lab manager
                         //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
                         //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
+                        LabExaminationLabManagerFirstNameTextBox.Enabled = false;
+                        LabExaminationLabManagerLastNameTextBox.Enabled = false;
+                        LabExaminationLabManagerCommentsTextBox.Enabled = false;
                         LabExaminationLabManagerCommentsTextBox.ReadOnly = true;
                         LabExaminationLabManagerApproveButton.Enabled = false;
                         LabExaminationLabManagerCancelButton.Enabled = false;
@@ -588,6 +600,7 @@
                         //LabExaminationExamStateComboBox.Enabled = false;
                         //LabExaminationExamTypeComboBox.Enabled = false;
                         //LabExaminationExamOrderDateTimePicker.Enabled = false;
+
                     }
                     break;
             }

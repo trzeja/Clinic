@@ -173,14 +173,14 @@ namespace BizzLayer.Facades
                          into joined
                          from j in joined
                          where (j.id_patient == idPatient) && (j.registration_date<(from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault())
-                         select new { labexam.code,type="Laboratory", order_date = new DateTime?(labexam.order_date), labexam.state, labexam.examination_execution_date, labexam.examination_approval_date, labexam.result })
+                         select new { labexam.code,type="Laboratory", order_date = new DateTime?(labexam.order_date), labexam.state, labexam.examination_execution_date, labexam.examination_approval_date, labexam.result, examId=labexam.id_laboratory_examination })
                          .Union(
            /* var resultPhy =*/ from labphy in dc.Physical_examinations
                             join visit in dc.Visits on labphy.id_visit equals visit.id_visit
                             into joined
                             from j in joined
                             where j.id_patient == idPatient && (j.registration_date < (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault())
-                            select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = labphy.execution_datetime, examination_approval_date = new DateTime?(), labphy.result });
+                            select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = labphy.execution_datetime, examination_approval_date = new DateTime?(), labphy.result,examId=labphy.id_physical_examination });
             //var resultSum = resultLab.ToList().Add(resultPhy.ToList());
             return result;
         }

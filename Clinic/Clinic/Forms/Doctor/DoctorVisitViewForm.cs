@@ -160,11 +160,33 @@ namespace Clinic
 
         private void doctorVisitViewExamHistDetailsButton_Click(object sender, EventArgs e)
         {
-            //to do :
-            //zobacz jakiego typu jest badanie w zaznaczonej lini i wtedy albo LabExamination albo DoctorExaminationView oba w read only mode ofc
-            LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
-            labExamView.SetReadOnlyMode();
-            labExamView.ShowDialog(this);
+            if (doctorVisitViewExaminationListDataGrid.RowCount == 0 || doctorVisitViewExaminationListDataGrid.SelectedCells.Count == 0)
+            {
+                //MessageBox.Show("No visit selected", "Error");
+                MessageBox.Show("No examination selected !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (doctorVisitViewExaminationListDataGrid.SelectedRows.Count > 1)
+            {
+                //MessageBox.Show("Selected too many visits, please select just one", "Error");
+                MessageBox.Show("Selected too many examinations ! \nPlease select just one...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                int examinationIndex = doctorVisitViewExaminationListDataGrid.CurrentRow.Index;
+                int idExam = Int32.Parse(doctorVisitViewExaminationListDataGrid.Rows[examinationIndex].Cells[7].Value.ToString());
+                if (doctorVisitViewExaminationListDataGrid.Rows[examinationIndex].Cells[1].Value.Equals("Laboratory"))
+                {
+                    LabolatoryExaminationForm examinationView = new LabolatoryExaminationForm(idExam);
+                    examinationView.ShowDialog(this);
+
+                }
+                else
+                {
+                    DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit, idExam);
+                    examinationView.ShowDialog(this);
+                }
+
+            }
         }
 
         private void doctorVisitViewLoadExamHistButton_Click(object sender, EventArgs e)
@@ -177,6 +199,7 @@ namespace Clinic
             doctorVisitViewExaminationListDataGrid.Columns[4].HeaderText = "Executed";
             doctorVisitViewExaminationListDataGrid.Columns[5].HeaderText = "Approved";
             doctorVisitViewExaminationListDataGrid.Columns[6].HeaderText = "Result";
+            doctorVisitViewExaminationListDataGrid.Columns[7].Visible = false;
             doctorVisitViewExaminationListDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //MessageBox.Show("Test");
         }
@@ -233,15 +256,14 @@ namespace Clinic
             {
                 int examinationIndex = doctorVisitViewCurrExamDataGrid.CurrentRow.Index;
                 int idExam = Int32.Parse(doctorVisitViewCurrExamDataGrid.Rows[examinationIndex].Cells[7].Value.ToString());
-                char type;
                 if (doctorVisitViewCurrExamDataGrid.Rows[examinationIndex].Cells[1].Value.Equals("Laboratory"))
                 {
-                    type = 'L';
+                    LabolatoryExaminationForm examinationView = new LabolatoryExaminationForm(idExam);
+                    examinationView.ShowDialog(this);
                     
                 }
                 else
                 {
-                    type = 'P';
                     DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit,idExam);
                     examinationView.ShowDialog(this);
                 }

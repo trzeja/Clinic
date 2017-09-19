@@ -105,6 +105,24 @@ namespace Clinic
                 //tu musimy wyciagnac wszstko z wizyty
                 DoctorVisitViewForm doctorViewVisit = new DoctorVisitViewForm(patient, idVisit);
                 doctorViewVisit.ShowDialog(this);
+                Visit visit = new Visit();
+                visit.id_patient = idPatient;
+                if (this.doctorVisitStateComboBox.SelectedItem != null)
+                {
+                    visit.state = this.doctorVisitStateComboBox.SelectedItem.ToString();
+                }
+
+                if (doctorDateTimePickerExecDate.Checked == true)
+                {
+                    visit.registration_date = doctorDateTimePickerExecDate.Value;
+                }
+                else
+                {
+                    DateTime loadedDate = DateTime.ParseExact("01.01.1754 00:00:00", "dd.MM.yyyy HH:mm:ss",
+                                            System.Globalization.CultureInfo.InvariantCulture);
+                    visit.registration_date = loadedDate;
+                }
+                this.dataGridView1.DataSource = DoctorFacade.GetPatientsWithAdresses(idDoctor, idPatient, visit);
             }
         }
 
