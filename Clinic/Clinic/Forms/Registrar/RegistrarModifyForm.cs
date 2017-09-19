@@ -83,7 +83,7 @@ namespace Clinic
         {
             //set==true --> Modify form acive
             modifyTrueAddFalse = set;
-            this.registrarSelectPatientButton.Visible = !set;
+            //this.registrarSelectPatientButton.Visible = !set;
             this.registrarSelectDoctorButton.Visible = true;
             this.registrarStateComboBox.Visible = set;
             this.stateLabel.Visible = set;
