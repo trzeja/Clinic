@@ -28,7 +28,7 @@ namespace BizzLayer.Facades
             return result;
         }
 
-        public static void AddUser(User user)
+        public static void AddUser(User user, string medRightNo = null)
         {
             //walidacja
             //pole username powinno być dostępne do edycji tylko w add
@@ -46,7 +46,7 @@ namespace BizzLayer.Facades
             }
             else if (user.roles == "DOC")
             {
-                dc.Doctors.InsertOnSubmit(new Doctor { user_name = user.user_name });
+                dc.Doctors.InsertOnSubmit(new Doctor { user_name = user.user_name, medical_right_no = medRightNo });
             }
 
             dc.SubmitChanges();

@@ -41,6 +41,8 @@
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.adminTextBoxUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.adminTextBoxMedicalRight = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // adminTextBoxFname
@@ -66,7 +68,7 @@
             // 
             // adminModifyButton
             // 
-            this.adminModifyButton.Location = new System.Drawing.Point(104, 268);
+            this.adminModifyButton.Location = new System.Drawing.Point(104, 299);
             this.adminModifyButton.Name = "adminModifyButton";
             this.adminModifyButton.Size = new System.Drawing.Size(75, 23);
             this.adminModifyButton.TabIndex = 18;
@@ -143,11 +145,12 @@
             this.comboBoxRole.Name = "comboBoxRole";
             this.comboBoxRole.Size = new System.Drawing.Size(95, 21);
             this.comboBoxRole.TabIndex = 27;
+            this.comboBoxRole.SelectedIndexChanged += new System.EventHandler(this.comboBoxRole_SelectedIndexChanged);
             // 
             // adminTextBoxUsername
             // 
             this.adminTextBoxUsername.Location = new System.Drawing.Point(105, 29);
-            this.adminTextBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.adminTextBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.adminTextBoxUsername.Name = "adminTextBoxUsername";
             this.adminTextBoxUsername.Size = new System.Drawing.Size(99, 20);
             this.adminTextBoxUsername.TabIndex = 28;
@@ -162,11 +165,30 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Username";
             // 
+            // adminTextBoxMedicalRight
+            // 
+            this.adminTextBoxMedicalRight.Enabled = false;
+            this.adminTextBoxMedicalRight.Location = new System.Drawing.Point(104, 259);
+            this.adminTextBoxMedicalRight.Name = "adminTextBoxMedicalRight";
+            this.adminTextBoxMedicalRight.Size = new System.Drawing.Size(100, 20);
+            this.adminTextBoxMedicalRight.TabIndex = 30;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(34, 262);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Medical right";
+            // 
             // AdminEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 323);
+            this.ClientSize = new System.Drawing.Size(282, 334);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.adminTextBoxMedicalRight);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.adminTextBoxUsername);
             this.Controls.Add(this.comboBoxRole);
@@ -206,5 +228,7 @@
         private System.Windows.Forms.ComboBox comboBoxRole;
         private System.Windows.Forms.TextBox adminTextBoxUsername;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox adminTextBoxMedicalRight;
+        private System.Windows.Forms.Label label4;
     }
 }
