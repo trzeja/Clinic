@@ -503,7 +503,7 @@ namespace DataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(254) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(254)")]
 		public string description
 		{
 			get
@@ -1033,7 +1033,7 @@ namespace DataLayer
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _code;
+		private string _code;
 		
 		private char _type;
 		
@@ -1047,7 +1047,7 @@ namespace DataLayer
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OncodeChanging(int value);
+    partial void OncodeChanging(string value);
     partial void OncodeChanged();
     partial void OntypeChanging(char value);
     partial void OntypeChanged();
@@ -1062,8 +1062,8 @@ namespace DataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_code", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_code", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string code
 		{
 			get
 			{
@@ -1221,7 +1221,7 @@ namespace DataLayer
 		
 		private System.Nullable<int> _id_laboratory_manager;
 		
-		private int _code;
+		private string _code;
 		
 		private EntityRef<Examination_dictionary> _Examination_dictionary;
 		
@@ -1257,7 +1257,7 @@ namespace DataLayer
     partial void Onid_laboratory_wokerChanged();
     partial void Onid_laboratory_managerChanging(System.Nullable<int> value);
     partial void Onid_laboratory_managerChanged();
-    partial void OncodeChanging(int value);
+    partial void OncodeChanging(string value);
     partial void OncodeChanged();
     #endregion
 		
@@ -1502,8 +1502,8 @@ namespace DataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_code", DbType="Int NOT NULL")]
-		public int code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_code", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string code
 		{
 			get
 			{
@@ -1553,7 +1553,7 @@ namespace DataLayer
 					}
 					else
 					{
-						this._code = default(int);
+						this._code = default(string);
 					}
 					this.SendPropertyChanged("Examination_dictionary");
 				}
@@ -2197,9 +2197,11 @@ namespace DataLayer
 		
 		private string _result;
 		
+		private System.Nullable<System.DateTime> _execution_datetime;
+		
 		private int _id_visit;
 		
-		private int _code;
+		private string _code;
 		
 		private EntityRef<Examination_dictionary> _Examination_dictionary;
 		
@@ -2213,9 +2215,11 @@ namespace DataLayer
     partial void Onid_physical_examinationChanged();
     partial void OnresultChanging(string value);
     partial void OnresultChanged();
+    partial void Onexecution_datetimeChanging(System.Nullable<System.DateTime> value);
+    partial void Onexecution_datetimeChanged();
     partial void Onid_visitChanging(int value);
     partial void Onid_visitChanged();
-    partial void OncodeChanging(int value);
+    partial void OncodeChanging(string value);
     partial void OncodeChanged();
     #endregion
 		
@@ -2266,6 +2270,26 @@ namespace DataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_execution_datetime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> execution_datetime
+		{
+			get
+			{
+				return this._execution_datetime;
+			}
+			set
+			{
+				if ((this._execution_datetime != value))
+				{
+					this.Onexecution_datetimeChanging(value);
+					this.SendPropertyChanging();
+					this._execution_datetime = value;
+					this.SendPropertyChanged("execution_datetime");
+					this.Onexecution_datetimeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_visit", DbType="Int NOT NULL")]
 		public int id_visit
 		{
@@ -2290,8 +2314,8 @@ namespace DataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_code", DbType="Int NOT NULL")]
-		public int code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_code", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string code
 		{
 			get
 			{
@@ -2341,7 +2365,7 @@ namespace DataLayer
 					}
 					else
 					{
-						this._code = default(int);
+						this._code = default(string);
 					}
 					this.SendPropertyChanged("Examination_dictionary");
 				}

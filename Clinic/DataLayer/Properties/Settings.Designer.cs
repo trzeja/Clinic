@@ -42,5 +42,16 @@ namespace DataLayer.Properties {
                 return ((string)(this["ClinicConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-0QEG5QUL\\SQLEXPRESS;Initial Catalog=clinic;Integrated Security" +
+            "=True")]
+        public string clinicConnectionString2 {
+            get {
+                return ((string)(this["clinicConnectionString2"]));
+            }
+        }
     }
 }
