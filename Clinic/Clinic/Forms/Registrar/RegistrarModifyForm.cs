@@ -18,7 +18,7 @@ namespace Clinic
         private bool modifyTrueAddFalse;
         private int idVisit;
         private int idDoctor;
-        public RegistrarAddModifyForm(int iD, int? idVisit = null)
+        public RegistrarAddModifyForm(int? idVisit = null)
         {
             InitializeComponent();
             Initialize(idVisit);
