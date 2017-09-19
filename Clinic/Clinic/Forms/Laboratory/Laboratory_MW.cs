@@ -100,7 +100,7 @@ namespace Clinic
             labMWDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             //force select first row
-            if (labMWDataGridView.Rows.Count >= 1) labMWDataGridView.CurrentCell = labMWDataGridView.Rows[0].Cells[0];
+            if (labMWDataGridView.Rows.Count >= 1) labMWDataGridView.CurrentCell = labMWDataGridView.Rows[0].Cells[1];
         }
 
         private void Initialize()

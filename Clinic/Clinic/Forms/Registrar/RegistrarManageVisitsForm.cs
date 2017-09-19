@@ -41,7 +41,7 @@ namespace Clinic
         {
             refreshGrid();
             //force select first row
-            if (dataGridViewRegistrar.Rows.Count >= 1) dataGridViewRegistrar.CurrentCell = dataGridViewRegistrar.Rows[0].Cells[0];
+            if (dataGridViewRegistrar.Rows.Count >= 1) dataGridViewRegistrar.CurrentCell = dataGridViewRegistrar.Rows[0].Cells[1];
         }
 
         private void registrarModifyVisitButton_Click(object sender, EventArgs e)
