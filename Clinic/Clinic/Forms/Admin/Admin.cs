@@ -40,6 +40,8 @@ namespace Clinic
 
                 AdminEditForm adminEditForm = new AdminEditForm("Edit user", "Confirm", true, user);
                 adminEditForm.ShowDialog(this);
+
+                RefreshGrid();
             }
             else
             {
@@ -58,6 +60,8 @@ namespace Clinic
         private void adminSearchButton_Click(object sender, EventArgs e)
         {
             RefreshGrid();
+            //force select first row
+            if (dataGridAdmin.Rows.Count >= 1) dataGridAdmin.CurrentCell = dataGridAdmin.Rows[0].Cells[0];
         }
         
         private void RefreshGrid()

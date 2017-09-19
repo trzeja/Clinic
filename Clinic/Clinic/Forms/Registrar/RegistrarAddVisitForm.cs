@@ -78,6 +78,8 @@ namespace Clinic
 
             RegistrarAddVisitDataGridView.DataSource = RegistrationFacade.GetPatientsWithAdresses(search);
 
+            //force select first row
+            if (RegistrarAddVisitDataGridView.Rows.Count >= 1) RegistrarAddVisitDataGridView.CurrentCell = RegistrarAddVisitDataGridView.Rows[0].Cells[0];
         }
 
         private void button1_Click(object sender, EventArgs e)

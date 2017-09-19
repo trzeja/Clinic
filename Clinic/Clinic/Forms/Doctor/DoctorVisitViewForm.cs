@@ -201,7 +201,8 @@ namespace Clinic
             doctorVisitViewExaminationListDataGrid.Columns[6].HeaderText = "Result";
             doctorVisitViewExaminationListDataGrid.Columns[7].Visible = false;
             doctorVisitViewExaminationListDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //MessageBox.Show("Test");
+            //force select first row
+            if (doctorVisitViewExaminationListDataGrid.Rows.Count >= 1) doctorVisitViewExaminationListDataGrid.CurrentCell = doctorVisitViewExaminationListDataGrid.Rows[0].Cells[0];
         }
 
         private void doctorVisitViewLoadVisitHistButton_Click(object sender, EventArgs e)
@@ -214,7 +215,8 @@ namespace Clinic
             doctorVisitViewVisitListDataGrid.Columns[4].HeaderText = "Doctor's last name";
             doctorVisitViewVisitListDataGrid.Columns[5].Visible = false;
             doctorVisitViewVisitListDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //MessageBox.Show("Test");
+            //force select first row
+            if (doctorVisitViewVisitListDataGrid.Rows.Count >= 1) doctorVisitViewVisitListDataGrid.CurrentCell = doctorVisitViewVisitListDataGrid.Rows[0].Cells[0];
         }
 
         private void doctorVisitViewVisitHistDetailsButton_Click(object sender, EventArgs e)

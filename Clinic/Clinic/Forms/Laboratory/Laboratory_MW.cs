@@ -73,7 +73,8 @@ namespace Clinic
 
         private void labManagerShowButton_Click(object sender, EventArgs e)
         {
-            this.Controls.Add(this.labMWDataGridView);
+            //this.Controls.Add(this.labMWDataGridView);
+            
             DataLayer.Laboratory_examination searchCriteria;
             searchCriteria = new DataLayer.Laboratory_examination();
             if (labMWDataTimePickerOrderDate.Checked) searchCriteria.order_date = labMWDataTimePickerOrderDate.Value;
@@ -98,7 +99,8 @@ namespace Clinic
             labMWDataGridView.Columns[15].Visible = false;
             labMWDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            labMWDataGridView.ClearSelection();// żeby nie było problemow pozniej
+            //force select first row
+            if (labMWDataGridView.Rows.Count >= 1) labMWDataGridView.CurrentCell = labMWDataGridView.Rows[0].Cells[1];
         }
 
         private void Initialize()
@@ -108,7 +110,7 @@ namespace Clinic
 
         private void labManagerEditButton_Click(object sender, EventArgs e)
         {
-            if (labMWDataGridView.SelectedRows.Count == 1 && labMWDataGridView.Rows.Count > 0)
+            if (labMWDataGridView.CurrentRow != null && labMWDataGridView.SelectedRows.Count == 1)
             {
                 
                 //kzp : do przekazania proponuję id_laboraory_examination i username

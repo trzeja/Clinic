@@ -83,6 +83,8 @@ namespace Clinic
             this.dataGridView1.Columns[4].HeaderText = "Registration date";
             this.dataGridView1.Columns[5].Visible = false;
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //force select first row
+            if (dataGridView1.Rows.Count >= 1) dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
         }
 
         private void doctorSelectVisitbutton_Click(object sender, EventArgs e)
@@ -147,8 +149,8 @@ namespace Clinic
 
             catch (Exception ex)
             {
-                //MessageBox.Show("Check again patient !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                MessageBox.Show("Person not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                // NIE RUSZAć !!
+                //MessageBox.Show("Person not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 idPatient = -1;
                 this.doctorPatientNameTextBox.Text = "All patients";
             }
