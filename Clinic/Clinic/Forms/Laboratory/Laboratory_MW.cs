@@ -118,8 +118,13 @@ namespace Clinic
                 {
                     // roles -> rola czyli "LABM" lub "LABW", id_worker -> id managera z "Laboratory_manager", username - user_name z "User"
                     //LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(roles, id_manager, username, tmp_id_exam);
-                    LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm();
-                    labExamView.SetLabManagerMode(id_manager.Value);
+                    LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(tmp_id_exam);
+
+                    if (labMWDataGridView.CurrentRow.Cells[7].Value.Equals("DONE"))
+                    {
+                        labExamView.SetLabManagerMode(id_manager.Value);
+                    }
+                    
                     labExamView.ShowDialog(this);
                 }
                 else if (roles.Equals("LABW"))
@@ -127,7 +132,11 @@ namespace Clinic
                     // roles -> rola czyli "LABM" lub "LABW", id_worker -> id workera z "Laboratory_worker", username - user_name z "User"
                     //LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(roles, id_worker, username, tmp_id_exam);
                     LabolatoryExaminationForm labExamView = new LabolatoryExaminationForm(tmp_id_exam);
-                    labExamView.SetLabWorkerMode(id_worker.Value);
+                    if (labMWDataGridView.CurrentRow.Cells[7].Value.Equals("ORD"))
+                    {
+                        labExamView.SetLabWorkerMode(id_worker.Value);
+                    }
+                   
                     labExamView.ShowDialog(this);
                 }                
             }

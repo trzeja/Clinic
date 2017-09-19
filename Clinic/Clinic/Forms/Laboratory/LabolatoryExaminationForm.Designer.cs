@@ -408,6 +408,7 @@ namespace Clinic
             this.LabExaminationLabManagerCancelButton.TabIndex = 8;
             this.LabExaminationLabManagerCancelButton.Text = "Cancel  Examination";
             this.LabExaminationLabManagerCancelButton.UseVisualStyleBackColor = true;
+            this.LabExaminationLabManagerCancelButton.Click += new EventHandler(LabExaminationLabManagerCancelButton_Click);
             // 
             // LabExaminationLabManagerApproveButton
             // 
@@ -417,6 +418,7 @@ namespace Clinic
             this.LabExaminationLabManagerApproveButton.TabIndex = 7;
             this.LabExaminationLabManagerApproveButton.Text = "Approve Examination";
             this.LabExaminationLabManagerApproveButton.UseVisualStyleBackColor = true;
+            this.LabExaminationLabManagerApproveButton.Click += new EventHandler(LabExaminationLabManagerApproveButton_Click);
             // 
             // LabExaminationLabManagerCommentsTextBox
             // 

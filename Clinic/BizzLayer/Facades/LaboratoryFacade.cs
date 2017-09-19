@@ -8,6 +8,20 @@ namespace BizzLayer.Facades
 {
     static public class LaboratoryFacade
     {
+        public static void UpdateExaminationM(Laboratory_examination labEx)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from ex in dc.Laboratory_examinations
+                         where ex.id_laboratory_examination == labEx.id_laboratory_examination
+                         select ex;
+            var examination = result.FirstOrDefault();
+            examination.examination_approval_date = labEx.examination_approval_date;
+            examination.state = labEx.state;
+            examination.lab_manager_comments = labEx.lab_manager_comments;
+            examination.id_laboratory_manager = labEx.id_laboratory_manager;
+            dc.SubmitChanges();
+        }
+
         public static void UpdateExamination(Laboratory_examination labEx)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();

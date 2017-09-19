@@ -24,6 +24,32 @@ namespace Clinic
             Initialize();
         }
 
+        private void LabExaminationLabManagerCancelButton_Click(object sender, EventArgs e)
+        {
+            DateTime time = DateTime.Now;
+            Laboratory_examination labEx = new Laboratory_examination();
+            labEx.id_laboratory_examination = id_exam;
+            labEx.examination_approval_date = time;
+            labEx.state = "CANC_LABM";
+            labEx.lab_manager_comments = LabExaminationLabManagerCommentsTextBox.Text;
+            labEx.id_laboratory_manager = id_user;
+            LaboratoryFacade.UpdateExaminationM(labEx);
+            this.Close();
+        }
+
+        private void LabExaminationLabManagerApproveButton_Click(object sender, EventArgs e)
+        {
+            DateTime time = DateTime.Now;
+            Laboratory_examination labEx = new Laboratory_examination();
+            labEx.id_laboratory_examination = id_exam;
+            labEx.examination_approval_date = time;
+            labEx.state = "APP";
+            labEx.lab_manager_comments = LabExaminationLabManagerCommentsTextBox.Text;
+            labEx.id_laboratory_manager = id_user;
+            LaboratoryFacade.UpdateExaminationM(labEx);
+            this.Close();
+        }
+
         private void LabExaminationLabWorkerSubmitButton_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;
@@ -41,6 +67,14 @@ namespace Clinic
         private void LabExaminationLabWorkerCancelButton_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;
+            Laboratory_examination labEx = new Laboratory_examination();
+            labEx.id_laboratory_examination = id_exam;
+            labEx.examination_execution_date = time;
+            labEx.state = "CANC_LABW";
+            labEx.result = LabExaminationExamResultTextBox.Text;
+            labEx.id_laboratory_woker = id_user;
+            LaboratoryFacade.UpdateExamination(labEx);
+            this.Close();
         }
 
         private void Initialize()
@@ -195,12 +229,18 @@ namespace Clinic
                         //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
                         //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
                         LabExaminationLabManagerCommentsTextBox.ReadOnly = false;
+                        LabExaminationLabManagerCommentsTextBox.Enabled = true;
                         LabExaminationLabManagerApproveButton.Enabled = true;
                         LabExaminationLabManagerCancelButton.Enabled = true;
                         //other
                         //LabExaminationExamStateComboBox.Enabled = false;
                         //LabExaminationExamTypeComboBox.Enabled = false;
                         //LabExaminationExamOrderDateTimePicker.Enabled = false;
+                        Laboratory_manager labM = CommonFacade.GetLabM(id_user);
+                        LabExaminationLabManagerFirstNameTextBox.Text = labM.User.fname;
+                        LabExaminationLabManagerLastNameTextBox.Text = labM.User.lname;
+                        LabExaminationExamApprovalDateTimePicker.Format = DateTimePickerFormat.Long;
+                        LabExaminationExamApprovalDateTimePicker.Value = DateTime.Now;
                     }
                     break;
                 default:

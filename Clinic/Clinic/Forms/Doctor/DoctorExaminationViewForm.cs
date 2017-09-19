@@ -40,6 +40,7 @@ namespace Clinic
                         doctorExaminationViewOrderButton.Visible = true;
                         doctorExaminationViewExamTypeComboBox.Enabled = true;
                         doctorExaminationViewCommentsResultTextBox.ReadOnly = false;
+                        doctorExaminationViewCommentsResultTextBox.Enabled = true;
                         //dateToComboBox = new List<string>();
                         //var query= DoctorFacade.GetLaboratoryExaminationType();
                         //foreach (var x in query) dateToComboBox.Add( x.ToString());
@@ -71,11 +72,15 @@ namespace Clinic
                         doctorExaminationViewCommentsResultTextBox.ReadOnly = true;
                         doctorExaminationViewCommentsResultTextBox.Enabled = false;
                         //doctorExaminationViewExamTypeComboBox.SelectedIndex = -1;
-                        var result = DoctorFacade.GetPhysicalExamination(id_exam);
-                        doctorExaminationViewExamTypeComboBox.Items.Add(result[0]);
-                        doctorExaminationViewExamTypeComboBox.SelectedIndex = 0;
-                        doctorExaminationViewExamNameTextBox.Text = result[1];
-                        doctorExaminationViewCommentsResultTextBox.Text = result[2];
+                        if (id_exam != 0)
+                        {
+                            var result = DoctorFacade.GetPhysicalExamination(id_exam);
+                            doctorExaminationViewExamTypeComboBox.Items.Add(result[0]);
+                            doctorExaminationViewExamTypeComboBox.SelectedIndex = 0;
+                            doctorExaminationViewExamNameTextBox.Text = result[1];
+                            doctorExaminationViewCommentsResultTextBox.Text = result[2];
+                        }
+                        
                     }
                     break;
             }
