@@ -16,12 +16,15 @@ namespace Clinic
     public partial class DoctorExaminationViewForm : Form
     {
         private int id_visit = 0;
-        private char mode;
-        public DoctorExaminationViewForm(int id = 0, string state = null)
+        private int id_exam = 0;
+        public DoctorExaminationViewForm(int id = 0, int idExam=0)
         {
             InitializeComponent();
-            SetWindowMode(-1);
+            this.id_exam = idExam;
             this.id_visit = id;
+            SetWindowMode(-1);
+            
+            
         }
 
         private void SetWindowMode(int mode)//0=LAB, 1=PHY
@@ -31,7 +34,6 @@ namespace Clinic
                 case 0:
                     {//lab exam
                      // doctorExaminationViewExamTypeComboBox
-                        this.mode = 'L';
                         doctorExaminationViewExamTypeHeadingLabel.Text = "Laboratory Examination";
                         doctorExaminationViewCommentsResultLabel.Text = "Comments :";
                         doctorExaminationViewSubmitButton.Visible = false;
@@ -48,7 +50,6 @@ namespace Clinic
                     break;
                 case 1:
                     {//phy exam
-                        this.mode = 'P';
                         doctorExaminationViewExamTypeHeadingLabel.Text = "Physical Examination";
                         doctorExaminationViewCommentsResultLabel.Text = "Results :";
                         doctorExaminationViewSubmitButton.Visible = true;
@@ -68,8 +69,13 @@ namespace Clinic
                         doctorExaminationViewOrderButton.Visible = false;
                         doctorExaminationViewExamTypeComboBox.Enabled = false;
                         doctorExaminationViewCommentsResultTextBox.ReadOnly = true;
-                        doctorExaminationViewExamTypeComboBox.SelectedIndex = -1;
-
+                        doctorExaminationViewCommentsResultTextBox.Enabled = false;
+                        //doctorExaminationViewExamTypeComboBox.SelectedIndex = -1;
+                        var result = DoctorFacade.GetPhysicalExamination(id_exam);
+                        doctorExaminationViewExamTypeComboBox.Items.Add(result[0]);
+                        doctorExaminationViewExamTypeComboBox.SelectedIndex = 0;
+                        doctorExaminationViewExamNameTextBox.Text = result[1];
+                        doctorExaminationViewCommentsResultTextBox.Text = result[2];
                     }
                     break;
             }
@@ -80,7 +86,10 @@ namespace Clinic
         {
             if (doctorExaminationViewExamTypeComboBox.SelectedIndex != -1)
             {
-                doctorExaminationViewExamNameTextBox.Text = DoctorFacade.GetNameForExam(doctorExaminationViewExamTypeComboBox.SelectedValue.ToString());
+                if (doctorExaminationViewExamTypeComboBox.SelectedValue != null)
+                {
+                    doctorExaminationViewExamNameTextBox.Text = DoctorFacade.GetNameForExam(doctorExaminationViewExamTypeComboBox.SelectedValue.ToString());
+                }
             }
             else
             {
@@ -99,11 +108,13 @@ namespace Clinic
 
         private void doctorExaminationViewSubmitButton_Click(object sender, EventArgs e)
         {
+            DateTime time = DateTime.Now;
             if (doctorExaminationViewExamTypeComboBox.SelectedIndex != -1) {
                 Physical_examination phyExam = new Physical_examination();
                 phyExam.result = doctorExaminationViewCommentsResultTextBox.Text;
                 phyExam.id_visit = id_visit;
                 phyExam.code = doctorExaminationViewExamTypeComboBox.SelectedValue.ToString();
+                phyExam.execution_datetime = time;
                 DoctorFacade.AddPhyExam(phyExam);
                 this.Close();
             } else

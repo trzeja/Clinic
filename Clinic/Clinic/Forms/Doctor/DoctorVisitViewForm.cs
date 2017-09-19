@@ -43,6 +43,7 @@ namespace Clinic
             doctorVisitPatientDescriptionTextBox.ForeColor = SystemColors.GrayText;
             doctorVisitPatientDiagnosisTextBox.Text = "Diagnosis";
             doctorVisitPatientDiagnosisTextBox.ForeColor = SystemColors.GrayText;
+            RefreshExamGrid();
         }
 
         private void doctorFinishVisitButton_Click(object sender, EventArgs e)
@@ -51,11 +52,16 @@ namespace Clinic
             Visit visit = new Visit();
             visit.id_visit = this.idVisit;
             //sprawdzic czy nie maja czegos zlego wpisanego
-            visit.description = doctorVisitPatientDescriptionTextBox.Text;
-            visit.diagnosis = doctorVisitPatientDiagnosisTextBox.Text;
+            if (doctorVisitPatientDescriptionTextBox.Text != "Description") {
+                visit.description = doctorVisitPatientDescriptionTextBox.Text;
+            }
+            if (doctorVisitPatientDiagnosisTextBox.Text != "Diagnosis") {
+                visit.diagnosis = doctorVisitPatientDiagnosisTextBox.Text;
+            }
             visit.state = "DONE";
             visit.execution_cancel_datetime = time;
             DoctorFacade.FinishVisit(visit);
+            this.Close();
             //validate data
         }
 
@@ -79,6 +85,7 @@ namespace Clinic
             doctorVisitViewCurrExamDataGrid.Columns[4].HeaderText = "Executed";
             doctorVisitViewCurrExamDataGrid.Columns[5].HeaderText = "Approved";
             doctorVisitViewCurrExamDataGrid.Columns[6].HeaderText = "Result";
+            doctorVisitViewCurrExamDataGrid.Columns[7].Visible = false;
             doctorVisitViewCurrExamDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -114,7 +121,21 @@ namespace Clinic
         {
             if(MessageBox.Show("Are you sure ?", "Cancel the visit...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                //cancel visit
+                DateTime time = DateTime.Now;
+                Visit visit = new Visit();
+                visit.id_visit = this.idVisit;
+                if (doctorVisitPatientDescriptionTextBox.Text != "Description")
+                {
+                    visit.description = doctorVisitPatientDescriptionTextBox.Text;
+                }
+                if (doctorVisitPatientDiagnosisTextBox.Text != "Diagnosis")
+                {
+                    visit.diagnosis = doctorVisitPatientDiagnosisTextBox.Text;
+                }
+                visit.state = "CANC";
+                visit.execution_cancel_datetime = time;
+                DoctorFacade.FinishVisit(visit);
+                this.Close();
             };
         }
 
@@ -193,6 +214,38 @@ namespace Clinic
                 //selected = DoctorFacade.GetVisitById(idSelected);
                 VisitInfoViewForm visit = new VisitInfoViewForm(idSelected);
                 visit.ShowDialog(this);
+            }
+        }
+
+        private void doctorVisitViewExamDetailsButton_Click(object sender, EventArgs e)
+        {
+            if (doctorVisitViewCurrExamDataGrid.RowCount == 0 || doctorVisitViewCurrExamDataGrid.SelectedCells.Count == 0)
+            {
+                //MessageBox.Show("No visit selected", "Error");
+                MessageBox.Show("No examination selected !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (doctorVisitViewCurrExamDataGrid.SelectedRows.Count > 1)
+            {
+                //MessageBox.Show("Selected too many visits, please select just one", "Error");
+                MessageBox.Show("Selected too many examinations ! \nPlease select just one...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                int examinationIndex = doctorVisitViewCurrExamDataGrid.CurrentRow.Index;
+                int idExam = Int32.Parse(doctorVisitViewCurrExamDataGrid.Rows[examinationIndex].Cells[7].Value.ToString());
+                char type;
+                if (doctorVisitViewCurrExamDataGrid.Rows[examinationIndex].Cells[1].Value.Equals("Laboratory"))
+                {
+                    type = 'L';
+                    
+                }
+                else
+                {
+                    type = 'P';
+                    DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit,idExam);
+                    examinationView.ShowDialog(this);
+                }
+
             }
         }
 

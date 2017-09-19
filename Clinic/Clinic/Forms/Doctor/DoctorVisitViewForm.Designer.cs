@@ -351,6 +351,7 @@
             this.doctorVisitViewExamDetailsButton.TabIndex = 2;
             this.doctorVisitViewExamDetailsButton.Text = "View details";
             this.doctorVisitViewExamDetailsButton.UseVisualStyleBackColor = true;
+            this.doctorVisitViewExamDetailsButton.Click += new System.EventHandler(doctorVisitViewExamDetailsButton_Click);
             // 
             // doctorVisitViewCurrExamDataGrid
             // 
