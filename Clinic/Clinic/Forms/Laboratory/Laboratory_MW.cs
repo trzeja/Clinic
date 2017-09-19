@@ -61,6 +61,7 @@ namespace Clinic
                 disable_all();
                 MessageBox.Show("Your ID does not exist !\nPlease try to log in again or contact administrator", "Wrong ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            RefreshGrid();
         }
 
         private void disable_all()
@@ -128,6 +129,7 @@ namespace Clinic
                     }
                     
                     labExamView.ShowDialog(this);
+                    RefreshGrid();
                 }
                 else if (roles.Equals("LABW"))
                 {
@@ -140,12 +142,43 @@ namespace Clinic
                     }
                    
                     labExamView.ShowDialog(this);
+                    RefreshGrid();
                 }                
             }
             else
             {
                 MessageBox.Show("Select laboratory examination !", "Select row ...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void RefreshGrid()
+        {
+            DataLayer.Laboratory_examination searchCriteria;
+            searchCriteria = new DataLayer.Laboratory_examination();
+            if (labMWDataTimePickerOrderDate.Checked) searchCriteria.order_date = labMWDataTimePickerOrderDate.Value;
+            else searchCriteria.order_date = DateTime.MinValue;
+            searchCriteria.state = labMWComboboxState.Text;
+            labMWDataGridView.DataSource = BizzLayer.Facades.LaboratoryFacade.GetExaminations(searchCriteria);
+            labMWDataGridView.Columns[0].Visible = false;//id examination
+            labMWDataGridView.Columns[1].HeaderText = "Order date";
+            labMWDataGridView.Columns[2].HeaderText = "Execution date";
+            labMWDataGridView.Columns[3].HeaderText = "Approval date";
+            labMWDataGridView.Columns[4].Visible = false;
+            labMWDataGridView.Columns[5].Visible = false;
+            labMWDataGridView.Columns[6].Visible = false;
+            labMWDataGridView.Columns[7].HeaderText = "State";
+            labMWDataGridView.Columns[8].Visible = false;
+            labMWDataGridView.Columns[9].Visible = false;
+            labMWDataGridView.Columns[10].Visible = false;
+            labMWDataGridView.Columns[11].Visible = false;
+            labMWDataGridView.Columns[12].Visible = false;
+            labMWDataGridView.Columns[13].Visible = false;
+            labMWDataGridView.Columns[14].Visible = false;
+            labMWDataGridView.Columns[15].Visible = false;
+            labMWDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            //force select first row
+            if (labMWDataGridView.Rows.Count >= 1) labMWDataGridView.CurrentCell = labMWDataGridView.Rows[0].Cells[1];
         }
 
         private void Laboratory_MW_Resize(object sender, EventArgs e)
