@@ -33,13 +33,18 @@ namespace BizzLayer.Facades
             return result.FirstOrDefault();
         }
 
-        public static IQueryable GetDoctors(User u)
+        public static IQueryable GetDoctors(User searchCrit)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
-            var result = from user in dc.Users
-                         where user.roles == "DOC"
-                         select user;
+            var result = from p in dc.Users
+                         where ((String.IsNullOrEmpty(searchCrit.fname) || p.fname.StartsWith(searchCrit.fname)) && (String.IsNullOrEmpty(searchCrit.lname) || p.lname.StartsWith(searchCrit.lname))) && p.roles == "DOC"
+                         join d in dc.Doctors on p.user_name equals d.user_name
+                         into joined
+                         from j in joined.DefaultIfEmpty()
+
+                         select new { j.id_doc, p.fname, p.lname, j.medical_right_no };
             return result;
+
             //var result2 = from doctor in dc.Doctors
             //              where 
         }
