@@ -1,4 +1,7 @@
-﻿namespace Clinic
+﻿using DataLayer;
+using System;
+
+namespace Clinic
 {
     partial class LabolatoryExaminationForm
     {
@@ -323,6 +326,7 @@
             this.LabExaminationLabWorkerSubmitButton.TabIndex = 6;
             this.LabExaminationLabWorkerSubmitButton.Text = "Submit Examination";
             this.LabExaminationLabWorkerSubmitButton.UseVisualStyleBackColor = true;
+            this.LabExaminationLabWorkerSubmitButton.Click += new EventHandler(LabExaminationLabWorkerSubmitButton_Click);
             // 
             // LabExaminationLabWorkerCancelButton
             // 
@@ -332,6 +336,7 @@
             this.LabExaminationLabWorkerCancelButton.TabIndex = 5;
             this.LabExaminationLabWorkerCancelButton.Text = "Cancel  Examination";
             this.LabExaminationLabWorkerCancelButton.UseVisualStyleBackColor = true;
+            this.LabExaminationLabWorkerCancelButton.Click += new EventHandler(LabExaminationLabWorkerCancelButton_Click);
             // 
             // LabExaminationExamResultTextBox
             // 
@@ -487,124 +492,9 @@
 
         #endregion
 
-       // public void SetWindowMode
-        public void SetLabWorkerMode()
-        {
-            SetWindowMode(0);
-        }
+        
 
-        public void SetLabManagerMode()
-        {
-            SetWindowMode(1);
-        }
-
-        public void SetReadOnlyMode()
-        {
-            SetWindowMode(-1);
-        }
-        private void SetWindowMode(int mode)//0 - lab worker, 1 - lab manager
-        {
-            switch (mode)
-            {
-                case 0:
-                    {//lab worker
-                        //patient
-                        //LabExaminationPatientFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationPatientLastNameTextBox.ReadOnly = true;
-                        //LabExaminationPatientPeselTextBox.ReadOnly = true;
-                        ////doctor
-                        //LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationDoctorLastNameTextBox.ReadOnly = true;
-                        //LabExaminationDoctorCommentsTextBox.ReadOnly = true;
-                        //lab worker
-                        //LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
-                        LabExaminationExamResultTextBox.ReadOnly = false;
-                        LabExaminationLabWorkerSubmitButton.Enabled = true;
-                        LabExaminationLabWorkerCancelButton.Enabled = true;
-                        //lab manager
-                        //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
-                        LabExaminationLabManagerCommentsTextBox.ReadOnly = true;
-                        LabExaminationLabManagerApproveButton.Enabled = false;
-                        LabExaminationLabManagerCancelButton.Enabled = false;
-                        //other
-                        //LabExaminationExamStateComboBox.Enabled = false;
-                        //LabExaminationExamTypeComboBox.Enabled = false;
-                        //LabExaminationExamOrderDateTimePicker.Enabled = false;
-                    }
-                    break;
-                case 1:
-                    {//lab manager
-                        //patient
-                        //LabExaminationPatientFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationPatientLastNameTextBox.ReadOnly = true;
-                        //LabExaminationPatientPeselTextBox.ReadOnly = true;
-                        ////doctor
-                        //LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationDoctorLastNameTextBox.ReadOnly = true;
-                        //LabExaminationDoctorCommentsTextBox.ReadOnly = true;
-                        //lab worker
-                        //LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
-                        LabExaminationExamResultTextBox.ReadOnly = true;
-                        LabExaminationLabWorkerSubmitButton.Enabled = false;
-                        LabExaminationLabWorkerCancelButton.Enabled = false;
-                        //lab manager
-                        //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
-                        LabExaminationLabManagerCommentsTextBox.ReadOnly = false;
-                        LabExaminationLabManagerApproveButton.Enabled = true;
-                        LabExaminationLabManagerCancelButton.Enabled = true;
-                        //other
-                        //LabExaminationExamStateComboBox.Enabled = false;
-                        //LabExaminationExamTypeComboBox.Enabled = false;
-                        //LabExaminationExamOrderDateTimePicker.Enabled = false;
-                    }
-                    break;
-                default:
-                    {//read only
-                        ////patient
-                        //LabExaminationPatientFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationPatientLastNameTextBox.ReadOnly = true;
-                        //LabExaminationPatientPeselTextBox.ReadOnly = true;
-                        LabExaminationPatientFirstNameTextBox.Enabled = false;
-                        LabExaminationPatientLastNameTextBox.Enabled = false;
-                        LabExaminationPatientPeselTextBox.Enabled = false;
-                        ////doctor
-                        //LabExaminationDoctorFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationDoctorLastNameTextBox.ReadOnly = true;
-                        //LabExaminationDoctorCommentsTextBox.ReadOnly = true;
-                        LabExaminationDoctorFirstNameTextBox.Enabled = false;
-                        LabExaminationDoctorLastNameTextBox.Enabled = false;
-                        LabExaminationDoctorCommentsTextBox.Enabled = false;
-                        ////lab worker
-                        //LabExaminationLabWorkerFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationLabWorkerLastNameTextBox.ReadOnly = true;
-                        LabExaminationLabWorkerFirstNameTextBox.Enabled = false;
-                        LabExaminationLabWorkerLastNameTextBox.Enabled = false;
-                        LabExaminationExamResultTextBox.Enabled = false;
-                        LabExaminationExamResultTextBox.ReadOnly = true;
-                        LabExaminationLabWorkerSubmitButton.Enabled = false;
-                        LabExaminationLabWorkerCancelButton.Enabled = false;
-                        //lab manager
-                        //LabExaminationLabManagerFirstNameTextBox.ReadOnly = true;
-                        //LabExaminationLabManagerLastNameTextBox.ReadOnly = true;
-                        LabExaminationLabManagerFirstNameTextBox.Enabled = false;
-                        LabExaminationLabManagerLastNameTextBox.Enabled = false;
-                        LabExaminationLabManagerCommentsTextBox.Enabled = false;
-                        LabExaminationLabManagerCommentsTextBox.ReadOnly = true;
-                        LabExaminationLabManagerApproveButton.Enabled = false;
-                        LabExaminationLabManagerCancelButton.Enabled = false;
-                        //other
-                        //LabExaminationExamStateComboBox.Enabled = false;
-                        //LabExaminationExamTypeComboBox.Enabled = false;
-                        //LabExaminationExamOrderDateTimePicker.Enabled = false;
-
-                    }
-                    break;
-            }
-        }
+       
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel labExaminationInfoPanel;
         private System.Windows.Forms.ComboBox LabExaminationExamTypeComboBox;
