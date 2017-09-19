@@ -110,9 +110,8 @@ namespace Clinic
 
                 this.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //MessageBox.Show("Nie wszystkie dane sa poprawne!");
                 MessageBox.Show("Invalid data !", "ERROR !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }                      
         }

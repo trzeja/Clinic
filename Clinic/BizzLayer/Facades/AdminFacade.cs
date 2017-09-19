@@ -35,6 +35,20 @@ namespace BizzLayer.Facades
             //by nie mozna bylo wpisac sobie nowego rekordu
             DataClasses1DataContext dc = new DataClasses1DataContext();
             dc.Users.InsertOnSubmit(user);
+
+            if (user.roles == "LABW")
+            {
+                dc.Laboratory_workers.InsertOnSubmit(new Laboratory_worker { user_name = user.user_name });
+            }
+            else if (user.roles == "LABM")
+            {
+                dc.Laboratory_managers.InsertOnSubmit(new Laboratory_manager { user_name = user.user_name });
+            }
+            else if (user.roles == "DOC")
+            {
+                dc.Doctors.InsertOnSubmit(new Doctor { user_name = user.user_name });
+            }
+
             dc.SubmitChanges();
         }
 
