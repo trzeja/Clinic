@@ -219,9 +219,28 @@ namespace Clinic
             return dataFromGrid[(int)index.LNAME];
         }
 
-        public string getID()
+        public int getID()
         {
-            return dataFromGrid[(int)index.ID];
+            if (dataFromGrid.Capacity == 0) return -1;
+            var idDoctor = dataFromGrid[(int)index.ID];
+            int id;
+            try
+            {
+
+
+                Int32.TryParse(idDoctor, out id);
+                if (id != 0)
+                    return id;
+                else return -1;
+            }
+            catch
+            {
+
+                MessageBox.Show("Error while parsing", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return -1;
+            }
+          
+           
         }
     }
 

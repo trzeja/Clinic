@@ -115,18 +115,8 @@ namespace Clinic
             registrarSelectDoctor.setRegistrarAddButtonEnableDisable(false);
             registrarSelectDoctor.ShowDialog(this);
             this.idDoctor = -1;
-            var idDoctor = registrarSelectDoctor.getID();
-            try
-            {
-
-
-                Int32.TryParse(idDoctor, out this.idDoctor);
-            }
-            catch
-            {
-
-                MessageBox.Show("Error while parsing", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            this.idDoctor = registrarSelectDoctor.getID();
+            
 
         }
         public void updateVisit(int id)

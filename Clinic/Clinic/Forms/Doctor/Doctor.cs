@@ -136,7 +136,8 @@ namespace Clinic
             idPatient = 0;
             try
             {
-                Int32.TryParse(doctorSelectPatient.getID(), out idPatient);
+                idPatient = doctorSelectPatient.getID();
+                if (idPatient<0) throw new System.ArgumentException("Invalid index", "original");
                 Patient patientSearchCriteria;
                 patientSearchCriteria = new Patient();
                 patientSearchCriteria.id_patient = idPatient;
@@ -147,7 +148,8 @@ namespace Clinic
             catch (Exception ex)
             {
                 //MessageBox.Show("Check again patient !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                idPatient = 0;
+                MessageBox.Show("Person not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                idPatient = -1;
                 this.doctorPatientNameTextBox.Text = "All patients";
             }
         }
