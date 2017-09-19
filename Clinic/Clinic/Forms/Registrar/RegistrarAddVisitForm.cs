@@ -59,7 +59,7 @@ namespace Clinic
             search.fname = registrarTextBoxPatientFName.Text.ToString();
             search.lname = registrarTextBoxPatientLName.Text.ToString();
 
-            RegistrarAddVisitDataGridView.DataSource = RegistrationFacade.GetPatients(search);
+            RegistrarAddVisitDataGridView.DataSource = RegistrationFacade.GetPatientsWithAdresses(search);
 
         }
     }

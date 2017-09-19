@@ -16,6 +16,7 @@ namespace Clinic
     public partial class SelectPersonForm : Form
     {
         private bool modifyTrueAddFalse;
+        private bool doctor = false;
         private List<string> dataFromGrid = new List<string>();
         private enum index { ID = 0, FNAME, LNAME, PESEL, PLACE, STREET, ZIPCODE, HOUSE, FLAT };
         public SelectPersonForm()
@@ -38,6 +39,12 @@ namespace Clinic
             else this.registrarSelectButton.Text = "Select";
         }
 
+        public SelectPersonForm(Doctor d)
+        {
+            InitializeComponent();
+            doctor = true;
+            
+        }
 
         private void registrarAddPatientButton_Click(object sender, EventArgs e)
         {
@@ -184,11 +191,23 @@ namespace Clinic
 
         private void refreshGrid()
         {
-            Patient patientSearchCriteria;
-            patientSearchCriteria = new Patient();
-            patientSearchCriteria.fname = fnameTextbox.Text.ToString();
-            patientSearchCriteria.lname = lnameTextbox.Text.ToString();
-            dataGridView1.DataSource = RegistrationFacade.GetPatientsWithAdresses(patientSearchCriteria);
+            if (doctor == false)
+            {
+                Patient patientSearchCriteria;
+                patientSearchCriteria = new Patient();
+                patientSearchCriteria.fname = fnameTextbox.Text.ToString();
+                patientSearchCriteria.lname = lnameTextbox.Text.ToString();
+                dataGridView1.DataSource = RegistrationFacade.GetPatientsWithAdresses(patientSearchCriteria);
+            }
+            else
+            {
+                DataLayer.Doctor search = new DataLayer.Doctor();
+
+               // search.
+
+
+            }
+
         }
 
 
