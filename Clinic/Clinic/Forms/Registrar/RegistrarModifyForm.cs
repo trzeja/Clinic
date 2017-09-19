@@ -18,13 +18,14 @@ namespace Clinic
         private bool modifyTrueAddFalse;
         private int idVisit;
         private int idDoctor;
-        public RegistrarAddModifyForm(int? idVisit = null)
+        public RegistrarAddModifyForm(int iD, int? idVisit = null)
         {
             InitializeComponent();
             Initialize(idVisit);
             this.idDoctor = -1;
             
         }
+
 
         /*///////////////////////////////////////////////////////////////////////*/
         //registrarTextBoxIDRegistration

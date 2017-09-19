@@ -30,6 +30,8 @@
         {
             this.RegistrarAddVisitDataGridView = new System.Windows.Forms.DataGridView();
             this.RegistrarAddVisitSearchPanel = new System.Windows.Forms.Panel();
+            this.RegistrarAddVisitButton = new System.Windows.Forms.Button();
+            this.RegistrarAddVisitModifyPatientButton = new System.Windows.Forms.Button();
             this.panelPatient = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.registrarTextBoxPatientLName = new System.Windows.Forms.TextBox();
@@ -37,8 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.registrarTextBoxPatientFName = new System.Windows.Forms.TextBox();
             this.RegistrarAddVisitSearchButton = new System.Windows.Forms.Button();
-            this.RegistrarAddVisitModifyPatientButton = new System.Windows.Forms.Button();
-            this.RegistrarAddVisitButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RegistrarAddVisitDataGridView)).BeginInit();
             this.RegistrarAddVisitSearchPanel.SuspendLayout();
             this.panelPatient.SuspendLayout();
@@ -49,12 +50,12 @@
             this.RegistrarAddVisitDataGridView.AllowUserToAddRows = false;
             this.RegistrarAddVisitDataGridView.AllowUserToDeleteRows = false;
             this.RegistrarAddVisitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RegistrarAddVisitDataGridView.Location = new System.Drawing.Point(12, 125);
+            this.RegistrarAddVisitDataGridView.Location = new System.Drawing.Point(12, 138);
             this.RegistrarAddVisitDataGridView.MultiSelect = false;
             this.RegistrarAddVisitDataGridView.Name = "RegistrarAddVisitDataGridView";
             this.RegistrarAddVisitDataGridView.ReadOnly = true;
             this.RegistrarAddVisitDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.RegistrarAddVisitDataGridView.Size = new System.Drawing.Size(484, 218);
+            this.RegistrarAddVisitDataGridView.Size = new System.Drawing.Size(484, 205);
             this.RegistrarAddVisitDataGridView.TabIndex = 0;
             // 
             // RegistrarAddVisitSearchPanel
@@ -62,14 +63,35 @@
             this.RegistrarAddVisitSearchPanel.AutoScroll = true;
             this.RegistrarAddVisitSearchPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.RegistrarAddVisitSearchPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.RegistrarAddVisitSearchPanel.Controls.Add(this.button1);
             this.RegistrarAddVisitSearchPanel.Controls.Add(this.RegistrarAddVisitButton);
             this.RegistrarAddVisitSearchPanel.Controls.Add(this.RegistrarAddVisitModifyPatientButton);
             this.RegistrarAddVisitSearchPanel.Controls.Add(this.panelPatient);
             this.RegistrarAddVisitSearchPanel.Controls.Add(this.RegistrarAddVisitSearchButton);
             this.RegistrarAddVisitSearchPanel.Location = new System.Drawing.Point(12, 12);
             this.RegistrarAddVisitSearchPanel.Name = "RegistrarAddVisitSearchPanel";
-            this.RegistrarAddVisitSearchPanel.Size = new System.Drawing.Size(484, 107);
+            this.RegistrarAddVisitSearchPanel.Size = new System.Drawing.Size(484, 120);
             this.RegistrarAddVisitSearchPanel.TabIndex = 22;
+            // 
+            // RegistrarAddVisitButton
+            // 
+            this.RegistrarAddVisitButton.Location = new System.Drawing.Point(384, 4);
+            this.RegistrarAddVisitButton.Name = "RegistrarAddVisitButton";
+            this.RegistrarAddVisitButton.Size = new System.Drawing.Size(82, 23);
+            this.RegistrarAddVisitButton.TabIndex = 24;
+            this.RegistrarAddVisitButton.Text = "Add Visit";
+            this.RegistrarAddVisitButton.UseVisualStyleBackColor = true;
+            this.RegistrarAddVisitButton.Click += new System.EventHandler(this.resgistrarAddVisitButton_Click);
+            // 
+            // RegistrarAddVisitModifyPatientButton
+            // 
+            this.RegistrarAddVisitModifyPatientButton.Location = new System.Drawing.Point(384, 33);
+            this.RegistrarAddVisitModifyPatientButton.Name = "RegistrarAddVisitModifyPatientButton";
+            this.RegistrarAddVisitModifyPatientButton.Size = new System.Drawing.Size(82, 23);
+            this.RegistrarAddVisitModifyPatientButton.TabIndex = 25;
+            this.RegistrarAddVisitModifyPatientButton.Text = "Modify Patient";
+            this.RegistrarAddVisitModifyPatientButton.UseVisualStyleBackColor = true;
+            this.RegistrarAddVisitModifyPatientButton.Click += new System.EventHandler(this.registrarModifyPatientButton_Click);
             // 
             // panelPatient
             // 
@@ -129,7 +151,7 @@
             // 
             // RegistrarAddVisitSearchButton
             // 
-            this.RegistrarAddVisitSearchButton.Location = new System.Drawing.Point(384, 68);
+            this.RegistrarAddVisitSearchButton.Location = new System.Drawing.Point(384, 90);
             this.RegistrarAddVisitSearchButton.Name = "RegistrarAddVisitSearchButton";
             this.RegistrarAddVisitSearchButton.Size = new System.Drawing.Size(82, 23);
             this.RegistrarAddVisitSearchButton.TabIndex = 21;
@@ -137,25 +159,15 @@
             this.RegistrarAddVisitSearchButton.UseVisualStyleBackColor = true;
             this.RegistrarAddVisitSearchButton.Click += new System.EventHandler(this.RegistrarAddVisitSearchButton_Click);
             // 
-            // RegistrarAddVisitModifyPatientButton
+            // button1
             // 
-            this.RegistrarAddVisitModifyPatientButton.Location = new System.Drawing.Point(384, 33);
-            this.RegistrarAddVisitModifyPatientButton.Name = "RegistrarAddVisitModifyPatientButton";
-            this.RegistrarAddVisitModifyPatientButton.Size = new System.Drawing.Size(82, 23);
-            this.RegistrarAddVisitModifyPatientButton.TabIndex = 25;
-            this.RegistrarAddVisitModifyPatientButton.Text = "Modify Patient";
-            this.RegistrarAddVisitModifyPatientButton.UseVisualStyleBackColor = true;
-            this.RegistrarAddVisitModifyPatientButton.Click += new System.EventHandler(this.registrarModifyPatientButton_Click);
-            // 
-            // RegistrarAddVisitButton
-            // 
-            this.RegistrarAddVisitButton.Location = new System.Drawing.Point(384, 4);
-            this.RegistrarAddVisitButton.Name = "RegistrarAddVisitButton";
-            this.RegistrarAddVisitButton.Size = new System.Drawing.Size(82, 23);
-            this.RegistrarAddVisitButton.TabIndex = 24;
-            this.RegistrarAddVisitButton.Text = "Add Visit";
-            this.RegistrarAddVisitButton.UseVisualStyleBackColor = true;
-            this.RegistrarAddVisitButton.Click += new System.EventHandler(this.resgistrarAddVisitButton_Click);
+            this.button1.Location = new System.Drawing.Point(384, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Add Patient";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RegistrarAddVisitForm
             // 
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Button RegistrarAddVisitSearchButton;
         private System.Windows.Forms.Button RegistrarAddVisitModifyPatientButton;
         private System.Windows.Forms.Button RegistrarAddVisitButton;
+        private System.Windows.Forms.Button button1;
     }
 }

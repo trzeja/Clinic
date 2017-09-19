@@ -16,6 +16,8 @@ namespace Clinic
 {
     public partial class RegistrarAddVisitForm : Form
     {
+
+        private enum index { ID = 0, FNAME, LNAME, PESEL, PLACE, STREET, ZIPCODE, HOUSE, FLAT };
         public RegistrarAddVisitForm()
         {
             InitializeComponent();
@@ -28,7 +30,13 @@ namespace Clinic
             //RegistrarAddVisitDataGridView
             if (RegistrarAddVisitDataGridView.SelectedRows.Count == 1 && RegistrarAddVisitDataGridView.Rows.Count > 0)
             {
-                RegistrarAddModifyForm registrarAddFrom = new RegistrarAddModifyForm();
+                int curRowIndex = RegistrarAddVisitDataGridView.CurrentCell.RowIndex;
+
+                int IdPatient = Int32.Parse(RegistrarAddVisitDataGridView.Rows[curRowIndex].Cells[0].Value.ToString());
+
+               // var name = RegistrarAddVisitDataGridView.Rows[curRowIndex].Cells[2].Value.ToString();
+
+                RegistrarAddModifyForm registrarAddFrom = new RegistrarAddModifyForm(IdPatient);
                 registrarAddFrom.setModifyTrueAddFalse(false);
                 registrarAddFrom.ShowDialog(this);
             }
@@ -43,7 +51,16 @@ namespace Clinic
             //modify patient
             if (RegistrarAddVisitDataGridView.SelectedRows.Count == 1 && RegistrarAddVisitDataGridView.Rows.Count > 0)
             {
-                SelectPersonForm registrarSelectPatient = new SelectPersonForm("Modify", true);
+                int curRowIndex = RegistrarAddVisitDataGridView.CurrentCell.RowIndex;
+                List<string> dataFromGrid = new List<string>();
+
+                for (int i = 0; i < 9; i++)
+                {
+                    dataFromGrid.Add(RegistrarAddVisitDataGridView.Rows[curRowIndex].Cells[i].Value.ToString());
+                }
+
+                RegistrarAddModifyPatientForm registrarSelectPatient = new RegistrarAddModifyPatientForm("Modify Patient", "Confirm", dataFromGrid[(int)index.ID], dataFromGrid[(int)index.FNAME], dataFromGrid[(int)index.LNAME], dataFromGrid[(int)index.PESEL],
+                                                                                                            dataFromGrid[(int)index.PLACE], dataFromGrid[(int)index.STREET], dataFromGrid[(int)index.ZIPCODE], dataFromGrid[(int)index.HOUSE], dataFromGrid[(int)index.FLAT]);
                 registrarSelectPatient.ShowDialog(this);
             }
             else
@@ -61,6 +78,12 @@ namespace Clinic
 
             RegistrarAddVisitDataGridView.DataSource = RegistrationFacade.GetPatientsWithAdresses(search);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegistrarAddModifyPatientForm registrarSelectPatient = new RegistrarAddModifyPatientForm();
+            registrarSelectPatient.ShowDialog(this);
         }
     }
 }
