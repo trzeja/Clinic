@@ -187,6 +187,7 @@ namespace Clinic
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
             refreshGrid();
+            if (dataGridView1.Rows.Count >= 1) dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
         }
 
         private void refreshGrid()

@@ -40,6 +40,8 @@ namespace Clinic
         private void registrarSearchButton_Click(object sender, EventArgs e)
         {
             refreshGrid();
+            //force select first row
+            if (dataGridViewRegistrar.Rows.Count >= 1) dataGridViewRegistrar.CurrentCell = dataGridViewRegistrar.Rows[0].Cells[0];
         }
 
         private void registrarModifyVisitButton_Click(object sender, EventArgs e)

@@ -34,8 +34,8 @@
             this.labMWShowButton = new System.Windows.Forms.Button();
             this.selectOrderDateLabel = new System.Windows.Forms.Label();
             this.labMWDataTimePickerOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.labMWDataGridView = new System.Windows.Forms.DataGridView();
             this.labMWEditButton = new System.Windows.Forms.Button();
+            this.labMWDataGridView = new System.Windows.Forms.DataGridView();
             this.LabWorkerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.labMWDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -49,19 +49,17 @@
             this.LabWorkerPanel.Controls.Add(this.labMWShowButton);
             this.LabWorkerPanel.Controls.Add(this.selectOrderDateLabel);
             this.LabWorkerPanel.Controls.Add(this.labMWDataTimePickerOrderDate);
-            this.LabWorkerPanel.Location = new System.Drawing.Point(16, 2);
-            this.LabWorkerPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LabWorkerPanel.Location = new System.Drawing.Point(12, 2);
             this.LabWorkerPanel.Name = "LabWorkerPanel";
-            this.LabWorkerPanel.Size = new System.Drawing.Size(592, 100);
+            this.LabWorkerPanel.Size = new System.Drawing.Size(445, 82);
             this.LabWorkerPanel.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(23, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 17);
+            this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "State of execution :";
             // 
@@ -75,19 +73,17 @@
             "APP",
             "CANC_LABW",
             "CANC_LABM"});
-            this.labMWComboboxState.Location = new System.Drawing.Point(171, 12);
-            this.labMWComboboxState.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labMWComboboxState.Location = new System.Drawing.Point(128, 10);
             this.labMWComboboxState.Name = "labMWComboboxState";
-            this.labMWComboboxState.Size = new System.Drawing.Size(160, 24);
+            this.labMWComboboxState.Size = new System.Drawing.Size(121, 21);
             this.labMWComboboxState.TabIndex = 7;
             // 
             // labMWShowButton
             // 
             this.labMWShowButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.labMWShowButton.Location = new System.Drawing.Point(445, 50);
-            this.labMWShowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labMWShowButton.Location = new System.Drawing.Point(334, 41);
             this.labMWShowButton.Name = "labMWShowButton";
-            this.labMWShowButton.Size = new System.Drawing.Size(105, 31);
+            this.labMWShowButton.Size = new System.Drawing.Size(79, 25);
             this.labMWShowButton.TabIndex = 3;
             this.labMWShowButton.Text = "Show records";
             this.labMWShowButton.UseVisualStyleBackColor = true;
@@ -96,10 +92,9 @@
             // selectOrderDateLabel
             // 
             this.selectOrderDateLabel.AutoSize = true;
-            this.selectOrderDateLabel.Location = new System.Drawing.Point(79, 62);
-            this.selectOrderDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.selectOrderDateLabel.Location = new System.Drawing.Point(59, 50);
             this.selectOrderDateLabel.Name = "selectOrderDateLabel";
-            this.selectOrderDateLabel.Size = new System.Drawing.Size(85, 17);
+            this.selectOrderDateLabel.Size = new System.Drawing.Size(63, 13);
             this.selectOrderDateLabel.TabIndex = 6;
             this.selectOrderDateLabel.Text = "Order date :";
             // 
@@ -107,53 +102,48 @@
             // 
             this.labMWDataTimePickerOrderDate.CustomFormat = "dddd, dd.MM.yyyyr.";
             this.labMWDataTimePickerOrderDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labMWDataTimePickerOrderDate.Location = new System.Drawing.Point(171, 53);
-            this.labMWDataTimePickerOrderDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labMWDataTimePickerOrderDate.Location = new System.Drawing.Point(128, 43);
             this.labMWDataTimePickerOrderDate.Name = "labMWDataTimePickerOrderDate";
             this.labMWDataTimePickerOrderDate.ShowCheckBox = true;
-            this.labMWDataTimePickerOrderDate.Size = new System.Drawing.Size(237, 23);
+            this.labMWDataTimePickerOrderDate.Size = new System.Drawing.Size(179, 20);
             this.labMWDataTimePickerOrderDate.TabIndex = 5;
+            // 
+            // labMWEditButton
+            // 
+            this.labMWEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.labMWEditButton.Location = new System.Drawing.Point(348, 598);
+            this.labMWEditButton.Name = "labMWEditButton";
+            this.labMWEditButton.Size = new System.Drawing.Size(79, 23);
+            this.labMWEditButton.TabIndex = 10;
+            this.labMWEditButton.Text = "Edit";
+            this.labMWEditButton.UseVisualStyleBackColor = true;
+            this.labMWEditButton.Click += new System.EventHandler(this.labManagerEditButton_Click);
             // 
             // labMWDataGridView
             // 
             this.labMWDataGridView.AllowUserToAddRows = false;
             this.labMWDataGridView.AllowUserToDeleteRows = false;
             this.labMWDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.labMWDataGridView.Location = new System.Drawing.Point(16, 111);
-            this.labMWDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labMWDataGridView.Location = new System.Drawing.Point(12, 90);
             this.labMWDataGridView.MultiSelect = false;
             this.labMWDataGridView.Name = "labMWDataGridView";
             this.labMWDataGridView.ReadOnly = true;
-            this.labMWDataGridView.RowTemplate.ReadOnly = true;
             this.labMWDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.labMWDataGridView.Size = new System.Drawing.Size(593, 618);
-            this.labMWDataGridView.TabIndex = 10;
-            // 
-            // labMWEditButton
-            // 
-            this.labMWEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.labMWEditButton.Location = new System.Drawing.Point(464, 736);
-            this.labMWEditButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.labMWEditButton.Name = "labMWEditButton";
-            this.labMWEditButton.Size = new System.Drawing.Size(105, 28);
-            this.labMWEditButton.TabIndex = 10;
-            this.labMWEditButton.Text = "Edit";
-            this.labMWEditButton.UseVisualStyleBackColor = true;
-            this.labMWEditButton.Click += new System.EventHandler(this.labManagerEditButton_Click);
+            this.labMWDataGridView.Size = new System.Drawing.Size(445, 502);
+            this.labMWDataGridView.TabIndex = 11;
             // 
             // Laboratory_MW
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 779);
+            this.ClientSize = new System.Drawing.Size(469, 633);
             this.Controls.Add(this.labMWDataGridView);
             this.Controls.Add(this.labMWEditButton);
             this.Controls.Add(this.LabWorkerPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(641, 974);
-            this.MinimumSize = new System.Drawing.Size(641, 482);
+            this.MaximumSize = new System.Drawing.Size(485, 799);
+            this.MinimumSize = new System.Drawing.Size(485, 399);
             this.Name = "Laboratory_MW";
             this.Text = "Laboratory manager/worker";
             this.Resize += new System.EventHandler(this.Laboratory_MW_Resize);
@@ -171,7 +161,7 @@
         private System.Windows.Forms.Button labMWShowButton;
         private System.Windows.Forms.Label selectOrderDateLabel;
         private System.Windows.Forms.DateTimePicker labMWDataTimePickerOrderDate;
-        private System.Windows.Forms.DataGridView labMWDataGridView;
         private System.Windows.Forms.Button labMWEditButton;
+        private System.Windows.Forms.DataGridView labMWDataGridView;
     }
 }
