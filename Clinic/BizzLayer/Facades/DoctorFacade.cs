@@ -118,7 +118,7 @@ namespace BizzLayer.Facades
             return result;
         }
 
-        public static string GetNameForExam(int code)
+        public static string GetNameForExam(string code)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var result = from ed in dc.Examination_dictionaries
