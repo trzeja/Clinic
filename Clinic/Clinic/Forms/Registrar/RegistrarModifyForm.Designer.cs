@@ -46,7 +46,6 @@ namespace Clinic
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.registrarStateComboBox = new System.Windows.Forms.ComboBox();
             this.registrarSelectDoctorButton = new System.Windows.Forms.Button();
-            this.registrarSelectPatientButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +131,6 @@ namespace Clinic
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.registrarStateComboBox);
             this.panel1.Controls.Add(this.registrarSelectDoctorButton);
-            this.panel1.Controls.Add(this.registrarSelectPatientButton);
             this.panel1.Controls.Add(this.stateLabel);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -231,16 +229,6 @@ namespace Clinic
             this.registrarSelectDoctorButton.UseVisualStyleBackColor = true;
             this.registrarSelectDoctorButton.Click += new System.EventHandler(this.registrarSelectDoctorButton_Click);
             // 
-            // registrarSelectPatientButton
-            // 
-            this.registrarSelectPatientButton.Location = new System.Drawing.Point(247, 59);
-            this.registrarSelectPatientButton.Name = "registrarSelectPatientButton";
-            this.registrarSelectPatientButton.Size = new System.Drawing.Size(75, 23);
-            this.registrarSelectPatientButton.TabIndex = 35;
-            this.registrarSelectPatientButton.Text = "Select";
-            this.registrarSelectPatientButton.UseVisualStyleBackColor = true;
-            this.registrarSelectPatientButton.Click += new System.EventHandler(this.registrarSelectPatientButton_Click);
-            // 
             // RegistrarAddModifyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +259,6 @@ namespace Clinic
         private System.Windows.Forms.Label stateLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button registrarSelectDoctorButton;
-        private System.Windows.Forms.Button registrarSelectPatientButton;
         private System.Windows.Forms.ComboBox registrarStateComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;

@@ -100,7 +100,14 @@ namespace Clinic
             {
                 if (this.Name.Equals("Add user"))
                 {
-                    AdminFacade.AddUser(user);
+                    if (comboBoxRole.Enabled)
+                    {
+                        AdminFacade.AddUser(user, adminTextBoxMedicalRight.Text);
+                    }
+                    else
+                    {
+                        AdminFacade.AddUser(user);
+                    }                    
                 }
                 else
                 {
@@ -116,6 +123,18 @@ namespace Clinic
             }                      
         }
 
+        private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxRole.Text == "DOC")
+            {
+                adminTextBoxMedicalRight.Enabled = true;
+            }
+            else
+            {
+                adminTextBoxMedicalRight.Text = "";
+                adminTextBoxMedicalRight.Enabled = false;
+            }
+        }
     }
 }
 
