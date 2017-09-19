@@ -80,7 +80,7 @@ namespace Clinic
         {
             if (doctorExaminationViewExamTypeComboBox.SelectedIndex != -1)
             {
-                doctorExaminationViewExamNameTextBox.Text = DoctorFacade.GetNameForExam(doctorExaminationViewExamTypeComboBox.SelectedValue.ToString());
+                doctorExaminationViewExamNameTextBox.Text = DoctorFacade.GetNameForExam(Int32.Parse(doctorExaminationViewExamTypeComboBox.SelectedValue.ToString()));
             }
             else
             {
@@ -103,7 +103,7 @@ namespace Clinic
                 Physical_examination phyExam = new Physical_examination();
                 phyExam.result = doctorExaminationViewCommentsResultTextBox.Text;
                 phyExam.id_visit = id_visit;
-                phyExam.code = doctorExaminationViewExamTypeComboBox.SelectedValue.ToString();
+                phyExam.code = Int32.Parse(doctorExaminationViewExamTypeComboBox.SelectedValue.ToString());
                 DoctorFacade.AddPhyExam(phyExam);
                 this.Close();
             } else
@@ -123,7 +123,7 @@ namespace Clinic
                 labExam.state = "ORD";
                 labExam.id_visit = id_visit;
                 labExam.order_date = time;
-                labExam.code = doctorExaminationViewExamTypeComboBox.SelectedValue.ToString();
+                labExam.code = Int32.Parse(doctorExaminationViewExamTypeComboBox.SelectedValue.ToString());
                 DoctorFacade.AddLabExam(labExam);
                 this.Close();
             }

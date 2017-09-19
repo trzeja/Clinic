@@ -11,6 +11,18 @@ namespace BizzLayer.Facades
 {
     static public class DoctorFacade
     {
+        public static void FinishVisit(Visit visit)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var oldVisit = from v in dc.Visits
+                           where v.id_visit == visit.id_visit
+                           select v;
+            oldVisit.FirstOrDefault().description = visit.description;
+            oldVisit.FirstOrDefault().diagnosis = visit.diagnosis;
+            oldVisit.FirstOrDefault().state = visit.state;
+            oldVisit.FirstOrDefault().execution_cancel_datetime = visit.execution_cancel_datetime;
+            dc.SubmitChanges();
+        }
 
         public static int GetDoctorIdByUsername(string username)
         {
@@ -129,7 +141,7 @@ namespace BizzLayer.Facades
             return result;
         }
 
-        public static string GetNameForExam(string code)
+        public static string GetNameForExam(int code)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var result = from ed in dc.Examination_dictionaries

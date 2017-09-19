@@ -47,6 +47,15 @@ namespace Clinic
 
         private void doctorFinishVisitButton_Click(object sender, EventArgs e)
         {
+            DateTime time = DateTime.Now;
+            Visit visit = new Visit();
+            visit.id_visit = this.idVisit;
+            //sprawdzic czy nie maja czegos zlego wpisanego
+            visit.description = doctorVisitPatientDescriptionTextBox.Text;
+            visit.diagnosis = doctorVisitPatientDiagnosisTextBox.Text;
+            visit.state = "DONE";
+            visit.execution_cancel_datetime = time;
+            DoctorFacade.FinishVisit(visit);
             //validate data
         }
 
