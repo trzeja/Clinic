@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="clinic" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-0QEG5QUL\SQLEXPRESS;Initial Catalog=clinic;Integrated Security=True" SettingsObjectName="DataLayer.Properties.Settings" SettingsPropertyName="clinicConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Address" Member="Addresses">
     <Type Name="Address">
       <Column Name="id_patient" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -13,7 +14,7 @@
   <Table Name="dbo.Visit" Member="Visits">
     <Type Name="Visit">
       <Column Name="id_visit" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="description" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="diagnosis" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="state" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="registration_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
@@ -39,7 +40,7 @@
   </Table>
   <Table Name="dbo.Examination_dictionary" Member="Examination_dictionaries">
     <Type Name="Examination_dictionary">
-      <Column Name="code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="type" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
       <Association Name="Examination_dictionary_Laboratory_examination" Member="Laboratory_examinations" ThisKey="code" OtherKey="code" Type="Laboratory_examination" />
@@ -59,7 +60,7 @@
       <Column Name="id_visit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_laboratory_woker" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_laboratory_manager" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Examination_dictionary_Laboratory_examination" Member="Examination_dictionary" ThisKey="code" OtherKey="code" Type="Examination_dictionary" IsForeignKey="true" />
       <Association Name="Visit_Laboratory_examination" Member="Visit" ThisKey="id_visit" OtherKey="id_visit" Type="Visit" IsForeignKey="true" />
       <Association Name="Laboratory_manager_Laboratory_examination" Member="Laboratory_manager" ThisKey="id_laboratory_manager" OtherKey="id_laboratory_manager" Type="Laboratory_manager" IsForeignKey="true" />
@@ -96,8 +97,9 @@
     <Type Name="Physical_examination">
       <Column Name="id_physical_examination" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="result" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="execution_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="id_visit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Examination_dictionary_Physical_examination" Member="Examination_dictionary" ThisKey="code" OtherKey="code" Type="Examination_dictionary" IsForeignKey="true" />
       <Association Name="Visit_Physical_examination" Member="Visit" ThisKey="id_visit" OtherKey="id_visit" Type="Visit" IsForeignKey="true" />
     </Type>
