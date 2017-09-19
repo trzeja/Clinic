@@ -130,7 +130,7 @@ namespace BizzLayer.Facades
             return result;
         }
 
-        public static string GetNameForExam(int code)
+        public static string GetNameForExam(string code)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var result = from ed in dc.Examination_dictionaries
@@ -169,7 +169,7 @@ namespace BizzLayer.Facades
                             into joined
                             from j in joined
                             where j.id_patient == idPatient && (j.registration_date < (from visit2 in dc.Visits where visit2.id_visit == idVisit select visit2.registration_date).FirstOrDefault())
-                            select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = new DateTime?(), examination_approval_date = new DateTime?(), labphy.result });
+                            select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = labphy.execution_datetime, examination_approval_date = new DateTime?(), labphy.result });
             //var resultSum = resultLab.ToList().Add(resultPhy.ToList());
             return result;
         }
@@ -182,16 +182,28 @@ namespace BizzLayer.Facades
                           into joined
                           from j in joined
                           where j.id_visit == idVisit
-                          select new { labexam.code, type = "Laboratory", order_date = new DateTime?(labexam.order_date), labexam.state, labexam.examination_execution_date, labexam.examination_approval_date, labexam.result })
+                          select new { labexam.code, type = "Laboratory", order_date = new DateTime?(labexam.order_date), labexam.state, labexam.examination_execution_date, labexam.examination_approval_date, labexam.result, examId=labexam.id_laboratory_examination })
                          .Union(
            /* var resultPhy =*/ from labphy in dc.Physical_examinations
                                 join visit in dc.Visits on labphy.id_visit equals visit.id_visit
                                 into joined
                                 from j in joined
                                 where j.id_visit == idVisit
-                                select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = new DateTime?(), examination_approval_date = new DateTime?(), labphy.result });
+                                select new { labphy.code, type = "Physical", order_date = new DateTime?(), state = "", examination_execution_date = labphy.execution_datetime, examination_approval_date = new DateTime?(), labphy.result, examId=labphy.id_physical_examination });
             //var resultSum = resultLab.ToList().Add(resultPhy.ToList());
             return result;
+        }
+        public static List<string> GetPhysicalExamination(int idExam)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from phyexam in dc.Physical_examinations
+                         join examdict in dc.Examination_dictionaries on phyexam.code equals examdict.code
+                         into joined
+                         from j in joined
+                         where phyexam.id_physical_examination == idExam
+                         select new {phyexam.code, j.name, phyexam.result };
+            var list = new List<string>(new string[]{ result.FirstOrDefault().code, result.FirstOrDefault().name, result.FirstOrDefault().result });
+            return list;
         }
     }
 }
