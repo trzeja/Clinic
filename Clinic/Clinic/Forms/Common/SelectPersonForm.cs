@@ -39,7 +39,7 @@ namespace Clinic
             else this.registrarSelectButton.Text = "Select";
         }
 
-        public SelectPersonForm(Doctor d)
+        public SelectPersonForm(DataLayer.Doctor d)
         {
             InitializeComponent();
             doctor = true;
@@ -201,9 +201,10 @@ namespace Clinic
             }
             else
             {
-                DataLayer.Doctor search = new DataLayer.Doctor();
-
-               // search.
+                User search = new User();
+                search.fname = fnameTextbox.Text.ToString();
+                search.lname = lnameTextbox.Text.ToString();
+                dataGridView1.DataSource = DoctorFacade.GetDoctors(search);
 
 
             }

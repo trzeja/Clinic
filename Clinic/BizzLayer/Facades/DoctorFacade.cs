@@ -33,6 +33,17 @@ namespace BizzLayer.Facades
             return result.FirstOrDefault();
         }
 
+        public static IQueryable GetDoctors(User u)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+            var result = from user in dc.Users
+                         where user.roles == "DOC"
+                         select user;
+            return result;
+            //var result2 = from doctor in dc.Doctors
+            //              where 
+        }
+
         //public static IQueryable GetVisitsFromToday(int idDoctor, DateTime currentDate)
         //{
         //    DataClasses1DataContext dc = new DataClasses1DataContext();

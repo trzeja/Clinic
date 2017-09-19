@@ -109,8 +109,8 @@ namespace Clinic
 
         private void registrarSelectDoctorButton_Click(object sender, EventArgs e)
         {
-
-            SelectPersonForm registrarSelectDoctor = new SelectPersonForm();
+            DataLayer.Doctor d = new DataLayer.Doctor();
+            SelectPersonForm registrarSelectDoctor = new SelectPersonForm(d);
             registrarSelectDoctor.setRegistrarAddButtonEnableDisable(false);
             registrarSelectDoctor.ShowDialog(this);
             this.idDoctor = -1;
