@@ -16,11 +16,13 @@ namespace Clinic
     public partial class RegistrarAddModifyPatientForm : Form
     {
         private int id_patient = 0;
+        private bool newPatient =false;
 
         public RegistrarAddModifyPatientForm()
         {
             InitializeComponent();
             InitializeTextBoxes();
+            newPatient = true;
         }
 
 
@@ -79,8 +81,16 @@ namespace Clinic
             address.zip_code = this.zipCodeBox.Text.ToString();
             address.house = this.houseBox.Text.ToString();
             address.flat = this.flatBox.Text.ToString();
-            RegistrationFacade.updatePatientData(patientSearchCriteria);
-            RegistrationFacade.updateAdressData(address);
+            if (newPatient == false)
+            {
+                RegistrationFacade.updatePatientData(patientSearchCriteria);
+                RegistrationFacade.updateAdressData(address);
+            }
+            else
+            {
+                RegistrationFacade.AddPatient(patientSearchCriteria);
+                RegistrationFacade.AddAdress(address);
+            }
 
             this.Close();
         }

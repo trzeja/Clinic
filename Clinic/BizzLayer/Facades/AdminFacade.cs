@@ -48,6 +48,10 @@ namespace BizzLayer.Facades
             {
                 dc.Doctors.InsertOnSubmit(new Doctor { user_name = user.user_name, medical_right_no = medRightNo });
             }
+            else if (user.roles=="REG")
+            {
+                dc.Registrations.InsertOnSubmit(new Registration { user_name = user.user_name });
+            }
 
             dc.SubmitChanges();
         }
