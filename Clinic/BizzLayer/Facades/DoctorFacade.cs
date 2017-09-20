@@ -122,7 +122,7 @@ namespace BizzLayer.Facades
                       where (((j.state == visit.state || visit.state == "") && ((j.id_patient == idPatient) || (idPatient == 0))) && (j.id_doctor == idDoctor) && ((visit.registration_date.Date == j.registration_date.Date) || (visit.registration_date == DateTime.ParseExact("01.01.1754 00:00:00", "dd.MM.yyyy HH:mm:ss",
                                         System.Globalization.CultureInfo.InvariantCulture))))
                       select new { p.fname, p.lname, p.PESEL, j.state, j.registration_date,j.id_visit };
-            return res;
+            return res.OrderBy(r => r.registration_date);
 
 
         }
