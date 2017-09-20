@@ -95,31 +95,38 @@ namespace Clinic
         private void registrarApproveButton_Click(object sender, EventArgs e)
         {
 
-            if (idPatient != -1 && idDoctor != -1 && comboBox1.SelectedIndex != -1 && comboBox2.SelectedIndex != -1)
+            if (comboBox1.SelectedIndex != -1 && comboBox2.SelectedIndex != -1)
+
             {
 
-                Visit visit = new Visit();
-                visit.id_doctor = idDoctor;
-                visit.id_patient = idPatient;
-                visit.id_registration = idReg;
-                visit.state = "REG";                
-                string date = this.dataTimePickerRegDate.Value.ToString("yyyy-MM-dd");
-                date += ' ';
-                date += comboBox1.Text;
-                date += ':';
-                date += comboBox2.Text;
-                DateTime myDate = DateTime.ParseExact(date, "yyyy-MM-dd HH:mm",
-                                       System.Globalization.CultureInfo.InvariantCulture);
-                visit.registration_date = myDate;
-                RegistrationFacade.AddVisit(visit);
-                this.Close();
-            }
-            else
-            {
+                if (idPatient != -1 && idDoctor != -1)
+                {
 
-                MessageBox.Show("Select Doctor, hour and minute!", "Select Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Visit visit = new Visit();
+                    visit.id_doctor = idDoctor;
+                    visit.id_patient = idPatient;
+                    visit.id_registration = idReg;
+                    visit.state = "REG";
+                    string date = this.dataTimePickerRegDate.Value.ToString("yyyy-MM-dd");
+                    date += ' ';
+                    date += comboBox1.Text;
+                    date += ':';
+                    date += comboBox2.Text;
+                    DateTime myDate = DateTime.ParseExact(date, "yyyy-MM-dd HH:mm",
+                                           System.Globalization.CultureInfo.InvariantCulture);
+                    visit.registration_date = myDate;
+                    RegistrationFacade.AddVisit(visit);
+                    this.Close();
+                }
+                else
+                {
+                    this.Close();
+
+                }
+
 
             }
+            else MessageBox.Show("Select Doctor, hour and minute!", "Select Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 
@@ -179,7 +186,15 @@ namespace Clinic
                 Visit visitToset = new Visit();
                 visitToset.id_doctor = this.idDoctor;
                 visitToset.id_visit = id;
-                visitToset.registration_date = this.dataTimePickerRegDate.Value;
+
+                string date = this.dataTimePickerRegDate.Value.ToString("yyyy-MM-dd");
+                date += ' ';
+                date += comboBox1.Text;
+                date += ':';
+                date += comboBox2.Text;
+                DateTime myDate = DateTime.ParseExact(date, "yyyy-MM-dd HH:mm",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+                visitToset.registration_date = myDate;
                 visitToset.state = this.registrarStateComboBox.SelectedItem.ToString();
                 if (visitToset.state == "REG")
                 {

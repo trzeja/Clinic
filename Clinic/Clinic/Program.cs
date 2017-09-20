@@ -16,8 +16,8 @@ namespace Clinic
         static void Main()
         {
 
-            Seed s = new Seed();
-            s.SeedDatabse();
+            //Seed s = new Seed();
+            //s.SeedDatabse();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
