@@ -37,7 +37,8 @@ namespace BizzLayer.Facades
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
             var result = from p in dc.Users
-                         where ((String.IsNullOrEmpty(searchCrit.fname) || p.fname.StartsWith(searchCrit.fname)) && (String.IsNullOrEmpty(searchCrit.lname) || p.lname.StartsWith(searchCrit.lname))) && p.roles == "DOC"
+                         where ((String.IsNullOrEmpty(searchCrit.fname) || p.fname.StartsWith(searchCrit.fname)) && (String.IsNullOrEmpty(searchCrit.lname) || p.lname.StartsWith(searchCrit.lname))) && p.roles == "DOC" && (p.retire_date == null
+                        || p.retire_date.Value < DateTime.Now.Date)
                          join d in dc.Doctors on p.user_name equals d.user_name
                          into joined
                          from j in joined.DefaultIfEmpty()
