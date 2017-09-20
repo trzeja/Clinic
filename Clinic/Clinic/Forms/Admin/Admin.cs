@@ -17,7 +17,7 @@ namespace Clinic
         public Admin()
         {
             InitializeComponent();
-
+            RefreshGrid();
         }
 
         private void Admin_Load(object sender, EventArgs e)
@@ -102,6 +102,7 @@ namespace Clinic
 
             dataGridAdmin.Columns[2].HeaderText = "Retire date";
             dataGridAdmin.Columns[2].DisplayIndex = 4;
+            dataGridAdmin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

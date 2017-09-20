@@ -60,7 +60,10 @@ namespace BizzLayer.Facades
             var old = from element in dc.Users
                       where element.user_name.Equals(user.user_name)
                       select element;
-            old.FirstOrDefault().password = user.password;
+            if (user.password != null)
+            {
+                old.FirstOrDefault().password = user.password;
+            }
             old.FirstOrDefault().roles = user.roles;
             old.FirstOrDefault().fname = user.fname;
             old.FirstOrDefault().lname = user.lname;

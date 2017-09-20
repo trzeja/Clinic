@@ -82,8 +82,10 @@ namespace Clinic
             User user;
             user = new User();
             user.user_name = adminTextBoxUsername.Text;
-            
-            user.password = BizzLayer.Services.CryptoService.MD5Hash(adminTextBoxPassword.Text);
+            if (adminTextBoxPassword.Text != "")
+            {
+                user.password = BizzLayer.Services.CryptoService.MD5Hash(adminTextBoxPassword.Text);
+            }
             user.roles = comboBoxRole.Text;
             user.lname = adminTextBoxLname.Text;
             user.fname = adminTextBoxFname.Text;
