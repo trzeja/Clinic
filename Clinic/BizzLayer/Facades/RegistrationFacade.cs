@@ -167,6 +167,27 @@ namespace BizzLayer.Facades
             }
         }
 
+        public static void AddPatient(Patient p)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+
+            dc.Patients.InsertOnSubmit(p);
+
+            dc.SubmitChanges();
+
+        }
+
+
+        public static void AddAdress(Address a)
+        {
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+
+            dc.Addresses.InsertOnSubmit(a);
+
+            dc.SubmitChanges();
+
+        }
+
 
         //public static void updateVisit(Visit visit)
         //{
