@@ -82,10 +82,20 @@ namespace BizzLayer.Facades
             return res;
         }
 
-        public static void AddVisit(Visit searchCrit)
+        public static void AddVisit(Visit v1)
         {
             DataClasses1DataContext dc = new DataClasses1DataContext();
-            dc.Visits.InsertOnSubmit(searchCrit);
+            if (dc.Patients.Any(b => b.id_patient == v1.id_patient) && dc.Doctors.Any(b => b.id_doc == v1.id_doctor) && dc.Registrations.Any(b => b.id_registration == v1.id_registration))
+            {
+
+                if (!(dc.Visits.Any(x => x.id_patient == v1.id_patient && x.id_doctor == v1.id_doctor && x.description == v1.description &&
+                     x.registration_date == v1.registration_date && x.state == v1.state)))
+                {
+                    dc.Visits.InsertOnSubmit(v1);
+
+                }
+
+            }
             dc.SubmitChanges();
         }
 
