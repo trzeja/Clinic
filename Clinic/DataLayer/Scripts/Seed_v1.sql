@@ -52,11 +52,11 @@ INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registra
 GO
 INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registration_date], [execution_cancel_datetime], [id_patient], [id_registration], [id_doctor]) VALUES (2, NULL, NULL, N'REG', CAST(N'2017-09-30T08:25:00.000' AS DateTime), NULL, 1, 1, 2)
 GO
-INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registration_date], [execution_cancel_datetime], [id_patient], [id_registration], [id_doctor]) VALUES (3, NULL, NULL, N'REG', CAST(N'2017-09-20T09:30:00.000' AS DateTime), NULL, 2, 1, 2)
+INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registration_date], [execution_cancel_datetime], [id_patient], [id_registration], [id_doctor]) VALUES (3, NULL, NULL, N'CANC', CAST(N'2017-09-20T09:30:00.000' AS DateTime), CAST(N'2017-09-21T00:00:00.000' AS DateTime), 2, 1, 2)
 GO
 INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registration_date], [execution_cancel_datetime], [id_patient], [id_registration], [id_doctor]) VALUES (4, NULL, NULL, N'REG', CAST(N'2017-09-20T11:35:00.000' AS DateTime), NULL, 2, 1, 1)
 GO
-INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registration_date], [execution_cancel_datetime], [id_patient], [id_registration], [id_doctor]) VALUES (5, NULL, NULL, N'REG', CAST(N'2017-09-06T08:30:00.000' AS DateTime), NULL, 2, 1, 1)
+INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registration_date], [execution_cancel_datetime], [id_patient], [id_registration], [id_doctor]) VALUES (5, N'serce', N'niewydolna zapadka aortalna', N'DONE', CAST(N'2017-09-06T08:30:00.000' AS DateTime), CAST(N'2017-09-21T01:08:32.997' AS DateTime), 2, 1, 1)
 GO
 INSERT [dbo].[Visit] ([id_visit], [description], [diagnosis], [state], [registration_date], [execution_cancel_datetime], [id_patient], [id_registration], [id_doctor]) VALUES (6, NULL, NULL, N'REG', CAST(N'2017-09-20T08:15:00.000' AS DateTime), NULL, 1, 1, 2)
 GO
@@ -139,6 +139,20 @@ GO
 INSERT [dbo].[Laboratory_worker] ([id_laboratory_worker], [user_name]) VALUES (2, N'labw1')
 GO
 SET IDENTITY_INSERT [dbo].[Laboratory_worker] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Laboratory_examination] ON 
+
+GO
+INSERT [dbo].[Laboratory_examination] ([id_laboratory_examination], [order_date], [examination_execution_date], [examination_approval_date], [doctor_comments], [result], [lab_manager_comments], [state], [id_visit], [id_laboratory_woker], [id_laboratory_manager], [code]) VALUES (1, CAST(N'2017-09-21T01:07:52.573' AS DateTime), CAST(N'2017-09-21T01:10:00.680' AS DateTime), CAST(N'2017-09-21T01:10:31.323' AS DateTime), N'', N'Stwierdzono obecność', N'', N'APP', 5, 1, 1, N'R03')
+GO
+SET IDENTITY_INSERT [dbo].[Laboratory_examination] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Physical_examination] ON 
+
+GO
+INSERT [dbo].[Physical_examination] ([id_physical_examination], [result], [execution_datetime], [id_visit], [code]) VALUES (1, N'', CAST(N'2017-09-21T01:07:04.860' AS DateTime), 5, N'89.41')
+GO
+SET IDENTITY_INSERT [dbo].[Physical_examination] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Address] ON 
 
