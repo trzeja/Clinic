@@ -70,10 +70,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\clinic_db_create_v4.sql" />
-    <Content Include="Scripts\clinic_db_create_v5.sql" />
     <Content Include="Scripts\clinic_db_create_v6.sql" />
-    <Content Include="Scripts\RegistrarPatientsUndVisits.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
