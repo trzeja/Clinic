@@ -16,11 +16,18 @@ namespace Clinic
 {
     public partial class RegistrarAddVisitForm : Form
     {
+        private int? id_reg;
 
         private enum index { ID = 0, FNAME, LNAME, PESEL, PLACE, STREET, ZIPCODE, HOUSE, FLAT };
         public RegistrarAddVisitForm()
         {
             InitializeComponent();
+        }
+
+        public RegistrarAddVisitForm(int? id_reg)
+        {
+            InitializeComponent();
+            this.id_reg = id_reg;
         }
 
         private void resgistrarAddVisitButton_Click(object sender, EventArgs e)
@@ -36,7 +43,7 @@ namespace Clinic
 
                // var name = RegistrarAddVisitDataGridView.Rows[curRowIndex].Cells[2].Value.ToString();
 
-                RegistrarAddModifyForm registrarAddFrom = new RegistrarAddModifyForm(IdPatient);
+                RegistrarAddModifyForm registrarAddFrom = new RegistrarAddModifyForm(IdPatient, id_reg);
                 registrarAddFrom.setModifyTrueAddFalse(false);
                 registrarAddFrom.ShowDialog(this);
             }

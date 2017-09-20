@@ -31,7 +31,7 @@ namespace Clinic
 
             // w id_reg (int) jest id rejetratorki - potrzebne do przekazania jeśli robimy add visit
             //RegistrarAddVisitForm addVisits = new RegistrarAddVisitForm( id_reg );
-            RegistrarAddVisitForm addVisits = new RegistrarAddVisitForm();
+            RegistrarAddVisitForm addVisits = new RegistrarAddVisitForm(id_reg);
             addVisits.ShowDialog(this);
         }
 

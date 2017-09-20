@@ -18,6 +18,7 @@ namespace Clinic
         private bool modifyTrueAddFalse;
         private int idVisit;
         private int idDoctor;
+        private int idPatient;
         public RegistrarAddModifyForm(int? idVisit = null)
         {
             InitializeComponent();
@@ -25,6 +26,25 @@ namespace Clinic
             this.idDoctor = -1;
             
         }
+
+        public RegistrarAddModifyForm(int idPatient,int? idReg)
+        {
+            InitializeComponent();
+            this.idPatient = idPatient;
+            SetPatientName(idPatient);
+
+        }
+
+        private void SetPatientName(int idPatient)
+        {
+
+            Patient patient = new Patient();
+            patient.id_patient = idPatient;
+            patient= RegistrationFacade.GetPatientByID(patient);
+            registrarTextBoxPatientName.Text = patient.lname;
+            this.idDoctor = -1;
+        }
+
 
 
         /*///////////////////////////////////////////////////////////////////////*/
@@ -116,6 +136,7 @@ namespace Clinic
             registrarSelectDoctor.ShowDialog(this);
             this.idDoctor = -1;
             this.idDoctor = registrarSelectDoctor.getID();
+            registrarTextBoxDoctor.Text = registrarSelectDoctor.getLname();
             
 
         }

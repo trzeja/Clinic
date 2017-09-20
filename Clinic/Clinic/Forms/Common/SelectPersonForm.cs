@@ -139,39 +139,66 @@ namespace Clinic
             try
             {
 
-                int curRowIndex = dataGridView1.CurrentCell.RowIndex;
-                string tmpID = null;
-                Patient patientSearchCriteria = new Patient();
-                Address addressSearchCriteria = new Address();
-
-                if (dataGridView1.Rows[curRowIndex].Cells[0].Value == null) throw new Exception();
-
-                tmpID = dataGridView1.Rows[curRowIndex].Cells[0].Value.ToString();
-                int id = Int32.Parse(tmpID);
-
-                patientSearchCriteria.id_patient = id;
-                addressSearchCriteria.id_patient = id;
-
-
-                Patient patient = RegistrationFacade.GetPatientByID(patientSearchCriteria);
-                Address address = RegistrationFacade.GetAdressByID(addressSearchCriteria);
-                if (patient == null) throw new Exception();
-
-
-                dataFromGrid.Add(tmpID);
-                dataFromGrid.Add(patient.fname.ToString());
-                dataFromGrid.Add(patient.lname.ToString());
-                dataFromGrid.Add(patient.PESEL.ToString());
-
-                if (address != null)
+                if (doctor == false)
                 {
-                    dataFromGrid.Add(address.place.ToString());
-                    dataFromGrid.Add(address.street.ToString());
-                    dataFromGrid.Add(address.zip_code.ToString());
-                    dataFromGrid.Add(address.house.ToString());
-                    dataFromGrid.Add(address.flat.ToString());
-                }
+                    int curRowIndex = dataGridView1.CurrentCell.RowIndex;
+                    string tmpID = null;
+                    Patient patientSearchCriteria = new Patient();
+                    Address addressSearchCriteria = new Address();
 
+                    if (dataGridView1.Rows[curRowIndex].Cells[0].Value == null) throw new Exception();
+
+                    tmpID = dataGridView1.Rows[curRowIndex].Cells[0].Value.ToString();
+                    int id = Int32.Parse(tmpID);
+
+                    patientSearchCriteria.id_patient = id;
+                    addressSearchCriteria.id_patient = id;
+
+
+                    Patient patient = RegistrationFacade.GetPatientByID(patientSearchCriteria);
+                    Address address = RegistrationFacade.GetAdressByID(addressSearchCriteria);
+                    if (patient == null) throw new Exception();
+
+
+                    dataFromGrid.Add(tmpID);
+                    dataFromGrid.Add(patient.fname.ToString());
+                    dataFromGrid.Add(patient.lname.ToString());
+                    dataFromGrid.Add(patient.PESEL.ToString());
+
+                    if (address != null)
+                    {
+                        dataFromGrid.Add(address.place.ToString());
+                        dataFromGrid.Add(address.street.ToString());
+                        dataFromGrid.Add(address.zip_code.ToString());
+                        dataFromGrid.Add(address.house.ToString());
+                        dataFromGrid.Add(address.flat.ToString());
+                    }
+                }
+                else
+                {
+                    int curRowIndex = dataGridView1.CurrentCell.RowIndex;
+                    string tmpID = null;
+                    DataLayer.Doctor doctorSearchCriteria = new DataLayer.Doctor();
+                 
+
+                    if (dataGridView1.Rows[curRowIndex].Cells[0].Value == null) throw new Exception();
+
+                    tmpID = dataGridView1.Rows[curRowIndex].Cells[0].Value.ToString();
+                    int id = Int32.Parse(tmpID);
+
+                    
+
+
+                   
+
+
+                    dataFromGrid.Add(tmpID);
+                    dataFromGrid.Add(dataGridView1.Rows[curRowIndex].Cells[1].Value.ToString());
+                    dataFromGrid.Add(dataGridView1.Rows[curRowIndex].Cells[2].Value.ToString());
+                   
+
+
+                }
 
 
             }
