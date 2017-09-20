@@ -26,10 +26,10 @@ namespace Clinic
             Initialize(idVisit);
             this.idDoctor = -1;
             this.idPatient = -1;
-            
+
         }
 
-        public RegistrarAddModifyForm(int idPatient,int? idReg)
+        public RegistrarAddModifyForm(int idPatient, int? idReg)
         {
             InitializeComponent();
             this.idPatient = idPatient;
@@ -43,7 +43,7 @@ namespace Clinic
 
             Patient patient = new Patient();
             patient.id_patient = idPatient;
-            patient= RegistrationFacade.GetPatientByID(patient);
+            patient = RegistrationFacade.GetPatientByID(patient);
             registrarTextBoxPatientName.Text = patient.lname;
             this.idDoctor = -1;
         }
@@ -86,7 +86,7 @@ namespace Clinic
                 this.dataTimePickerRegDate.Value = visit.registration_date;
                 this.registrarTextBoxPatientName.Text = visit.patientLname;
                 this.registrarTextBoxDoctor.Text = visit.doctorLname;
-                
+
                 this.registrarStateComboBox.SelectedIndex = this.registrarStateComboBox.FindStringExact(visit.state);
             }
         }
@@ -94,19 +94,33 @@ namespace Clinic
 
         private void registrarApproveButton_Click(object sender, EventArgs e)
         {
-            if (idPatient != -1 && idDoctor!=-1)
+
+            if (idPatient != -1 && idDoctor != -1 && comboBox1.SelectedIndex != -1 && comboBox2.SelectedIndex != -1)
             {
 
                 Visit visit = new Visit();
                 visit.id_doctor = idDoctor;
                 visit.id_patient = idPatient;
                 visit.id_registration = idReg;
-                visit.state = "REG";
-                visit.registration_date= this.dataTimePickerRegDate.Value;
+                visit.state = "REG";                
+                string date = this.dataTimePickerRegDate.Value.ToString("yyyy-MM-dd");
+                date += ' ';
+                date += comboBox1.Text;
+                date += ':';
+                date += comboBox2.Text;
+                DateTime myDate = DateTime.ParseExact(date, "yyyy-MM-dd HH:mm",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+                visit.registration_date = myDate;
                 RegistrationFacade.AddVisit(visit);
+                this.Close();
+            }
+            else
+            {
 
-             }
-            this.Close();
+                MessageBox.Show("Select Doctor, hour and minute!", "Select Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
         }
 
         private void registrarTextBoxPatient_TextChanged(object sender, EventArgs e)
@@ -152,7 +166,7 @@ namespace Clinic
             this.idDoctor = -1;
             this.idDoctor = registrarSelectDoctor.getID();
             registrarTextBoxDoctor.Text = registrarSelectDoctor.getLname();
-            
+
 
         }
         public void updateVisit(int id)
@@ -162,14 +176,14 @@ namespace Clinic
             {
 
 
-                Visit visitToset = new Visit() ;
+                Visit visitToset = new Visit();
                 visitToset.id_doctor = this.idDoctor;
                 visitToset.id_visit = id;
                 visitToset.registration_date = this.dataTimePickerRegDate.Value;
                 visitToset.state = this.registrarStateComboBox.SelectedItem.ToString();
                 if (visitToset.state == "REG")
                 {
-                    
+
                     visitToset.execution_cancel_datetime = null;
                 }
                 else
