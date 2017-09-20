@@ -19,11 +19,13 @@ namespace Clinic
         private int idVisit;
         private int idDoctor;
         private int idPatient;
+        private int idReg;
         public RegistrarAddModifyForm(int? idVisit = null)
         {
             InitializeComponent();
             Initialize(idVisit);
             this.idDoctor = -1;
+            this.idPatient = -1;
             
         }
 
@@ -31,6 +33,7 @@ namespace Clinic
         {
             InitializeComponent();
             this.idPatient = idPatient;
+            this.idReg = idReg.Value;
             SetPatientName(idPatient);
 
         }
@@ -91,6 +94,18 @@ namespace Clinic
 
         private void registrarApproveButton_Click(object sender, EventArgs e)
         {
+            if (idPatient != -1 && idDoctor!=-1)
+            {
+
+                Visit visit = new Visit();
+                visit.id_doctor = idDoctor;
+                visit.id_patient = idPatient;
+                visit.id_registration = idReg;
+                visit.state = "REG";
+                visit.registration_date= this.dataTimePickerRegDate.Value;
+                RegistrationFacade.AddVisit(visit);
+
+             }
             this.Close();
         }
 

@@ -244,6 +244,7 @@ namespace Clinic
 
         public string getLname()
         {
+            if (dataFromGrid.Capacity == 0) return null;
             return dataFromGrid[(int)index.LNAME];
         }
 
