@@ -50,7 +50,7 @@ namespace Clinic
                         {
                             int idDoctor = DoctorFacade.GetDoctorIdByUsername(user.user_name);
                             doctor = new Doctor(idDoctor);
-                            doctor.Show();
+                            doctor.ShowDialog();
                         }
                         else if (user.roles == "REG")
                         {
