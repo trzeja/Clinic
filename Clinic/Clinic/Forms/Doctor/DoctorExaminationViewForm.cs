@@ -17,12 +17,12 @@ namespace Clinic
     {
         private int id_visit = 0;
         private int id_exam = 0;
-        public DoctorExaminationViewForm(int id = 0, int idExam=0)
+        public DoctorExaminationViewForm(int id = 0, int idExam=0, int mode = -1)
         {
             InitializeComponent();
             this.id_exam = idExam;
             this.id_visit = id;
-            SetWindowMode(-1);
+            SetWindowMode(mode);
             
             
         }

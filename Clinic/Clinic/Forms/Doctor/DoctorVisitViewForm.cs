@@ -69,7 +69,7 @@ namespace Clinic
         {
             // refresh examination history
             //MessageBox.Show("Physical examination submited !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit);
+            DoctorExaminationViewForm examinationView = new DoctorExaminationViewForm(this.idVisit, 0, 1);
             examinationView.SetPhyExamMode();
             examinationView.ShowDialog(this);
             RefreshExamGrid();
